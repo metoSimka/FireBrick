@@ -12,6 +12,10 @@
 		A5B67921228D3F74003DB84E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6791F228D3F74003DB84E /* Main.storyboard */; };
 		A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B67922228D3F75003DB84E /* Assets.xcassets */; };
 		A5B67926228D3F75003DB84E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */; };
+		A5B67934228D4537003DB84E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5B67933228D4537003DB84E /* GoogleService-Info.plist */; };
+		A5F7C4F0228D715400B35C6C /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7C4EF228D715400B35C6C /* DashBoardViewController.swift */; };
+		A5F7C4F6228D7B2000B35C6C /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7C4F5228D7B2000B35C6C /* EmailSignUpViewController.swift */; };
+		A5F7C4F8228D7F6700B35C6C /* LoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7C4F7228D7F6700B35C6C /* LoginEmailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		A5B67922228D3F75003DB84E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B67925228D3F75003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5B67927228D3F75003DB84E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5B67933228D4537003DB84E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A5F7C4EF228D715400B35C6C /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
+		A5F7C4F5228D7B2000B35C6C /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
+		A5F7C4F7228D7F6700B35C6C /* LoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewController.swift; sourceTree = "<group>"; };
 		B4B5A3BA52832BCFE3DC6B03 /* Pods-FireBrick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBrick.release.xcconfig"; path = "Target Support Files/Pods-FireBrick/Pods-FireBrick.release.xcconfig"; sourceTree = "<group>"; };
 		E902CBCB56E0BA0B2D5D539E /* Pods-FireBrick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBrick.debug.xcconfig"; path = "Target Support Files/Pods-FireBrick/Pods-FireBrick.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,8 +105,6 @@
 		A5B6792E228D3FB2003DB84E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A5B6791F228D3F74003DB84E /* Main.storyboard */,
-				A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -106,6 +112,7 @@
 		A5B6792F228D3FB8003DB84E /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				A5B67933228D4537003DB84E /* GoogleService-Info.plist */,
 				A5B6791B228D3F74003DB84E /* AppDelegate.swift */,
 				A5B67927228D3F75003DB84E /* Info.plist */,
 			);
@@ -129,6 +136,11 @@
 		A5B67932228D3FC4003DB84E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A5B6791F228D3F74003DB84E /* Main.storyboard */,
+				A5F7C4F5228D7B2000B35C6C /* EmailSignUpViewController.swift */,
+				A5F7C4F7228D7F6700B35C6C /* LoginEmailViewController.swift */,
+				A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */,
+				A5F7C4EF228D715400B35C6C /* DashBoardViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -194,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5B67926228D3F75003DB84E /* LaunchScreen.storyboard in Resources */,
+				A5B67934228D4537003DB84E /* GoogleService-Info.plist in Resources */,
 				A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */,
 				A5B67921228D3F74003DB84E /* Main.storyboard in Resources */,
 			);
@@ -233,6 +246,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FireBrick/Pods-FireBrick-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -240,6 +254,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -256,6 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */,
+				A5F7C4F8228D7F6700B35C6C /* LoginEmailViewController.swift in Sources */,
+				A5F7C4F0228D715400B35C6C /* DashBoardViewController.swift in Sources */,
+				A5F7C4F6228D7B2000B35C6C /* EmailSignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +429,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.blackbricks.firebrick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -430,6 +449,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.blackbricks.firebrick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>393460562559-dq0rrusi31qou09csliigvdfbpimhgj3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.393460562559-dq0rrusi31qou09csliigvdfbpimhgj3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCPq9Osc5H4-14IMFWhm98lCqoVNQM3tXI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>393460562559</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.blackbricks.firebrick</string>
+	<key>PROJECT_ID</key>
+	<string>firebrick-5c0cc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>firebrick-5c0cc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:393460562559:ios:eedadf0c14b3d16b</string>
+	<key>DATABASE_URL</key>
+	<string>https://firebrick-5c0cc.firebaseio.com</string>
+</dict>
+</plist>
