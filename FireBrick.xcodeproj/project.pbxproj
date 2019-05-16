@@ -52,7 +52,6 @@
 				E902CBCB56E0BA0B2D5D539E /* Pods-FireBrick.debug.xcconfig */,
 				B4B5A3BA52832BCFE3DC6B03 /* Pods-FireBrick.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -77,12 +76,12 @@
 		A5B6791A228D3F74003DB84E /* FireBrick */ = {
 			isa = PBXGroup;
 			children = (
-				A5B67932228D3FC4003DB84E /* UI */,
-				A5B67931228D3FC1003DB84E /* Services */,
-				A5B67930228D3FBE003DB84E /* Model */,
 				A5B6792F228D3FB8003DB84E /* Config */,
-				A5B6792E228D3FB2003DB84E /* Utils */,
+				A5B67930228D3FBE003DB84E /* Model */,
 				A5B6792D228D3FAD003DB84E /* Resources */,
+				A5B67931228D3FC1003DB84E /* Services */,
+				A5B67932228D3FC4003DB84E /* UI */,
+				A5B6792E228D3FB2003DB84E /* Utils */,
 			);
 			path = FireBrick;
 			sourceTree = "<group>";
@@ -405,12 +404,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L59JFSX5QN;
-				INFOPLIST_FILE = FireBrick/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FireBrick/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BlackBricks.FireBrick;
+				PRODUCT_BUNDLE_IDENTIFIER = io.blackbricks.firebrick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,12 +423,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L59JFSX5QN;
-				INFOPLIST_FILE = FireBrick/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/FireBrick/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BlackBricks.FireBrick;
+				PRODUCT_BUNDLE_IDENTIFIER = io.blackbricks.firebrick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
