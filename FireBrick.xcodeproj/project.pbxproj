@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89FB8BB717B9474AB1524010 /* Pods_FireBrick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344648746F1FEB9158D6CAD2 /* Pods_FireBrick.framework */; };
 		A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6791B228D3F74003DB84E /* AppDelegate.swift */; };
-		A5B6791E228D3F74003DB84E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6791D228D3F74003DB84E /* ViewController.swift */; };
 		A5B67921228D3F74003DB84E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6791F228D3F74003DB84E /* Main.storyboard */; };
 		A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B67922228D3F75003DB84E /* Assets.xcassets */; };
 		A5B67926228D3F75003DB84E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		344648746F1FEB9158D6CAD2 /* Pods_FireBrick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireBrick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B67918228D3F74003DB84E /* FireBrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireBrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B6791B228D3F74003DB84E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5B6791D228D3F74003DB84E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A5B67920228D3F74003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5B67922228D3F75003DB84E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B67925228D3F75003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5B67927228D3F75003DB84E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4B5A3BA52832BCFE3DC6B03 /* Pods-FireBrick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBrick.release.xcconfig"; path = "Target Support Files/Pods-FireBrick/Pods-FireBrick.release.xcconfig"; sourceTree = "<group>"; };
+		E902CBCB56E0BA0B2D5D539E /* Pods-FireBrick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBrick.debug.xcconfig"; path = "Target Support Files/Pods-FireBrick/Pods-FireBrick.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +31,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FB8BB717B9474AB1524010 /* Pods_FireBrick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52FE347BCF1888D0B308BA21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				344648746F1FEB9158D6CAD2 /* Pods_FireBrick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		978880E161F779BE844F7C4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E902CBCB56E0BA0B2D5D539E /* Pods-FireBrick.debug.xcconfig */,
+				B4B5A3BA52832BCFE3DC6B03 /* Pods-FireBrick.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A5B6790F228D3F74003DB84E = {
 			isa = PBXGroup;
 			children = (
 				A5B6791A228D3F74003DB84E /* FireBrick */,
 				A5B67919228D3F74003DB84E /* Products */,
+				978880E161F779BE844F7C4A /* Pods */,
+				52FE347BCF1888D0B308BA21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +77,61 @@
 		A5B6791A228D3F74003DB84E /* FireBrick */ = {
 			isa = PBXGroup;
 			children = (
-				A5B6791B228D3F74003DB84E /* AppDelegate.swift */,
-				A5B6791D228D3F74003DB84E /* ViewController.swift */,
-				A5B6791F228D3F74003DB84E /* Main.storyboard */,
-				A5B67922228D3F75003DB84E /* Assets.xcassets */,
-				A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */,
-				A5B67927228D3F75003DB84E /* Info.plist */,
+				A5B67932228D3FC4003DB84E /* UI */,
+				A5B67931228D3FC1003DB84E /* Services */,
+				A5B67930228D3FBE003DB84E /* Model */,
+				A5B6792F228D3FB8003DB84E /* Config */,
+				A5B6792E228D3FB2003DB84E /* Utils */,
+				A5B6792D228D3FAD003DB84E /* Resources */,
 			);
 			path = FireBrick;
+			sourceTree = "<group>";
+		};
+		A5B6792D228D3FAD003DB84E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A5B67922228D3F75003DB84E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A5B6792E228D3FB2003DB84E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A5B6791F228D3F74003DB84E /* Main.storyboard */,
+				A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A5B6792F228D3FB8003DB84E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A5B6791B228D3F74003DB84E /* AppDelegate.swift */,
+				A5B67927228D3F75003DB84E /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		A5B67930228D3FBE003DB84E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A5B67931228D3FC1003DB84E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A5B67932228D3FC4003DB84E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +141,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5B6792A228D3F75003DB84E /* Build configuration list for PBXNativeTarget "FireBrick" */;
 			buildPhases = (
+				7912AFEC8A54C385C0C7EE50 /* [CP] Check Pods Manifest.lock */,
 				A5B67914228D3F74003DB84E /* Sources */,
 				A5B67915228D3F74003DB84E /* Frameworks */,
 				A5B67916228D3F74003DB84E /* Resources */,
+				8D8967DA0201940F478D371F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +202,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7912AFEC8A54C385C0C7EE50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FireBrick-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D8967DA0201940F478D371F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FireBrick/Pods-FireBrick-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FireBrick/Pods-FireBrick-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5B67914228D3F74003DB84E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5B6791E228D3F74003DB84E /* ViewController.swift in Sources */,
 				A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +400,7 @@
 		};
 		A5B6792B228D3F75003DB84E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E902CBCB56E0BA0B2D5D539E /* Pods-FireBrick.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +419,7 @@
 		};
 		A5B6792C228D3F75003DB84E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4B5A3BA52832BCFE3DC6B03 /* Pods-FireBrick.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
