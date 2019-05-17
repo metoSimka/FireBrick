@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89FB8BB717B9474AB1524010 /* Pods_FireBrick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344648746F1FEB9158D6CAD2 /* Pods_FireBrick.framework */; };
+		A5136493228E648A0053DE00 /* EmailSignUpStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5136492228E648A0053DE00 /* EmailSignUpStoryBoard.storyboard */; };
 		A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6791B228D3F74003DB84E /* AppDelegate.swift */; };
 		A5B67921228D3F74003DB84E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6791F228D3F74003DB84E /* Main.storyboard */; };
 		A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B67922228D3F75003DB84E /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		344648746F1FEB9158D6CAD2 /* Pods_FireBrick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireBrick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5136492228E648A0053DE00 /* EmailSignUpStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailSignUpStoryBoard.storyboard; sourceTree = "<group>"; };
 		A5B67918228D3F74003DB84E /* FireBrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireBrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B6791B228D3F74003DB84E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B67920228D3F74003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,25 @@
 				B4B5A3BA52832BCFE3DC6B03 /* Pods-FireBrick.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A5136494228E64D90053DE00 /* Dash Board */ = {
+			isa = PBXGroup;
+			children = (
+				A5B6791F228D3F74003DB84E /* Main.storyboard */,
+				A5F7C4EF228D715400B35C6C /* DashBoardViewController.swift */,
+			);
+			path = "Dash Board";
+			sourceTree = "<group>";
+		};
+		A5136495228E64F10053DE00 /* E-mail */ = {
+			isa = PBXGroup;
+			children = (
+				A5F7C4F5228D7B2000B35C6C /* EmailSignUpViewController.swift */,
+				A5F7C4F7228D7F6700B35C6C /* LoginEmailViewController.swift */,
+				A5136492228E648A0053DE00 /* EmailSignUpStoryBoard.storyboard */,
+			);
+			path = "E-mail";
 			sourceTree = "<group>";
 		};
 		A5B6790F228D3F74003DB84E = {
@@ -136,11 +157,9 @@
 		A5B67932228D3FC4003DB84E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A5B6791F228D3F74003DB84E /* Main.storyboard */,
-				A5F7C4F5228D7B2000B35C6C /* EmailSignUpViewController.swift */,
-				A5F7C4F7228D7F6700B35C6C /* LoginEmailViewController.swift */,
 				A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */,
-				A5F7C4EF228D715400B35C6C /* DashBoardViewController.swift */,
+				A5136495228E64F10053DE00 /* E-mail */,
+				A5136494228E64D90053DE00 /* Dash Board */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -207,6 +226,7 @@
 			files = (
 				A5B67926228D3F75003DB84E /* LaunchScreen.storyboard in Resources */,
 				A5B67934228D4537003DB84E /* GoogleService-Info.plist in Resources */,
+				A5136493228E648A0053DE00 /* EmailSignUpStoryBoard.storyboard in Resources */,
 				A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */,
 				A5B67921228D3F74003DB84E /* Main.storyboard in Resources */,
 			);
