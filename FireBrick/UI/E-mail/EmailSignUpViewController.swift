@@ -14,11 +14,14 @@ class EmailSignUpViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     @IBAction func back(_ sender: UIButton) {
@@ -69,7 +72,7 @@ class EmailSignUpViewController: UIViewController {
             }
         }
     }
-    
+
     func invalidEnteredLogin() {
         let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -120,4 +123,20 @@ extension EmailSignUpViewController: UITextFieldDelegate {
 extension Notification.Name {
     static let e_mailSignedIn = Notification.Name("e-mailSignedIn")
     static let errorSignIn = Notification.Name("errorSignIn")
+}
+
+extension UIViewController {
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height/3
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
 }

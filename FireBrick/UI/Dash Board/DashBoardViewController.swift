@@ -13,16 +13,16 @@ import GoogleSignIn
 
 class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
     
+//    @IBOutlet weak var googleButton: GIDSignInButton!
     @IBOutlet weak var googleButton: GIDSignInButton!
     
     func customizeGoogleButton() {
-        googleButton.style = GIDSignInButtonStyle.wide
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance()?.signInSilently()
+//        GIDSignIn.sharedInstance()?.signInSilently()
         setGoogleButton()
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
         customizeGoogleButton()
@@ -32,6 +32,10 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
         userDidSignIn()
     }
 
+    @IBAction func googleLogin(_ sender: UIButton) {
+    }
+    
+    
     @IBAction func e_mailAuth(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "EmailSignUp", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "e-mail SignUp"  ) as! EmailSignUpViewController
