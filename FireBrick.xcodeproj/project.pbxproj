@@ -49,6 +49,7 @@
 		A5FEEC632293AEC400EB09BC /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC452293AEC400EB09BC /* SF-Pro-Text-Medium.otf */; };
 		A5FEEC642293AEC400EB09BC /* SF-Pro-Display-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC462293AEC400EB09BC /* SF-Pro-Display-BoldItalic.otf */; };
 		A5FEEC652293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC472293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf */; };
+		A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FEEC662293F28E00EB09BC /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		A5FEEC452293AEC400EB09BC /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		A5FEEC462293AEC400EB09BC /* SF-Pro-Display-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BoldItalic.otf"; sourceTree = "<group>"; };
 		A5FEEC472293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		A5FEEC662293F28E00EB09BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B4B5A3BA52832BCFE3DC6B03 /* Pods-FireBrick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBrick.release.xcconfig"; path = "Target Support Files/Pods-FireBrick/Pods-FireBrick.release.xcconfig"; sourceTree = "<group>"; };
 		E902CBCB56E0BA0B2D5D539E /* Pods-FireBrick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBrick.debug.xcconfig"; path = "Target Support Files/Pods-FireBrick/Pods-FireBrick.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				A513649A228E745C0053DE00 /* ExtensionBorder.swift */,
+				A5FEEC662293F28E00EB09BC /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				A5F7C4F0228D715400B35C6C /* DashBoardViewController.swift in Sources */,
 				A5F7C4F6228D7B2000B35C6C /* EmailSignUpViewController.swift in Sources */,
 				A51E49102292907F006687A3 /* EnteredViewController.swift in Sources */,
+				A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

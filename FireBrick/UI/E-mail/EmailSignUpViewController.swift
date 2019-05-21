@@ -12,12 +12,18 @@ import FirebaseAuth
 
 class EmailSignUpViewController: UIViewController {
     
+    @IBOutlet weak var warningPasswordTextField: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    @IBOutlet weak var constraintPasswordWarning: NSLayoutConstraint!
+    @IBOutlet weak var constraintEmailWarning: NSLayoutConstraint!
+    @IBOutlet weak var eyeButton: UIButton!
+    @IBOutlet weak var imageWarningPassword: UIImageView!
+    @IBOutlet weak var imageWarningEmail: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         emailTextField.delegate = self
         passwordTextField.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -49,6 +55,15 @@ class EmailSignUpViewController: UIViewController {
         }
     }
 
+    @IBAction func ShowHidePassword(_ sender: UIButton) {
+        if eyeButton.isSelected {
+            eyeButton.isSelected = false
+            passwordTextField.isSecureTextEntry = true
+        } else {
+            eyeButton.isSelected = true
+            passwordTextField.isSecureTextEntry = false
+        }
+    }
     
     @IBAction func login(_ sender: UIButton) {
         if emailTextField.text == "" {
@@ -71,6 +86,43 @@ class EmailSignUpViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func showWarningPassword() {
+        UIView.animate(withDuration: Constants.forAnimation.normal) {
+        self.constraintPasswordWarning.constant = Constants.forConstraints.showValue
+            self.view.layoutIfNeeded()
+        self.imageWarningPassword.alpha = 1
+            self.warningPasswordTextField.alpha = 1
+        }
+    }
+    func hideWarningPassword() {
+        UIView.animate(withDuration: Constants.forAnimation.normal) {
+            self.constraintPasswordWarning.constant = Constants.forConstraints.hideValue
+            self.view.layoutIfNeeded()
+            self.imageWarningPassword.alpha = 0
+            self.warningPasswordTextField.alpha = 0
+        }
+    }
+    
+    func showWarningEmail() {
+        UIView.animate(withDuration: Constants.forAnimation.normal) {
+            self.constraintEmailWarning.constant = Constants.forConstraints.showValue
+            self.view.layoutIfNeeded()
+            self.imageWarningEmail.alpha = 1
+        }
+    }
+    
+    func hideWarningEmail() {
+        UIView.animate(withDuration: Constants.forAnimation.normal) {
+            self.constraintEmailWarning.constant = Constants.forConstraints.hideValue
+            self.view.layoutIfNeeded()
+            self.imageWarningEmail.alpha = 0
+        }
+    }
+    
+    @IBAction func refresh(_ sender: Any) {
+        print("work")
     }
 
     func invalidEnteredLogin() {
@@ -109,13 +161,46 @@ class EmailSignUpViewController: UIViewController {
             self.userDidSignIn()
         }
     }
+    
+    func isValidEmail() -> Bool {
+        guard let txt = emailTextField.text else {
+            return false
+        }
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: txt)
+    }
+    
+    func isValidPassword() -> Bool {
+        guard let txt = passwordTextField.text else {
+            return false
+        }
+        let count = txt.count
+        guard count >= 6 else {
+            return false
+        }
+        return true
+    }
 }
 
 extension EmailSignUpViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+            if isValidEmail() {
+                hideWarningEmail()
+            } else {
+                showWarningEmail()
+            }
+        } else if textField == passwordTextField {
+            passwordTextField.resignFirstResponder()
+            if isValidPassword() {
+                hideWarningPassword()
+            } else {
+                showWarningPassword()
+            }
+        }
         return true
     }
 }

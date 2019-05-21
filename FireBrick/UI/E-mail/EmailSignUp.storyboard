@@ -29,23 +29,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IPHONE S5 LAST VER" translatesAutoresizingMaskIntoConstraints="NO" id="AIY-8C-N45">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e-mail" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZm-eC-jB2">
+                            <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e-mail" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZm-eC-jB2">
                                 <rect key="frame" x="24" y="311.5" width="327" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Djq-fW-Nab"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEP-bJ-hMb">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEP-bJ-hMb">
                                 <rect key="frame" x="24" y="379.5" width="327" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="dE4-fz-m9p"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no" textContentType="password"/>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phg-16-Qe0">
                                 <rect key="frame" x="92" y="607" width="191" height="44"/>
@@ -86,7 +86,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: password must have at least 8 symbols" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT8-8B-CL5">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: password must have at least 6 symbols" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT8-8B-CL5">
                                 <rect key="frame" x="24" y="423.5" width="241" height="13.5"/>
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -137,17 +137,46 @@
                                     <action selector="back:" destination="GI5-CL-4st" eventType="touchUpInside" id="5Lm-Ip-Kep"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFg-tV-hH2">
+                                <rect key="frame" x="307" y="379.5" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OFg-tV-hH2" secondAttribute="height" multiplier="1:1" id="7i6-eA-A2T"/>
+                                </constraints>
+                                <state key="normal" image="password_eye_cross"/>
+                                <state key="selected" image="password_eye"/>
+                                <connections>
+                                    <action selector="ShowHidePassword:" destination="GI5-CL-4st" eventType="touchUpInside" id="b8X-wP-ppK"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_field_error" translatesAutoresizingMaskIntoConstraints="NO" id="2OD-e7-AqV">
+                                <rect key="frame" x="351" y="391.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2OD-e7-AqV" secondAttribute="height" multiplier="1:1" id="RXM-7j-H3d"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_field_error" translatesAutoresizingMaskIntoConstraints="NO" id="aio-ka-usx">
+                                <rect key="frame" x="351" y="323.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aio-ka-usx" secondAttribute="height" multiplier="1:1" id="GnM-uE-ddM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="OFg-tV-hH2" firstAttribute="height" secondItem="ZEP-bJ-hMb" secondAttribute="height" id="1PE-yu-Jjv"/>
                             <constraint firstItem="ZEP-bJ-hMb" firstAttribute="top" secondItem="SZm-eC-jB2" secondAttribute="bottom" constant="24" id="2ZY-Ww-Yh5"/>
                             <constraint firstItem="LrJ-Fi-nbB" firstAttribute="bottom" secondItem="phg-16-Qe0" secondAttribute="bottom" constant="16" id="3qO-KP-8Zl"/>
                             <constraint firstItem="SZm-eC-jB2" firstAttribute="centerY" secondItem="hYy-Fs-0er" secondAttribute="centerY" id="3yQ-q3-5u6"/>
                             <constraint firstItem="SZm-eC-jB2" firstAttribute="centerX" secondItem="hYy-Fs-0er" secondAttribute="centerX" id="4WM-Sl-x5P"/>
+                            <constraint firstItem="aio-ka-usx" firstAttribute="centerY" secondItem="SZm-eC-jB2" secondAttribute="centerY" id="6GY-mb-E2D"/>
+                            <constraint firstItem="2OD-e7-AqV" firstAttribute="centerY" secondItem="ZEP-bJ-hMb" secondAttribute="centerY" id="7eK-8n-fiO"/>
                             <constraint firstItem="LrJ-Fi-nbB" firstAttribute="bottom" secondItem="9pm-fP-NUm" secondAttribute="bottom" constant="16" id="8uw-9z-FKy"/>
+                            <constraint firstItem="2OD-e7-AqV" firstAttribute="leading" secondItem="OFg-tV-hH2" secondAttribute="trailing" id="Brk-IG-pAI"/>
                             <constraint firstItem="phg-16-Qe0" firstAttribute="top" secondItem="lFI-Cm-Hg2" secondAttribute="bottom" constant="8" id="FMH-RD-r75"/>
                             <constraint firstItem="ZEP-bJ-hMb" firstAttribute="leading" secondItem="LrJ-Fi-nbB" secondAttribute="leading" constant="24" id="MLE-WX-gHQ"/>
+                            <constraint firstItem="OFg-tV-hH2" firstAttribute="centerY" secondItem="ZEP-bJ-hMb" secondAttribute="centerY" id="QPr-Ov-51H"/>
                             <constraint firstItem="LrJ-Fi-nbB" firstAttribute="trailing" secondItem="ZEP-bJ-hMb" secondAttribute="trailing" constant="24" id="WHD-Sr-r9q"/>
                             <constraint firstItem="SZm-eC-jB2" firstAttribute="top" secondItem="ThK-28-RgH" secondAttribute="bottom" constant="8" id="Wi3-uZ-m79"/>
+                            <constraint firstItem="2OD-e7-AqV" firstAttribute="trailing" secondItem="ZEP-bJ-hMb" secondAttribute="trailing" constant="20" id="ZTs-V8-OMX"/>
                             <constraint firstItem="SZm-eC-jB2" firstAttribute="leading" secondItem="LrJ-Fi-nbB" secondAttribute="leading" constant="24" id="ZVg-dR-mzc"/>
                             <constraint firstItem="Mn0-QH-mMq" firstAttribute="centerX" secondItem="hYy-Fs-0er" secondAttribute="centerX" id="bZg-CL-NP6"/>
                             <constraint firstItem="9pm-fP-NUm" firstAttribute="leading" secondItem="hYy-Fs-0er" secondAttribute="leading" id="d3n-MY-dMF"/>
@@ -156,6 +185,7 @@
                             <constraint firstItem="lFI-Cm-Hg2" firstAttribute="centerX" secondItem="hYy-Fs-0er" secondAttribute="centerX" id="f48-68-VZf"/>
                             <constraint firstItem="SZm-eC-jB2" firstAttribute="leading" secondItem="ThK-28-RgH" secondAttribute="leading" id="gKP-Dr-9pb"/>
                             <constraint firstItem="AIY-8C-N45" firstAttribute="top" secondItem="hYy-Fs-0er" secondAttribute="top" id="iwv-Oz-sVp"/>
+                            <constraint firstItem="aio-ka-usx" firstAttribute="trailing" secondItem="SZm-eC-jB2" secondAttribute="trailing" constant="20" id="nZz-dh-p0H"/>
                             <constraint firstItem="AIY-8C-N45" firstAttribute="leading" secondItem="LrJ-Fi-nbB" secondAttribute="leading" id="qGp-ec-0by"/>
                             <constraint firstItem="AIY-8C-N45" firstAttribute="trailing" secondItem="LrJ-Fi-nbB" secondAttribute="trailing" id="tcY-Q5-QDT"/>
                             <constraint firstItem="phg-16-Qe0" firstAttribute="centerX" secondItem="hYy-Fs-0er" secondAttribute="centerX" id="vGD-0K-NFk"/>
@@ -167,8 +197,14 @@
                         <viewLayoutGuide key="safeArea" id="LrJ-Fi-nbB"/>
                     </view>
                     <connections>
+                        <outlet property="constraintEmailWarning" destination="nZz-dh-p0H" id="4TC-6Y-emy"/>
+                        <outlet property="constraintPasswordWarning" destination="ZTs-V8-OMX" id="Mpb-O9-nwG"/>
                         <outlet property="emailTextField" destination="SZm-eC-jB2" id="J7L-BH-JO6"/>
+                        <outlet property="eyeButton" destination="OFg-tV-hH2" id="Fl0-bg-Yry"/>
+                        <outlet property="imageWarningEmail" destination="aio-ka-usx" id="LmD-fi-Rl0"/>
+                        <outlet property="imageWarningPassword" destination="2OD-e7-AqV" id="KmB-vv-SEQ"/>
                         <outlet property="passwordTextField" destination="ZEP-bJ-hMb" id="apS-4F-An0"/>
+                        <outlet property="warningPasswordTextField" destination="wT8-8B-CL5" id="3AS-oj-vzo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wp1-cH-n6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -179,5 +215,8 @@
     <resources>
         <image name="IPHONE S5 LAST VER" width="320" height="568"/>
         <image name="ic-back-white" width="8.5" height="15"/>
+        <image name="ic_field_error" width="20" height="17"/>
+        <image name="password_eye" width="22" height="15"/>
+        <image name="password_eye_cross" width="22" height="20"/>
     </resources>
 </document>
