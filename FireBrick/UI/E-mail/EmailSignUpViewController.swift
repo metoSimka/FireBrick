@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SwiftEntryKit
 
 class EmailSignUpViewController: UIViewController {
     
@@ -31,6 +32,14 @@ class EmailSignUpViewController: UIViewController {
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true) {
         }
+    }
+    @IBAction func forgotPassword(_ sender: UIButton) {
+//        let storyboard = UIStoryboard(name: "ResetPassword", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "reset vc"  ) as! ResetPasswordViewController
+        
+        let vc = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)
+        
+        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
     @IBAction func signUp(_ sender: UIButton) {

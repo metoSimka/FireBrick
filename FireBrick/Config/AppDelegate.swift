@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import IQKeyboardManager
+import SwiftEntryKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -36,6 +37,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
     }
     
+    func setupEntryKit() {
+        var attributes = EKAttributes.centerFloat
+        attributes.entryBackground = .color(color: UIColor(white: 0.1, alpha: 1))
+        attributes.screenBackground = .color(color: UIColor(white: 0.1, alpha: 0.4))
+        attributes.entranceAnimation = .init(
+            translate: .init(duration: 0.4, anchorPosition: .bottom, spring: .init(damping: 1, initialVelocity: 0)),
+            scale: .init(from: 1, to: 1, duration: 0.4),
+            fade: .init(from: 0.6, to: 1, duration: 0.2))
+        attributes.exitAnimation = .init(
+            translate: .init(duration: 0.4, anchorPosition: .bottom, spring: .init(damping: 1, initialVelocity: 0)),
+            scale: .init(from: 1, to: 1, duration: 0.4),
+            fade: .init(from: 0.6, to: 1, duration: 0.2))
+        attributes.displayDuration = .infinity
+        attributes.shadow = .active(with: .init(color: .black, opacity: 0.2, radius: 10, offset: .init(width: 0, height: 7)))
+        attributes.roundCorners = .all(radius: 8)
+        attributes.entryInteraction = .absorbTouches
+        attributes.screenInteraction = .dismiss
+        attributes.scroll = .disabled
+        EKAttributes.default = attributes
+    }
+    
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
         -> Bool {
@@ -49,11 +71,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         IQKeyboardManager.shared().isEnabled = true
+        IQKeyboardManager.shared().keyboardDistanceFromTextField = 20
+        
         FirebaseApp.configure()
+        setupEntryKit()
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
         return true
     }
     

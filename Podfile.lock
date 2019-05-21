@@ -75,12 +75,16 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - QuickLayout (3.0.0)
+  - SwiftEntryKit (1.0.1):
+    - QuickLayout (= 3.0.0)
 
 DEPENDENCIES:
   - Firebase (= 6.0.0)
   - Firebase/Auth
   - GoogleSignIn
   - IQKeyboardManager (= 6.0.4)
+  - SwiftEntryKit (= 1.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -97,6 +101,8 @@ SPEC REPOS:
     - GTMSessionFetcher
     - IQKeyboardManager
     - nanopb
+    - QuickLayout
+    - SwiftEntryKit
 
 SPEC CHECKSUMS:
   Firebase: fa80b9d987ca014a1ba9357496ef2a0178b28b12
@@ -112,7 +118,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   IQKeyboardManager: 29514134ef0334a6fa33cf4eee11c36c064baeaf
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  SwiftEntryKit: 3f55c0b8e676afe24a3703237bcac68372891c56
 
-PODFILE CHECKSUM: 2f084e05e819bb396376008be42789b347497d3f
+PODFILE CHECKSUM: ea87e2db5b6346eb9185ce69c16ba8bd5a97326c
 
 COCOAPODS: 1.6.1
