@@ -15,12 +15,17 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var googleButton: GIDSignInButton!
     
+    func customizeGoogleButton() {
+        googleButton.style = GIDSignInButtonStyle.wide
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance()?.signInSilently()
         setGoogleButton()
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
+        customizeGoogleButton()
     }
     
     @objc func googleUserDidSignIn(_ notification:Notification) {
