@@ -80,31 +80,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pm-fP-NUm">
-                                <rect key="frame" x="285" y="30" width="80" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="PZp-dj-ooy"/>
-                                    <constraint firstAttribute="width" constant="80" id="ggB-p0-4XK"/>
-                                </constraints>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="back:" destination="GI5-CL-4st" eventType="touchUpInside" id="5Lm-Ip-Kep"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThK-28-RgH">
                                 <rect key="frame" x="24" y="281.5" width="55" height="22"/>
                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
@@ -140,26 +115,48 @@
                                     <action selector="login:" destination="GI5-CL-4st" eventType="touchUpInside" id="fPc-qP-yYz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pm-fP-NUm">
+                                <rect key="frame" x="0.0" y="607" width="76" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7Yz-Q7-2Lm"/>
+                                    <constraint firstAttribute="width" constant="76" id="ckN-MZ-N6a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="12"/>
+                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Back" image="ic-back-white">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="back:" destination="GI5-CL-4st" eventType="touchUpInside" id="5Lm-Ip-Kep"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="9pm-fP-NUm" firstAttribute="top" secondItem="LrJ-Fi-nbB" secondAttribute="top" constant="10" id="0JE-xz-nSP"/>
                             <constraint firstItem="ZEP-bJ-hMb" firstAttribute="top" secondItem="SZm-eC-jB2" secondAttribute="bottom" constant="24" id="2ZY-Ww-Yh5"/>
                             <constraint firstItem="LrJ-Fi-nbB" firstAttribute="bottom" secondItem="phg-16-Qe0" secondAttribute="bottom" constant="16" id="3qO-KP-8Zl"/>
                             <constraint firstItem="SZm-eC-jB2" firstAttribute="centerY" secondItem="hYy-Fs-0er" secondAttribute="centerY" id="3yQ-q3-5u6"/>
                             <constraint firstItem="SZm-eC-jB2" firstAttribute="centerX" secondItem="hYy-Fs-0er" secondAttribute="centerX" id="4WM-Sl-x5P"/>
+                            <constraint firstItem="LrJ-Fi-nbB" firstAttribute="bottom" secondItem="9pm-fP-NUm" secondAttribute="bottom" constant="16" id="8uw-9z-FKy"/>
                             <constraint firstItem="phg-16-Qe0" firstAttribute="top" secondItem="lFI-Cm-Hg2" secondAttribute="bottom" constant="8" id="FMH-RD-r75"/>
                             <constraint firstItem="ZEP-bJ-hMb" firstAttribute="leading" secondItem="LrJ-Fi-nbB" secondAttribute="leading" constant="24" id="MLE-WX-gHQ"/>
                             <constraint firstItem="LrJ-Fi-nbB" firstAttribute="trailing" secondItem="ZEP-bJ-hMb" secondAttribute="trailing" constant="24" id="WHD-Sr-r9q"/>
                             <constraint firstItem="SZm-eC-jB2" firstAttribute="top" secondItem="ThK-28-RgH" secondAttribute="bottom" constant="8" id="Wi3-uZ-m79"/>
                             <constraint firstItem="SZm-eC-jB2" firstAttribute="leading" secondItem="LrJ-Fi-nbB" secondAttribute="leading" constant="24" id="ZVg-dR-mzc"/>
                             <constraint firstItem="Mn0-QH-mMq" firstAttribute="centerX" secondItem="hYy-Fs-0er" secondAttribute="centerX" id="bZg-CL-NP6"/>
+                            <constraint firstItem="9pm-fP-NUm" firstAttribute="leading" secondItem="hYy-Fs-0er" secondAttribute="leading" id="d3n-MY-dMF"/>
                             <constraint firstItem="wT8-8B-CL5" firstAttribute="leading" secondItem="ZEP-bJ-hMb" secondAttribute="leading" id="dHY-oq-dbX"/>
                             <constraint firstItem="AIY-8C-N45" firstAttribute="bottom" secondItem="LrJ-Fi-nbB" secondAttribute="bottom" id="dWy-2q-aPz"/>
                             <constraint firstItem="lFI-Cm-Hg2" firstAttribute="centerX" secondItem="hYy-Fs-0er" secondAttribute="centerX" id="f48-68-VZf"/>
                             <constraint firstItem="SZm-eC-jB2" firstAttribute="leading" secondItem="ThK-28-RgH" secondAttribute="leading" id="gKP-Dr-9pb"/>
                             <constraint firstItem="AIY-8C-N45" firstAttribute="top" secondItem="hYy-Fs-0er" secondAttribute="top" id="iwv-Oz-sVp"/>
                             <constraint firstItem="AIY-8C-N45" firstAttribute="leading" secondItem="LrJ-Fi-nbB" secondAttribute="leading" id="qGp-ec-0by"/>
-                            <constraint firstItem="LrJ-Fi-nbB" firstAttribute="trailing" secondItem="9pm-fP-NUm" secondAttribute="trailing" constant="10" id="sYU-ot-4aJ"/>
                             <constraint firstItem="AIY-8C-N45" firstAttribute="trailing" secondItem="LrJ-Fi-nbB" secondAttribute="trailing" id="tcY-Q5-QDT"/>
                             <constraint firstItem="phg-16-Qe0" firstAttribute="centerX" secondItem="hYy-Fs-0er" secondAttribute="centerX" id="vGD-0K-NFk"/>
                             <constraint firstItem="ZEP-bJ-hMb" firstAttribute="centerX" secondItem="hYy-Fs-0er" secondAttribute="centerX" id="w4H-6T-fan"/>
@@ -181,5 +178,6 @@
     </scenes>
     <resources>
         <image name="IPHONE S5 LAST VER" width="320" height="568"/>
+        <image name="ic-back-white" width="8.5" height="15"/>
     </resources>
 </document>
