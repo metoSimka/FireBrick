@@ -69,6 +69,7 @@ PODS:
   - GoogleUtilities/UserDefaults (6.1.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.1)
+  - IQKeyboardManager (6.0.4)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - Firebase (= 6.0.0)
   - Firebase/Auth
   - GoogleSignIn
+  - IQKeyboardManager (= 6.0.4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -93,6 +95,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
+    - IQKeyboardManager
     - nanopb
 
 SPEC CHECKSUMS:
@@ -107,8 +110,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 84df567c76ca84f67b7bb40e769fdd4acc746a10
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  IQKeyboardManager: 29514134ef0334a6fa33cf4eee11c36c064baeaf
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 033f771cf0b50cebfac6926b2dd85622e7da91c7
+PODFILE CHECKSUM: 2f084e05e819bb396376008be42789b347497d3f
 
 COCOAPODS: 1.6.1
