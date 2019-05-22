@@ -106,8 +106,8 @@ class EmailAuthViewController: UIViewController {
         spinnerLogin.stopAnimating()
         spinnerSignUp.stopAnimating()
         enableButtons()
-        LogInButton.setTitle(Constants.Strings.LogInButton, for: .normal)
-        signUpButton.setTitle(Constants.Strings.signUpButton, for: .normal)
+        LogInButton.setTitle(Constants.strings.LogInButton, for: .normal)
+        signUpButton.setTitle(Constants.strings.signUpButton, for: .normal)
     }
     
     func logInFunc() {
@@ -222,7 +222,7 @@ class EmailAuthViewController: UIViewController {
             return false
         }
         let count = txt.count
-        guard count >= 6 else {
+        guard count >= Constants.magicNumbers.minCountPasswordChars else {
             return false
         }
         return true
@@ -238,18 +238,18 @@ class EmailAuthViewController: UIViewController {
     
     func disableButtons() {
         signUpButton.isEnabled = false
-        signUpButton.alpha = 0.5
+        signUpButton.alpha = Constants.magicNumbers.halfAlpha
         
         LogInButton.isEnabled = false
-        LogInButton.alpha = 0.5
+        LogInButton.alpha = Constants.magicNumbers.halfAlpha
     }
     
     func enableButtons() {
         signUpButton.isEnabled = true
-        signUpButton.alpha = 1
+        signUpButton.alpha = Constants.magicNumbers.fullAlpha
         
         LogInButton.isEnabled = true
-        LogInButton.alpha = 1
+        LogInButton.alpha = Constants.magicNumbers.fullAlpha
     }
 }
 

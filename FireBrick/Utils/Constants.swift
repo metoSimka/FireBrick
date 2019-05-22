@@ -20,8 +20,14 @@ struct Constants {
         static let fast = 0.2
     }
     
-    enum Strings {
+    enum strings {
         static let signUpButton = "SIGN UP"
         static let LogInButton = "LOG IN"
+    }
+    
+    enum magicNumbers {
+        static let minCountPasswordChars = 6
+        static let halfAlpha: CGFloat = 0.5
+        static let fullAlpha: CGFloat = 1
     }
 }
