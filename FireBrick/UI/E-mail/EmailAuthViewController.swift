@@ -25,7 +25,7 @@ class EmailAuthViewController: UIViewController {
     @IBOutlet weak var imageWarningEmail: UIImageView!
     @IBOutlet weak var spinnerLogin: UIActivityIndicatorView!
     @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var LogInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class EmailAuthViewController: UIViewController {
         passwordTextField.delegate = self
         disableButtons()
     }
-
+    
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true) {
         }
@@ -67,7 +67,7 @@ class EmailAuthViewController: UIViewController {
             showErrorWithMessage()
             return
         }
-        startLoading()
+        startLoadingSignUp()
         guard let email = emailTextField.text else {
             return
         }
@@ -88,16 +88,26 @@ class EmailAuthViewController: UIViewController {
         }
     }
     
-    func startLoading() {
+    func startLoadingLogin() {
         spinnerLogin.startAnimating()
-        signUpButton.alpha = 0
-        signInButton.titleLabel?.text = nil
+        disableButtons()
+        LogInButton.setTitle("", for: .normal)
+        LogInButton.alpha = 1
+    }
+    
+    func startLoadingSignUp() {
+        spinnerSignUp.startAnimating()
+        disableButtons()
+        signUpButton.setTitle("", for: .normal)
+        signUpButton.alpha = 1
     }
     
     func stopLoading() {
         spinnerLogin.stopAnimating()
-        signInButton.titleLabel?.text = Constants.Strings.signInButton
-        signUpButton.alpha = 1
+        spinnerSignUp.stopAnimating()
+        enableButtons()
+        LogInButton.setTitle(Constants.Strings.LogInButton, for: .normal)
+        signUpButton.setTitle(Constants.Strings.signUpButton, for: .normal)
     }
     
     func logInFunc() {
@@ -105,7 +115,7 @@ class EmailAuthViewController: UIViewController {
             showErrorWithMessage()
             return
         }
-        startLoading()
+        startLoadingLogin()
         guard let email = emailTextField.text else {
             return
         }
@@ -125,7 +135,7 @@ class EmailAuthViewController: UIViewController {
             self.stopLoading()
         }
     }
-
+    
     func showWarningPassword() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintPasswordWarning.constant = Constants.forConstraints.showValue
@@ -230,16 +240,16 @@ class EmailAuthViewController: UIViewController {
         signUpButton.isEnabled = false
         signUpButton.alpha = 0.5
         
-        signInButton.isEnabled = false
-        signInButton.alpha = 0.5
+        LogInButton.isEnabled = false
+        LogInButton.alpha = 0.5
     }
     
     func enableButtons() {
         signUpButton.isEnabled = true
         signUpButton.alpha = 1
         
-        signInButton.isEnabled = true
-        signInButton.alpha = 1
+        LogInButton.isEnabled = true
+        LogInButton.alpha = 1
     }
 }
 
@@ -248,23 +258,27 @@ extension EmailAuthViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            passwordTextField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == emailTextField {
             if isValidEmail() {
                 hideWarningEmail()
             } else {
                 showWarningEmail()
             }
-             shouldEnableButtons()
         } else if textField == passwordTextField {
-            passwordTextField.resignFirstResponder()
             if isValidPassword() {
                 hideWarningPassword()
-               
             } else {
                 showWarningPassword()
             }
-             shouldEnableButtons()
         }
-        return true
+        shouldEnableButtons()
     }
 }
 

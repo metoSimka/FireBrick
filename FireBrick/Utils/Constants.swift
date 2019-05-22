@@ -22,6 +22,6 @@ struct Constants {
     
     enum Strings {
         static let signUpButton = "SIGN UP"
-        static let signInButton = "SIGN IN"
+        static let LogInButton = "LOG IN"
     }
 }
