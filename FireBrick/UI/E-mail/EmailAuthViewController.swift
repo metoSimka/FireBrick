@@ -92,14 +92,14 @@ class EmailAuthViewController: UIViewController {
         spinnerLogin.startAnimating()
         disableButtons()
         LogInButton.setTitle("", for: .normal)
-        LogInButton.alpha = 1
+        LogInButton.alpha = Constants.magicNumbers.fullAlpha
     }
     
     func startLoadingSignUp() {
         spinnerSignUp.startAnimating()
         disableButtons()
         signUpButton.setTitle("", for: .normal)
-        signUpButton.alpha = 1
+        signUpButton.alpha = Constants.magicNumbers.fullAlpha
     }
     
     func stopLoading() {
@@ -140,8 +140,8 @@ class EmailAuthViewController: UIViewController {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintPasswordWarning.constant = Constants.forConstraints.showValue
             self.view.layoutIfNeeded()
-            self.imageWarningPassword.alpha = 1
-            self.warningPasswordTextLabel.alpha = 1
+            self.imageWarningPassword.alpha = Constants.magicNumbers.fullAlpha
+            self.warningPasswordTextLabel.alpha = Constants.magicNumbers.fullAlpha
         }
     }
     
@@ -149,8 +149,8 @@ class EmailAuthViewController: UIViewController {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintPasswordWarning.constant = Constants.forConstraints.hideValue
             self.view.layoutIfNeeded()
-            self.imageWarningPassword.alpha = 0
-            self.warningPasswordTextLabel.alpha = 0
+            self.imageWarningPassword.alpha = Constants.magicNumbers.zeroAlpha
+            self.warningPasswordTextLabel.alpha = Constants.magicNumbers.zeroAlpha
         }
     }
     
@@ -158,8 +158,8 @@ class EmailAuthViewController: UIViewController {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintEmailWarning.constant = Constants.forConstraints.showValue
             self.view.layoutIfNeeded()
-            self.imageWarningEmail.alpha = 1
-            self.warningEmailTextLabel.alpha = 1
+            self.imageWarningEmail.alpha = Constants.magicNumbers.fullAlpha
+            self.warningEmailTextLabel.alpha = Constants.magicNumbers.fullAlpha
         }
     }
     
@@ -167,8 +167,8 @@ class EmailAuthViewController: UIViewController {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintEmailWarning.constant = Constants.forConstraints.hideValue
             self.view.layoutIfNeeded()
-            self.imageWarningEmail.alpha = 0
-            self.warningEmailTextLabel.alpha = 0
+            self.imageWarningEmail.alpha = Constants.magicNumbers.zeroAlpha
+            self.warningEmailTextLabel.alpha = Constants.magicNumbers.zeroAlpha
         }
     }
     
@@ -212,8 +212,7 @@ class EmailAuthViewController: UIViewController {
         guard let txt = emailTextField.text else {
             return false
         }
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", Constants.strings.eMailFormat)
         return emailTest.evaluate(with: txt)
     }
     

@@ -23,11 +23,13 @@ struct Constants {
     enum strings {
         static let signUpButton = "SIGN UP"
         static let LogInButton = "LOG IN"
+        static let eMailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     }
     
     enum magicNumbers {
         static let minCountPasswordChars = 6
         static let halfAlpha: CGFloat = 0.5
         static let fullAlpha: CGFloat = 1
+        static let zeroAlpha: CGFloat = 0
     }
 }
