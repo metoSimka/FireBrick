@@ -24,5 +24,4 @@ class EnteredViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "Home"  ) as! DashBoardViewController
         self.present(vc, animated: true, completion: nil)
     }
-
 }
