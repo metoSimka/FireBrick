@@ -107,7 +107,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="e_mailAuth:" destination="p9U-U2-cJt" eventType="touchUpInside" id="ddS-uo-lEo"/>
+                                            <action selector="emailAuth:" destination="p9U-U2-cJt" eventType="touchUpInside" id="ddS-uo-lEo"/>
                                         </connections>
                                     </button>
                                 </subviews>

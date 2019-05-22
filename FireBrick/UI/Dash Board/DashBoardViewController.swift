@@ -12,12 +12,8 @@ import FirebaseAuth
 import GoogleSignIn
 
 class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
-    
-//    @IBOutlet weak var googleButton: GIDSignInButton!
+
     @IBOutlet weak var googleButton: GIDSignInButton!
-    
-    func customizeGoogleButton() {
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +21,6 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
 //        GIDSignIn.sharedInstance()?.signInSilently()
         setGoogleButton()
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
-        customizeGoogleButton()
     }
     
     @objc func googleUserDidSignIn(_ notification:Notification) {
@@ -36,9 +31,9 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     
-    @IBAction func e_mailAuth(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "EmailSignUp", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "e-mail SignUp"  ) as! EmailSignUpViewController
+    @IBAction func emailAuth(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "EmailAuth", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "e-mail auth"  ) as! EmailAuthViewController
         self.present(vc, animated: true, completion: nil)
     }
     

@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		89FB8BB717B9474AB1524010 /* Pods_FireBrick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344648746F1FEB9158D6CAD2 /* Pods_FireBrick.framework */; };
-		A5136493228E648A0053DE00 /* EmailSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5136492228E648A0053DE00 /* EmailSignUp.storyboard */; };
+		A5136493228E648A0053DE00 /* EmailAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5136492228E648A0053DE00 /* EmailAuth.storyboard */; };
 		A513649B228E745C0053DE00 /* ExtensionBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513649A228E745C0053DE00 /* ExtensionBorder.swift */; };
 		A51E49102292907F006687A3 /* EnteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E490F2292907F006687A3 /* EnteredViewController.swift */; };
 		A51E4912229291E3006687A3 /* Entered.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51E4911229291E3006687A3 /* Entered.storyboard */; };
 		A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6791B228D3F74003DB84E /* AppDelegate.swift */; };
-		A5B67921228D3F74003DB84E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6791F228D3F74003DB84E /* Main.storyboard */; };
+		A5B67921228D3F74003DB84E /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6791F228D3F74003DB84E /* DashBoard.storyboard */; };
 		A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B67922228D3F75003DB84E /* Assets.xcassets */; };
 		A5B67926228D3F75003DB84E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */; };
 		A5B67934228D4537003DB84E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5B67933228D4537003DB84E /* GoogleService-Info.plist */; };
 		A5F7C4F0228D715400B35C6C /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7C4EF228D715400B35C6C /* DashBoardViewController.swift */; };
-		A5F7C4F6228D7B2000B35C6C /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7C4F5228D7B2000B35C6C /* EmailSignUpViewController.swift */; };
+		A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7C4F5228D7B2000B35C6C /* EmailAuthViewController.swift */; };
 		A5FEEC482293AEC400EB09BC /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC2A2293AEC400EB09BC /* SF-Pro-Display-Thin.otf */; };
 		A5FEEC492293AEC400EB09BC /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC2B2293AEC400EB09BC /* SF-Pro-Display-SemiboldItalic.otf */; };
 		A5FEEC4A2293AEC400EB09BC /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC2C2293AEC400EB09BC /* SF-Pro-Text-Heavy.otf */; };
@@ -50,28 +50,25 @@
 		A5FEEC642293AEC400EB09BC /* SF-Pro-Display-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC462293AEC400EB09BC /* SF-Pro-Display-BoldItalic.otf */; };
 		A5FEEC652293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC472293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf */; };
 		A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FEEC662293F28E00EB09BC /* Constants.swift */; };
-		A5FEEC6A22940DBE00EB09BC /* ResetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC6922940DBE00EB09BC /* ResetPassword.storyboard */; };
-		A5FEEC6C22940DCD00EB09BC /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FEEC6B22940DCD00EB09BC /* ResetPasswordViewController.swift */; };
-		A5FEEC6E2294112800EB09BC /* ResetPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC6D2294112800EB09BC /* ResetPasswordView.xib */; };
 		A5FEEC712294149500EB09BC /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FEEC6F2294149500EB09BC /* ForgotPasswordViewController.swift */; };
 		A5FEEC722294149500EB09BC /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC702294149500EB09BC /* ForgotPasswordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		344648746F1FEB9158D6CAD2 /* Pods_FireBrick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireBrick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5136492228E648A0053DE00 /* EmailSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailSignUp.storyboard; sourceTree = "<group>"; };
+		A5136492228E648A0053DE00 /* EmailAuth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailAuth.storyboard; sourceTree = "<group>"; };
 		A513649A228E745C0053DE00 /* ExtensionBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionBorder.swift; sourceTree = "<group>"; };
 		A51E490F2292907F006687A3 /* EnteredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnteredViewController.swift; sourceTree = "<group>"; };
 		A51E4911229291E3006687A3 /* Entered.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Entered.storyboard; sourceTree = "<group>"; };
 		A5B67918228D3F74003DB84E /* FireBrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireBrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B6791B228D3F74003DB84E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5B67920228D3F74003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A5B67920228D3F74003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DashBoard.storyboard; sourceTree = "<group>"; };
 		A5B67922228D3F75003DB84E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B67925228D3F75003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5B67927228D3F75003DB84E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5B67933228D4537003DB84E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5F7C4EF228D715400B35C6C /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
-		A5F7C4F5228D7B2000B35C6C /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
+		A5F7C4F5228D7B2000B35C6C /* EmailAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthViewController.swift; sourceTree = "<group>"; };
 		A5FEEC2A2293AEC400EB09BC /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		A5FEEC2B2293AEC400EB09BC /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		A5FEEC2C2293AEC400EB09BC /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -103,9 +100,6 @@
 		A5FEEC462293AEC400EB09BC /* SF-Pro-Display-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BoldItalic.otf"; sourceTree = "<group>"; };
 		A5FEEC472293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		A5FEEC662293F28E00EB09BC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A5FEEC6922940DBE00EB09BC /* ResetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResetPassword.storyboard; sourceTree = "<group>"; };
-		A5FEEC6B22940DCD00EB09BC /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		A5FEEC6D2294112800EB09BC /* ResetPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPasswordView.xib; sourceTree = "<group>"; };
 		A5FEEC6F2294149500EB09BC /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A5FEEC702294149500EB09BC /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		B4B5A3BA52832BCFE3DC6B03 /* Pods-FireBrick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireBrick.release.xcconfig"; path = "Target Support Files/Pods-FireBrick/Pods-FireBrick.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,7 +138,7 @@
 		A5136494228E64D90053DE00 /* Dash Board */ = {
 			isa = PBXGroup;
 			children = (
-				A5B6791F228D3F74003DB84E /* Main.storyboard */,
+				A5B6791F228D3F74003DB84E /* DashBoard.storyboard */,
 				A5F7C4EF228D715400B35C6C /* DashBoardViewController.swift */,
 			);
 			path = "Dash Board";
@@ -153,8 +147,8 @@
 		A5136495228E64F10053DE00 /* E-mail */ = {
 			isa = PBXGroup;
 			children = (
-				A5F7C4F5228D7B2000B35C6C /* EmailSignUpViewController.swift */,
-				A5136492228E648A0053DE00 /* EmailSignUp.storyboard */,
+				A5F7C4F5228D7B2000B35C6C /* EmailAuthViewController.swift */,
+				A5136492228E648A0053DE00 /* EmailAuth.storyboard */,
 			);
 			path = "E-mail";
 			sourceTree = "<group>";
@@ -245,7 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */,
-				A5FEEC6822940DA400EB09BC /* ResetPasswordController */,
+				A5FEEC6822940DA400EB09BC /* ForgotPasswordController */,
 				A51E490B22928E07006687A3 /* Entered */,
 				A5136495228E64F10053DE00 /* E-mail */,
 				A5136494228E64D90053DE00 /* Dash Board */,
@@ -290,16 +284,13 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		A5FEEC6822940DA400EB09BC /* ResetPasswordController */ = {
+		A5FEEC6822940DA400EB09BC /* ForgotPasswordController */ = {
 			isa = PBXGroup;
 			children = (
-				A5FEEC6922940DBE00EB09BC /* ResetPassword.storyboard */,
-				A5FEEC6D2294112800EB09BC /* ResetPasswordView.xib */,
-				A5FEEC6B22940DCD00EB09BC /* ResetPasswordViewController.swift */,
 				A5FEEC6F2294149500EB09BC /* ForgotPasswordViewController.swift */,
 				A5FEEC702294149500EB09BC /* ForgotPasswordViewController.xib */,
 			);
-			path = ResetPasswordController;
+			path = ForgotPasswordController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,7 +366,6 @@
 				A5FEEC522293AEC400EB09BC /* SF-Pro-Text-Light.otf in Resources */,
 				A5FEEC4E2293AEC400EB09BC /* SF-Pro-Text-MediumItalic.otf in Resources */,
 				A5B67926228D3F75003DB84E /* LaunchScreen.storyboard in Resources */,
-				A5FEEC6A22940DBE00EB09BC /* ResetPassword.storyboard in Resources */,
 				A5FEEC562293AEC400EB09BC /* SF-Pro-Display-MediumItalic.otf in Resources */,
 				A5FEEC512293AEC400EB09BC /* SF-Pro-Display-Heavy.otf in Resources */,
 				A5FEEC5A2293AEC400EB09BC /* SF-Pro-Display-LightItalic.otf in Resources */,
@@ -386,10 +376,9 @@
 				A5FEEC542293AEC400EB09BC /* SF-Pro-Text-Regular.otf in Resources */,
 				A5FEEC4F2293AEC400EB09BC /* SF-Pro-Display-Bold.otf in Resources */,
 				A5FEEC5B2293AEC400EB09BC /* SF-Pro-Display-BlackItalic.otf in Resources */,
-				A5136493228E648A0053DE00 /* EmailSignUp.storyboard in Resources */,
+				A5136493228E648A0053DE00 /* EmailAuth.storyboard in Resources */,
 				A5FEEC4A2293AEC400EB09BC /* SF-Pro-Text-Heavy.otf in Resources */,
 				A5FEEC632293AEC400EB09BC /* SF-Pro-Text-Medium.otf in Resources */,
-				A5FEEC6E2294112800EB09BC /* ResetPasswordView.xib in Resources */,
 				A5FEEC492293AEC400EB09BC /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
 				A5FEEC592293AEC400EB09BC /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */,
@@ -402,7 +391,7 @@
 				A51E4912229291E3006687A3 /* Entered.storyboard in Resources */,
 				A5FEEC4B2293AEC400EB09BC /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				A5FEEC4D2293AEC400EB09BC /* SF-Pro-Display-Regular.otf in Resources */,
-				A5B67921228D3F74003DB84E /* Main.storyboard in Resources */,
+				A5B67921228D3F74003DB84E /* DashBoard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,22 +487,21 @@
 				A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */,
 				A513649B228E745C0053DE00 /* ExtensionBorder.swift in Sources */,
 				A5F7C4F0228D715400B35C6C /* DashBoardViewController.swift in Sources */,
-				A5F7C4F6228D7B2000B35C6C /* EmailSignUpViewController.swift in Sources */,
+				A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */,
 				A51E49102292907F006687A3 /* EnteredViewController.swift in Sources */,
 				A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */,
-				A5FEEC6C22940DCD00EB09BC /* ResetPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A5B6791F228D3F74003DB84E /* Main.storyboard */ = {
+		A5B6791F228D3F74003DB84E /* DashBoard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A5B67920228D3F74003DB84E /* Base */,
 			);
-			name = Main.storyboard;
+			name = DashBoard.storyboard;
 			sourceTree = "<group>";
 		};
 		A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */ = {

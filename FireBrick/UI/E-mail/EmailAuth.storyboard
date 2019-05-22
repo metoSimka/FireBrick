@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Email Sign Up View Controller-->
+        <!--Email Auth View Controller-->
         <scene sceneID="CEK-t8-KrG">
             <objects>
-                <viewController storyboardIdentifier="e-mail SignUp" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GI5-CL-4st" customClass="EmailSignUpViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="e-mail auth" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GI5-CL-4st" customClass="EmailAuthViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hYy-Fs-0er">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn0-QH-mMq">
-                                <rect key="frame" x="135.5" y="452" width="104" height="44"/>
+                                <rect key="frame" x="135.5" y="451.5" width="104" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="g66-cz-lTw"/>
                                 </constraints>
@@ -66,13 +66,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThK-28-RgH">
-                                <rect key="frame" x="24" y="281.5" width="55" height="22"/>
+                                <rect key="frame" x="24" y="282.5" width="54.5" height="21"/>
                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: password must have at least 6 symbols" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT8-8B-CL5">
-                                <rect key="frame" x="24" y="423.5" width="241" height="13.5"/>
+                                <rect key="frame" x="24" y="423.5" width="241" height="13"/>
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

@@ -13,18 +13,15 @@ class ForgotPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
     @IBOutlet weak var textField: UITextField!
     
-    
     @IBAction func sendPassword(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        SwiftEntryKit.dismiss()
     }
     
     @IBAction func close(_ sender: UIButton) {
         SwiftEntryKit.dismiss()
     }
-
 }

@@ -20,7 +20,7 @@ class EnteredViewController: UIViewController {
     @IBAction func signOut(_ sender: UIButton) {
         GIDSignIn.sharedInstance()?.signOut()
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "DashBoard", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "Home"  ) as! DashBoardViewController
         self.present(vc, animated: true, completion: nil)
     }

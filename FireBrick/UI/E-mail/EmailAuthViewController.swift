@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import SwiftEntryKit
 
-class EmailSignUpViewController: UIViewController {
+class EmailAuthViewController: UIViewController {
     
     @IBOutlet weak var warningPasswordTextField: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -22,13 +22,11 @@ class EmailSignUpViewController: UIViewController {
     @IBOutlet weak var imageWarningPassword: UIImageView!
     @IBOutlet weak var imageWarningEmail: UIImageView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
@@ -45,6 +43,20 @@ class EmailSignUpViewController: UIViewController {
     
     @IBAction func signUp(_ sender: UIButton) {
         signUpFunc()
+    }
+    
+    @IBAction func ShowHidePassword(_ sender: UIButton) {
+        if eyeButton.isSelected {
+            eyeButton.isSelected = false
+            passwordTextField.isSecureTextEntry = true
+        } else {
+            eyeButton.isSelected = true
+            passwordTextField.isSecureTextEntry = false
+        }
+    }
+    
+    @IBAction func login(_ sender: UIButton) {
+        logInFunc()
     }
     
     func signUpFunc() {
@@ -73,7 +85,6 @@ class EmailSignUpViewController: UIViewController {
         }
     }
     
-    
     func startLoading() {
         spinner.startAnimating()
         signUpButton.alpha = 0
@@ -85,20 +96,6 @@ class EmailSignUpViewController: UIViewController {
         signInButton.titleLabel?.text = Constants.Strings.signInButton
         signUpButton.alpha = 1
         
-    }
-    
-    @IBAction func ShowHidePassword(_ sender: UIButton) {
-        if eyeButton.isSelected {
-            eyeButton.isSelected = false
-            passwordTextField.isSecureTextEntry = true
-        } else {
-            eyeButton.isSelected = true
-            passwordTextField.isSecureTextEntry = false
-        }
-    }
-    
-    @IBAction func login(_ sender: UIButton) {
-        logInFunc()
     }
     
     func logInFunc() {
@@ -126,9 +123,7 @@ class EmailSignUpViewController: UIViewController {
             self.stopLoading()
         }
     }
-    
-    
-    
+
     func showWarningPassword() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintPasswordWarning.constant = Constants.forConstraints.showValue
@@ -137,6 +132,7 @@ class EmailSignUpViewController: UIViewController {
             self.warningPasswordTextField.alpha = 1
         }
     }
+    
     func hideWarningPassword() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintPasswordWarning.constant = Constants.forConstraints.hideValue
@@ -224,7 +220,7 @@ class EmailSignUpViewController: UIViewController {
     }
 }
 
-extension EmailSignUpViewController: UITextFieldDelegate {
+extension EmailAuthViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {

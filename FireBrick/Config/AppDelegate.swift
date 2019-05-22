@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func setupEntryKit() {
         var attributes = EKAttributes.centerFloat
-        attributes.entryBackground = .color(color: UIColor(white: 0.1, alpha: 1))
+        attributes.entryBackground = .color(color: UIColor(white: 0, alpha: 0))
         attributes.screenBackground = .color(color: UIColor(white: 0.1, alpha: 0.4))
         attributes.entranceAnimation = .init(
             translate: .init(duration: 0.4, anchorPosition: .bottom, spring: .init(damping: 1, initialVelocity: 0)),
