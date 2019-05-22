@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Pro-Text-Bold.otf">
-            <string>SFProText-Bold</string>
-        </array>
         <array key="SF-Pro-Text-Medium.otf">
             <string>SFProText-Medium</string>
         </array>
@@ -26,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="rIf-tm-HXc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="rIf-tm-HXc">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cb9-M6-js9">
@@ -37,115 +34,119 @@
                                     <constraint firstAttribute="height" constant="10" id="Fnb-7g-k8Y"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Khw-Ii-rzG">
-                                <rect key="frame" x="69.666666666666686" y="570.33333333333337" width="275" height="133.66666666666663"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in with:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Bp-Sv-Fa8">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="21.666666666666668"/>
-                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD2-aW-2qO">
-                                        <rect key="frame" x="0.0" y="29.666666666666629" width="275" height="48"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="YKv-vE-SZP"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
-                                        <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Log in with Google" image="Google Icon">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="-1" height="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="googleLogin:" destination="p9U-U2-cJt" eventType="touchUpInside" id="yLT-g0-2aZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jz8-iO-M6u">
-                                        <rect key="frame" x="0.0" y="85.666666666666629" width="275" height="48"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="7KV-Qe-J6i"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="Ivw-Fe-QC0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
-                                        <inset key="contentEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Login with Email" image="ic_email_48px">
-                                            <color key="titleColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="-1" height="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="emailAuth:" destination="p9U-U2-cJt" eventType="touchUpInside" id="ddS-uo-lEo"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="Qfi-uJ-nlb"/>
-                                </constraints>
-                            </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Neuro Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Dfj-5U-DTj">
                                 <rect key="frame" x="84" y="116.66666666666667" width="246" height="246.33333333333331"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Dfj-5U-DTj" secondAttribute="height" multiplier="1:1" id="oQh-uC-R0I"/>
                                 </constraints>
                             </imageView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXi-wq-ZFJ" userLabel="viewForYPositionStackView" customClass="GIDSignInButton">
+                                <rect key="frame" x="414" y="363" width="0.0" height="373"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="n9A-9b-Iuw"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5He-pS-sVU">
+                                <rect key="frame" x="24" y="497.66666666666674" width="366" height="104"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oi-Bu-iKH">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Mwb-RS-oq8">
+                                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Mwb-RS-oq8" secondAttribute="height" multiplier="1:1" id="3pW-Bp-PJw"/>
+                                                    <constraint firstAttribute="height" constant="18" id="gz2-Pn-2PK"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in with Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHQ-Zx-K61">
+                                                <rect key="frame" x="44" y="13.333333333333314" width="322" height="17"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Mwb-RS-oq8" firstAttribute="centerY" secondItem="4oi-Bu-iKH" secondAttribute="centerY" id="87Z-yx-tnw"/>
+                                            <constraint firstItem="GHQ-Zx-K61" firstAttribute="centerY" secondItem="4oi-Bu-iKH" secondAttribute="centerY" id="Sd8-gJ-5sX"/>
+                                            <constraint firstItem="GHQ-Zx-K61" firstAttribute="leading" secondItem="Mwb-RS-oq8" secondAttribute="trailing" constant="10" id="UsN-WN-xw6"/>
+                                            <constraint firstItem="Mwb-RS-oq8" firstAttribute="leading" secondItem="4oi-Bu-iKH" secondAttribute="leading" constant="16" id="ZhY-dE-Vrb"/>
+                                            <constraint firstAttribute="trailing" secondItem="GHQ-Zx-K61" secondAttribute="trailing" id="khC-Tt-3zD"/>
+                                            <constraint firstAttribute="height" constant="44" id="r7J-wQ-WOd"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAq-ZU-2wt">
+                                        <rect key="frame" x="0.0" y="59.999999999999943" width="366" height="44"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail_icon" translatesAutoresizingMaskIntoConstraints="NO" id="r3o-Tv-6BZ">
+                                                <rect key="frame" x="17" y="13" width="18" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="r3o-Tv-6BZ" secondAttribute="height" multiplier="1:1" id="1Td-zE-Q3x"/>
+                                                    <constraint firstAttribute="height" constant="18" id="gdE-KO-hRP"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in with Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mss-1i-MdG">
+                                                <rect key="frame" x="44" y="13.333333333333371" width="322" height="17"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Mss-1i-MdG" firstAttribute="centerY" secondItem="zAq-ZU-2wt" secondAttribute="centerY" id="6PC-kA-WcS"/>
+                                            <constraint firstAttribute="height" constant="44" id="dtr-gs-L44"/>
+                                            <constraint firstItem="Mss-1i-MdG" firstAttribute="leading" secondItem="r3o-Tv-6BZ" secondAttribute="trailing" constant="9" id="f7j-et-x4M"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mss-1i-MdG" secondAttribute="trailing" id="mO0-Pr-iyH"/>
+                                            <constraint firstItem="r3o-Tv-6BZ" firstAttribute="centerY" secondItem="zAq-ZU-2wt" secondAttribute="centerY" id="tbo-dp-Ej5"/>
+                                            <constraint firstItem="r3o-Tv-6BZ" firstAttribute="leading" secondItem="zAq-ZU-2wt" secondAttribute="leading" constant="17" id="vqT-Fb-jPx"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1yp-w3-XdQ" firstAttribute="bottom" secondItem="Khw-Ii-rzG" secondAttribute="bottom" constant="32" id="0WF-pd-ygd"/>
+                            <constraint firstItem="5He-pS-sVU" firstAttribute="leading" secondItem="1yp-w3-XdQ" secondAttribute="leading" constant="24" id="3qK-hk-Ome"/>
                             <constraint firstItem="Cb9-M6-js9" firstAttribute="centerY" secondItem="Ez7-aR-bF1" secondAttribute="centerY" id="61x-iW-E2V"/>
+                            <constraint firstItem="uXi-wq-ZFJ" firstAttribute="top" secondItem="Dfj-5U-DTj" secondAttribute="bottom" id="D4d-Wk-lDB"/>
                             <constraint firstItem="rIf-tm-HXc" firstAttribute="top" secondItem="Ez7-aR-bF1" secondAttribute="top" id="DGe-4I-RxW"/>
-                            <constraint firstItem="Khw-Ii-rzG" firstAttribute="centerX" secondItem="Ez7-aR-bF1" secondAttribute="centerX" id="Jbv-jY-gsu"/>
                             <constraint firstItem="Cb9-M6-js9" firstAttribute="top" secondItem="Dfj-5U-DTj" secondAttribute="bottom" id="KCP-eN-TQv"/>
                             <constraint firstItem="Dfj-5U-DTj" firstAttribute="height" secondItem="Ez7-aR-bF1" secondAttribute="height" multiplier="0.3345" id="UNo-nZ-YGj"/>
                             <constraint firstItem="rIf-tm-HXc" firstAttribute="bottom" secondItem="1yp-w3-XdQ" secondAttribute="bottom" id="Z4f-ht-dtx"/>
                             <constraint firstItem="Dfj-5U-DTj" firstAttribute="centerX" secondItem="Ez7-aR-bF1" secondAttribute="centerX" id="asn-Hw-qh3"/>
                             <constraint firstItem="1yp-w3-XdQ" firstAttribute="trailing" secondItem="rIf-tm-HXc" secondAttribute="trailing" id="duU-mP-TYr"/>
+                            <constraint firstItem="1yp-w3-XdQ" firstAttribute="trailing" secondItem="uXi-wq-ZFJ" secondAttribute="trailing" id="kxg-or-6g2"/>
                             <constraint firstItem="Cb9-M6-js9" firstAttribute="centerX" secondItem="Ez7-aR-bF1" secondAttribute="centerX" id="oFh-GF-b3e"/>
+                            <constraint firstAttribute="trailing" secondItem="5He-pS-sVU" secondAttribute="trailing" constant="24" id="pcX-kc-yCk"/>
+                            <constraint firstItem="uXi-wq-ZFJ" firstAttribute="bottom" secondItem="1yp-w3-XdQ" secondAttribute="bottom" id="puK-vZ-i0g"/>
                             <constraint firstItem="rIf-tm-HXc" firstAttribute="leading" secondItem="1yp-w3-XdQ" secondAttribute="leading" id="tsT-aM-58L"/>
+                            <constraint firstItem="uXi-wq-ZFJ" firstAttribute="centerY" secondItem="5He-pS-sVU" secondAttribute="centerY" id="tsV-dx-KI6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1yp-w3-XdQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="Xmw-X4-5YB"/>
                     <connections>
-                        <outlet property="googleButton" destination="xD2-aW-2qO" id="N8m-gW-34G"/>
+                        <outlet property="emailAuth" destination="zAq-ZU-2wt" id="jKm-UO-4a3"/>
+                        <outlet property="googleAuth" destination="4oi-Bu-iKH" id="YFm-9u-QKn"/>
+                        <outlet property="googleHiddenButton" destination="uXi-wq-ZFJ" id="GYN-j3-kQb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQf-ca-0U6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1115.625" y="-221.83098591549296"/>
+            <point key="canvasLocation" x="1114.4927536231885" y="-222.55434782608697"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IJC-E5-8Kd">
@@ -166,9 +167,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BG" width="375" height="667"/>
-        <image name="Google Icon" width="24" height="24"/>
+        <image name="BackGround" width="375" height="667"/>
         <image name="Neuro Logo" width="190" height="190"/>
-        <image name="ic_email_48px" width="24" height="24"/>
+        <image name="google_icon" width="18" height="18"/>
+        <image name="mail_icon" width="18" height="14"/>
     </resources>
 </document>

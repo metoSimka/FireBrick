@@ -11,8 +11,8 @@ import UIKit
 
 struct Constants {
     enum forConstraints {
-        static let showValue: CGFloat = 17
-        static let hideValue: CGFloat = -20
+        static let showValue: CGFloat = -17
+        static let hideValue: CGFloat = 20
     }
     
     enum forAnimation {

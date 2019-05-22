@@ -13,7 +13,9 @@ import SwiftEntryKit
 
 class EmailAuthViewController: UIViewController {
     
-    @IBOutlet weak var warningPasswordTextField: UILabel!
+    @IBOutlet weak var spinnerSignUp: UIActivityIndicatorView!
+    @IBOutlet weak var warningEmailTextLabel: UILabel!
+    @IBOutlet weak var warningPasswordTextLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var constraintPasswordWarning: NSLayoutConstraint!
@@ -21,7 +23,7 @@ class EmailAuthViewController: UIViewController {
     @IBOutlet weak var eyeButton: UIButton!
     @IBOutlet weak var imageWarningPassword: UIImageView!
     @IBOutlet weak var imageWarningEmail: UIImageView!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var spinnerLogin: UIActivityIndicatorView!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
     
@@ -29,8 +31,9 @@ class EmailAuthViewController: UIViewController {
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        disableButtons()
     }
-    
+
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true) {
         }
@@ -61,7 +64,7 @@ class EmailAuthViewController: UIViewController {
     
     func signUpFunc() {
         guard emailTextField.text != "" else  {
-            invalidEnteredLogin()
+            showErrorWithMessage()
             return
         }
         startLoading()
@@ -86,21 +89,20 @@ class EmailAuthViewController: UIViewController {
     }
     
     func startLoading() {
-        spinner.startAnimating()
+        spinnerLogin.startAnimating()
         signUpButton.alpha = 0
         signInButton.titleLabel?.text = nil
     }
     
     func stopLoading() {
-        spinner.stopAnimating()
+        spinnerLogin.stopAnimating()
         signInButton.titleLabel?.text = Constants.Strings.signInButton
         signUpButton.alpha = 1
-        
     }
     
     func logInFunc() {
         guard emailTextField.text != "" else  {
-            invalidEnteredLogin()
+            showErrorWithMessage()
             return
         }
         startLoading()
@@ -129,7 +131,7 @@ class EmailAuthViewController: UIViewController {
             self.constraintPasswordWarning.constant = Constants.forConstraints.showValue
             self.view.layoutIfNeeded()
             self.imageWarningPassword.alpha = 1
-            self.warningPasswordTextField.alpha = 1
+            self.warningPasswordTextLabel.alpha = 1
         }
     }
     
@@ -138,7 +140,7 @@ class EmailAuthViewController: UIViewController {
             self.constraintPasswordWarning.constant = Constants.forConstraints.hideValue
             self.view.layoutIfNeeded()
             self.imageWarningPassword.alpha = 0
-            self.warningPasswordTextField.alpha = 0
+            self.warningPasswordTextLabel.alpha = 0
         }
     }
     
@@ -147,6 +149,7 @@ class EmailAuthViewController: UIViewController {
             self.constraintEmailWarning.constant = Constants.forConstraints.showValue
             self.view.layoutIfNeeded()
             self.imageWarningEmail.alpha = 1
+            self.warningEmailTextLabel.alpha = 1
         }
     }
     
@@ -155,17 +158,14 @@ class EmailAuthViewController: UIViewController {
             self.constraintEmailWarning.constant = Constants.forConstraints.hideValue
             self.view.layoutIfNeeded()
             self.imageWarningEmail.alpha = 0
+            self.warningEmailTextLabel.alpha = 0
         }
     }
     
-    @IBAction func refresh(_ sender: Any) {
-        print("work")
-    }
-    
-    func invalidEnteredLogin() {
+    func showErrorWithMessage() {
         let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(defaultAction)
+        alertController.addAction(defaultAction)    
         present(alertController, animated: true, completion: nil)
     }
     
@@ -174,8 +174,6 @@ class EmailAuthViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "entered") as! EnteredViewController
         self.present(vc, animated: true, completion: nil)
     }
-    
-    
     
     func errorSignIn(error: Error?) {
         guard let error = error else {
@@ -188,15 +186,16 @@ class EmailAuthViewController: UIViewController {
     }
     
     func successfulData(authResult: AuthDataResult? ,error: Error?) {
-        if error == nil {
-            guard let authResult = authResult else {
-                return
-            }
-            print("You have successfully signed up")
-            let userData:[String: AuthDataResult] = ["user": authResult]
-            NotificationCenter.default.post(name: .e_mailSignedIn, object: nil, userInfo: userData)
-            self.userDidSignIn()
+        guard error == nil else {
+            return
         }
+        guard let authResult = authResult else {
+            return
+        }
+        print("You have successfully signed up")
+        let userData:[String: AuthDataResult] = ["user": authResult]
+        NotificationCenter.default.post(name: .e_mailSignedIn, object: nil, userInfo: userData)
+        self.userDidSignIn()
     }
     
     func isValidEmail() -> Bool {
@@ -218,6 +217,30 @@ class EmailAuthViewController: UIViewController {
         }
         return true
     }
+    
+    func shouldEnableButtons() {
+        guard isValidPassword() && isValidEmail() else {
+            disableButtons()
+            return
+        }
+        enableButtons()
+    }
+    
+    func disableButtons() {
+        signUpButton.isEnabled = false
+        signUpButton.alpha = 0.5
+        
+        signInButton.isEnabled = false
+        signInButton.alpha = 0.5
+    }
+    
+    func enableButtons() {
+        signUpButton.isEnabled = true
+        signUpButton.alpha = 1
+        
+        signInButton.isEnabled = true
+        signInButton.alpha = 1
+    }
 }
 
 extension EmailAuthViewController: UITextFieldDelegate {
@@ -230,14 +253,16 @@ extension EmailAuthViewController: UITextFieldDelegate {
             } else {
                 showWarningEmail()
             }
+             shouldEnableButtons()
         } else if textField == passwordTextField {
             passwordTextField.resignFirstResponder()
             if isValidPassword() {
                 hideWarningPassword()
-                //
+               
             } else {
                 showWarningPassword()
             }
+             shouldEnableButtons()
         }
         return true
     }
