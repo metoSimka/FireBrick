@@ -21,6 +21,10 @@ class EmailSignUpViewController: UIViewController {
     @IBOutlet weak var eyeButton: UIButton!
     @IBOutlet weak var imageWarningPassword: UIImageView!
     @IBOutlet weak var imageWarningEmail: UIImageView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,40 +32,61 @@ class EmailSignUpViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
-
+    
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true) {
         }
     }
+    
     @IBAction func forgotPassword(_ sender: UIButton) {
-//        let storyboard = UIStoryboard(name: "ResetPassword", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "reset vc"  ) as! ResetPasswordViewController
-        
         let vc = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)
-        
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
     @IBAction func signUp(_ sender: UIButton) {
-        if emailTextField.text == "" {
+        signUpFunc()
+    }
+    
+    func signUpFunc() {
+        guard emailTextField.text != "" else  {
             invalidEnteredLogin()
-        } else {
-            guard let email = emailTextField.text else {
-                return
-            }
-            guard let password = passwordTextField.text else {
-                return
-            }
-            Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-                if error == nil {
-                    self.successfulData(authResult: authResult, error: error)
-                } else {
-                    self.errorSignIn(error: error)
+            return
+        }
+        startLoading()
+        guard let email = emailTextField.text else {
+            return
+        }
+        guard let password = passwordTextField.text else {
+            return
+        }
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            guard error == nil else {
+                guard let error = error else {
+                    return
                 }
+                self.errorSignIn(error: error)
+                self.stopLoading()
+                return
             }
+            self.successfulData(authResult: authResult, error: error)
+            self.stopLoading()
         }
     }
-
+    
+    
+    func startLoading() {
+        spinner.startAnimating()
+        signUpButton.alpha = 0
+        signInButton.titleLabel?.text = nil
+    }
+    
+    func stopLoading() {
+        spinner.stopAnimating()
+        signInButton.titleLabel?.text = Constants.Strings.signInButton
+        signUpButton.alpha = 1
+        
+    }
+    
     @IBAction func ShowHidePassword(_ sender: UIButton) {
         if eyeButton.isSelected {
             eyeButton.isSelected = false
@@ -73,33 +98,42 @@ class EmailSignUpViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
-        if emailTextField.text == "" {
+        logInFunc()
+    }
+    
+    func logInFunc() {
+        guard emailTextField.text != "" else  {
             invalidEnteredLogin()
-        } else {
-            guard let email = emailTextField.text else {
-                return
-            }
-            guard let password = passwordTextField.text else {
-                return
-            }
-            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-                if error == nil {
-                    self.successfulData(authResult: user, error: error)
-                } else {
-                    guard let error = error else {
-                        return
-                    }
-                    self.errorSignIn(error: error)
+            return
+        }
+        startLoading()
+        guard let email = emailTextField.text else {
+            return
+        }
+        guard let password = passwordTextField.text else {
+            return
+        }
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            guard error == nil else {
+                guard let error = error else {
+                    return
                 }
+                self.errorSignIn(error: error)
+                self.stopLoading()
+                return
             }
+            self.successfulData(authResult: user, error: error)
+            self.stopLoading()
         }
     }
     
+    
+    
     func showWarningPassword() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
-        self.constraintPasswordWarning.constant = Constants.forConstraints.showValue
+            self.constraintPasswordWarning.constant = Constants.forConstraints.showValue
             self.view.layoutIfNeeded()
-        self.imageWarningPassword.alpha = 1
+            self.imageWarningPassword.alpha = 1
             self.warningPasswordTextField.alpha = 1
         }
     }
@@ -131,7 +165,7 @@ class EmailSignUpViewController: UIViewController {
     @IBAction func refresh(_ sender: Any) {
         print("work")
     }
-
+    
     func invalidEnteredLogin() {
         let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -145,7 +179,7 @@ class EmailSignUpViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-
+    
     
     func errorSignIn(error: Error?) {
         guard let error = error else {
@@ -204,6 +238,7 @@ extension EmailSignUpViewController: UITextFieldDelegate {
             passwordTextField.resignFirstResponder()
             if isValidPassword() {
                 hideWarningPassword()
+                //
             } else {
                 showWarningPassword()
             }

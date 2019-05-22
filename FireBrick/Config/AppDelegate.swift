@@ -16,60 +16,7 @@ import SwiftEntryKit
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     var window: UIWindow?
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        guard error == nil else {
-            print("\(error.localizedDescription)")
-            return
-        }
-        guard let authentication = user.authentication else {
-            return
-        }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-        
-        Auth.auth().signIn(with: credential) { (authResult, error) in
-            guard error == nil else {
-                print(error ?? "authentication error", " did happen")
-                return
-            }
-            NotificationCenter.default.post(name: .googleSignedIn, object: nil)
-        }
-    }
-    
-    func setupEntryKit() {
-        var attributes = EKAttributes.centerFloat
-        attributes.entryBackground = .color(color: UIColor(white: 0.1, alpha: 1))
-        attributes.screenBackground = .color(color: UIColor(white: 0.1, alpha: 0.4))
-        attributes.entranceAnimation = .init(
-            translate: .init(duration: 0.4, anchorPosition: .bottom, spring: .init(damping: 1, initialVelocity: 0)),
-            scale: .init(from: 1, to: 1, duration: 0.4),
-            fade: .init(from: 0.6, to: 1, duration: 0.2))
-        attributes.exitAnimation = .init(
-            translate: .init(duration: 0.4, anchorPosition: .bottom, spring: .init(damping: 1, initialVelocity: 0)),
-            scale: .init(from: 1, to: 1, duration: 0.4),
-            fade: .init(from: 0.6, to: 1, duration: 0.2))
-        attributes.displayDuration = .infinity
-        attributes.shadow = .active(with: .init(color: .black, opacity: 0.2, radius: 10, offset: .init(width: 0, height: 7)))
-        attributes.roundCorners = .all(radius: 8)
-        attributes.entryInteraction = .absorbTouches
-        attributes.screenInteraction = .dismiss
-        attributes.scroll = .disabled
-        EKAttributes.default = attributes
-    }
-    
-    @available(iOS 9.0, *)
-    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
-        -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,
-                                                     sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-                                                     annotation: [:])
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        print("DISCONNECTED")
-    }
-    
+  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         IQKeyboardManager.shared().isEnabled = true
@@ -106,7 +53,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func setupEntryKit() {
+        var attributes = EKAttributes.centerFloat
+        attributes.entryBackground = .color(color: UIColor(white: 0.1, alpha: 1))
+        attributes.screenBackground = .color(color: UIColor(white: 0.1, alpha: 0.4))
+        attributes.entranceAnimation = .init(
+            translate: .init(duration: 0.4, anchorPosition: .bottom, spring: .init(damping: 1, initialVelocity: 0)),
+            scale: .init(from: 1, to: 1, duration: 0.4),
+            fade: .init(from: 0.6, to: 1, duration: 0.2))
+        attributes.exitAnimation = .init(
+            translate: .init(duration: 0.4, anchorPosition: .bottom, spring: .init(damping: 1, initialVelocity: 0)),
+            scale: .init(from: 1, to: 1, duration: 0.4),
+            fade: .init(from: 0.6, to: 1, duration: 0.2))
+        attributes.displayDuration = .infinity
+        attributes.shadow = .active(with: .init(color: .black, opacity: 0.2, radius: 10, offset: .init(width: 0, height: 7)))
+        attributes.roundCorners = .all(radius: 8)
+        attributes.entryInteraction = .absorbTouches
+        attributes.screenInteraction = .dismiss
+        attributes.scroll = .disabled
+        EKAttributes.default = attributes
+    }
     
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        guard error == nil else {
+            print("\(error.localizedDescription)")
+            return
+        }
+        
+        guard let authentication = user.authentication else {
+            return
+        }
+        
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            guard error == nil else {
+                print(error ?? "authentication error", " did happen")
+                return
+            }
+            NotificationCenter.default.post(name: .googleSignedIn, object: nil)
+        }
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+        -> Bool {
+            return GIDSignIn.sharedInstance().handle(url,
+                                                     sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                     annotation: [:])
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        print("DISCONNECTED")
+    }
 }
 
 extension Notification.Name {
