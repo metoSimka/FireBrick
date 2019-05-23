@@ -12,12 +12,12 @@ import FirebaseAuth
 import GoogleSignIn
 
 class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
-
+    
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var emailAuth: UIView!
     @IBOutlet weak var googleAuth: UIView!
     @IBOutlet weak var googleHiddenButton: GIDSignInButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -54,15 +54,8 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
                 self.showErrorMsg(errorTxt: error?.localizedDescription)
                 return
             }
-               self.userDidSignIn()
+            self.userDidSignIn()
         }
-    }
-    
-    func isUserLogged() -> Bool {
-        guard let _ = GIDSignIn.sharedInstance()?.currentUser else {
-            return false
-        }
-        return true
     }
     
     @objc func googleErrorAuth(_ notification:Notification) {
@@ -79,7 +72,7 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
         }
         showErrorMsg(errorTxt: error.localizedDescription)
     }
-
+    
     @objc func emailButtonTap(_ sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "EmailAuth", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "e-mail auth"  ) as! EmailAuthViewController
@@ -100,9 +93,16 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
     
     func stopGoogleLoader() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
-        self.spinnerView.alpha = Constants.magicNumbers.zeroAlpha
-        self.enableButtons()
+            self.spinnerView.alpha = Constants.magicNumbers.zeroAlpha
+            self.enableButtons()
         }
+    }
+    
+    func isUserLogged() -> Bool {
+        guard let _ = GIDSignIn.sharedInstance()?.currentUser else {
+            return false
+        }
+        return true
     }
     
     func enableButtons() {
@@ -118,7 +118,7 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
         emailAuth.isUserInteractionEnabled = false
         emailAuth.alpha = Constants.magicNumbers.halfAlpha
     }
-
+    
     func userDidSignIn() {
         let storyboard = UIStoryboard(name: "Entered", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "entered"  ) as! EnteredViewController
@@ -139,7 +139,6 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
         alertController.addAction(defaultAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
     
     func isErrorAboutCancled(errMsg: String) -> Bool {
         guard errMsg == "The user canceled the sign-in flow." else {

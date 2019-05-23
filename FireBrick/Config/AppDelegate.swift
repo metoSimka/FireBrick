@@ -103,19 +103,3 @@ extension Notification.Name {
     static let googleSignedIn = Notification.Name("googleSignedIn")
     static let googleError = Notification.Name("googleError")
 }
-
-//
-//func handleFirebaseError(error: NSError, onComplete: Completion?) {
-//    print(error.debugDescription)
-//    if let errorCode = AuthErrorCode(rawValue: error.code) {
-//        switch errorCode {
-//        case .invalidEmail:
-//            onComplete?(errMsg: "Invalid email adress", data: nil)
-//            break
-//        case .wrongPassword:
-//            onComplete?(errMsg: "Invalid email password", data: nil)
-//        case .
-//        default:
-//        }
-//    }
-//}
