@@ -188,8 +188,8 @@ class EmailAuthViewController: UIViewController {
     }
     
     func userDidSignIn() {
-        let storyboard = UIStoryboard(name: "Entered", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "entered") as! EnteredViewController
+        let storyboard = UIStoryboard(name: "Workspace", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "workspace") as! WorkspaceViewController
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -209,10 +209,7 @@ class EmailAuthViewController: UIViewController {
         }
         let storyboard = UIStoryboard(name: "SingleButtonAlertMessage", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as! SingleButtonAlertMessageViewController
-        vc.headTitle = "Alert"
         vc.messageTitle = error.localizedDescription
-        vc.buttonTitle = "OK"
-//        vc.setAlertView(title: "nil", message: error.localizedDescription, buttonTitle: "nil")
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     

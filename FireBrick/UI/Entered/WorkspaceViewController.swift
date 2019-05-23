@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
-class EnteredViewController: UIViewController {
+class WorkspaceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,8 @@ class EnteredViewController: UIViewController {
     @IBAction func signOut(_ sender: UIButton) {
         GIDSignIn.sharedInstance()?.signOut()
         
-        let storyboard = UIStoryboard(name: "DashBoard", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Home"  ) as! DashBoardViewController
+        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "auth"  ) as! AuthViewController
         self.present(vc, animated: true, completion: nil)
     }
 }

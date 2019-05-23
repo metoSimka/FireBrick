@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
-class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
+class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var emailAuth: UIView!
@@ -121,7 +121,7 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
     
     func userDidSignIn() {
         let storyboard = UIStoryboard(name: "Entered", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "entered"  ) as! EnteredViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "entered"  ) as! WorkspaceViewController
         self.present(vc, animated: true, completion: nil)
     }
     

@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Dash Board View Controller-->
+        <!--Auth View Controller-->
         <scene sceneID="0QM-d5-0Jo">
             <objects>
-                <viewController storyboardIdentifier="Home" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p9U-U2-cJt" customClass="DashBoardViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="auth" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p9U-U2-cJt" customClass="AuthViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ez7-aR-bF1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

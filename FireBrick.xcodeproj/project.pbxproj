@@ -12,14 +12,14 @@
 		A50718032296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50718022296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift */; };
 		A5136493228E648A0053DE00 /* EmailAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5136492228E648A0053DE00 /* EmailAuth.storyboard */; };
 		A513649B228E745C0053DE00 /* ExtensionBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513649A228E745C0053DE00 /* ExtensionBorder.swift */; };
-		A51E49102292907F006687A3 /* EnteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E490F2292907F006687A3 /* EnteredViewController.swift */; };
-		A51E4912229291E3006687A3 /* Entered.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51E4911229291E3006687A3 /* Entered.storyboard */; };
+		A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E490F2292907F006687A3 /* WorkspaceViewController.swift */; };
+		A51E4912229291E3006687A3 /* Workspace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51E4911229291E3006687A3 /* Workspace.storyboard */; };
 		A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6791B228D3F74003DB84E /* AppDelegate.swift */; };
-		A5B67921228D3F74003DB84E /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6791F228D3F74003DB84E /* DashBoard.storyboard */; };
+		A5B67921228D3F74003DB84E /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6791F228D3F74003DB84E /* Auth.storyboard */; };
 		A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B67922228D3F75003DB84E /* Assets.xcassets */; };
 		A5B67926228D3F75003DB84E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */; };
 		A5B67934228D4537003DB84E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5B67933228D4537003DB84E /* GoogleService-Info.plist */; };
-		A5F7C4F0228D715400B35C6C /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7C4EF228D715400B35C6C /* DashBoardViewController.swift */; };
+		A5F7C4F0228D715400B35C6C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7C4EF228D715400B35C6C /* AuthViewController.swift */; };
 		A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7C4F5228D7B2000B35C6C /* EmailAuthViewController.swift */; };
 		A5FEEC482293AEC400EB09BC /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC2A2293AEC400EB09BC /* SF-Pro-Display-Thin.otf */; };
 		A5FEEC492293AEC400EB09BC /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5FEEC2B2293AEC400EB09BC /* SF-Pro-Display-SemiboldItalic.otf */; };
@@ -62,16 +62,16 @@
 		A50718022296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertMessageViewController.swift; sourceTree = "<group>"; };
 		A5136492228E648A0053DE00 /* EmailAuth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailAuth.storyboard; sourceTree = "<group>"; };
 		A513649A228E745C0053DE00 /* ExtensionBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionBorder.swift; sourceTree = "<group>"; };
-		A51E490F2292907F006687A3 /* EnteredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnteredViewController.swift; sourceTree = "<group>"; };
-		A51E4911229291E3006687A3 /* Entered.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Entered.storyboard; sourceTree = "<group>"; };
+		A51E490F2292907F006687A3 /* WorkspaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewController.swift; sourceTree = "<group>"; };
+		A51E4911229291E3006687A3 /* Workspace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Workspace.storyboard; sourceTree = "<group>"; };
 		A5B67918228D3F74003DB84E /* FireBrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireBrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B6791B228D3F74003DB84E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5B67920228D3F74003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DashBoard.storyboard; sourceTree = "<group>"; };
+		A5B67920228D3F74003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		A5B67922228D3F75003DB84E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5B67925228D3F75003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5B67927228D3F75003DB84E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5B67933228D4537003DB84E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A5F7C4EF228D715400B35C6C /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
+		A5F7C4EF228D715400B35C6C /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A5F7C4F5228D7B2000B35C6C /* EmailAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthViewController.swift; sourceTree = "<group>"; };
 		A5FEEC2A2293AEC400EB09BC /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		A5FEEC2B2293AEC400EB09BC /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
@@ -151,8 +151,8 @@
 		A5136494228E64D90053DE00 /* Dash Board */ = {
 			isa = PBXGroup;
 			children = (
-				A5B6791F228D3F74003DB84E /* DashBoard.storyboard */,
-				A5F7C4EF228D715400B35C6C /* DashBoardViewController.swift */,
+				A5B6791F228D3F74003DB84E /* Auth.storyboard */,
+				A5F7C4EF228D715400B35C6C /* AuthViewController.swift */,
 			);
 			path = "Dash Board";
 			sourceTree = "<group>";
@@ -169,8 +169,8 @@
 		A51E490B22928E07006687A3 /* Entered */ = {
 			isa = PBXGroup;
 			children = (
-				A51E490F2292907F006687A3 /* EnteredViewController.swift */,
-				A51E4911229291E3006687A3 /* Entered.storyboard */,
+				A51E490F2292907F006687A3 /* WorkspaceViewController.swift */,
+				A51E4911229291E3006687A3 /* Workspace.storyboard */,
 			);
 			path = Entered;
 			sourceTree = "<group>";
@@ -403,10 +403,10 @@
 				A5FEEC5D2293AEC400EB09BC /* SF-Pro-Text-BoldItalic.otf in Resources */,
 				A5FEEC4C2293AEC400EB09BC /* SF-Pro-Display-Light.otf in Resources */,
 				A5FEEC642293AEC400EB09BC /* SF-Pro-Display-BoldItalic.otf in Resources */,
-				A51E4912229291E3006687A3 /* Entered.storyboard in Resources */,
+				A51E4912229291E3006687A3 /* Workspace.storyboard in Resources */,
 				A5FEEC4B2293AEC400EB09BC /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				A5FEEC4D2293AEC400EB09BC /* SF-Pro-Display-Regular.otf in Resources */,
-				A5B67921228D3F74003DB84E /* DashBoard.storyboard in Resources */,
+				A5B67921228D3F74003DB84E /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,9 +501,9 @@
 				A5FEEC712294149500EB09BC /* ForgotPasswordViewController.swift in Sources */,
 				A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */,
 				A513649B228E745C0053DE00 /* ExtensionBorder.swift in Sources */,
-				A5F7C4F0228D715400B35C6C /* DashBoardViewController.swift in Sources */,
+				A5F7C4F0228D715400B35C6C /* AuthViewController.swift in Sources */,
 				A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */,
-				A51E49102292907F006687A3 /* EnteredViewController.swift in Sources */,
+				A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */,
 				A50718032296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift in Sources */,
 				A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */,
 			);
@@ -512,12 +512,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A5B6791F228D3F74003DB84E /* DashBoard.storyboard */ = {
+		A5B6791F228D3F74003DB84E /* Auth.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A5B67920228D3F74003DB84E /* Base */,
 			);
-			name = DashBoard.storyboard;
+			name = Auth.storyboard;
 			sourceTree = "<group>";
 		};
 		A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */ = {
