@@ -173,6 +173,14 @@ class EmailAuthViewController: UIViewController {
     }
     
     func showErrorWithMessage() {
+        let storyboard = UIStoryboard(name: "SingleButtonAlertMessage", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as! SingleButtonAlertMessageViewController
+        vc.headerLabel.text = "Error"
+        vc.messageLabel.text = "Please enter your email and password"
+        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
+    }
+    
+    func showErrorWithMessage1() {
         let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)    
@@ -185,7 +193,7 @@ class EmailAuthViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    func errorSignIn(error: Error?) {
+    func errorSignIn1(error: Error?) {
         guard let error = error else {
             return
         }
@@ -193,6 +201,19 @@ class EmailAuthViewController: UIViewController {
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func errorSignIn(error: Error?) {
+        guard let error = error else {
+            return
+        }
+        let storyboard = UIStoryboard(name: "SingleButtonAlertMessage", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as! SingleButtonAlertMessageViewController
+        vc.headTitle = "Alert"
+        vc.messageTitle = error.localizedDescription
+        vc.buttonTitle = "OK"
+//        vc.setAlertView(title: "nil", message: error.localizedDescription, buttonTitle: "nil")
+        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
     func successfulData(authResult: AuthDataResult? ,error: Error?) {

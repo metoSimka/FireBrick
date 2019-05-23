@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             fade: .init(from: 0.6, to: 1, duration: 0.2))
         attributes.displayDuration = .infinity
         attributes.shadow = .active(with: .init(color: .black, opacity: 0.2, radius: 10, offset: .init(width: 0, height: 7)))
-        attributes.roundCorners = .all(radius: 8)
+        attributes.roundCorners = .all(radius: 6)
         attributes.entryInteraction = .absorbTouches
         attributes.screenInteraction = .dismiss
         attributes.scroll = .disabled

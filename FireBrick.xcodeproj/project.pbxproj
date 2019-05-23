@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		89FB8BB717B9474AB1524010 /* Pods_FireBrick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344648746F1FEB9158D6CAD2 /* Pods_FireBrick.framework */; };
+		A50718012296A11400BC7FF1 /* SingleButtonAlertMessage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A50718002296A11400BC7FF1 /* SingleButtonAlertMessage.storyboard */; };
+		A50718032296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50718022296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift */; };
 		A5136493228E648A0053DE00 /* EmailAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5136492228E648A0053DE00 /* EmailAuth.storyboard */; };
 		A513649B228E745C0053DE00 /* ExtensionBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513649A228E745C0053DE00 /* ExtensionBorder.swift */; };
 		A51E49102292907F006687A3 /* EnteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E490F2292907F006687A3 /* EnteredViewController.swift */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		344648746F1FEB9158D6CAD2 /* Pods_FireBrick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireBrick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50718002296A11400BC7FF1 /* SingleButtonAlertMessage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingleButtonAlertMessage.storyboard; sourceTree = "<group>"; };
+		A50718022296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertMessageViewController.swift; sourceTree = "<group>"; };
 		A5136492228E648A0053DE00 /* EmailAuth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailAuth.storyboard; sourceTree = "<group>"; };
 		A513649A228E745C0053DE00 /* ExtensionBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionBorder.swift; sourceTree = "<group>"; };
 		A51E490F2292907F006687A3 /* EnteredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnteredViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,15 @@
 				B4B5A3BA52832BCFE3DC6B03 /* Pods-FireBrick.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A50717FF2296A0FD00BC7FF1 /* AlertMessageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A50718002296A11400BC7FF1 /* SingleButtonAlertMessage.storyboard */,
+				A50718022296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift */,
+			);
+			path = AlertMessageViewController;
 			sourceTree = "<group>";
 		};
 		A5136494228E64D90053DE00 /* Dash Board */ = {
@@ -238,6 +251,7 @@
 		A5B67932228D3FC4003DB84E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A50717FF2296A0FD00BC7FF1 /* AlertMessageViewController */,
 				A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */,
 				A5FEEC6822940DA400EB09BC /* ForgotPasswordController */,
 				A51E490B22928E07006687A3 /* Entered */,
@@ -376,6 +390,7 @@
 				A5FEEC542293AEC400EB09BC /* SF-Pro-Text-Regular.otf in Resources */,
 				A5FEEC4F2293AEC400EB09BC /* SF-Pro-Display-Bold.otf in Resources */,
 				A5FEEC5B2293AEC400EB09BC /* SF-Pro-Display-BlackItalic.otf in Resources */,
+				A50718012296A11400BC7FF1 /* SingleButtonAlertMessage.storyboard in Resources */,
 				A5136493228E648A0053DE00 /* EmailAuth.storyboard in Resources */,
 				A5FEEC4A2293AEC400EB09BC /* SF-Pro-Text-Heavy.otf in Resources */,
 				A5FEEC632293AEC400EB09BC /* SF-Pro-Text-Medium.otf in Resources */,
@@ -489,6 +504,7 @@
 				A5F7C4F0228D715400B35C6C /* DashBoardViewController.swift in Sources */,
 				A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */,
 				A51E49102292907F006687A3 /* EnteredViewController.swift in Sources */,
+				A50718032296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift in Sources */,
 				A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

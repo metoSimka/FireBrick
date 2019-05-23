@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Single Button Alert Message View Controller-->
+        <scene sceneID="0pz-EX-FkZ">
+            <objects>
+                <viewController storyboardIdentifier="singleButtonAlert" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Iu-ZV-642" customClass="SingleButtonAlertMessageViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kkU-dV-0ch">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcg-Vj-Rf7">
+                                <rect key="frame" x="0.0" y="184" width="375" height="299"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqb-W8-pfS">
+                                        <rect key="frame" x="130.5" y="239" width="114" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.35686274509803922" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="L0a-Du-Les"/>
+                                            <constraint firstAttribute="width" constant="114" id="RBx-xD-FBD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="12"/>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tapButton:" destination="1Iu-ZV-642" eventType="touchUpInside" id="oWn-lz-hou"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgb-dX-PXy">
+                                        <rect key="frame" x="165" y="18" width="45" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wu-WH-joi">
+                                        <rect key="frame" x="30" y="55.5" width="315" height="167.5"/>
+                                        <string key="text">Here is a message where we can put
+absolutely anything we want.Here is a message where we can put
+absolutely anything we want.Here is a message where we can put
+absolutely anything we want.Here is a message where we can put
+absolutely anything we want.Here is a message where we can put
+absolutely anything we want.</string>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Nqb-W8-pfS" firstAttribute="centerX" secondItem="hcg-Vj-Rf7" secondAttribute="centerX" id="JsC-Vq-z27"/>
+                                    <constraint firstAttribute="trailing" secondItem="8wu-WH-joi" secondAttribute="trailing" constant="30" id="M20-Lm-Kmn"/>
+                                    <constraint firstItem="hgb-dX-PXy" firstAttribute="centerX" secondItem="hcg-Vj-Rf7" secondAttribute="centerX" id="Pvt-qR-Dpk"/>
+                                    <constraint firstItem="8wu-WH-joi" firstAttribute="top" secondItem="hgb-dX-PXy" secondAttribute="bottom" constant="16" id="cUb-nE-a3t"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nqb-W8-pfS" secondAttribute="bottom" constant="16" id="i7f-oA-Z4C"/>
+                                    <constraint firstItem="Nqb-W8-pfS" firstAttribute="top" secondItem="8wu-WH-joi" secondAttribute="bottom" constant="16" id="s4c-mv-dk2"/>
+                                    <constraint firstItem="8wu-WH-joi" firstAttribute="centerX" secondItem="hcg-Vj-Rf7" secondAttribute="centerX" id="sqz-Ri-kdr"/>
+                                    <constraint firstItem="8wu-WH-joi" firstAttribute="leading" secondItem="hcg-Vj-Rf7" secondAttribute="leading" constant="30" id="wEg-BP-t6n"/>
+                                    <constraint firstItem="hgb-dX-PXy" firstAttribute="top" secondItem="hcg-Vj-Rf7" secondAttribute="top" constant="18" id="yXt-Tx-cRt"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hcg-Vj-Rf7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="18N-gi-qZZ" secondAttribute="top" id="4kb-a0-Ree"/>
+                            <constraint firstAttribute="trailing" secondItem="hcg-Vj-Rf7" secondAttribute="trailing" id="AtH-jk-0cL"/>
+                            <constraint firstItem="hcg-Vj-Rf7" firstAttribute="leading" secondItem="kkU-dV-0ch" secondAttribute="leading" id="LJ6-3m-W8T"/>
+                            <constraint firstItem="hcg-Vj-Rf7" firstAttribute="centerX" secondItem="kkU-dV-0ch" secondAttribute="centerX" id="bSJ-vd-01Z"/>
+                            <constraint firstItem="hcg-Vj-Rf7" firstAttribute="centerY" secondItem="kkU-dV-0ch" secondAttribute="centerY" id="mnk-T4-74p"/>
+                            <constraint firstItem="18N-gi-qZZ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hcg-Vj-Rf7" secondAttribute="bottom" id="rmN-09-Vs5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="18N-gi-qZZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="Nqb-W8-pfS" id="Bfa-FO-IT6"/>
+                        <outlet property="headerLabel" destination="hgb-dX-PXy" id="6Ut-1z-BJn"/>
+                        <outlet property="messageLabel" destination="8wu-WH-joi" id="tfF-Oe-b3Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="utp-Jf-wkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314" y="-393"/>
+        </scene>
+    </scenes>
+</document>
