@@ -66,13 +66,35 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bI-WL-3dO">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
+                                                <subviews>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KAR-XU-UjN">
+                                                        <rect key="frame" x="173" y="12" width="20" height="20"/>
+                                                    </activityIndicatorView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="KAR-XU-UjN" firstAttribute="centerY" secondItem="5bI-WL-3dO" secondAttribute="centerY" id="cRy-wl-wJ6"/>
+                                                    <constraint firstItem="KAR-XU-UjN" firstAttribute="centerX" secondItem="5bI-WL-3dO" secondAttribute="centerX" id="lZU-JX-mZO"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="22"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="5bI-WL-3dO" firstAttribute="leading" secondItem="4oi-Bu-iKH" secondAttribute="leading" id="78i-NY-IJY"/>
                                             <constraint firstItem="Mwb-RS-oq8" firstAttribute="centerY" secondItem="4oi-Bu-iKH" secondAttribute="centerY" id="87Z-yx-tnw"/>
+                                            <constraint firstAttribute="bottom" secondItem="5bI-WL-3dO" secondAttribute="bottom" id="DEr-wr-Ubv"/>
+                                            <constraint firstAttribute="trailing" secondItem="5bI-WL-3dO" secondAttribute="trailing" id="JEN-hW-9W7"/>
                                             <constraint firstItem="GHQ-Zx-K61" firstAttribute="centerY" secondItem="4oi-Bu-iKH" secondAttribute="centerY" id="Sd8-gJ-5sX"/>
                                             <constraint firstItem="GHQ-Zx-K61" firstAttribute="leading" secondItem="Mwb-RS-oq8" secondAttribute="trailing" constant="10" id="UsN-WN-xw6"/>
                                             <constraint firstItem="Mwb-RS-oq8" firstAttribute="leading" secondItem="4oi-Bu-iKH" secondAttribute="leading" constant="16" id="ZhY-dE-Vrb"/>
+                                            <constraint firstItem="5bI-WL-3dO" firstAttribute="top" secondItem="4oi-Bu-iKH" secondAttribute="top" id="key-Mi-DnO"/>
                                             <constraint firstAttribute="trailing" secondItem="GHQ-Zx-K61" secondAttribute="trailing" id="khC-Tt-3zD"/>
                                             <constraint firstAttribute="height" constant="44" id="r7J-wQ-WOd"/>
                                         </constraints>
@@ -142,6 +164,7 @@
                         <outlet property="emailAuth" destination="zAq-ZU-2wt" id="jKm-UO-4a3"/>
                         <outlet property="googleAuth" destination="4oi-Bu-iKH" id="YFm-9u-QKn"/>
                         <outlet property="googleHiddenButton" destination="uXi-wq-ZFJ" id="GYN-j3-kQb"/>
+                        <outlet property="spinnerView" destination="5bI-WL-3dO" id="4b5-S4-RSM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQf-ca-0U6" userLabel="First Responder" sceneMemberID="firstResponder"/>

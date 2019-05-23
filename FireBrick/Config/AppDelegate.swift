@@ -12,6 +12,8 @@ import GoogleSignIn
 import IQKeyboardManager
 import SwiftEntryKit
 
+typealias Completion = (_  errMsg: String?, _ data: AnyObject?) -> Void
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
@@ -76,24 +78,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         guard error == nil else {
-            print("\(error.localizedDescription)")
+            let errData: [String: Error] = ["error": error]
+            NotificationCenter.default.post(name: .googleError, object: nil, userInfo: errData)
             return
         }
         
-        guard let authentication = user.authentication else {
-            return
-        }
-        
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-        
-        Auth.auth().signIn(with: credential) { (authResult, error) in
-            guard error == nil else {
-                print(error ?? "authentication error", " did happen")
-                return
-            }
-            NotificationCenter.default.post(name: .googleSignedIn, object: nil)
-        }
+        let userData: [String: GIDGoogleUser] = ["user": user]
+        NotificationCenter.default.post(name: .googleSignedIn, object: nil, userInfo: userData)
     }
     
     @available(iOS 9.0, *)
@@ -111,4 +102,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 extension Notification.Name {
     static let googleSignedIn = Notification.Name("googleSignedIn")
+    static let googleError = Notification.Name("googleError")
 }
+
+//
+//func handleFirebaseError(error: NSError, onComplete: Completion?) {
+//    print(error.debugDescription)
+//    if let errorCode = AuthErrorCode(rawValue: error.code) {
+//        switch errorCode {
+//        case .invalidEmail:
+//            onComplete?(errMsg: "Invalid email adress", data: nil)
+//            break
+//        case .wrongPassword:
+//            onComplete?(errMsg: "Invalid email password", data: nil)
+//        case .
+//        default:
+//        }
+//    }
+//}
