@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="ZDo-lW-Ws7">
+            <objects>
+                <viewController id="68I-m1-okH" customClass="SplashScreenViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZWd-cB-c7e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-G1-4PF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="lkn-2p-dZK">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EhB-gp-BVK">
+                                        <rect key="frame" x="182.5" y="328.5" width="10" height="10"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="3Ix-2Q-5O1"/>
+                                            <constraint firstAttribute="width" constant="10" id="pAf-Ga-8eO"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Neuro Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ca4-gf-zxx">
+                                        <rect key="frame" x="76" y="105.5" width="223" height="223"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ca4-gf-zxx" secondAttribute="height" multiplier="1:1" id="RWF-6D-UJk"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.50588235290000005" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="EhB-gp-BVK" firstAttribute="centerY" secondItem="UKa-G1-4PF" secondAttribute="centerY" id="73l-rN-adC"/>
+                                    <constraint firstItem="lkn-2p-dZK" firstAttribute="leading" secondItem="jzF-wn-KvW" secondAttribute="leading" id="NrA-VD-9pT"/>
+                                    <constraint firstItem="EhB-gp-BVK" firstAttribute="centerX" secondItem="UKa-G1-4PF" secondAttribute="centerX" id="We6-lU-yMo"/>
+                                    <constraint firstItem="lkn-2p-dZK" firstAttribute="top" secondItem="UKa-G1-4PF" secondAttribute="top" id="YQ2-a2-RFt"/>
+                                    <constraint firstItem="Ca4-gf-zxx" firstAttribute="centerX" secondItem="UKa-G1-4PF" secondAttribute="centerX" id="ZoL-cv-GA4"/>
+                                    <constraint firstItem="jzF-wn-KvW" firstAttribute="trailing" secondItem="lkn-2p-dZK" secondAttribute="trailing" id="c9S-M5-5pi"/>
+                                    <constraint firstItem="lkn-2p-dZK" firstAttribute="bottom" secondItem="jzF-wn-KvW" secondAttribute="bottom" id="kaG-5a-hVL"/>
+                                    <constraint firstItem="EhB-gp-BVK" firstAttribute="top" secondItem="Ca4-gf-zxx" secondAttribute="bottom" id="qYv-6t-dLS"/>
+                                    <constraint firstItem="Ca4-gf-zxx" firstAttribute="height" secondItem="UKa-G1-4PF" secondAttribute="height" multiplier="0.3345" id="yhG-fr-ywi"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="jzF-wn-KvW"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="UKa-G1-4PF" secondAttribute="bottom" id="UBr-PN-YvS"/>
+                            <constraint firstItem="UKa-G1-4PF" firstAttribute="leading" secondItem="ZWd-cB-c7e" secondAttribute="leading" id="XLQ-9M-1Ak"/>
+                            <constraint firstItem="UKa-G1-4PF" firstAttribute="top" secondItem="ZWd-cB-c7e" secondAttribute="top" id="XZw-gi-mlZ"/>
+                            <constraint firstAttribute="trailing" secondItem="UKa-G1-4PF" secondAttribute="trailing" id="khG-Xd-deC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dI5-yn-app"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1m-ML-6Lx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="-196"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BackGround" width="375" height="667"/>
+        <image name="Neuro Logo" width="190" height="190"/>
+    </resources>
+</document>

@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +17,50 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ip-0F-1rg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="bsG-vo-JQ0">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pej-gS-kSu">
+                                        <rect key="frame" x="182.5" y="328.5" width="10" height="10"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="TQz-lp-1KS"/>
+                                            <constraint firstAttribute="height" constant="10" id="m4n-gW-fg8"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Neuro Logo" translatesAutoresizingMaskIntoConstraints="NO" id="2g5-Xf-dr6">
+                                        <rect key="frame" x="76" y="105.5" width="223" height="223"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="2g5-Xf-dr6" secondAttribute="height" multiplier="1:1" id="qp7-OX-BZl"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.50588235290000005" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2g5-Xf-dr6" firstAttribute="centerX" secondItem="9ip-0F-1rg" secondAttribute="centerX" id="106-C6-QFe"/>
+                                    <constraint firstItem="pej-gS-kSu" firstAttribute="centerY" secondItem="9ip-0F-1rg" secondAttribute="centerY" id="6ue-EF-IEO"/>
+                                    <constraint firstItem="2g5-Xf-dr6" firstAttribute="height" secondItem="9ip-0F-1rg" secondAttribute="height" multiplier="0.3345" id="IWG-Vh-Mub"/>
+                                    <constraint firstItem="bsG-vo-JQ0" firstAttribute="leading" secondItem="LO6-ze-C4p" secondAttribute="leading" id="Ws8-oY-ac7"/>
+                                    <constraint firstItem="pej-gS-kSu" firstAttribute="centerX" secondItem="9ip-0F-1rg" secondAttribute="centerX" id="Z1T-f0-kNK"/>
+                                    <constraint firstItem="LO6-ze-C4p" firstAttribute="trailing" secondItem="bsG-vo-JQ0" secondAttribute="trailing" id="ecU-Nf-UAY"/>
+                                    <constraint firstItem="pej-gS-kSu" firstAttribute="top" secondItem="2g5-Xf-dr6" secondAttribute="bottom" id="f3R-id-FG9"/>
+                                    <constraint firstItem="bsG-vo-JQ0" firstAttribute="top" secondItem="9ip-0F-1rg" secondAttribute="top" id="oNw-Kh-qXa"/>
+                                    <constraint firstItem="bsG-vo-JQ0" firstAttribute="bottom" secondItem="LO6-ze-C4p" secondAttribute="bottom" id="tdk-jY-FlA"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="LO6-ze-C4p"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9ip-0F-1rg" secondAttribute="trailing" id="4QE-tI-rCJ"/>
+                            <constraint firstItem="9ip-0F-1rg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="6l2-Sb-Aw7"/>
+                            <constraint firstItem="9ip-0F-1rg" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="IE1-eU-pq7"/>
+                            <constraint firstAttribute="bottom" secondItem="9ip-0F-1rg" secondAttribute="bottom" id="Uxj-fN-GBs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -22,4 +69,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BackGround" width="375" height="667"/>
+        <image name="Neuro Logo" width="190" height="190"/>
+    </resources>
 </document>
