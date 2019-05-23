@@ -51,7 +51,7 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
         
         Auth.auth().signIn(with: credential) { (authResult, error) in
             guard error == nil else {
-            self.errorSignIn(error: error)
+                self.showErrorMsg(errorTxt: error?.localizedDescription)
                 return
             }
                self.userDidSignIn()
@@ -70,8 +70,14 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
         guard let data = notification.userInfo else {
             return
         }
-         let error = data["error"] as! Error
-        errorSignIn(error: error)
+        guard let error = data["error"] as? NSError else {
+            showErrorMsg(errorTxt: "Uknown authentication error")
+            return
+        }
+        guard error.code != Constants.errorCodes.googleUserCancel else {
+            return
+        }
+        showErrorMsg(errorTxt: error.localizedDescription)
     }
 
     @objc func emailButtonTap(_ sender: UITapGestureRecognizer) {
@@ -127,14 +133,8 @@ class DashBoardViewController: UIViewController, GIDSignInUIDelegate {
         self.googleAuth.addGestureRecognizer(googleTap)
     }
     
-    func errorSignIn(error: Error?) {
-        guard let error = error else {
-            return
-        }
-        guard !isErrorAboutCancled(errMsg: error.localizedDescription) else {
-            return
-        }
-        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+    func showErrorMsg(errorTxt: String?) {
+        let alertController = UIAlertController(title: "Error", message: errorTxt, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
         self.present(alertController, animated: true, completion: nil)

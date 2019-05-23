@@ -82,7 +82,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             NotificationCenter.default.post(name: .googleError, object: nil, userInfo: errData)
             return
         }
-        
         let userData: [String: GIDGoogleUser] = ["user": user]
         NotificationCenter.default.post(name: .googleSignedIn, object: nil, userInfo: userData)
     }

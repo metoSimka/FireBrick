@@ -32,4 +32,7 @@ struct Constants {
         static let fullAlpha: CGFloat = 1
         static let zeroAlpha: CGFloat = 0
     }
+    enum errorCodes {
+        static let googleUserCancel = -5
+    }
 }
