@@ -66,18 +66,44 @@ class EmailAuthViewController: UIViewController {
         logInFunc()
     }
     
-    func signUpFunc() {
+    func logInFunc() {
         guard emailTextField.text != "" else  {
             showErrorWithMessage()
             return
         }
-        startLoadingSignUp()
         guard let email = emailTextField.text else {
             return
         }
         guard let password = passwordTextField.text else {
             return
         }
+        startLoadingLogin()
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            guard error == nil else {
+                guard let error = error else {
+                    return
+                }
+                self.errorSignIn(error: error)
+                self.stopLoading()
+                return
+            }
+            self.successfulData(authResult: user, error: error)
+            self.stopLoading()
+        }
+    }
+    
+    func signUpFunc() {
+        guard emailTextField.text != "" else  {
+            showErrorWithMessage()
+            return
+        }
+        guard let email = emailTextField.text else {
+            return
+        }
+        guard let password = passwordTextField.text else {
+            return
+        }
+        startLoadingSignUp()
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             guard error == nil else {
                 guard let error = error else {
@@ -112,32 +138,6 @@ class EmailAuthViewController: UIViewController {
         enableButtons()
         LogInButton.setTitle(Constants.strings.LogInButton, for: .normal)
         signUpButton.setTitle(Constants.strings.signUpButton, for: .normal)
-    }
-    
-    func logInFunc() {
-        guard emailTextField.text != "" else  {
-            showErrorWithMessage()
-            return
-        }
-        startLoadingLogin()
-        guard let email = emailTextField.text else {
-            return
-        }
-        guard let password = passwordTextField.text else {
-            return
-        }
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            guard error == nil else {
-                guard let error = error else {
-                    return
-                }
-                self.errorSignIn(error: error)
-                self.stopLoading()
-                return
-            }
-            self.successfulData(authResult: user, error: error)
-            self.stopLoading()
-        }
     }
     
     func showWarningPassword() {
