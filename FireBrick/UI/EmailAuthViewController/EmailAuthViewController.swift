@@ -35,6 +35,7 @@ class EmailAuthViewController: UIViewController {
     let showConstraintValue: CGFloat = -17
     let hideConstraintValue: CGFloat = 20
     let minCountPasswordChars = 6
+    let disableTransparencyAlpha:CGFloat = 0.5
     
     // MARK: Lifecycle
     
@@ -258,10 +259,10 @@ class EmailAuthViewController: UIViewController {
     
     private  func disableButtons() {
         signUpButton.isEnabled = false
-        signUpButton.alpha = 0.5
+        signUpButton.alpha = disableTransparencyAlpha
         
         LogInButton.isEnabled = false
-        LogInButton.alpha = 0.5
+        LogInButton.alpha = disableTransparencyAlpha
     }
     
     private func enableButtons() {

@@ -20,6 +20,8 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var googleAuth: UIView!
     @IBOutlet weak var googleHiddenButton: GIDSignInButton!
     
+    let disableTransparencyAlpha: CGFloat = 0.5
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -126,7 +128,7 @@ class AuthViewController: UIViewController {
         googleAuth.isUserInteractionEnabled = false
         googleAuth.alpha = 0
         emailAuth.isUserInteractionEnabled = false
-        emailAuth.alpha = 0.5
+        emailAuth.alpha = disableTransparencyAlpha
     }
     
     private func userDidSignIn() {
