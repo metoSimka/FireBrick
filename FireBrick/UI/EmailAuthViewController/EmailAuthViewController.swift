@@ -13,10 +13,6 @@ import SwiftEntryKit
 
 class EmailAuthViewController: UIViewController {
     
-    let showConstraintValue: CGFloat = -17
-    let hideConstraintValue: CGFloat = 20
-    let minCountPasswordChars = 6
-    
     // MARK: icons
     @IBOutlet weak var imageWarningPassword: UIImageView!
     @IBOutlet weak var imageWarningEmail: UIImageView!
@@ -35,6 +31,10 @@ class EmailAuthViewController: UIViewController {
     @IBOutlet weak var constraintPasswordWarning: NSLayoutConstraint!
     @IBOutlet weak var constraintEmailWarning: NSLayoutConstraint!
     
+    // MARK: Private vars
+    let showConstraintValue: CGFloat = -17
+    let hideConstraintValue: CGFloat = 20
+    let minCountPasswordChars = 6
     
     // MARK: Lifecycle
     
