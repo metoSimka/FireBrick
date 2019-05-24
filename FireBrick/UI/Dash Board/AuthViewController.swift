@@ -22,15 +22,27 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
         viewsToButtonsConversions()
+
+    }
+    
+    func enableNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(googleErrorAuth(_:)), name: .googleError, object: nil)
     }
     
+    func disableNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .googleSignedIn, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .googleError, object: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if isUserLogged() {
-            userDidSignIn()
-        }
+        enableNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        disableNotifications()
     }
     
     @objc func googleUserDidSignIn(_ notification:Notification) {
@@ -119,8 +131,8 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     func userDidSignIn() {
-        let storyboard = UIStoryboard(name: "Entered", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "entered"  ) as! WorkspaceViewController
+        let storyboard = UIStoryboard(name: "Workspace", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "workspace"  ) as! WorkspaceViewController
         self.present(vc, animated: true, completion: nil)
     }
     
