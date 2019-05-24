@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct Constants {
-
+    
     enum forAnimation {
         static let normal = 0.5
         static let fast = 0.2

@@ -17,19 +17,26 @@ class EmailAuthViewController: UIViewController {
     let hideConstraintValue: CGFloat = 20
     let minCountPasswordChars = 6
     
-    @IBOutlet weak var spinnerSignUp: UIActivityIndicatorView!
+    // MARK: icons
+    @IBOutlet weak var imageWarningPassword: UIImageView!
+    @IBOutlet weak var imageWarningEmail: UIImageView!
+    // MARK: buttons
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var LogInButton: UIButton!
+    @IBOutlet weak var eyeButton: UIButton!
+    // MARK: textFields, Labels.
     @IBOutlet weak var warningEmailTextLabel: UILabel!
     @IBOutlet weak var warningPasswordTextLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    // MARK: common
+    @IBOutlet weak var spinnerLogin: UIActivityIndicatorView!
+    @IBOutlet weak var spinnerSignUp: UIActivityIndicatorView!
     @IBOutlet weak var constraintPasswordWarning: NSLayoutConstraint!
     @IBOutlet weak var constraintEmailWarning: NSLayoutConstraint!
-    @IBOutlet weak var eyeButton: UIButton!
-    @IBOutlet weak var imageWarningPassword: UIImageView!
-    @IBOutlet weak var imageWarningEmail: UIImageView!
-    @IBOutlet weak var spinnerLogin: UIActivityIndicatorView!
-    @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var LogInButton: UIButton!
+    
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +44,8 @@ class EmailAuthViewController: UIViewController {
         passwordTextField.delegate = self
         disableButtons()
     }
+    
+    // MARK: IBAction
     
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true) {
@@ -66,7 +75,9 @@ class EmailAuthViewController: UIViewController {
         logInFunc()
     }
     
-    func logInFunc() {
+    // MARK: Private
+    
+    private func logInFunc() {
         guard emailTextField.text != "" else  {
             showErrorWithMessage()
             return
@@ -92,7 +103,7 @@ class EmailAuthViewController: UIViewController {
         }
     }
     
-    func signUpFunc() {
+    private func signUpFunc() {
         guard emailTextField.text != "" else  {
             showErrorWithMessage()
             return
@@ -118,21 +129,21 @@ class EmailAuthViewController: UIViewController {
         }
     }
     
-    func startLoadingLogin() {
+    private func startLoadingLogin() {
         spinnerLogin.startAnimating()
         disableButtons()
         LogInButton.setTitle("", for: .normal)
         LogInButton.alpha = 1
     }
     
-    func startLoadingSignUp() {
+    private func startLoadingSignUp() {
         spinnerSignUp.startAnimating()
         disableButtons()
         signUpButton.setTitle("", for: .normal)
         signUpButton.alpha = 1
     }
     
-    func stopLoading() {
+    private func stopLoading() {
         spinnerLogin.stopAnimating()
         spinnerSignUp.stopAnimating()
         enableButtons()
@@ -140,7 +151,7 @@ class EmailAuthViewController: UIViewController {
         signUpButton.setTitle(Constants.strings.signUpButton, for: .normal)
     }
     
-    func showWarningPassword() {
+    private func showWarningPassword() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintPasswordWarning.constant = self.showConstraintValue
             self.view.layoutIfNeeded()
@@ -149,7 +160,7 @@ class EmailAuthViewController: UIViewController {
         }
     }
     
-    func hideWarningPassword() {
+    private func hideWarningPassword() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintPasswordWarning.constant = self.hideConstraintValue
             self.view.layoutIfNeeded()
@@ -158,7 +169,7 @@ class EmailAuthViewController: UIViewController {
         }
     }
     
-    func showWarningEmail() {
+    private func showWarningEmail() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintEmailWarning.constant = self.showConstraintValue
             self.view.layoutIfNeeded()
@@ -167,7 +178,7 @@ class EmailAuthViewController: UIViewController {
         }
     }
     
-    func hideWarningEmail() {
+    private func hideWarningEmail() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintEmailWarning.constant = self.hideConstraintValue
             self.view.layoutIfNeeded()
@@ -176,7 +187,7 @@ class EmailAuthViewController: UIViewController {
         }
     }
     
-    func showErrorWithMessage() {
+    private func showErrorWithMessage() {
         let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as? SimpleAlertViewController else {
             return
@@ -186,14 +197,7 @@ class EmailAuthViewController: UIViewController {
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
-    func showErrorWithMessage1() {
-        let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(defaultAction)    
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    func userDidSignIn() {
+    private  func userDidSignIn() {
         let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "workspace") as? WorkspaceViewController else {
             return
@@ -201,17 +205,7 @@ class EmailAuthViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    func errorSignIn1(error: Error?) {
-        guard let error = error else {
-            return
-        }
-        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(defaultAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func errorSignIn(error: Error?) {
+    private func errorSignIn(error: Error?) {
         guard let error = error else {
             return
         }
@@ -223,7 +217,7 @@ class EmailAuthViewController: UIViewController {
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
-    func successfulData(authResult: AuthDataResult? ,error: Error?) {
+    private  func successfulData(authResult: AuthDataResult? ,error: Error?) {
         guard error == nil else {
             return
         }
@@ -236,7 +230,7 @@ class EmailAuthViewController: UIViewController {
         self.userDidSignIn()
     }
     
-    func isValidEmail() -> Bool {
+    private  func isValidEmail() -> Bool {
         guard let txt = emailTextField.text else {
             return false
         }
@@ -244,7 +238,7 @@ class EmailAuthViewController: UIViewController {
         return emailTest.evaluate(with: txt)
     }
     
-    func isValidPassword() -> Bool {
+    private func isValidPassword() -> Bool {
         guard let txt = passwordTextField.text else {
             return false
         }
@@ -255,7 +249,7 @@ class EmailAuthViewController: UIViewController {
         return true
     }
     
-    func updateButtonStatus() {
+    private  func updateButtonStatus() {
         guard isValidPassword() && isValidEmail() else {
             disableButtons()
             return
@@ -263,7 +257,7 @@ class EmailAuthViewController: UIViewController {
         enableButtons()
     }
     
-    func disableButtons() {
+    private  func disableButtons() {
         signUpButton.isEnabled = false
         signUpButton.alpha = 0.5
         
@@ -271,7 +265,7 @@ class EmailAuthViewController: UIViewController {
         LogInButton.alpha = 0.5
     }
     
-    func enableButtons() {
+    private func enableButtons() {
         signUpButton.isEnabled = true
         signUpButton.alpha = 1
         
@@ -279,6 +273,8 @@ class EmailAuthViewController: UIViewController {
         LogInButton.alpha = 1
     }
 }
+
+// MARK: Extenstions
 
 extension EmailAuthViewController: UITextFieldDelegate {
     

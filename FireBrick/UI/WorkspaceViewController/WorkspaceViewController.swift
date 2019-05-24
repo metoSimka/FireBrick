@@ -12,7 +12,7 @@ import FirebaseAuth
 import GoogleSignIn
 
 class WorkspaceViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
