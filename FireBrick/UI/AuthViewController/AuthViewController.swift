@@ -112,14 +112,7 @@ class AuthViewController: UIViewController {
             self.enableButtons()
         }
     }
-    
-    private func isUserLogged() -> Bool {
-        guard let _ = GIDSignIn.sharedInstance()?.currentUser else {
-            return false
-        }
-        return true
-    }
-    
+
     private func enableButtons() {
         googleAuth.isUserInteractionEnabled = true
         googleAuth.alpha = 1
@@ -156,13 +149,6 @@ class AuthViewController: UIViewController {
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
         self.present(alertController, animated: true, completion: nil)
-    }
-    
-    private func isErrorAboutCancled(errMsg: String) -> Bool {
-        guard errMsg == "The user canceled the sign-in flow." else {
-            return false
-        }
-        return true
     }
 }
 

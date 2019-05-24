@@ -48,8 +48,7 @@ class EmailAuthViewController: UIViewController {
     // MARK: IBAction
     
     @IBAction func back(_ sender: UIButton) {
-        dismiss(animated: true) {
-        }
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func forgotPassword(_ sender: UIButton) {
