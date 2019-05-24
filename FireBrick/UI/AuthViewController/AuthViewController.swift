@@ -34,6 +34,8 @@ class AuthViewController: UIViewController {
         registerNotifications()
     }
     
+    // MARK: IBActions
+    
     @IBAction func googleTap(_ sender: UIView) {
         startGoogleLoader()
         googleSignInView.sendActions(for: .touchUpInside)
