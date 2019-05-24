@@ -23,9 +23,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="rIf-tm-HXc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cb9-M6-js9">
                                 <rect key="frame" x="202" y="363" width="10" height="10"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -34,7 +31,7 @@
                                     <constraint firstAttribute="height" constant="10" id="Fnb-7g-k8Y"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Neuro Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Dfj-5U-DTj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_readable_image_Neuro_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Dfj-5U-DTj">
                                 <rect key="frame" x="84" y="116.66666666666667" width="246" height="246.33333333333331"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Dfj-5U-DTj" secondAttribute="height" multiplier="1:1" id="oQh-uC-R0I"/>
@@ -53,7 +50,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oi-Bu-iKH">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Mwb-RS-oq8">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_readable_icon_Google_Icon_2" translatesAutoresizingMaskIntoConstraints="NO" id="Mwb-RS-oq8">
                                                 <rect key="frame" x="16" y="13" width="18" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Mwb-RS-oq8" secondAttribute="height" multiplier="1:1" id="3pW-Bp-PJw"/>
@@ -107,7 +104,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAq-ZU-2wt">
                                         <rect key="frame" x="0.0" y="59.999999999999943" width="366" height="44"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail_icon" translatesAutoresizingMaskIntoConstraints="NO" id="r3o-Tv-6BZ">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_readable_icon_email_2" translatesAutoresizingMaskIntoConstraints="NO" id="r3o-Tv-6BZ">
                                                 <rect key="frame" x="17" y="13" width="18" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="r3o-Tv-6BZ" secondAttribute="height" multiplier="1:1" id="1Td-zE-Q3x"/>
@@ -145,6 +142,9 @@
                                     <constraint firstAttribute="height" constant="48" id="GMS-kk-qPW"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_readable_image_BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="rIf-tm-HXc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.50588235294117645" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -184,9 +184,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackGround" width="375" height="667"/>
-        <image name="Neuro Logo" width="190" height="190"/>
-        <image name="google_icon" width="18" height="18"/>
-        <image name="mail_icon" width="18" height="14"/>
+        <image name="ic_readable_icon_Google_Icon_2" width="18" height="18"/>
+        <image name="ic_readable_icon_email_2" width="18" height="14"/>
+        <image name="img_readable_image_BackGround" width="375" height="667"/>
+        <image name="img_readable_image_Neuro_Logo" width="190" height="190"/>
     </resources>
 </document>
