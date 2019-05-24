@@ -24,6 +24,7 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
         viewsToButtonsConversions()
 
     }
+    @IBOutlet weak var signInGoogleView: GIDSignInButton!
     
     func enableNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
@@ -38,11 +39,6 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         enableNotifications()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        disableNotifications()
     }
     
     @objc func googleUserDidSignIn(_ notification:Notification) {
@@ -87,12 +83,13 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     @objc func emailButtonTap(_ sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "EmailAuth", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "e-mail auth"  ) as! EmailAuthViewController
+        disableNotifications()
         self.present(vc, animated: true, completion: nil)
     }
     
     @objc func googleButtonTap(_ sender: UITapGestureRecognizer) {
         startGoogleLoader()
-        googleHiddenButton.sendActions(for: .touchUpInside)
+        signInGoogleView.sendActions(for: .touchUpInside)
     }
     
     func startGoogleLoader() {
@@ -133,6 +130,7 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     func userDidSignIn() {
         let storyboard = UIStoryboard(name: "Workspace", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "workspace"  ) as! WorkspaceViewController
+        disableNotifications()
         self.present(vc, animated: true, completion: nil)
     }
     
