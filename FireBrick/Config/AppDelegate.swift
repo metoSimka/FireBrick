@@ -12,8 +12,6 @@ import GoogleSignIn
 import IQKeyboardManager
 import SwiftEntryKit
 
-typealias Completion = (_  errshowErrorMsg: String?, _ data: AnyObject?) -> Void
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
