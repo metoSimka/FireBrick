@@ -17,16 +17,12 @@ class SplashScreenViewController: UIViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
         enableNotifications()
         GIDSignIn.sharedInstance().uiDelegate = self
-        autoLogin()
+        GIDSignIn.sharedInstance()?.signInSilently()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         disableNotifications()
-    }
-    
-    func autoLogin() {
-        GIDSignIn.sharedInstance()?.signInSilently()
     }
     
     @objc func googleUserDidSignIn(_ notification:Notification) {
