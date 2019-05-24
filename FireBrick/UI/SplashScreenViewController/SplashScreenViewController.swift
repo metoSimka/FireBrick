@@ -11,38 +11,40 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
-class SplashScreenViewController: UIViewController, GIDSignInUIDelegate {
+class SplashScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         enableNotifications()
-        GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance()?.signInSilently()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    @objc
+    private func googleUserDidSignIn(_ notification:Notification) {
+        let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "WorkspaceViewController"  ) as? WorkspaceViewController else {
+            return
+        }
         disableNotifications()
-    }
-    
-    @objc func googleUserDidSignIn(_ notification:Notification) {
-        let storyboard = UIStoryboard(name: "Workspace", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "workspace"  ) as! WorkspaceViewController
         self.present(vc, animated: true, completion: nil)
     }
     
-    @objc func googleErrorAuth(_ notification:Notification) {
-        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "auth"  ) as! AuthViewController
+    @objc
+    private func googleErrorAuth(_ notification:Notification) {
+        let storyboard = UIStoryboard(name: "AuthViewController", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "AuthViewController"  ) as? AuthViewController else {
+            return
+        }
+        disableNotifications()
         self.present(vc, animated: true, completion: nil)
     }
     
-    func enableNotifications() {
+    private func enableNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(googleErrorAuth(_:)), name: .googleError, object: nil)
     }
     
-    func disableNotifications() {
+    private func disableNotifications() {
         NotificationCenter.default.removeObserver(self, name: .googleSignedIn, object: nil)
         NotificationCenter.default.removeObserver(self, name: .googleError, object: nil)
     }

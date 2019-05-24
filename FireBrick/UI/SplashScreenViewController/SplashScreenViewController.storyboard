@@ -13,7 +13,7 @@
         <!--Splash Screen View Controller-->
         <scene sceneID="ZDo-lW-Ws7">
             <objects>
-                <viewController id="68I-m1-okH" customClass="SplashScreenViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="68I-m1-okH" customClass="SplashScreenViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZWd-cB-c7e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-G1-4PF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="lkn-2p-dZK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_readable_image_BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="lkn-2p-dZK">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EhB-gp-BVK">
@@ -32,7 +32,7 @@
                                             <constraint firstAttribute="width" constant="10" id="pAf-Ga-8eO"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Neuro Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ca4-gf-zxx">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_readable_image_Neuro_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ca4-gf-zxx">
                                         <rect key="frame" x="76" y="105.5" width="223" height="223"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ca4-gf-zxx" secondAttribute="height" multiplier="1:1" id="RWF-6D-UJk"/>
@@ -88,7 +88,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackGround" width="375" height="667"/>
-        <image name="Neuro Logo" width="190" height="190"/>
+        <image name="img_readable_image_BackGround" width="375" height="667"/>
+        <image name="img_readable_image_Neuro_Logo" width="190" height="190"/>
     </resources>
 </document>
