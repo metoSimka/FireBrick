@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
-class AuthViewController: UIViewController, GIDSignInUIDelegate {
+class AuthViewController: UIViewController {
     
     @IBOutlet weak var googleSignInView: GIDSignInButton!
     @IBOutlet weak var spinnerView: UIView!
@@ -157,5 +157,9 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
         }
         return true
     }
+}
+
+extension AuthViewController: GIDSignInUIDelegate {
+    
 }
 

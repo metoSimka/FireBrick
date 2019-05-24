@@ -255,7 +255,7 @@ class EmailAuthViewController: UIViewController {
         return true
     }
     
-    func shouldEnableButtons() {
+    func updateButtonStatus() {
         guard isValidPassword() && isValidEmail() else {
             disableButtons()
             return
@@ -305,7 +305,7 @@ extension EmailAuthViewController: UITextFieldDelegate {
                 showWarningPassword()
             }
         }
-        shouldEnableButtons()
+        updateButtonStatus()
     }
 }
 

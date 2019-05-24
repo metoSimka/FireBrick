@@ -11,12 +11,12 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
-class SplashScreenViewController: UIViewController, GIDSignInUIDelegate {
+class SplashScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         enableNotifications()
-        GIDSignIn.sharedInstance().uiDelegate = self
+//        GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance()?.signInSilently()
     }
     
