@@ -74,6 +74,7 @@
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="Mwb-RS-oq8" firstAttribute="centerY" secondItem="4oi-Bu-iKH" secondAttribute="centerY" id="87Z-yx-tnw"/>
                                                     <constraint firstItem="GHQ-Zx-K61" firstAttribute="centerY" secondItem="4oi-Bu-iKH" secondAttribute="centerY" id="Sd8-gJ-5sX"/>
@@ -87,6 +88,9 @@
                                                         <real key="value" value="22"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="aSF-us-kjw" appends="YES" id="V4o-KJ-f25"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,6 +127,7 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="Mss-1i-MdG" firstAttribute="centerY" secondItem="zAq-ZU-2wt" secondAttribute="centerY" id="6PC-kA-WcS"/>
                                             <constraint firstAttribute="height" constant="44" id="dtr-gs-L44"/>
@@ -136,6 +141,9 @@
                                                 <real key="value" value="22"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Zvq-zW-UrY" appends="YES" id="38l-cr-B7a"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -180,6 +188,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQf-ca-0U6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aSF-us-kjw" userLabel="GoogleAuthTap">
+                    <connections>
+                        <action selector="googleTap:" destination="p9U-U2-cJt" id="OF8-U9-ooR"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Zvq-zW-UrY" userLabel="EmailAuthTap">
+                    <connections>
+                        <action selector="emailTap:" destination="p9U-U2-cJt" id="wvB-e0-sic"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="39" y="-292"/>
         </scene>

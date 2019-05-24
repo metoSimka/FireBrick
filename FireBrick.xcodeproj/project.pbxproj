@@ -143,13 +143,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A50717FF2296A0FD00BC7FF1 /* AlertMessageViewController */ = {
+		A50717FF2296A0FD00BC7FF1 /* SimpleAlertViewController */ = {
 			isa = PBXGroup;
 			children = (
 				A50718002296A11400BC7FF1 /* SimpleAlertViewController.storyboard */,
 				A50718022296A12000BC7FF1 /* SimpleAlertViewController.swift */,
 			);
-			path = AlertMessageViewController;
+			path = SimpleAlertViewController;
 			sourceTree = "<group>";
 		};
 		A50718042296BD3C00BC7FF1 /* SplashScreenViewController */ = {
@@ -272,13 +272,13 @@
 		A5B67932228D3FC4003DB84E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A50717FF2296A0FD00BC7FF1 /* SimpleAlertViewController */,
+				A5136494228E64D90053DE00 /* AuthViewController */,
+				A5136495228E64F10053DE00 /* EmailAuthViewController */,
+				A5FEEC6822940DA400EB09BC /* ForgotPasswordController */,
 				A5075C8D2297CCDE008FF334 /* LaunchScreen */,
 				A50718042296BD3C00BC7FF1 /* SplashScreenViewController */,
-				A50717FF2296A0FD00BC7FF1 /* AlertMessageViewController */,
-				A5FEEC6822940DA400EB09BC /* ForgotPasswordController */,
 				A51E490B22928E07006687A3 /* WorkspaceViewController */,
-				A5136495228E64F10053DE00 /* EmailAuthViewController */,
-				A5136494228E64D90053DE00 /* AuthViewController */,
 			);
 			path = UI;
 			sourceTree = "<group>";

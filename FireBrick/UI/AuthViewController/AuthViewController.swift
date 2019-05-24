@@ -25,7 +25,6 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
-        viewsToButtonsConversions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +32,19 @@ class AuthViewController: UIViewController {
         enableNotifications()
     }
     
+    @IBAction func googleTap(_ sender: UIView) {
+        startGoogleLoader()
+        googleSignInView.sendActions(for: .touchUpInside)
+    }
+    
+    @IBAction func emailTap(_ sender: UIView) {
+        let storyboard = UIStoryboard(name: "EmailAuthViewController", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "e-mail auth"  ) as? EmailAuthViewController else {
+            return
+        }
+        disableNotifications()
+        self.present(vc, animated: true, completion: nil)
+    }
     
     // MARK: Private
     
@@ -75,22 +87,6 @@ class AuthViewController: UIViewController {
         }
         showErrorMessage(errorTxt: error.localizedDescription)
     }
-    
-    @objc
-    private func emailButtonTap(_ sender: UITapGestureRecognizer) {
-        let storyboard = UIStoryboard(name: "EmailAuthViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "e-mail auth"  ) as? EmailAuthViewController else {
-            return
-        }
-        disableNotifications()
-        self.present(vc, animated: true, completion: nil)
-    }
-    
-    @objc
-    private func googleButtonTap(_ sender: UITapGestureRecognizer) {
-        startGoogleLoader()
-        googleSignInView.sendActions(for: .touchUpInside)
-    }
 
     private func enableNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
@@ -115,7 +111,7 @@ class AuthViewController: UIViewController {
             self.enableButtons()
         }
     }
-
+    
     private func enableButtons() {
         googleAuth.isUserInteractionEnabled = true
         googleAuth.alpha = 1
@@ -137,14 +133,6 @@ class AuthViewController: UIViewController {
         }
         disableNotifications()
         self.present(vc, animated: true, completion: nil)
-    }
-    
-    private func  viewsToButtonsConversions() {
-        let emailTap = UITapGestureRecognizer(target: self, action: #selector(emailButtonTap))
-        self.emailAuth.addGestureRecognizer(emailTap)
-        
-        let googleTap = UITapGestureRecognizer(target: self, action: #selector(googleButtonTap))
-        self.googleAuth.addGestureRecognizer(googleTap)
     }
     
     private func showErrorMessage(errorTxt: String?) {
