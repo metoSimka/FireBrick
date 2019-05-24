@@ -16,7 +16,6 @@ protocol SingleButtonAlertMessageViewDelegate {
 class SingleButtonAlertMessageViewController: UIViewController {
 
     var delegate: SingleButtonAlertMessageViewDelegate?
-    
     var headTitle: String?
     var messageTitle: String?
     var buttonTitle: String?

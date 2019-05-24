@@ -17,15 +17,14 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var emailAuth: UIView!
     @IBOutlet weak var googleAuth: UIView!
     @IBOutlet weak var googleHiddenButton: GIDSignInButton!
+    @IBOutlet weak var signInGoogleView: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
         viewsToButtonsConversions()
-
     }
-    @IBOutlet weak var signInGoogleView: GIDSignInButton!
-    
+
     func enableNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(googleErrorAuth(_:)), name: .googleError, object: nil)
@@ -48,7 +47,6 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
         guard let user = userData["user"] as? GIDGoogleUser else {
             return
         }
-        
         guard let authentication = user.authentication else {
             return
         }
