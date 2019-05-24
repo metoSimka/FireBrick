@@ -16,9 +16,9 @@ protocol SingleButtonAlertMessageViewDelegate {
 class SimpleAlertViewController: UIViewController {
     
     var delegate: SingleButtonAlertMessageViewDelegate?
-    var headTitle: String?
-    var messageTitle: String?
-    var buttonTitle: String?
+    var headerTitle = "Alert"
+    var messageTitle = "Uknown Error"
+    var buttonTitle = "OK"
     
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
@@ -26,23 +26,13 @@ class SimpleAlertViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setAlertView(title: headTitle, message: messageTitle, buttonTitle: buttonTitle)
+        headerLabel.text = headerTitle
+        messageLabel.text = messageTitle
+        button.setTitle(buttonTitle, for: .normal)
     }
     
     @IBAction func tapButton(_ sender: UIButton) {
         self.delegate?.didTapButton(button: sender)
         SwiftEntryKit.dismiss()
-    }
-    
-   private func setAlertView(title: String?, message: String?, buttonTitle: String?) {
-        if title != nil {
-            headerLabel.text = title
-        }
-        if message != nil {
-            messageLabel.text = message
-        }
-        if buttonTitle != nil {
-            button.setTitle(buttonTitle, for: .normal)
-        }
     }
 }
