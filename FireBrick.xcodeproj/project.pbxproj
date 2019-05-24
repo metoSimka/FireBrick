@@ -161,6 +161,14 @@
 			path = SplashScreenViewController;
 			sourceTree = "<group>";
 		};
+		A5075C8D2297CCDE008FF334 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		A5136494228E64D90053DE00 /* AuthViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,7 +272,7 @@
 		A5B67932228D3FC4003DB84E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A5B67924228D3F75003DB84E /* LaunchScreen.storyboard */,
+				A5075C8D2297CCDE008FF334 /* LaunchScreen */,
 				A50718042296BD3C00BC7FF1 /* SplashScreenViewController */,
 				A50717FF2296A0FD00BC7FF1 /* AlertMessageViewController */,
 				A5FEEC6822940DA400EB09BC /* ForgotPasswordController */,
