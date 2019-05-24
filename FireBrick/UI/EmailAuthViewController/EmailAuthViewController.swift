@@ -178,7 +178,9 @@ class EmailAuthViewController: UIViewController {
     
     func showErrorWithMessage() {
         let storyboard = UIStoryboard(name: "SingleButtonAlertMessageViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as! SingleButtonAlertMessageViewController
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as? SingleButtonAlertMessageViewController else {
+            return
+        }
         vc.headerLabel.text = "Error"
         vc.messageLabel.text = "Please enter your email and password"
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
@@ -193,7 +195,9 @@ class EmailAuthViewController: UIViewController {
     
     func userDidSignIn() {
         let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "workspace") as! WorkspaceViewController
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "workspace") as? WorkspaceViewController else {
+            return
+        }
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -212,7 +216,9 @@ class EmailAuthViewController: UIViewController {
             return
         }
         let storyboard = UIStoryboard(name: "SingleButtonAlertMessageViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as! SingleButtonAlertMessageViewController
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as? SingleButtonAlertMessageViewController else {
+            return
+        }
         vc.messageTitle = error.localizedDescription
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }

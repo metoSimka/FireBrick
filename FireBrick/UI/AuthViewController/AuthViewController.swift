@@ -80,7 +80,9 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
     @objc func emailButtonTap(_ sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "EmailAuthViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "e-mail auth"  ) as! EmailAuthViewController
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "e-mail auth"  ) as? EmailAuthViewController else {
+            return
+        }
         disableNotifications()
         self.present(vc, animated: true, completion: nil)
     }
@@ -127,7 +129,9 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
     func userDidSignIn() {
         let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "workspace"  ) as! WorkspaceViewController
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "workspace"  ) as? WorkspaceViewController else {
+            return
+        }
         disableNotifications()
         self.present(vc, animated: true, completion: nil)
     }

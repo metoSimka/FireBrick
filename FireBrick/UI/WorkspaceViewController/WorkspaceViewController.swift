@@ -21,7 +21,9 @@ class WorkspaceViewController: UIViewController {
         GIDSignIn.sharedInstance()?.signOut()
         
         let storyboard = UIStoryboard(name: "AuthViewController", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "auth"  ) as! AuthViewController
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "auth"  ) as? AuthViewController else {
+            return
+        }
         self.present(vc, animated: true, completion: nil)
     }
 }
