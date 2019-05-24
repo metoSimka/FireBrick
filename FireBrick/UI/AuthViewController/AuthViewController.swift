@@ -29,7 +29,7 @@ class AuthViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        enableNotifications()
+        registerNotifications()
     }
     
     @IBAction func googleTap(_ sender: UIView) {
@@ -42,7 +42,7 @@ class AuthViewController: UIViewController {
         guard let vc = storyboard.instantiateViewController(withIdentifier: "EmailAuthViewController"  ) as? EmailAuthViewController else {
             return
         }
-        disableNotifications()
+        unregisterNotifications()
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -65,7 +65,10 @@ class AuthViewController: UIViewController {
         
         Auth.auth().signIn(with: credential) { (authResult, error) in
             guard error == nil else {
-                self.showErrorMessage(errorTxt: error?.localizedDescription)
+                guard let error = error else {
+                    return
+                }
+                self.showErrorMessage(errorText: error.localizedDescription)
                 return
             }
             self.userDidSignIn()
@@ -79,21 +82,21 @@ class AuthViewController: UIViewController {
             return
         }
         guard let error = data["error"] as? NSError else {
-            showErrorMessage(errorTxt: "Uknown authentication error")
+            showErrorMessage(errorText: "Uknown authentication error")
             return
         }
         guard error.code != Constants.errorCodes.googleUserCancel else {
             return
         }
-        showErrorMessage(errorTxt: error.localizedDescription)
+        showErrorMessage(errorText: error.localizedDescription)
     }
 
-    private func enableNotifications() {
+    private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(googleErrorAuth(_:)), name: .googleError, object: nil)
     }
     
-    private func disableNotifications() {
+    private func unregisterNotifications() {
         NotificationCenter.default.removeObserver(self, name: .googleSignedIn, object: nil)
         NotificationCenter.default.removeObserver(self, name: .googleError, object: nil)
     }
@@ -131,12 +134,12 @@ class AuthViewController: UIViewController {
         guard let vc = storyboard.instantiateViewController(withIdentifier: "WorkspaceViewController"  ) as? WorkspaceViewController else {
             return
         }
-        disableNotifications()
+        unregisterNotifications()
         self.present(vc, animated: true, completion: nil)
     }
     
-    private func showErrorMessage(errorTxt: String?) {
-        let alertController = UIAlertController(title: "Error", message: errorTxt, preferredStyle: .alert)
+    private func showErrorMessage(errorText: String) {
+        let alertController = UIAlertController(title: "Error", message: errorText, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
         self.present(alertController, animated: true, completion: nil)
