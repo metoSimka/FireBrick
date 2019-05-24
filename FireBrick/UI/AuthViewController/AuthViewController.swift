@@ -51,7 +51,7 @@ class AuthViewController: UIViewController {
         
         Auth.auth().signIn(with: credential) { (authResult, error) in
             guard error == nil else {
-                self.showErrorMsg(errorTxt: error?.localizedDescription)
+                self.showErrorMessage(errorTxt: error?.localizedDescription)
                 return
             }
             self.userDidSignIn()
@@ -64,13 +64,13 @@ class AuthViewController: UIViewController {
             return
         }
         guard let error = data["error"] as? NSError else {
-            showErrorMsg(errorTxt: "Uknown authentication error")
+            showErrorMessage(errorTxt: "Uknown authentication error")
             return
         }
         guard error.code != Constants.errorCodes.googleUserCancel else {
             return
         }
-        showErrorMsg(errorTxt: error.localizedDescription)
+        showErrorMessage(errorTxt: error.localizedDescription)
     }
     
     @objc func emailButtonTap(_ sender: UITapGestureRecognizer) {
@@ -151,7 +151,7 @@ class AuthViewController: UIViewController {
         self.googleAuth.addGestureRecognizer(googleTap)
     }
     
-    private func showErrorMsg(errorTxt: String?) {
+    private func showErrorMessage(errorTxt: String?) {
         let alertController = UIAlertController(title: "Error", message: errorTxt, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
