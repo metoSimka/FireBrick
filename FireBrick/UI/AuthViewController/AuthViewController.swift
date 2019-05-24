@@ -33,9 +33,11 @@ class AuthViewController: UIViewController {
         enableNotifications()
     }
     
-    // MARK: @objc
     
-    @objc func googleUserDidSignIn(_ notification:Notification) {
+    // MARK: Private
+    
+    @objc
+    private func googleUserDidSignIn(_ notification:Notification) {
         guard let userData = notification.userInfo else {
             return
         }
@@ -58,7 +60,8 @@ class AuthViewController: UIViewController {
         }
     }
     
-    @objc func googleErrorAuth(_ notification:Notification) {
+    @objc
+    private func googleErrorAuth(_ notification:Notification) {
         stopGoogleLoader()
         guard let data = notification.userInfo else {
             return
@@ -73,7 +76,8 @@ class AuthViewController: UIViewController {
         showErrorMessage(errorTxt: error.localizedDescription)
     }
     
-    @objc func emailButtonTap(_ sender: UITapGestureRecognizer) {
+    @objc
+    private func emailButtonTap(_ sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "EmailAuthViewController", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "e-mail auth"  ) as? EmailAuthViewController else {
             return
@@ -82,13 +86,12 @@ class AuthViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    @objc func googleButtonTap(_ sender: UITapGestureRecognizer) {
+    @objc
+    private func googleButtonTap(_ sender: UITapGestureRecognizer) {
         startGoogleLoader()
         googleSignInView.sendActions(for: .touchUpInside)
     }
-    
-    // MARK: Private
-    
+
     private func enableNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(googleErrorAuth(_:)), name: .googleError, object: nil)
