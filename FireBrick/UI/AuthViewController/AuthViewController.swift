@@ -13,11 +13,11 @@ import GoogleSignIn
 
 class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
+    @IBOutlet weak var googleSignInView: GIDSignInButton!
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var emailAuth: UIView!
     @IBOutlet weak var googleAuth: UIView!
     @IBOutlet weak var googleHiddenButton: GIDSignInButton!
-    @IBOutlet weak var signInGoogleView: GIDSignInButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +87,7 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
     @objc func googleButtonTap(_ sender: UITapGestureRecognizer) {
         startGoogleLoader()
-        signInGoogleView.sendActions(for: .touchUpInside)
+        googleSignInView.sendActions(for: .touchUpInside)
     }
     
     func startGoogleLoader() {
@@ -98,8 +98,8 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     func stopGoogleLoader() {
-        UIView.animate(withDuration: Constants.forAnimation.normal) {
-            self.spinnerView.alpha = Constants.alpha.disabledAlpha
+        UIView.animate(withDuration: Constants.forAnimation.fast) {
+            self.spinnerView.alpha = Constants.alpha.zeroAlpha
             self.enableButtons()
         }
     }

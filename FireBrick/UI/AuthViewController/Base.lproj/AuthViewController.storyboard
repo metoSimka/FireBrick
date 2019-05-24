@@ -23,7 +23,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cb9-M6-js9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_readable_image_BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="rIf-tm-HXc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cb9-M6-js9">
                                 <rect key="frame" x="202" y="363" width="10" height="10"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -135,16 +138,13 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKF-1R-idr" customClass="GIDSignInButton">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKu-kf-aVw" customClass="GIDSignInButton">
                                 <rect key="frame" x="0.0" y="20" width="414" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="GMS-kk-qPW"/>
+                                    <constraint firstAttribute="height" constant="48" id="TAY-so-nsQ"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_readable_image_BackGround" translatesAutoresizingMaskIntoConstraints="NO" id="rIf-tm-HXc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.50588235294117645" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -152,15 +152,15 @@
                             <constraint firstItem="Cb9-M6-js9" firstAttribute="centerY" secondItem="Ez7-aR-bF1" secondAttribute="centerY" id="61x-iW-E2V"/>
                             <constraint firstItem="uXi-wq-ZFJ" firstAttribute="top" secondItem="Dfj-5U-DTj" secondAttribute="bottom" id="D4d-Wk-lDB"/>
                             <constraint firstItem="rIf-tm-HXc" firstAttribute="top" secondItem="Ez7-aR-bF1" secondAttribute="top" id="DGe-4I-RxW"/>
-                            <constraint firstItem="zKF-1R-idr" firstAttribute="top" secondItem="1yp-w3-XdQ" secondAttribute="top" id="Hg7-Ub-b0z"/>
+                            <constraint firstItem="jKu-kf-aVw" firstAttribute="centerX" secondItem="Dfj-5U-DTj" secondAttribute="centerX" id="JSs-Yj-6s7"/>
                             <constraint firstItem="Cb9-M6-js9" firstAttribute="top" secondItem="Dfj-5U-DTj" secondAttribute="bottom" id="KCP-eN-TQv"/>
-                            <constraint firstItem="zKF-1R-idr" firstAttribute="leading" secondItem="1yp-w3-XdQ" secondAttribute="leading" id="TWC-pm-doJ"/>
                             <constraint firstItem="Dfj-5U-DTj" firstAttribute="height" secondItem="Ez7-aR-bF1" secondAttribute="height" multiplier="0.3345" id="UNo-nZ-YGj"/>
                             <constraint firstItem="rIf-tm-HXc" firstAttribute="bottom" secondItem="1yp-w3-XdQ" secondAttribute="bottom" id="Z4f-ht-dtx"/>
                             <constraint firstItem="Dfj-5U-DTj" firstAttribute="centerX" secondItem="Ez7-aR-bF1" secondAttribute="centerX" id="asn-Hw-qh3"/>
                             <constraint firstItem="1yp-w3-XdQ" firstAttribute="trailing" secondItem="rIf-tm-HXc" secondAttribute="trailing" id="duU-mP-TYr"/>
-                            <constraint firstItem="1yp-w3-XdQ" firstAttribute="trailing" secondItem="zKF-1R-idr" secondAttribute="trailing" id="hPB-WV-cb1"/>
+                            <constraint firstItem="jKu-kf-aVw" firstAttribute="top" secondItem="1yp-w3-XdQ" secondAttribute="top" id="ewe-VU-crj"/>
                             <constraint firstItem="1yp-w3-XdQ" firstAttribute="trailing" secondItem="uXi-wq-ZFJ" secondAttribute="trailing" id="kxg-or-6g2"/>
+                            <constraint firstItem="jKu-kf-aVw" firstAttribute="leading" secondItem="1yp-w3-XdQ" secondAttribute="leading" id="oFK-Bn-eS9"/>
                             <constraint firstItem="Cb9-M6-js9" firstAttribute="centerX" secondItem="Ez7-aR-bF1" secondAttribute="centerX" id="oFh-GF-b3e"/>
                             <constraint firstAttribute="trailing" secondItem="5He-pS-sVU" secondAttribute="trailing" constant="24" id="pcX-kc-yCk"/>
                             <constraint firstItem="uXi-wq-ZFJ" firstAttribute="bottom" secondItem="1yp-w3-XdQ" secondAttribute="bottom" id="puK-vZ-i0g"/>
@@ -174,7 +174,7 @@
                         <outlet property="emailAuth" destination="zAq-ZU-2wt" id="jKm-UO-4a3"/>
                         <outlet property="googleAuth" destination="4oi-Bu-iKH" id="YFm-9u-QKn"/>
                         <outlet property="googleHiddenButton" destination="uXi-wq-ZFJ" id="GYN-j3-kQb"/>
-                        <outlet property="signInGoogleView" destination="zKF-1R-idr" id="5x9-I1-sBO"/>
+                        <outlet property="googleSignInView" destination="jKu-kf-aVw" id="jK4-G7-yNC"/>
                         <outlet property="spinnerView" destination="5bI-WL-3dO" id="4b5-S4-RSM"/>
                     </connections>
                 </viewController>

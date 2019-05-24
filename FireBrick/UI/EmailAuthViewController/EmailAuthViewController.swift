@@ -153,8 +153,8 @@ class EmailAuthViewController: UIViewController {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintPasswordWarning.constant = self.hideConstraintValue
             self.view.layoutIfNeeded()
-            self.imageWarningPassword.alpha = Constants.alpha.disabledAlpha
-            self.warningPasswordTextLabel.alpha = Constants.alpha.disabledAlpha
+            self.imageWarningPassword.alpha = Constants.alpha.zeroAlpha
+            self.warningPasswordTextLabel.alpha = Constants.alpha.zeroAlpha
         }
     }
     
@@ -171,8 +171,8 @@ class EmailAuthViewController: UIViewController {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.constraintEmailWarning.constant = self.hideConstraintValue
             self.view.layoutIfNeeded()
-            self.imageWarningEmail.alpha = Constants.alpha.disabledAlpha
-            self.warningEmailTextLabel.alpha = Constants.alpha.disabledAlpha
+            self.imageWarningEmail.alpha = Constants.alpha.zeroAlpha
+            self.warningEmailTextLabel.alpha = Constants.alpha.zeroAlpha
         }
     }
     

@@ -191,7 +191,7 @@
                                     <constraint firstAttribute="height" constant="44" id="K9k-J3-03Y"/>
                                 </constraints>
                                 <state key="normal" image="ic_readable_icon_password_eye_cross"/>
-                                <state key="selected" image="password_eye"/>
+                                <state key="selected" image="ic_readable_icon_password_eye"/>
                                 <connections>
                                     <action selector="ShowHidePassword:" destination="GI5-CL-4st" eventType="touchUpInside" id="b8X-wP-ppK"/>
                                 </connections>
@@ -305,9 +305,9 @@
     <resources>
         <image name="ic_readable_icon_back-white" width="8.6666669845581055" height="15.333333015441895"/>
         <image name="ic_readable_icon_error" width="20" height="17"/>
+        <image name="ic_readable_icon_password_eye" width="22" height="15.333333015441895"/>
         <image name="ic_readable_icon_password_eye_cross" width="22" height="20"/>
         <image name="img_readable_image_BackGround" width="375" height="667"/>
         <image name="img_readable_image_Neuro_Logo" width="190" height="190"/>
-        <image name="password_eye" width="22" height="15.333333015441895"/>
     </resources>
 </document>

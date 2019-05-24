@@ -20,20 +20,17 @@ class SplashScreenViewController: UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance()?.signInSilently()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        disableNotifications()
-    }
-    
     @objc func googleUserDidSignIn(_ notification:Notification) {
         let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "workspace"  ) as! WorkspaceViewController
+        disableNotifications()
         self.present(vc, animated: true, completion: nil)
     }
     
     @objc func googleErrorAuth(_ notification:Notification) {
         let storyboard = UIStoryboard(name: "AuthViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "auth"  ) as! AuthViewController
+        disableNotifications()
         self.present(vc, animated: true, completion: nil)
     }
     
