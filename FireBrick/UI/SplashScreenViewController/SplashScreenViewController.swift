@@ -26,13 +26,13 @@ class SplashScreenViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     @objc func googleUserDidSignIn(_ notification:Notification) {
-        let storyboard = UIStoryboard(name: "Workspace", bundle: nil)
+        let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "workspace"  ) as! WorkspaceViewController
         self.present(vc, animated: true, completion: nil)
     }
     
     @objc func googleErrorAuth(_ notification:Notification) {
-        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+        let storyboard = UIStoryboard(name: "AuthViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "auth"  ) as! AuthViewController
         self.present(vc, animated: true, completion: nil)
     }

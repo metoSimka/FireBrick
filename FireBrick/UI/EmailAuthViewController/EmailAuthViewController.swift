@@ -13,6 +13,10 @@ import SwiftEntryKit
 
 class EmailAuthViewController: UIViewController {
     
+    let showConstraintValue: CGFloat = -17
+    let hideConstraintValue: CGFloat = 20
+    let minCountPasswordChars = 6
+    
     @IBOutlet weak var spinnerSignUp: UIActivityIndicatorView!
     @IBOutlet weak var warningEmailTextLabel: UILabel!
     @IBOutlet weak var warningPasswordTextLabel: UILabel!
@@ -92,14 +96,14 @@ class EmailAuthViewController: UIViewController {
         spinnerLogin.startAnimating()
         disableButtons()
         LogInButton.setTitle("", for: .normal)
-        LogInButton.alpha = Constants.magicNumbers.fullAlpha
+        LogInButton.alpha = Constants.alpha.fullAlpha
     }
     
     func startLoadingSignUp() {
         spinnerSignUp.startAnimating()
         disableButtons()
         signUpButton.setTitle("", for: .normal)
-        signUpButton.alpha = Constants.magicNumbers.fullAlpha
+        signUpButton.alpha = Constants.alpha.fullAlpha
     }
     
     func stopLoading() {
@@ -138,42 +142,42 @@ class EmailAuthViewController: UIViewController {
     
     func showWarningPassword() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
-            self.constraintPasswordWarning.constant = Constants.forConstraints.showValue
+            self.constraintPasswordWarning.constant = self.showConstraintValue
             self.view.layoutIfNeeded()
-            self.imageWarningPassword.alpha = Constants.magicNumbers.fullAlpha
-            self.warningPasswordTextLabel.alpha = Constants.magicNumbers.fullAlpha
+            self.imageWarningPassword.alpha = Constants.alpha.fullAlpha
+            self.warningPasswordTextLabel.alpha = Constants.alpha.fullAlpha
         }
     }
     
     func hideWarningPassword() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
-            self.constraintPasswordWarning.constant = Constants.forConstraints.hideValue
+            self.constraintPasswordWarning.constant = self.hideConstraintValue
             self.view.layoutIfNeeded()
-            self.imageWarningPassword.alpha = Constants.magicNumbers.zeroAlpha
-            self.warningPasswordTextLabel.alpha = Constants.magicNumbers.zeroAlpha
+            self.imageWarningPassword.alpha = Constants.alpha.disabledAlpha
+            self.warningPasswordTextLabel.alpha = Constants.alpha.disabledAlpha
         }
     }
     
     func showWarningEmail() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
-            self.constraintEmailWarning.constant = Constants.forConstraints.showValue
+            self.constraintEmailWarning.constant = self.showConstraintValue
             self.view.layoutIfNeeded()
-            self.imageWarningEmail.alpha = Constants.magicNumbers.fullAlpha
-            self.warningEmailTextLabel.alpha = Constants.magicNumbers.fullAlpha
+            self.imageWarningEmail.alpha = Constants.alpha.fullAlpha
+            self.warningEmailTextLabel.alpha = Constants.alpha.fullAlpha
         }
     }
     
     func hideWarningEmail() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
-            self.constraintEmailWarning.constant = Constants.forConstraints.hideValue
+            self.constraintEmailWarning.constant = self.hideConstraintValue
             self.view.layoutIfNeeded()
-            self.imageWarningEmail.alpha = Constants.magicNumbers.zeroAlpha
-            self.warningEmailTextLabel.alpha = Constants.magicNumbers.zeroAlpha
+            self.imageWarningEmail.alpha = Constants.alpha.disabledAlpha
+            self.warningEmailTextLabel.alpha = Constants.alpha.disabledAlpha
         }
     }
     
     func showErrorWithMessage() {
-        let storyboard = UIStoryboard(name: "SingleButtonAlertMessage", bundle: nil)
+        let storyboard = UIStoryboard(name: "SingleButtonAlertMessageViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as! SingleButtonAlertMessageViewController
         vc.headerLabel.text = "Error"
         vc.messageLabel.text = "Please enter your email and password"
@@ -188,7 +192,7 @@ class EmailAuthViewController: UIViewController {
     }
     
     func userDidSignIn() {
-        let storyboard = UIStoryboard(name: "Workspace", bundle: nil)
+        let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "workspace") as! WorkspaceViewController
         self.present(vc, animated: true, completion: nil)
     }
@@ -207,7 +211,7 @@ class EmailAuthViewController: UIViewController {
         guard let error = error else {
             return
         }
-        let storyboard = UIStoryboard(name: "SingleButtonAlertMessage", bundle: nil)
+        let storyboard = UIStoryboard(name: "SingleButtonAlertMessageViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as! SingleButtonAlertMessageViewController
         vc.messageTitle = error.localizedDescription
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
@@ -239,7 +243,7 @@ class EmailAuthViewController: UIViewController {
             return false
         }
         let count = txt.count
-        guard count >= Constants.magicNumbers.minCountPasswordChars else {
+        guard count >= minCountPasswordChars else {
             return false
         }
         return true
@@ -255,18 +259,18 @@ class EmailAuthViewController: UIViewController {
     
     func disableButtons() {
         signUpButton.isEnabled = false
-        signUpButton.alpha = Constants.magicNumbers.halfAlpha
+        signUpButton.alpha = Constants.alpha.disabledAlpha
         
         LogInButton.isEnabled = false
-        LogInButton.alpha = Constants.magicNumbers.halfAlpha
+        LogInButton.alpha = Constants.alpha.disabledAlpha
     }
     
     func enableButtons() {
         signUpButton.isEnabled = true
-        signUpButton.alpha = Constants.magicNumbers.fullAlpha
+        signUpButton.alpha = Constants.alpha.fullAlpha
         
         LogInButton.isEnabled = true
-        LogInButton.alpha = Constants.magicNumbers.fullAlpha
+        LogInButton.alpha = Constants.alpha.fullAlpha
     }
 }
 

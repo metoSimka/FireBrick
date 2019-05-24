@@ -79,7 +79,7 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     @objc func emailButtonTap(_ sender: UITapGestureRecognizer) {
-        let storyboard = UIStoryboard(name: "EmailAuth", bundle: nil)
+        let storyboard = UIStoryboard(name: "EmailAuthViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "e-mail auth"  ) as! EmailAuthViewController
         disableNotifications()
         self.present(vc, animated: true, completion: nil)
@@ -92,14 +92,14 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
     func startGoogleLoader() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
-            self.spinnerView.alpha = Constants.magicNumbers.fullAlpha
+            self.spinnerView.alpha = Constants.alpha.fullAlpha
             self.disableButtons()
         }
     }
     
     func stopGoogleLoader() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
-            self.spinnerView.alpha = Constants.magicNumbers.zeroAlpha
+            self.spinnerView.alpha = Constants.alpha.disabledAlpha
             self.enableButtons()
         }
     }
@@ -113,20 +113,20 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
     func enableButtons() {
         googleAuth.isUserInteractionEnabled = true
-        googleAuth.alpha = Constants.magicNumbers.fullAlpha
+        googleAuth.alpha = Constants.alpha.fullAlpha
         emailAuth.isUserInteractionEnabled = true
-        emailAuth.alpha = Constants.magicNumbers.fullAlpha
+        emailAuth.alpha = Constants.alpha.fullAlpha
     }
     
     func disableButtons() {
         googleAuth.isUserInteractionEnabled = false
-        googleAuth.alpha = Constants.magicNumbers.halfAlpha
+        googleAuth.alpha = Constants.alpha.disabledAlpha
         emailAuth.isUserInteractionEnabled = false
-        emailAuth.alpha = Constants.magicNumbers.halfAlpha
+        emailAuth.alpha = Constants.alpha.disabledAlpha
     }
     
     func userDidSignIn() {
-        let storyboard = UIStoryboard(name: "Workspace", bundle: nil)
+        let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "workspace"  ) as! WorkspaceViewController
         disableNotifications()
         self.present(vc, animated: true, completion: nil)
