@@ -22,7 +22,7 @@ class SplashScreenViewController: UIViewController {
     @objc
     private func googleUserDidSignIn(_ notification:Notification) {
         let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "workspace"  ) as? WorkspaceViewController else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "WorkspaceViewController"  ) as? WorkspaceViewController else {
             return
         }
         disableNotifications()
@@ -32,7 +32,7 @@ class SplashScreenViewController: UIViewController {
     @objc
     private func googleErrorAuth(_ notification:Notification) {
         let storyboard = UIStoryboard(name: "AuthViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "auth"  ) as? AuthViewController else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "AuthViewController"  ) as? AuthViewController else {
             return
         }
         disableNotifications()

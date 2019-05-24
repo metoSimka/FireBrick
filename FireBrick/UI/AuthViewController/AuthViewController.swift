@@ -39,7 +39,7 @@ class AuthViewController: UIViewController {
     
     @IBAction func emailTap(_ sender: UIView) {
         let storyboard = UIStoryboard(name: "EmailAuthViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "e-mail auth"  ) as? EmailAuthViewController else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "EmailAuthViewController"  ) as? EmailAuthViewController else {
             return
         }
         disableNotifications()
@@ -128,7 +128,7 @@ class AuthViewController: UIViewController {
     
     private func userDidSignIn() {
         let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "workspace"  ) as? WorkspaceViewController else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "WorkspaceViewController"  ) as? WorkspaceViewController else {
             return
         }
         disableNotifications()

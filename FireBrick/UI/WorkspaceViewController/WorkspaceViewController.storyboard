@@ -13,7 +13,7 @@
         <!--Workspace View Controller-->
         <scene sceneID="hND-g4-e4D">
             <objects>
-                <viewController storyboardIdentifier="workspace" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sP1-qw-vvz" customClass="WorkspaceViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WorkspaceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sP1-qw-vvz" customClass="WorkspaceViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aY0-ui-o6i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

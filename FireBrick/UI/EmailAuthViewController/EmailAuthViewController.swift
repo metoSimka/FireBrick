@@ -188,7 +188,7 @@ class EmailAuthViewController: UIViewController {
     
     private func showErrorWithMessage() {
         let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as? SimpleAlertViewController else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SimpleAlertViewController") as? SimpleAlertViewController else {
             return
         }
         vc.headerLabel.text = "Error"
@@ -198,7 +198,7 @@ class EmailAuthViewController: UIViewController {
     
     private  func userDidSignIn() {
         let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "workspace") as? WorkspaceViewController else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "WorkspaceViewController") as? WorkspaceViewController else {
             return
         }
         self.present(vc, animated: true, completion: nil)
@@ -209,7 +209,7 @@ class EmailAuthViewController: UIViewController {
             return
         }
         let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as? SimpleAlertViewController else {
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SimpleAlertViewController") as? SimpleAlertViewController else {
             return
         }
         vc.messageTitle = error.localizedDescription

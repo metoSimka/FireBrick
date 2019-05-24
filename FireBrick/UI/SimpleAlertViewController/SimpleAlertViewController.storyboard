@@ -21,16 +21,16 @@
         <!--Simple Alert View Controller-->
         <scene sceneID="0pz-EX-FkZ">
             <objects>
-                <viewController storyboardIdentifier="singleButtonAlert" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Iu-ZV-642" customClass="SimpleAlertViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SimpleAlertViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Iu-ZV-642" customClass="SimpleAlertViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kkU-dV-0ch">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcg-Vj-Rf7">
-                                <rect key="frame" x="0.0" y="186.5" width="375" height="294.5"/>
+                                <rect key="frame" x="0.0" y="184.5" width="375" height="298.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqb-W8-pfS">
-                                        <rect key="frame" x="130.5" y="234.5" width="114" height="44"/>
+                                        <rect key="frame" x="130.5" y="238.5" width="114" height="44"/>
                                         <color key="backgroundColor" red="1" green="0.35686274509803922" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="L0a-Du-Les"/>
@@ -50,13 +50,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgb-dX-PXy">
-                                        <rect key="frame" x="169" y="18" width="37" height="21"/>
+                                        <rect key="frame" x="165" y="18" width="45" height="21"/>
                                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wu-WH-joi">
-                                        <rect key="frame" x="30" y="55" width="315" height="163.5"/>
+                                        <rect key="frame" x="30" y="55" width="315" height="167.5"/>
                                         <string key="text">Here is a message where we can put
 absolutely anything we want.Here is a message where we can put
 absolutely anything we want.Here is a message where we can put
