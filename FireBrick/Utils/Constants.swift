@@ -22,12 +22,6 @@ struct Constants {
         static let eMailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     }
     
-    enum alpha {
-        static let disabledAlpha: CGFloat = 0.5
-        static let fullAlpha: CGFloat = 1
-        static let zeroAlpha: CGFloat = 0
-    }
-    
     enum errorCodes {
         static let googleUserCancel = -5
     }

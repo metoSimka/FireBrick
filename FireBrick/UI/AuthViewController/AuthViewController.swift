@@ -92,14 +92,14 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
     func startGoogleLoader() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
-            self.spinnerView.alpha = Constants.alpha.fullAlpha
+            self.spinnerView.alpha = 1
             self.disableButtons()
         }
     }
     
     func stopGoogleLoader() {
         UIView.animate(withDuration: Constants.forAnimation.fast) {
-            self.spinnerView.alpha = Constants.alpha.zeroAlpha
+            self.spinnerView.alpha = 0
             self.enableButtons()
         }
     }
@@ -113,16 +113,16 @@ class AuthViewController: UIViewController, GIDSignInUIDelegate {
     
     func enableButtons() {
         googleAuth.isUserInteractionEnabled = true
-        googleAuth.alpha = Constants.alpha.fullAlpha
+        googleAuth.alpha = 1
         emailAuth.isUserInteractionEnabled = true
-        emailAuth.alpha = Constants.alpha.fullAlpha
+        emailAuth.alpha = 1
     }
     
     func disableButtons() {
         googleAuth.isUserInteractionEnabled = false
-        googleAuth.alpha = Constants.alpha.disabledAlpha
+        googleAuth.alpha = 0.5
         emailAuth.isUserInteractionEnabled = false
-        emailAuth.alpha = Constants.alpha.disabledAlpha
+        emailAuth.alpha = 0.5
     }
     
     func userDidSignIn() {
