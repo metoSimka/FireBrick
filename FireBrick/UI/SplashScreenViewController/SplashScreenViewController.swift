@@ -19,7 +19,8 @@ class SplashScreenViewController: UIViewController {
         GIDSignIn.sharedInstance()?.signInSilently()
     }
     
-    @objc func googleUserDidSignIn(_ notification:Notification) {
+    @objc
+    private func googleUserDidSignIn(_ notification:Notification) {
         let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "workspace"  ) as? WorkspaceViewController else {
             return
@@ -28,7 +29,8 @@ class SplashScreenViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    @objc func googleErrorAuth(_ notification:Notification) {
+    @objc
+    private func googleErrorAuth(_ notification:Notification) {
         let storyboard = UIStoryboard(name: "AuthViewController", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "auth"  ) as? AuthViewController else {
             return
@@ -37,12 +39,12 @@ class SplashScreenViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    private  func enableNotifications() {
+    private func enableNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(googleErrorAuth(_:)), name: .googleError, object: nil)
     }
     
-    private  func disableNotifications() {
+    private func disableNotifications() {
         NotificationCenter.default.removeObserver(self, name: .googleSignedIn, object: nil)
         NotificationCenter.default.removeObserver(self, name: .googleError, object: nil)
     }

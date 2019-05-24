@@ -34,7 +34,7 @@ class SimpleAlertViewController: UIViewController {
         SwiftEntryKit.dismiss()
     }
     
-    func setAlertView(title: String?, message: String?, buttonTitle: String?) {
+   private func setAlertView(title: String?, message: String?, buttonTitle: String?) {
         if title != nil {
             headerLabel.text = title
         }
