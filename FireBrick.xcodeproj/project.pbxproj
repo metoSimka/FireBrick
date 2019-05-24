@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		89FB8BB717B9474AB1524010 /* Pods_FireBrick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344648746F1FEB9158D6CAD2 /* Pods_FireBrick.framework */; };
-		A50718012296A11400BC7FF1 /* SingleButtonAlertMessageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A50718002296A11400BC7FF1 /* SingleButtonAlertMessageViewController.storyboard */; };
-		A50718032296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50718022296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift */; };
+		A50718012296A11400BC7FF1 /* SimpleAlertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A50718002296A11400BC7FF1 /* SimpleAlertViewController.storyboard */; };
+		A50718032296A12000BC7FF1 /* SimpleAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50718022296A12000BC7FF1 /* SimpleAlertViewController.swift */; };
 		A50718062296BD4E00BC7FF1 /* SplashScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A50718052296BD4E00BC7FF1 /* SplashScreenViewController.storyboard */; };
 		A50718082296BD7000BC7FF1 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50718072296BD7000BC7FF1 /* SplashScreenViewController.swift */; };
 		A5136493228E648A0053DE00 /* EmailAuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5136492228E648A0053DE00 /* EmailAuthViewController.storyboard */; };
@@ -60,8 +60,8 @@
 
 /* Begin PBXFileReference section */
 		344648746F1FEB9158D6CAD2 /* Pods_FireBrick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireBrick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A50718002296A11400BC7FF1 /* SingleButtonAlertMessageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingleButtonAlertMessageViewController.storyboard; sourceTree = "<group>"; };
-		A50718022296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleButtonAlertMessageViewController.swift; sourceTree = "<group>"; };
+		A50718002296A11400BC7FF1 /* SimpleAlertViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleAlertViewController.storyboard; sourceTree = "<group>"; };
+		A50718022296A12000BC7FF1 /* SimpleAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertViewController.swift; sourceTree = "<group>"; };
 		A50718052296BD4E00BC7FF1 /* SplashScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreenViewController.storyboard; sourceTree = "<group>"; };
 		A50718072296BD7000BC7FF1 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		A5136492228E648A0053DE00 /* EmailAuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailAuthViewController.storyboard; sourceTree = "<group>"; };
@@ -146,8 +146,8 @@
 		A50717FF2296A0FD00BC7FF1 /* AlertMessageViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A50718002296A11400BC7FF1 /* SingleButtonAlertMessageViewController.storyboard */,
-				A50718022296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift */,
+				A50718002296A11400BC7FF1 /* SimpleAlertViewController.storyboard */,
+				A50718022296A12000BC7FF1 /* SimpleAlertViewController.swift */,
 			);
 			path = AlertMessageViewController;
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 				A5FEEC542293AEC400EB09BC /* SF-Pro-Text-Regular.otf in Resources */,
 				A5FEEC4F2293AEC400EB09BC /* SF-Pro-Display-Bold.otf in Resources */,
 				A5FEEC5B2293AEC400EB09BC /* SF-Pro-Display-BlackItalic.otf in Resources */,
-				A50718012296A11400BC7FF1 /* SingleButtonAlertMessageViewController.storyboard in Resources */,
+				A50718012296A11400BC7FF1 /* SimpleAlertViewController.storyboard in Resources */,
 				A5136493228E648A0053DE00 /* EmailAuthViewController.storyboard in Resources */,
 				A5FEEC4A2293AEC400EB09BC /* SF-Pro-Text-Heavy.otf in Resources */,
 				A5FEEC632293AEC400EB09BC /* SF-Pro-Text-Medium.otf in Resources */,
@@ -528,7 +528,7 @@
 				A5F7C4F0228D715400B35C6C /* AuthViewController.swift in Sources */,
 				A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */,
 				A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */,
-				A50718032296A12000BC7FF1 /* SingleButtonAlertMessageViewController.swift in Sources */,
+				A50718032296A12000BC7FF1 /* SimpleAlertViewController.swift in Sources */,
 				A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

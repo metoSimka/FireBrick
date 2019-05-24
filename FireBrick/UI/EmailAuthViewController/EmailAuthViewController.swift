@@ -177,8 +177,8 @@ class EmailAuthViewController: UIViewController {
     }
     
     func showErrorWithMessage() {
-        let storyboard = UIStoryboard(name: "SingleButtonAlertMessageViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as? SingleButtonAlertMessageViewController else {
+        let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as? SimpleAlertViewController else {
             return
         }
         vc.headerLabel.text = "Error"
@@ -215,8 +215,8 @@ class EmailAuthViewController: UIViewController {
         guard let error = error else {
             return
         }
-        let storyboard = UIStoryboard(name: "SingleButtonAlertMessageViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as? SingleButtonAlertMessageViewController else {
+        let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "singleButtonAlert") as? SimpleAlertViewController else {
             return
         }
         vc.messageTitle = error.localizedDescription

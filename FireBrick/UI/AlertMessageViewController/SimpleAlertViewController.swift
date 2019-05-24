@@ -13,7 +13,7 @@ protocol SingleButtonAlertMessageViewDelegate {
     func didTapButton(button: UIButton)
 }
 
-class SingleButtonAlertMessageViewController: UIViewController {
+class SimpleAlertViewController: UIViewController {
 
     var delegate: SingleButtonAlertMessageViewDelegate?
     var headTitle: String?
