@@ -13,6 +13,7 @@ import GoogleSignIn
 
 class AuthViewController: UIViewController {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var googleSignInView: GIDSignInButton!
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var emailAuth: UIView!
@@ -100,14 +101,14 @@ class AuthViewController: UIViewController {
     
     private func startGoogleLoader() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
-            self.spinnerView.alpha = 1
+            self.spinner.startAnimating()
             self.disableButtons()
         }
     }
     
     private func stopGoogleLoader() {
         UIView.animate(withDuration: Constants.forAnimation.fast) {
-            self.spinnerView.alpha = 0
+            self.spinner.stopAnimating()
             self.enableButtons()
         }
     }
@@ -128,7 +129,7 @@ class AuthViewController: UIViewController {
     
     private func disableButtons() {
         googleAuth.isUserInteractionEnabled = false
-        googleAuth.alpha = 0.5
+        googleAuth.alpha = 0
         emailAuth.isUserInteractionEnabled = false
         emailAuth.alpha = 0.5
     }

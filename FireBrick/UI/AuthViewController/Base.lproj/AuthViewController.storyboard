@@ -50,33 +50,37 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5He-pS-sVU">
                                 <rect key="frame" x="24" y="497.66666666666674" width="366" height="104"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oi-Bu-iKH">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Grf-tW-8vY">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_readable_icon_Google_Icon_2" translatesAutoresizingMaskIntoConstraints="NO" id="Mwb-RS-oq8">
-                                                <rect key="frame" x="16" y="13" width="18" height="18"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Mwb-RS-oq8" secondAttribute="height" multiplier="1:1" id="3pW-Bp-PJw"/>
-                                                    <constraint firstAttribute="height" constant="18" id="gz2-Pn-2PK"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in with Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHQ-Zx-K61">
-                                                <rect key="frame" x="44" y="13.333333333333314" width="322" height="17"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bI-WL-3dO">
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KAR-XU-UjN">
+                                                <rect key="frame" x="173" y="12" width="20" height="20"/>
+                                            </activityIndicatorView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4oi-Bu-iKH">
                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
                                                 <subviews>
-                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KAR-XU-UjN">
-                                                        <rect key="frame" x="173" y="12" width="20" height="20"/>
-                                                    </activityIndicatorView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_readable_icon_Google_Icon_2" translatesAutoresizingMaskIntoConstraints="NO" id="Mwb-RS-oq8">
+                                                        <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Mwb-RS-oq8" secondAttribute="height" multiplier="1:1" id="3pW-Bp-PJw"/>
+                                                            <constraint firstAttribute="height" constant="18" id="gz2-Pn-2PK"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in with Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHQ-Zx-K61">
+                                                        <rect key="frame" x="44" y="13.333333333333314" width="322" height="17"/>
+                                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="KAR-XU-UjN" firstAttribute="centerY" secondItem="5bI-WL-3dO" secondAttribute="centerY" id="cRy-wl-wJ6"/>
-                                                    <constraint firstItem="KAR-XU-UjN" firstAttribute="centerX" secondItem="5bI-WL-3dO" secondAttribute="centerX" id="lZU-JX-mZO"/>
+                                                    <constraint firstItem="Mwb-RS-oq8" firstAttribute="centerY" secondItem="4oi-Bu-iKH" secondAttribute="centerY" id="87Z-yx-tnw"/>
+                                                    <constraint firstItem="GHQ-Zx-K61" firstAttribute="centerY" secondItem="4oi-Bu-iKH" secondAttribute="centerY" id="Sd8-gJ-5sX"/>
+                                                    <constraint firstItem="GHQ-Zx-K61" firstAttribute="leading" secondItem="Mwb-RS-oq8" secondAttribute="trailing" constant="10" id="UsN-WN-xw6"/>
+                                                    <constraint firstItem="Mwb-RS-oq8" firstAttribute="leading" secondItem="4oi-Bu-iKH" secondAttribute="leading" constant="16" id="ZhY-dE-Vrb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GHQ-Zx-K61" secondAttribute="trailing" id="khC-Tt-3zD"/>
+                                                    <constraint firstAttribute="height" constant="44" id="r7J-wQ-WOd"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -87,16 +91,13 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="5bI-WL-3dO" firstAttribute="leading" secondItem="4oi-Bu-iKH" secondAttribute="leading" id="78i-NY-IJY"/>
-                                            <constraint firstItem="Mwb-RS-oq8" firstAttribute="centerY" secondItem="4oi-Bu-iKH" secondAttribute="centerY" id="87Z-yx-tnw"/>
-                                            <constraint firstAttribute="bottom" secondItem="5bI-WL-3dO" secondAttribute="bottom" id="DEr-wr-Ubv"/>
-                                            <constraint firstAttribute="trailing" secondItem="5bI-WL-3dO" secondAttribute="trailing" id="JEN-hW-9W7"/>
-                                            <constraint firstItem="GHQ-Zx-K61" firstAttribute="centerY" secondItem="4oi-Bu-iKH" secondAttribute="centerY" id="Sd8-gJ-5sX"/>
-                                            <constraint firstItem="GHQ-Zx-K61" firstAttribute="leading" secondItem="Mwb-RS-oq8" secondAttribute="trailing" constant="10" id="UsN-WN-xw6"/>
-                                            <constraint firstItem="Mwb-RS-oq8" firstAttribute="leading" secondItem="4oi-Bu-iKH" secondAttribute="leading" constant="16" id="ZhY-dE-Vrb"/>
-                                            <constraint firstItem="5bI-WL-3dO" firstAttribute="top" secondItem="4oi-Bu-iKH" secondAttribute="top" id="key-Mi-DnO"/>
-                                            <constraint firstAttribute="trailing" secondItem="GHQ-Zx-K61" secondAttribute="trailing" id="khC-Tt-3zD"/>
-                                            <constraint firstAttribute="height" constant="44" id="r7J-wQ-WOd"/>
+                                            <constraint firstItem="KAR-XU-UjN" firstAttribute="centerY" secondItem="Grf-tW-8vY" secondAttribute="centerY" id="1x2-MD-XNX"/>
+                                            <constraint firstItem="KAR-XU-UjN" firstAttribute="centerX" secondItem="Grf-tW-8vY" secondAttribute="centerX" id="C8c-RR-Cdy"/>
+                                            <constraint firstAttribute="bottom" secondItem="4oi-Bu-iKH" secondAttribute="bottom" id="ayu-RX-E3f"/>
+                                            <constraint firstItem="4oi-Bu-iKH" firstAttribute="top" secondItem="Grf-tW-8vY" secondAttribute="top" id="cGc-VQ-wmM"/>
+                                            <constraint firstAttribute="height" constant="44" id="kly-rL-udQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="4oi-Bu-iKH" secondAttribute="trailing" id="pxH-c7-seq"/>
+                                            <constraint firstItem="4oi-Bu-iKH" firstAttribute="leading" secondItem="Grf-tW-8vY" secondAttribute="leading" id="skf-7v-7gp"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -175,7 +176,7 @@
                         <outlet property="googleAuth" destination="4oi-Bu-iKH" id="YFm-9u-QKn"/>
                         <outlet property="googleHiddenButton" destination="uXi-wq-ZFJ" id="GYN-j3-kQb"/>
                         <outlet property="googleSignInView" destination="jKu-kf-aVw" id="jK4-G7-yNC"/>
-                        <outlet property="spinnerView" destination="5bI-WL-3dO" id="4b5-S4-RSM"/>
+                        <outlet property="spinner" destination="KAR-XU-UjN" id="hUj-Sr-7iz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQf-ca-0U6" userLabel="First Responder" sceneMemberID="firstResponder"/>
