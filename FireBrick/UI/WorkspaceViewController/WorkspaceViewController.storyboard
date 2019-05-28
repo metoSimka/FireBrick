@@ -95,15 +95,38 @@
                                     <action selector="researchTechnology:" destination="sP1-qw-vvz" eventType="touchUpInside" id="lsc-V9-H2n"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wg-Yg-Et1">
+                                <rect key="frame" x="25" y="164" width="325" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="mTt-dd-3YA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="17"/>
+                                <state key="normal" title="Team">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addNewEmployee:" destination="sP1-qw-vvz" eventType="touchUpInside" id="Tfg-Fr-JPc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="06a-IB-osi" firstAttribute="top" secondItem="5B8-p4-r0E" secondAttribute="top" id="0cr-aR-1g5"/>
+                            <constraint firstItem="Onw-Dm-wP1" firstAttribute="leading" secondItem="5B8-p4-r0E" secondAttribute="leading" constant="25" id="2fb-r8-4S8"/>
+                            <constraint firstItem="2wg-Yg-Et1" firstAttribute="top" secondItem="Onw-Dm-wP1" secondAttribute="bottom" constant="25" id="4cS-FI-Gqp"/>
+                            <constraint firstItem="5B8-p4-r0E" firstAttribute="trailing" secondItem="2wg-Yg-Et1" secondAttribute="trailing" constant="25" id="8t8-T3-Xcl"/>
                             <constraint firstItem="5B8-p4-r0E" firstAttribute="trailing" secondItem="DXi-KI-fIh" secondAttribute="trailing" constant="99" id="94n-77-iSO"/>
                             <constraint firstItem="G6V-aD-q87" firstAttribute="centerX" secondItem="aY0-ui-o6i" secondAttribute="centerX" id="AAK-9f-SNR"/>
                             <constraint firstItem="Onw-Dm-wP1" firstAttribute="top" secondItem="06a-IB-osi" secondAttribute="bottom" constant="50" id="BDd-Tb-tMr"/>
                             <constraint firstItem="xJm-DV-ZHQ" firstAttribute="top" secondItem="aY0-ui-o6i" secondAttribute="top" id="Dx5-Xu-TJC"/>
                             <constraint firstItem="06a-IB-osi" firstAttribute="centerX" secondItem="aY0-ui-o6i" secondAttribute="centerX" id="FfT-Xs-TiA"/>
+                            <constraint firstItem="2wg-Yg-Et1" firstAttribute="leading" secondItem="5B8-p4-r0E" secondAttribute="leading" constant="25" id="Tsz-4j-iRU"/>
                             <constraint firstItem="xJm-DV-ZHQ" firstAttribute="trailing" secondItem="5B8-p4-r0E" secondAttribute="trailing" id="fvr-eg-GNI"/>
                             <constraint firstItem="xJm-DV-ZHQ" firstAttribute="leading" secondItem="5B8-p4-r0E" secondAttribute="leading" id="hoA-Ql-b3S"/>
                             <constraint firstItem="xJm-DV-ZHQ" firstAttribute="bottom" secondItem="5B8-p4-r0E" secondAttribute="bottom" id="ket-J5-dsp"/>

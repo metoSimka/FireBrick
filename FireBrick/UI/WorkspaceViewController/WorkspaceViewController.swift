@@ -24,7 +24,7 @@ class WorkspaceViewController: UIViewController {
         super.viewDidLoad()
         docRef = Firestore.firestore().document("Technology/Name")
         db = Firestore.firestore()
-        getDocumentBy(collectionName: "Technology", fieldName: "Name", value: "iOS" as AnyObject)
+//        getDocumentBy(collectionName: "Technology", fieldName: "Name", value: "iOS" as AnyObject)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +37,8 @@ class WorkspaceViewController: UIViewController {
         listener?.remove()
     }
 
+    @IBAction func addNewEmployee(_ sender: UIButton) {
+    }
     func getDocumentBy(collectionName: String, fieldName: String, value: AnyObject) {
         db?.collection(collectionName).whereField(fieldName, isEqualTo: value).getDocuments(completion: { (snapShot, error) in
             guard let QsnapShot = self.getterQueryData(snapShot: snapShot, error: error) else {
