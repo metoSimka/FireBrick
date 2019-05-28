@@ -75,13 +75,18 @@
                                 <rect key="frame" x="16" y="129" width="343" height="522"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lYb-aY-ori">
+                                <rect key="frame" x="177.5" y="380" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Sij-cd-33c" firstAttribute="leading" secondItem="kMp-P6-4Kb" secondAttribute="leading" id="3kg-2x-J08"/>
+                            <constraint firstItem="lYb-aY-ori" firstAttribute="centerY" secondItem="xgK-gz-EZX" secondAttribute="centerY" id="AWu-TX-tgr"/>
                             <constraint firstItem="kMp-P6-4Kb" firstAttribute="trailing" secondItem="mBE-2d-NcQ" secondAttribute="trailing" constant="16" id="CMW-9q-lfl"/>
                             <constraint firstItem="hLp-WD-HSE" firstAttribute="leading" secondItem="kMp-P6-4Kb" secondAttribute="leading" constant="16" id="Chv-k8-4z3"/>
                             <constraint firstItem="mBE-2d-NcQ" firstAttribute="top" secondItem="kMp-P6-4Kb" secondAttribute="top" id="KTQ-iK-QbP"/>
+                            <constraint firstItem="lYb-aY-ori" firstAttribute="centerX" secondItem="xgK-gz-EZX" secondAttribute="centerX" id="Wvh-Yr-NT9"/>
                             <constraint firstItem="kMp-P6-4Kb" firstAttribute="bottom" secondItem="xgK-gz-EZX" secondAttribute="bottom" constant="16" id="XQW-Y1-nuj"/>
                             <constraint firstItem="kMp-P6-4Kb" firstAttribute="trailing" secondItem="xgK-gz-EZX" secondAttribute="trailing" constant="16" id="gJb-9g-eFW"/>
                             <constraint firstItem="hLp-WD-HSE" firstAttribute="top" secondItem="db7-Sh-Xx1" secondAttribute="bottom" constant="30" id="gdR-wD-Foe"/>
@@ -97,6 +102,7 @@
                         <viewLayoutGuide key="safeArea" id="kMp-P6-4Kb"/>
                     </view>
                     <connections>
+                        <outlet property="spinner" destination="lYb-aY-ori" id="mF0-rj-dhr"/>
                         <outlet property="tableView" destination="xgK-gz-EZX" id="BBh-wf-Q8D"/>
                     </connections>
                 </viewController>

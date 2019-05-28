@@ -16,6 +16,7 @@ class TechnologyViewController: UIViewController {
     var docRef: DocumentReference!
     var db: Firestore?
     var availableTechnoloies: [Technology] = []
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,11 +26,32 @@ class TechnologyViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         db = Firestore.firestore()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchTechnologies()
+        addListeners()
+    }
+    
+    private func addListeners() {
+        db?.collection("Technology").addSnapshotListener({ (snapShot, error) in
+            guard let _ = self.getterQueryData(snapShot: snapShot, error: error) else {
+                return
+            }
+            self.fetchTechnologies()
+        })
+    }
+    
+    func getterQueryData(snapShot: QuerySnapshot? , error: Error? ) -> QuerySnapshot? {
+        guard error == nil else {
+            print("error Here", error ?? "Unkown error")
+            return nil
+        }
+        guard let snapShot = snapShot else {
+            return nil
+        }
+        return snapShot
     }
     
     // MARK: IBAction
@@ -56,29 +78,19 @@ class TechnologyViewController: UIViewController {
             }
             var techs:[Technology] = []
             for data in snapShot.documents {
-                   if  let name = data["Name"] as? String,
+                if  let name = data["Name"] as? String,
                     let doc = data["Documentation"] as? String {
                     let tech = Technology(name: name, documentation: doc)
                     techs.append(tech)
-                   } else {
-                        let tech = Technology(name: "error", documentation: "error")
-                        techs.append(tech)
+                } else {
+                    let tech = Technology(name: "error", documentation: "error")
+                    techs.append(tech)
                 }
             }
             self.availableTechnoloies = techs
             self.tableView.reloadData()
+            self.spinner.stopAnimating()
         })
-    }
-
-    private func getterQueryData(snapShot: QuerySnapshot? , error: Error? ) -> QuerySnapshot? {
-        guard error == nil else {
-            print("error Here", error ?? "Unkown error")
-            return nil
-        }
-        guard let snapShot = snapShot else {
-            return nil
-        }
-        return snapShot
     }
     
     private func showErrorAlert(error: Error?) {
@@ -95,20 +107,20 @@ class TechnologyViewController: UIViewController {
     
     //It may use in feature.
     
-//    private func showAlertIfNeeded(array idFailedDocs: [String]) {
-//        if idFailedDocs.count > 0 {
-//            self.showFormattAlert(ids: idFailedDocs)
-//        }
-//    }
-//
-//    private func showFormattAlert(ids: [String]) {
-//        let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
-//        guard let vc = storyboard.instantiateViewController(withIdentifier: "SimpleAlertViewController") as? SimpleAlertViewController else {
-//            return
-//        }
-//        vc.messageTitle = "One or more technologies came in the wrong format and will not be displayed. \nID-list failed documents: \(ids.map { "\($0)" }.joined(separator:"\n"))"
-//        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
-//    }
+    //    private func showAlertIfNeeded(array idFailedDocs: [String]) {
+    //        if idFailedDocs.count > 0 {
+    //            self.showFormattAlert(ids: idFailedDocs)
+    //        }
+    //    }
+    //
+    //    private func showFormattAlert(ids: [String]) {
+    //        let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
+    //        guard let vc = storyboard.instantiateViewController(withIdentifier: "SimpleAlertViewController") as? SimpleAlertViewController else {
+    //            return
+    //        }
+    //        vc.messageTitle = "One or more technologies came in the wrong format and will not be displayed. \nID-list failed documents: \(ids.map { "\($0)" }.joined(separator:"\n"))"
+    //        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
+    //    }
     
     private func setupTableView() {
         tableView.register(UINib(nibName: "TechnologyTableViewCell", bundle: nil), forCellReuseIdentifier: "TechnologyCell")
