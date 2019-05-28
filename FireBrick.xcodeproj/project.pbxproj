@@ -16,6 +16,12 @@
 		A513649B228E745C0053DE00 /* ExtensionDesignableUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513649A228E745C0053DE00 /* ExtensionDesignableUIView.swift */; };
 		A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E490F2292907F006687A3 /* WorkspaceViewController.swift */; };
 		A51E4912229291E3006687A3 /* WorkspaceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51E4911229291E3006687A3 /* WorkspaceViewController.storyboard */; };
+		A52D5D3B229BF08400E6C4D5 /* TechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */; };
+		A52D5D3D229BF08F00E6C4D5 /* TechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52D5D3C229BF08F00E6C4D5 /* TechnologyViewController.swift */; };
+		A52D5D4D229BF74300E6C4D5 /* AddTechnologyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52D5D4B229BF74300E6C4D5 /* AddTechnologyTableViewCell.xib */; };
+		A52D5D4E229BF74300E6C4D5 /* AddTechnologyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52D5D4C229BF74300E6C4D5 /* AddTechnologyTableViewCell.swift */; };
+		A52D5D50229BF77400E6C4D5 /* AddTechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52D5D4F229BF77400E6C4D5 /* AddTechnologyViewController.swift */; };
+		A52D5D52229BF77C00E6C4D5 /* AddTechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52D5D51229BF77C00E6C4D5 /* AddTechnologyViewController.storyboard */; };
 		A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6791B228D3F74003DB84E /* AppDelegate.swift */; };
 		A5B67921228D3F74003DB84E /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6791F228D3F74003DB84E /* AuthViewController.storyboard */; };
 		A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B67922228D3F75003DB84E /* Assets.xcassets */; };
@@ -68,6 +74,12 @@
 		A513649A228E745C0053DE00 /* ExtensionDesignableUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDesignableUIView.swift; sourceTree = "<group>"; };
 		A51E490F2292907F006687A3 /* WorkspaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewController.swift; sourceTree = "<group>"; };
 		A51E4911229291E3006687A3 /* WorkspaceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkspaceViewController.storyboard; sourceTree = "<group>"; };
+		A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TechnologyViewController.storyboard; sourceTree = "<group>"; };
+		A52D5D3C229BF08F00E6C4D5 /* TechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyViewController.swift; sourceTree = "<group>"; };
+		A52D5D4B229BF74300E6C4D5 /* AddTechnologyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddTechnologyTableViewCell.xib; path = FireBrick/UI/AddTechnologyViewController/AddTechnologyViewController/AddTechnologyTableViewCell/AddTechnologyTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		A52D5D4C229BF74300E6C4D5 /* AddTechnologyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTechnologyTableViewCell.swift; path = FireBrick/UI/AddTechnologyViewController/AddTechnologyViewController/AddTechnologyTableViewCell/AddTechnologyTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		A52D5D4F229BF77400E6C4D5 /* AddTechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTechnologyViewController.swift; path = FireBrick/UI/AddTechnologyViewController/AddTechnologyViewController.swift; sourceTree = SOURCE_ROOT; };
+		A52D5D51229BF77C00E6C4D5 /* AddTechnologyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = AddTechnologyViewController.storyboard; path = FireBrick/UI/AddTechnologyViewController/AddTechnologyViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		A5B67918228D3F74003DB84E /* FireBrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireBrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B6791B228D3F74003DB84E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B67920228D3F74003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AuthViewController.storyboard; sourceTree = "<group>"; };
@@ -196,6 +208,35 @@
 			path = WorkspaceViewController;
 			sourceTree = "<group>";
 		};
+		A52D5D39229BF06600E6C4D5 /* TechnologyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */,
+				A52D5D3C229BF08F00E6C4D5 /* TechnologyViewController.swift */,
+			);
+			path = TechnologyViewController;
+			sourceTree = "<group>";
+		};
+		A52D5D4A229BF64500E6C4D5 /* AddTechnologyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A52D5D53229BF78300E6C4D5 /* AddTechnologyTableViewCell */,
+				A52D5D4F229BF77400E6C4D5 /* AddTechnologyViewController.swift */,
+				A52D5D51229BF77C00E6C4D5 /* AddTechnologyViewController.storyboard */,
+			);
+			name = AddTechnologyViewController;
+			path = AddTechnologyViewController/AddTechnologyViewController;
+			sourceTree = "<group>";
+		};
+		A52D5D53229BF78300E6C4D5 /* AddTechnologyTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A52D5D4C229BF74300E6C4D5 /* AddTechnologyTableViewCell.swift */,
+				A52D5D4B229BF74300E6C4D5 /* AddTechnologyTableViewCell.xib */,
+			);
+			path = AddTechnologyTableViewCell;
+			sourceTree = "<group>";
+		};
 		A5B6790F228D3F74003DB84E = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +313,8 @@
 		A5B67932228D3FC4003DB84E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A52D5D39229BF06600E6C4D5 /* TechnologyViewController */,
+				A52D5D4A229BF64500E6C4D5 /* AddTechnologyViewController */,
 				A50717FF2296A0FD00BC7FF1 /* SimpleAlertViewController */,
 				A5136494228E64D90053DE00 /* AuthViewController */,
 				A5136495228E64F10053DE00 /* EmailAuthViewController */,
@@ -400,6 +443,7 @@
 				A5FEEC612293AEC400EB09BC /* SF-Pro-Display-ThinItalic.otf in Resources */,
 				A5FEEC602293AEC400EB09BC /* SF-Pro-Text-HeavyItalic.otf in Resources */,
 				A5FEEC522293AEC400EB09BC /* SF-Pro-Text-Light.otf in Resources */,
+				A52D5D3B229BF08400E6C4D5 /* TechnologyViewController.storyboard in Resources */,
 				A5FEEC4E2293AEC400EB09BC /* SF-Pro-Text-MediumItalic.otf in Resources */,
 				A5B67926228D3F75003DB84E /* LaunchScreen.storyboard in Resources */,
 				A5FEEC562293AEC400EB09BC /* SF-Pro-Display-MediumItalic.otf in Resources */,
@@ -409,6 +453,7 @@
 				A5FEEC552293AEC400EB09BC /* SF-Pro-Text-Bold.otf in Resources */,
 				A5FEEC5F2293AEC400EB09BC /* SF-Pro-Text-Semibold.otf in Resources */,
 				A5FEEC532293AEC400EB09BC /* SF-Pro-Display-Semibold.otf in Resources */,
+				A52D5D4D229BF74300E6C4D5 /* AddTechnologyTableViewCell.xib in Resources */,
 				A5FEEC542293AEC400EB09BC /* SF-Pro-Text-Regular.otf in Resources */,
 				A5FEEC4F2293AEC400EB09BC /* SF-Pro-Display-Bold.otf in Resources */,
 				A5FEEC5B2293AEC400EB09BC /* SF-Pro-Display-BlackItalic.otf in Resources */,
@@ -424,6 +469,7 @@
 				A5FEEC652293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				A5FEEC5D2293AEC400EB09BC /* SF-Pro-Text-BoldItalic.otf in Resources */,
 				A5FEEC4C2293AEC400EB09BC /* SF-Pro-Display-Light.otf in Resources */,
+				A52D5D52229BF77C00E6C4D5 /* AddTechnologyViewController.storyboard in Resources */,
 				A5FEEC642293AEC400EB09BC /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				A51E4912229291E3006687A3 /* WorkspaceViewController.storyboard in Resources */,
 				A50718062296BD4E00BC7FF1 /* SplashScreenViewController.storyboard in Resources */,
@@ -489,24 +535,34 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FireBrick/Pods-FireBrick-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEntryKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,11 +578,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5FEEC712294149500EB09BC /* ForgotPasswordViewController.swift in Sources */,
+				A52D5D4E229BF74300E6C4D5 /* AddTechnologyTableViewCell.swift in Sources */,
 				A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */,
 				A50718082296BD7000BC7FF1 /* SplashScreenViewController.swift in Sources */,
 				A513649B228E745C0053DE00 /* ExtensionDesignableUIView.swift in Sources */,
+				A52D5D3D229BF08F00E6C4D5 /* TechnologyViewController.swift in Sources */,
 				A5F7C4F0228D715400B35C6C /* AuthViewController.swift in Sources */,
 				A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */,
+				A52D5D50229BF77400E6C4D5 /* AddTechnologyViewController.swift in Sources */,
 				A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */,
 				A50718032296A12000BC7FF1 /* SimpleAlertViewController.swift in Sources */,
 				A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */,
