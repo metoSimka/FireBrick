@@ -8,17 +8,38 @@
 
 import UIKit
 
-class EmployeeTableViewCell: UITableViewCell {
+protocol EmployeeTableViewCellDelegate {
+    func didTapOptionButton()
+    func didTapOnUser()
+}
 
+class EmployeeTableViewCell: UITableViewCell {
+    
+    var delegate: EmployeeTableViewCellDelegate?
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageIcon: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
+    @IBAction func openOptions(_ sender: UIButton) {
+        self.delegate?.didTapOptionButton()
+    }
+    
+    func addGestureForLabel() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        imageIcon.addGestureRecognizer(tap)
+    }
+    
+    @objc
+    func handleTap(_ sender: UITapGestureRecognizer) {
+        self.delegate?.didTapOnUser()
+    }
 }

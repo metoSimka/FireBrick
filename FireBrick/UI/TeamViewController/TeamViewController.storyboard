@@ -18,7 +18,7 @@
         <!--Team View Controller-->
         <scene sceneID="p8D-8e-0L1">
             <objects>
-                <viewController id="5t1-dV-PNH" customClass="TeamViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TeamViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5t1-dV-PNH" customClass="TeamViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rxI-Bv-WWK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
