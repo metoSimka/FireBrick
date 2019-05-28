@@ -8,5 +8,6 @@ target 'FireBrick' do
   pod 'IQKeyboardManager', '6.2.1'
   pod 'SwiftEntryKit', '0.8.9'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
 end
