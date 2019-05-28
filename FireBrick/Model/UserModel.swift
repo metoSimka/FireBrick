@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct User {
+    var name: String?
+    var hoursInWeek: Int?
+    var skills: [String: Int]?
+    var isShouldBeHidden = false
+    
+}

@@ -9,5 +9,5 @@
 import Foundation
 
 struct Team {
-    
+    var name: String?
 }
