@@ -8,16 +8,20 @@
 
 import UIKit
 import SwiftEntryKit
+import Firebase
+import FirebaseFirestore
 
 class AddTechnologyViewController: UIViewController {
     
-
-
+    var docRef: DocumentReference!
+    var db: Firestore?
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var DocTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        db = Firestore.firestore()
         nameTextField.delegate = self
         DocTextField.delegate = self
     }
@@ -26,11 +30,27 @@ class AddTechnologyViewController: UIViewController {
         SwiftEntryKit.dismiss()
     }
     
-    
     @IBAction func add(_ sender: UIButton) {
-        
+        writeData()
     }
     
+    func writeData() {
+        guard let name = nameTextField.text else {
+            return
+        }
+        guard let doc = DocTextField.text else {
+            return
+        }
+        
+        let dataToSave: [String: Any] = ["Name": name, "Documentation": doc]
+        db!.collection("Technology").addDocument(data: dataToSave, completion: { (error) in
+            guard error == nil else {
+                print("there must be ALERT!")
+                return
+            }
+                SwiftEntryKit.dismiss()
+        })
+    }
 }
 
 extension AddTechnologyViewController: UITextFieldDelegate {

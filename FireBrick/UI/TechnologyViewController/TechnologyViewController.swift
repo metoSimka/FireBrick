@@ -64,7 +64,6 @@ class TechnologyViewController: UIViewController {
             }
             self.tableView.reloadData()
         })
-        
     }
     
     func getterQueryData(snapShot: QuerySnapshot? , error: Error? ) -> QuerySnapshot? {
@@ -78,7 +77,6 @@ class TechnologyViewController: UIViewController {
         return snapShot
     }
 }
-
 
 extension TechnologyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -64,80 +64,47 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new Technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXw-ek-uT5">
-                                        <rect key="frame" x="20" y="40" width="187" height="52"/>
+                                        <rect key="frame" x="20" y="40" width="187" height="56"/>
                                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NR4-a0-pef">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Documentation" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="40G-D9-WZW">
                                         <rect key="frame" x="20" y="173" width="303" height="44"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Documentation" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="40G-D9-WZW">
-                                                <rect key="frame" x="8" y="0.0" width="287" height="44"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.91351351349999999" green="0.91351351349999999" blue="0.91351351349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.89365547895431519" green="0.89433497190475464" blue="0.89376074075698853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="40G-D9-WZW" secondAttribute="bottom" id="6w0-Uy-a8r"/>
-                                            <constraint firstItem="40G-D9-WZW" firstAttribute="centerY" secondItem="NR4-a0-pef" secondAttribute="centerY" id="Bwj-hM-QIw"/>
-                                            <constraint firstAttribute="trailing" secondItem="40G-D9-WZW" secondAttribute="trailing" constant="8" id="DR6-GT-qog"/>
-                                            <constraint firstItem="40G-D9-WZW" firstAttribute="top" secondItem="NR4-a0-pef" secondAttribute="top" id="iCe-8N-GCx"/>
-                                            <constraint firstAttribute="height" constant="44" id="wK6-nq-Kug"/>
-                                            <constraint firstItem="40G-D9-WZW" firstAttribute="leading" secondItem="NR4-a0-pef" secondAttribute="leading" constant="8" id="z7h-dx-YEj"/>
+                                            <constraint firstAttribute="height" constant="44" id="MBO-xM-8lX"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyr-a0-4h7">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of technology" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="LzG-fO-Yfh">
                                         <rect key="frame" x="20" y="104" width="303" height="44"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of technology" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LzG-fO-Yfh">
-                                                <rect key="frame" x="8" y="0.0" width="287" height="44"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.91351351349999999" green="0.91351351349999999" blue="0.91351351349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.89369371356190863" green="0.89369371356190863" blue="0.89369371356190863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="LzG-fO-Yfh" firstAttribute="leading" secondItem="Fyr-a0-4h7" secondAttribute="leading" constant="8" id="27f-eo-nXg"/>
-                                            <constraint firstItem="LzG-fO-Yfh" firstAttribute="top" secondItem="Fyr-a0-4h7" secondAttribute="top" id="FTB-p4-1w6"/>
-                                            <constraint firstItem="LzG-fO-Yfh" firstAttribute="centerY" secondItem="Fyr-a0-4h7" secondAttribute="centerY" id="GlG-Ah-l24"/>
-                                            <constraint firstAttribute="bottom" secondItem="LzG-fO-Yfh" secondAttribute="bottom" id="MgC-9b-8nc"/>
-                                            <constraint firstAttribute="height" constant="44" id="PNj-uP-ndh"/>
-                                            <constraint firstAttribute="trailing" secondItem="LzG-fO-Yfh" secondAttribute="trailing" constant="8" id="Urr-fy-9a3"/>
+                                            <constraint firstAttribute="height" constant="44" id="9jx-Qa-00e"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Uyn-b8-zcN" firstAttribute="centerX" secondItem="Qsd-Zy-wSz" secondAttribute="centerX" id="2lc-k6-mbH"/>
-                                    <constraint firstItem="NR4-a0-pef" firstAttribute="leading" secondItem="Qsd-Zy-wSz" secondAttribute="leading" constant="20" id="5ZN-cZ-8ir"/>
-                                    <constraint firstAttribute="trailing" secondItem="Fyr-a0-4h7" secondAttribute="trailing" constant="20" id="5nr-RW-8Dc"/>
-                                    <constraint firstItem="Uyn-b8-zcN" firstAttribute="top" secondItem="NR4-a0-pef" secondAttribute="bottom" constant="50" id="7j8-Lb-vYZ"/>
-                                    <constraint firstItem="NR4-a0-pef" firstAttribute="top" secondItem="Fyr-a0-4h7" secondAttribute="bottom" constant="25" id="E1R-Pu-Ev9"/>
-                                    <constraint firstAttribute="trailing" secondItem="NR4-a0-pef" secondAttribute="trailing" constant="20" id="Slt-Ud-k8N"/>
+                                    <constraint firstAttribute="trailing" secondItem="40G-D9-WZW" secondAttribute="trailing" constant="20" id="3bK-CA-KG2"/>
+                                    <constraint firstItem="Uyn-b8-zcN" firstAttribute="top" secondItem="40G-D9-WZW" secondAttribute="bottom" constant="50" id="7Yj-cD-EEv"/>
+                                    <constraint firstItem="LzG-fO-Yfh" firstAttribute="top" secondItem="VXw-ek-uT5" secondAttribute="bottom" constant="8" id="CKc-Vd-EVV"/>
+                                    <constraint firstItem="40G-D9-WZW" firstAttribute="top" secondItem="LzG-fO-Yfh" secondAttribute="bottom" constant="25" id="E5v-LR-7uY"/>
+                                    <constraint firstItem="LzG-fO-Yfh" firstAttribute="leading" secondItem="Qsd-Zy-wSz" secondAttribute="leading" constant="20" id="INc-C8-fNX"/>
+                                    <constraint firstAttribute="trailing" secondItem="LzG-fO-Yfh" secondAttribute="trailing" constant="20" id="PHX-io-phq"/>
                                     <constraint firstItem="VXw-ek-uT5" firstAttribute="leading" secondItem="Qsd-Zy-wSz" secondAttribute="leading" constant="20" id="Smw-1N-fym"/>
-                                    <constraint firstItem="NR4-a0-pef" firstAttribute="centerX" secondItem="Qsd-Zy-wSz" secondAttribute="centerX" id="Yxh-L5-uVY"/>
                                     <constraint firstAttribute="bottom" secondItem="Uyn-b8-zcN" secondAttribute="bottom" constant="16" id="ZIN-LE-QQy"/>
-                                    <constraint firstItem="Fyr-a0-4h7" firstAttribute="leading" secondItem="Qsd-Zy-wSz" secondAttribute="leading" constant="20" id="fVn-sX-L6j"/>
-                                    <constraint firstItem="Fyr-a0-4h7" firstAttribute="top" secondItem="VXw-ek-uT5" secondAttribute="bottom" constant="12" id="hKT-Ap-LZX"/>
                                     <constraint firstItem="MWn-uV-VTg" firstAttribute="top" secondItem="Qsd-Zy-wSz" secondAttribute="top" id="mDo-hB-wjF"/>
                                     <constraint firstItem="VXw-ek-uT5" firstAttribute="top" secondItem="Qsd-Zy-wSz" secondAttribute="top" constant="40" id="pHl-Sr-gan"/>
                                     <constraint firstAttribute="trailing" secondItem="MWn-uV-VTg" secondAttribute="trailing" id="qOS-uo-SgX"/>
+                                    <constraint firstItem="40G-D9-WZW" firstAttribute="leading" secondItem="Qsd-Zy-wSz" secondAttribute="leading" constant="20" id="t3D-Ms-4Zs"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

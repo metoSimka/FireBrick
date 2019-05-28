@@ -54,7 +54,7 @@
 
 ## Overview
 
-SwiftEntryKit is a simple and versatile content presenter written in Swift.
+SwiftEntryKit is a simple and versatile pop-up presenter written in Swift.
 
 ### Features
 
@@ -75,7 +75,7 @@ Banners or pop-ups are called *Entries*.
   - [x] Entries can be optionally dismissed using a simple [swipe gesture](#swiping-and-rubber-banding).
   - [x] Entries can be optionally injected with [lifecycle events](#lifecycle-events): *will* and *did* appear/disappear.
   - [x] The [status bar style](#status-bar) is settable for the display duration of the entry.
-  - [x] Supports [navigation controllers](#presets) & [custom views](#custom-view-usage-example) as well!
+  - [x] SwiftEntryKit supports [custom views](#custom-view-usage-example) as well.
 
 ## Example Project
 
@@ -98,13 +98,9 @@ Cloning from https://github.com/huri000/SwiftEntryKit.git also setups QuickLayou
 
 ### Presets
 
-| Toasts | Notes | Floats | Popups |
-| --- | --- | --- | --- |
-| ![toasts_example](https://github.com/huri000/assets/blob/master/swift-entrykit/toasts.gif) | ![notes_example](https://github.com/huri000/assets/blob/master/swift-entrykit/notes.gif) | ![floats_example](https://github.com/huri000/assets/blob/master/swift-entrykit/floats.gif) | ![popup_example](https://github.com/huri000/assets/blob/master/swift-entrykit/popups.gif) |
-
-| Alerts | Forms | Rating | More... |
-| --- | --- | --- | --- |
-| ![alert_example](https://github.com/huri000/assets/blob/master/swift-entrykit/alerts.gif) | ![form_example](https://github.com/huri000/assets/blob/master/swift-entrykit/forms.gif) | ![rating_example](https://github.com/huri000/assets/blob/master/swift-entrykit/rating.gif) | ![custom_example](https://github.com/huri000/assets/blob/master/swift-entrykit/custom.gif) |
+Toasts | Notes | Floats | Popups | Alerts | Forms | Rating
+--- | --- | --- | --- | --- | --- | --- 
+![toasts_example](https://github.com/huri000/assets/blob/master/swift-entrykit/toasts.gif) | ![notes_example](https://github.com/huri000/assets/blob/master/swift-entrykit/notes.gif) | ![floats_example](https://github.com/huri000/assets/blob/master/swift-entrykit/floats.gif) | ![popup_example](https://github.com/huri000/assets/blob/master/swift-entrykit/popups.gif) | ![alert_example](https://github.com/huri000/assets/blob/master/swift-entrykit/alerts.gif) | ![form_example](https://github.com/huri000/assets/blob/master/swift-entrykit/forms.gif) | ![rating](https://github.com/huri000/assets/blob/master/swift-entrykit/rating.gif)
 
 ### Playground
 
@@ -127,9 +123,8 @@ The Playground Screen | Top Toast Sample
 
 ## Installation
 
-- SwiftEntryKit is compatible with Swift 5 as of release *1.0.0*. 
-- SwiftEntryKit is compatible with Swift 4.2 as of release *0.8.1*. 
-- Developers who use lower Swift version should install release *0.7.2*.
+SwiftEntryKit is compatible with Swift 4.2 as of release *0.8.1*. 
+Developers who use lower Swift version can install release *0.7.2*.
 
 ### CocoaPods
 
@@ -146,7 +141,7 @@ source 'https://github.com/cocoapods/specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
-pod 'SwiftEntryKit', '1.0.1'
+pod 'SwiftEntryKit', '0.8.9'
 ```
 
 Then, run the following command:
@@ -169,7 +164,7 @@ $ brew install carthage
 To integrate SwiftEntryKit into your Xcode project using Carthage, specify the following in your `Cartfile`:
 
 ```ogdl
-github "huri000/SwiftEntryKit" == 1.0.1
+github "huri000/SwiftEntryKit" == 0.8.9
 ```
 
 ## Usage

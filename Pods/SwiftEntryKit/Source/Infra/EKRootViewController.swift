@@ -147,13 +147,7 @@ class EKRootViewController: UIViewController {
         view.addSubview(entryContentView)
         entryContentView.setup(with: entryView)
         
-        switch attributes.screenInteraction.defaultAction {
-        case .forward:
-            isResponsive = false
-        default:
-            isResponsive = true
-        }
-
+        isResponsive = attributes.screenInteraction.isResponsive
         if previousAttributes?.statusBar != attributes.statusBar {
             setNeedsStatusBarAppearanceUpdate()
         }

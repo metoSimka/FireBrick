@@ -21,8 +21,8 @@ public typealias QLMultipleConstraints = [QLAttribute: NSLayoutConstraint]
  Extends layout priority to other readable types
  */
 public extension QLPriority {
-    static let must = QLPriority(rawValue: 999)
-    static let zero = QLPriority(rawValue: 0)
+    public static let must = QLPriority(rawValue: 999)
+    public static let zero = QLPriority(rawValue: 0)
 }
 
 /**

@@ -6,7 +6,7 @@ target 'FireBrick' do
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
   pod 'IQKeyboardManager', '6.2.1'
-  pod 'SwiftEntryKit', '1.0.1'
+  pod 'SwiftEntryKit', '0.8.9'
   pod 'Firebase/Firestore'
-  
+
 end

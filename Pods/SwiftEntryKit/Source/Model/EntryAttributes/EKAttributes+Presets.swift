@@ -10,10 +10,10 @@ import Foundation
 public extension EKAttributes {
     
     /** Default attributes - Can be mutated according to the hosting application theme */
-    static var `default` = EKAttributes()
+    public static var `default` = EKAttributes()
     
     /** Toast preset - The frame fills margins and safe area is filled with background view */
-    static var toast: EKAttributes {
+    public static var toast: EKAttributes {
         var attributes = EKAttributes()
         attributes.positionConstraints = .fullWidth
         attributes.positionConstraints.safeArea = .empty(fillSafeArea: true)
@@ -24,7 +24,7 @@ public extension EKAttributes {
     }
     
     /** Float preset - The frame is margined and the safe area is left cleared */
-    static var float: EKAttributes {
+    public static var float: EKAttributes {
         var attributes = EKAttributes()
         attributes.positionConstraints = .float
         attributes.roundCorners = .all(radius: 10)
@@ -34,42 +34,42 @@ public extension EKAttributes {
     }
     
     /** Preset for top float entry */
-    static var topFloat: EKAttributes {
+    public static var topFloat: EKAttributes {
         var attributes = float
         attributes.position = .top
         return attributes
     }
     
     /** Preset for a bottom float entry */
-    static var bottomFloat: EKAttributes {
+    public static var bottomFloat: EKAttributes {
         var attributes = float
         attributes.position = .bottom
         return attributes
     }
     
     /** Preset for a center float entry */
-    static var centerFloat: EKAttributes {
+    public static var centerFloat: EKAttributes {
         var attributes = float
         attributes.position = .center
         return attributes
     }
     
     /** Preset for a bottom toast entry */
-    static var bottomToast: EKAttributes {
+    public static var bottomToast: EKAttributes {
         var attributes = toast
         attributes.position = .bottom
         return attributes
     }
     
     /** Preset for a top toast entry */
-    static var topToast: EKAttributes {
+    public static var topToast: EKAttributes {
         var attributes = toast
         attributes.position = .top
         return attributes
     }
     
     /** Preset for a top note entry */
-    static var topNote: EKAttributes {
+    public static var topNote: EKAttributes {
         var attributes = topToast
         attributes.scroll = .disabled
         attributes.windowLevel = .normal
@@ -78,7 +78,7 @@ public extension EKAttributes {
     }
     
     /** Preset for a bottom note entry */
-    static var bottomNote: EKAttributes {
+    public static var bottomNote: EKAttributes {
         var attributes = bottomToast
         attributes.scroll = .disabled
         attributes.windowLevel = .normal
@@ -87,7 +87,7 @@ public extension EKAttributes {
     }
     
     /** Preset for a status bar entry - appears on top of the status bar */
-    static var statusBar: EKAttributes {
+    public static var statusBar: EKAttributes {
         var attributes = topToast
         attributes.windowLevel = .statusBar
         attributes.entryInteraction = .absorbTouches

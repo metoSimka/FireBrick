@@ -11,7 +11,7 @@ import UIKit
 public extension EKAttributes {
     
     /** The background style property */
-    enum BackgroundStyle: Equatable {
+    public enum BackgroundStyle: Equatable {
         
         /** Gradient background style */
         public struct Gradient {

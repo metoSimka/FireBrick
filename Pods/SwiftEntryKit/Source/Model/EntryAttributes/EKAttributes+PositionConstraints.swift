@@ -11,7 +11,7 @@ import UIKit
 public extension EKAttributes {
     
     /** Describes the frame of the entry. It's limitations, width and offset from the anchor (top / bottom of the screen) */
-    struct PositionConstraints {
+    public struct PositionConstraints {
 
         /** Describes safe area relation */
         public enum SafeArea {

@@ -10,7 +10,7 @@ import Foundation
 public extension EKAttributes {
     
     /** Describes the event of scroll user interaction */
-    enum Scroll {
+    public enum Scroll {
     
         /** Describes the event when the user leaves the entry after rubber-banding it - How the entry behaves */
         public struct PullbackAnimation {
