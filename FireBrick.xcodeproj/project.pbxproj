@@ -12,6 +12,12 @@
 		A50718032296A12000BC7FF1 /* SimpleAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50718022296A12000BC7FF1 /* SimpleAlertViewController.swift */; };
 		A50718062296BD4E00BC7FF1 /* SplashScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A50718052296BD4E00BC7FF1 /* SplashScreenViewController.storyboard */; };
 		A50718082296BD7000BC7FF1 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50718072296BD7000BC7FF1 /* SplashScreenViewController.swift */; };
+		A50B0102229D38FE008C85AE /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B0100229D38FE008C85AE /* TeamTableViewCell.swift */; };
+		A50B0103229D38FE008C85AE /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50B0101229D38FE008C85AE /* TeamTableViewCell.xib */; };
+		A50B0106229D3A91008C85AE /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B0104229D3A91008C85AE /* EmployeeTableViewCell.swift */; };
+		A50B0107229D3A91008C85AE /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50B0105229D3A91008C85AE /* EmployeeTableViewCell.xib */; };
+		A50B0109229D3CDE008C85AE /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B0108229D3CDE008C85AE /* TeamModel.swift */; };
+		A50B010B229D3D03008C85AE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B010A229D3D03008C85AE /* UserModel.swift */; };
 		A5136493228E648A0053DE00 /* EmailAuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5136492228E648A0053DE00 /* EmailAuthViewController.storyboard */; };
 		A513649B228E745C0053DE00 /* ExtensionDesignableUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513649A228E745C0053DE00 /* ExtensionDesignableUIView.swift */; };
 		A517D5E5229CE97F0081B8A6 /* TecnhologyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5E4229CE97E0081B8A6 /* TecnhologyModel.swift */; };
@@ -73,6 +79,12 @@
 		A50718022296A12000BC7FF1 /* SimpleAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertViewController.swift; sourceTree = "<group>"; };
 		A50718052296BD4E00BC7FF1 /* SplashScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreenViewController.storyboard; sourceTree = "<group>"; };
 		A50718072296BD7000BC7FF1 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		A50B0100229D38FE008C85AE /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		A50B0101229D38FE008C85AE /* TeamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamTableViewCell.xib; sourceTree = "<group>"; };
+		A50B0104229D3A91008C85AE /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		A50B0105229D3A91008C85AE /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
+		A50B0108229D3CDE008C85AE /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
+		A50B010A229D3D03008C85AE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A5136492228E648A0053DE00 /* EmailAuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailAuthViewController.storyboard; sourceTree = "<group>"; };
 		A513649A228E745C0053DE00 /* ExtensionDesignableUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDesignableUIView.swift; sourceTree = "<group>"; };
 		A517D5E4229CE97E0081B8A6 /* TecnhologyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TecnhologyModel.swift; sourceTree = "<group>"; };
@@ -205,19 +217,12 @@
 			path = EmailAuthViewController;
 			sourceTree = "<group>";
 		};
-		A517D5DE229CE90F0081B8A6 /* TechnologyTableView */ = {
-			isa = PBXGroup;
-			children = (
-				A517D5E7229CE9F30081B8A6 /* TechnologyTableViewCell.swift */,
-				A517D5E8229CE9F30081B8A6 /* TechnologyTableViewCell.xib */,
-			);
-			path = TechnologyTableView;
-			sourceTree = "<group>";
-		};
 		A517D5E3229CE97E0081B8A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A517D5E4229CE97E0081B8A6 /* TecnhologyModel.swift */,
+				A50B0108229D3CDE008C85AE /* TeamModel.swift */,
+				A50B010A229D3D03008C85AE /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +248,10 @@
 			children = (
 				A517D5F2229D2A240081B8A6 /* TeamViewController.swift */,
 				A517D5F4229D2A2E0081B8A6 /* TeamViewController.storyboard */,
+				A50B0100229D38FE008C85AE /* TeamTableViewCell.swift */,
+				A50B0101229D38FE008C85AE /* TeamTableViewCell.xib */,
+				A50B0104229D3A91008C85AE /* EmployeeTableViewCell.swift */,
+				A50B0105229D3A91008C85AE /* EmployeeTableViewCell.xib */,
 			);
 			path = TeamViewController;
 			sourceTree = "<group>";
@@ -259,7 +268,8 @@
 		A52D5D39229BF06600E6C4D5 /* TechnologyViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A517D5DE229CE90F0081B8A6 /* TechnologyTableView */,
+				A517D5E7229CE9F30081B8A6 /* TechnologyTableViewCell.swift */,
+				A517D5E8229CE9F30081B8A6 /* TechnologyTableViewCell.xib */,
 				A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */,
 				A52D5D3C229BF08F00E6C4D5 /* TechnologyViewController.swift */,
 			);
@@ -450,6 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50B0103229D38FE008C85AE /* TeamTableViewCell.xib in Resources */,
 				A5FEEC722294149500EB09BC /* ForgotPasswordViewController.xib in Resources */,
 				A5FEEC482293AEC400EB09BC /* SF-Pro-Display-Thin.otf in Resources */,
 				A5FEEC622293AEC400EB09BC /* SF-Pro-Text-LightItalic.otf in Resources */,
@@ -485,6 +496,7 @@
 				A5FEEC502293AEC400EB09BC /* SF-Pro-Display-Medium.otf in Resources */,
 				A5FEEC652293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				A5FEEC5D2293AEC400EB09BC /* SF-Pro-Text-BoldItalic.otf in Resources */,
+				A50B0107229D3A91008C85AE /* EmployeeTableViewCell.xib in Resources */,
 				A5FEEC4C2293AEC400EB09BC /* SF-Pro-Display-Light.otf in Resources */,
 				A517D5EE229D05D20081B8A6 /* AddTechnologyViewController.storyboard in Resources */,
 				A5FEEC642293AEC400EB09BC /* SF-Pro-Display-BoldItalic.otf in Resources */,
@@ -563,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5FEEC712294149500EB09BC /* ForgotPasswordViewController.swift in Sources */,
+				A50B0109229D3CDE008C85AE /* TeamModel.swift in Sources */,
 				A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */,
 				A50718082296BD7000BC7FF1 /* SplashScreenViewController.swift in Sources */,
 				A513649B228E745C0053DE00 /* ExtensionDesignableUIView.swift in Sources */,
@@ -571,10 +584,13 @@
 				A5F7C4F0228D715400B35C6C /* AuthViewController.swift in Sources */,
 				A517D5EF229D05D20081B8A6 /* AddTechnologyViewController.swift in Sources */,
 				A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */,
+				A50B0106229D3A91008C85AE /* EmployeeTableViewCell.swift in Sources */,
 				A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */,
 				A50718032296A12000BC7FF1 /* SimpleAlertViewController.swift in Sources */,
 				A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */,
+				A50B0102229D38FE008C85AE /* TeamTableViewCell.swift in Sources */,
 				A517D5E5229CE97F0081B8A6 /* TecnhologyModel.swift in Sources */,
+				A50B010B229D3D03008C85AE /* UserModel.swift in Sources */,
 				A517D5F3229D2A240081B8A6 /* TeamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -124,8 +124,8 @@ class TechnologyViewController: UIViewController {
     
     private func setupTableView() {
         tableView.register(UINib(nibName: "TechnologyTableViewCell", bundle: nil), forCellReuseIdentifier: "TechnologyCell")
-        self.tableView.frame = self.view.bounds
-        self.tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.tableView.estimatedRowHeight = 70
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
     }

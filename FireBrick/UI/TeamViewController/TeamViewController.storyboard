@@ -32,11 +32,39 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU9-7u-pxG">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="aWu-qW-muq"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="ic_readable_icon_navigation_bar"/>
+                                        <connections>
+                                            <action selector="openNavigation:" destination="5t1-dV-PNH" eventType="touchUpInside" id="gaP-yU-H3q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxb-cN-XS4">
+                                        <rect key="frame" x="279" y="0.0" width="96" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="iva-2R-6vo"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" image="ic_readable_icon_filter"/>
+                                        <connections>
+                                            <action selector="openFilter:" destination="5t1-dV-PNH" eventType="touchUpInside" id="5Lh-eD-Aah"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83137254901960778" green="0.17254901960784313" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="oxb-cN-XS4" firstAttribute="top" secondItem="rdD-oB-gdd" secondAttribute="top" id="1WM-q1-IRI"/>
                                     <constraint firstItem="NSu-3b-Jl1" firstAttribute="centerX" secondItem="rdD-oB-gdd" secondAttribute="centerX" id="6xg-UQ-kiQ"/>
+                                    <constraint firstItem="CU9-7u-pxG" firstAttribute="leading" secondItem="rdD-oB-gdd" secondAttribute="leading" id="GkV-hq-GBm"/>
                                     <constraint firstItem="NSu-3b-Jl1" firstAttribute="centerY" secondItem="rdD-oB-gdd" secondAttribute="centerY" id="HEw-GQ-1sS"/>
+                                    <constraint firstAttribute="trailing" secondItem="oxb-cN-XS4" secondAttribute="trailing" id="HcO-1j-Nq3"/>
+                                    <constraint firstAttribute="bottom" secondItem="CU9-7u-pxG" secondAttribute="bottom" id="S04-Sn-geQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="oxb-cN-XS4" secondAttribute="bottom" id="crm-dK-0gF"/>
+                                    <constraint firstItem="CU9-7u-pxG" firstAttribute="top" secondItem="rdD-oB-gdd" secondAttribute="top" id="jfW-Zc-XMv"/>
                                     <constraint firstAttribute="height" constant="44" id="tbb-jY-QqF"/>
                                 </constraints>
                             </view>
@@ -44,6 +72,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                                 <color key="backgroundColor" red="0.87274676561355591" green="0.26179593801498413" blue="0.31577703356742859" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lvf-YW-Rs5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -51,16 +83,27 @@
                             <constraint firstItem="rdD-oB-gdd" firstAttribute="top" secondItem="57r-sv-HN0" secondAttribute="bottom" id="75T-00-OOd"/>
                             <constraint firstItem="00w-4g-oA3" firstAttribute="trailing" secondItem="rdD-oB-gdd" secondAttribute="trailing" id="L0g-nj-bFe"/>
                             <constraint firstItem="rdD-oB-gdd" firstAttribute="leading" secondItem="00w-4g-oA3" secondAttribute="leading" id="NQA-u9-TT8"/>
+                            <constraint firstItem="00w-4g-oA3" firstAttribute="trailing" secondItem="lvf-YW-Rs5" secondAttribute="trailing" id="aby-9h-y52"/>
                             <constraint firstItem="57r-sv-HN0" firstAttribute="leading" secondItem="rxI-Bv-WWK" secondAttribute="leading" id="acQ-gu-FHB"/>
                             <constraint firstAttribute="trailing" secondItem="57r-sv-HN0" secondAttribute="trailing" id="jK8-ke-9id"/>
+                            <constraint firstItem="lvf-YW-Rs5" firstAttribute="top" secondItem="rdD-oB-gdd" secondAttribute="bottom" id="l5T-rd-fwN"/>
+                            <constraint firstItem="lvf-YW-Rs5" firstAttribute="leading" secondItem="00w-4g-oA3" secondAttribute="leading" id="nzB-mA-n55"/>
+                            <constraint firstItem="00w-4g-oA3" firstAttribute="bottom" secondItem="lvf-YW-Rs5" secondAttribute="bottom" id="wR3-CE-BMh"/>
                             <constraint firstItem="rdD-oB-gdd" firstAttribute="top" secondItem="00w-4g-oA3" secondAttribute="top" id="y9A-xJ-tsT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="00w-4g-oA3"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="lvf-YW-Rs5" id="W6y-1j-ECd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JeI-wh-KYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="160.80000000000001" y="-188.45577211394306"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_readable_icon_filter" width="19" height="21.5"/>
+        <image name="ic_readable_icon_navigation_bar" width="21" height="14"/>
+    </resources>
 </document>
