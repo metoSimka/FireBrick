@@ -15,14 +15,22 @@ class TechnologyViewController: UIViewController {
     
     var docRef: DocumentReference!
     var db: Firestore?
-    var availableTechnoloies: [String: String] = [:]
+    var availableTechnoloies: [Technology] = []
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "TechnologyTableViewCell", bundle: nil), forCellReuseIdentifier: "TechnologyCell")
+        self.tableView.frame = self.view.bounds
+        self.tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.delegate = self
+        tableView.dataSource = self
         db = Firestore.firestore()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchTechnologies()
     }
     
@@ -50,9 +58,13 @@ class TechnologyViewController: UIViewController {
                     else {
                         return
                 }
-                self.availableTechnoloies[name] = doc
+                let tech = Technology(name: name, documentation: doc)
+                self.availableTechnoloies.append(tech)
+
             }
+            self.tableView.reloadData()
         })
+        
     }
     
     func getterQueryData(snapShot: QuerySnapshot? , error: Error? ) -> QuerySnapshot? {
@@ -75,11 +87,11 @@ extension TechnologyViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // create a new cell if needed or reuse an old one
-        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "TechnologyCell") as? AddTechnologyTableViewCell else {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "TechnologyCell") as? TechnologyTableViewCell else {
             return UITableViewCell()
         }
-        let name = availableTechnoloies
-        cell.setTechnology(name: <#T##String#>, documentation: <#T##String#>)
+        cell.technology = availableTechnoloies[indexPath.row]
+        cell.setTechnology()
         return cell
     }
 }

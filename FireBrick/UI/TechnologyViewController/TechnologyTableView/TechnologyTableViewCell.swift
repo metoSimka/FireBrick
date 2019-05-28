@@ -8,19 +8,19 @@
 
 import UIKit
 
-class AddTechnologyTableViewCell: UITableViewCell {
+class TechnologyTableViewCell: UITableViewCell {
+    
+    var technology: Technology?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var docLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
-    func setTechnology(name: String, documentation: String) {
-        nameLabel.text = name
-        docLabel.text = documentation
+    func setTechnology() {
+        nameLabel.text = "Name: " + (technology?.name ?? "")
+        docLabel.text = "Documentation: " + (technology?.documentation ?? "")
     }
-    
 }
