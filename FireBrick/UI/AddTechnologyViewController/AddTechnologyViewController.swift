@@ -16,14 +16,16 @@ class AddTechnologyViewController: UIViewController {
     var docRef: DocumentReference!
     var db: Firestore?
     
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var DocTextField: UITextField!
+    @IBOutlet weak var docTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
         nameTextField.delegate = self
-        DocTextField.delegate = self
+        docTextField.delegate = self
+        updataButtonState()
     }
     
     @IBAction func cancel(_ sender: UIButton) {
@@ -38,7 +40,10 @@ class AddTechnologyViewController: UIViewController {
         guard let name = nameTextField.text else {
             return
         }
-        guard let doc = DocTextField.text else {
+        guard let doc = docTextField.text else {
+            return
+        }
+        guard name.count > 0 && doc.count > 0 else {
             return
         }
         
@@ -51,11 +56,37 @@ class AddTechnologyViewController: UIViewController {
                 SwiftEntryKit.dismiss()
         })
     }
+    
+    func isFildsAreEmpty() -> Bool {
+        if nameTextField.text?.count ?? 0 == 0 || docTextField.text?.count ?? 0 == 0 {
+            return true
+        }
+        return false
+    }
+    
+    func updataButtonState() {
+        if isFildsAreEmpty() {
+            addButton.alpha = 0.5
+            addButton.isEnabled = false
+        } else {
+            addButton.alpha = 1
+            addButton.isEnabled = true
+        }
+    }
 }
 
 extension AddTechnologyViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.resignFirstResponder()
+        if textField == nameTextField {
+            docTextField.becomeFirstResponder()
+        } else if textField == docTextField {
+            docTextField.resignFirstResponder()
+        }
         return true
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+            updataButtonState()
+    }
 }
+

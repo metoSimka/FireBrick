@@ -19,13 +19,11 @@ class TechnologyViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "TechnologyTableViewCell", bundle: nil), forCellReuseIdentifier: "TechnologyCell")
-        self.tableView.frame = self.view.bounds
-        self.tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        tableView.delegate = self
-        tableView.dataSource = self
+        setupTableView()
         db = Firestore.firestore()
     }
     
@@ -33,6 +31,8 @@ class TechnologyViewController: UIViewController {
         super.viewWillAppear(animated)
         fetchTechnologies()
     }
+    
+    // MARK: IBAction
     
     @IBAction func Back(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -46,27 +46,40 @@ class TechnologyViewController: UIViewController {
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
-    func fetchTechnologies() {
+    // Private
+    
+    private func fetchTechnologies() {
         db?.collection("Technology").getDocuments(completion: { (snapShot, error) in
             guard let snapShot = self.getterQueryData(snapShot: snapShot, error: error) else {
+                self.showErrorAlert(error: error)
                 return
             }
+            var idFailedDocs: [String] = []
+            var techs:[Technology] = []
             for data in snapShot.documents {
                 guard
                     let name = data["Name"] as? String,
-                    let doc = data["Documentation"] as? String?
+                    let doc = data["Documentation"] as? String
                     else {
-                        return
+                        idFailedDocs.append(data.documentID)
+                        continue
                 }
                 let tech = Technology(name: name, documentation: doc)
-                self.availableTechnoloies.append(tech)
-
+                techs.append(tech)
             }
+            self.showAlertIfNeeded(array: idFailedDocs)
+            self.availableTechnoloies = techs
             self.tableView.reloadData()
         })
     }
     
-    func getterQueryData(snapShot: QuerySnapshot? , error: Error? ) -> QuerySnapshot? {
+    private func showAlertIfNeeded(array idFailedDocs: [String]) {
+        if idFailedDocs.count > 0 {
+            self.showFormattAlert(ids: idFailedDocs)
+        }
+    }
+    
+    private func getterQueryData(snapShot: QuerySnapshot? , error: Error? ) -> QuerySnapshot? {
         guard error == nil else {
             print("error Here", error ?? "Unkown error")
             return nil
@@ -76,6 +89,35 @@ class TechnologyViewController: UIViewController {
         }
         return snapShot
     }
+    
+    private func showErrorAlert(error: Error?) {
+        guard let error = error else {
+            return
+        }
+        let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SimpleAlertViewController") as? SimpleAlertViewController else {
+            return
+        }
+        vc.messageTitle = error.localizedDescription
+        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
+    }
+    
+    private func showFormattAlert(ids: [String]) {
+        let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SimpleAlertViewController") as? SimpleAlertViewController else {
+            return
+        }
+        vc.messageTitle = "One or more technologies came in the wrong format and will not be displayed. \nID-list failed documents: \(ids.map { "\($0)" }.joined(separator:"\n"))"
+        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
+    }
+    
+    private func setupTableView() {
+        tableView.register(UINib(nibName: "TechnologyTableViewCell", bundle: nil), forCellReuseIdentifier: "TechnologyCell")
+        self.tableView.frame = self.view.bounds
+        self.tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
 }
 
 extension TechnologyViewController: UITableViewDelegate, UITableViewDataSource {
@@ -84,7 +126,6 @@ extension TechnologyViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // create a new cell if needed or reuse an old one
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "TechnologyCell") as? TechnologyTableViewCell else {
             return UITableViewCell()
         }

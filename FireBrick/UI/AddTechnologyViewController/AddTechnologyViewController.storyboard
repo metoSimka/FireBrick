@@ -69,7 +69,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Documentation" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="40G-D9-WZW">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Documentation" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="40G-D9-WZW">
                                         <rect key="frame" x="20" y="173" width="303" height="44"/>
                                         <color key="backgroundColor" red="0.89365547895431519" green="0.89433497190475464" blue="0.89376074075698853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -77,9 +77,9 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of technology" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="LzG-fO-Yfh">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of technology" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LzG-fO-Yfh">
                                         <rect key="frame" x="20" y="104" width="303" height="44"/>
                                         <color key="backgroundColor" red="0.89369371356190863" green="0.89369371356190863" blue="0.89369371356190863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -87,7 +87,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="nickname"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,7 +123,8 @@
                         <viewLayoutGuide key="safeArea" id="OFm-wB-s93"/>
                     </view>
                     <connections>
-                        <outlet property="DocTextField" destination="40G-D9-WZW" id="xxu-13-Eey"/>
+                        <outlet property="addButton" destination="Uyn-b8-zcN" id="L3S-uf-m2l"/>
+                        <outlet property="docTextField" destination="40G-D9-WZW" id="xxu-13-Eey"/>
                         <outlet property="nameTextField" destination="LzG-fO-Yfh" id="fL0-A2-9YL"/>
                     </connections>
                 </viewController>
