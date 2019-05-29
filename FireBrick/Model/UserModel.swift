@@ -11,8 +11,8 @@ import UIKit
 
 struct User {
     var name: String?
-    var imageAvatar: UIImage?
+    var imageLink: String?
     var hoursInWeek: Int?
     var skills: [String: Int]?
-    var isShouldBeHidden = false
+//    var isShouldBeHidden = false
 }

@@ -9,5 +9,6 @@ target 'FireBrick' do
   pod 'SwiftEntryKit', '0.8.9'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'SDWebImage', '5.0.3'
 
 end

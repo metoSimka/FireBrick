@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol EmployeeTableViewCellDelegate {
     func didTapOptionButton()
@@ -16,6 +17,7 @@ protocol EmployeeTableViewCellDelegate {
 class EmployeeTableViewCell: UITableViewCell {
     
     var delegate: EmployeeTableViewCellDelegate?
+    var user = User()
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageIcon: UIImageView!
@@ -35,6 +37,14 @@ class EmployeeTableViewCell: UITableViewCell {
     func addGestureForLabel() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         imageIcon.addGestureRecognizer(tap)
+    }
+    
+    func setCellView() {
+        nameLabel.text = user.name
+        guard let link = user.imageLink else {
+            return
+        }
+        imageIcon.sd_setImage(with: URL(string: link), completed: nil)
     }
     
     @objc

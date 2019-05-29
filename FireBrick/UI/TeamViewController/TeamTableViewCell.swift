@@ -1,8 +1,8 @@
 //
-//  TeemTableViewCell.swift
+//  TeamTableViewCell.swift
 //  FireBrick
 //
-//  Created by metoSimka on 28/05/2019.
+//  Created by metoSimka on 29/05/2019.
 //  Copyright © 2019 metoSimka. All rights reserved.
 //
 
@@ -16,15 +16,23 @@ protocol TeamTableViewCellDelegate {
 class TeamTableViewCell: UITableViewCell {
 
     var delegate: TeamTableViewCellDelegate?
+    var team: Team?
     
-    @IBOutlet weak var arrowStateButton: UIButton!
     @IBOutlet weak var teamLabel: UILabel!
+    @IBOutlet weak var arrowStateButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         addGestureForLabel()
     }
-
+    
+    func setCellView() {
+        guard let name = team?.name else {
+            return
+        }
+        teamLabel.text = name
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
