@@ -9,8 +9,8 @@
 import UIKit
 
 protocol TeamTableViewCellDelegate {
-    func didTapAddEmployee()
-    func didTapOnTeam()
+    func didTapAddEmployee(cell: TeamTableViewCell)
+    func didTapOnTeam(cell: TeamTableViewCell)
 }
 
 class TeamTableViewCell: UITableViewCell {
@@ -38,7 +38,7 @@ class TeamTableViewCell: UITableViewCell {
     }
     
     @IBAction func addEmployee(_ sender: UIButton) {
-        self.delegate?.didTapAddEmployee()
+        self.delegate?.didTapAddEmployee(cell: self)
     }
     
     func addGestureForLabel() {
@@ -48,6 +48,6 @@ class TeamTableViewCell: UITableViewCell {
     
     @objc
     func handleTap(_ sender: UITapGestureRecognizer) {
-        self.delegate?.didTapOnTeam()
+        self.delegate?.didTapOnTeam(cell: self)
     }
 }

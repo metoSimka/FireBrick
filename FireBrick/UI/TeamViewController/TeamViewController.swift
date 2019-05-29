@@ -217,6 +217,7 @@ class TeamViewController: UIViewController {
                 }
                 let team = transferTeamFormat(teamModel: currentModel)
                 cell.team = team
+                cell.delegate = self
                 cell.setCellView()
                 return cell
                 
@@ -226,6 +227,7 @@ class TeamViewController: UIViewController {
                 }
                 let user = transferUserFormat(teamModel: currentModel)
                 cell.user = user
+                cell.delegate = self
                 cell.setCellView()
                 return cell
                 
@@ -233,6 +235,43 @@ class TeamViewController: UIViewController {
             return UITableViewCell()
         }
 }
+
+extension TeamViewController: TeamTableViewCellDelegate {
+    func didTapAddEmployee(cell: TeamTableViewCell) {
+        
+    }
+    
+    func didTapOnTeam(cell: TeamTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+        var indexRow =  indexPath.row
+        
+    }
+    
+    
+    func showUsers() {
+        
+    }
+    
+    func hideUsers() {
+        
+    }
+    
+}
+
+extension TeamViewController: EmployeeTableViewCellDelegate {
+    func didTapOptionButton() {
+       
+    }
+    
+    func didTapOnUser() {
+        
+    }
+
+}
+
+
 
 
 //    func uploadImageToFirestore(data: Data ) {
