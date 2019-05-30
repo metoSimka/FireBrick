@@ -44,7 +44,7 @@ class EmployeeTableViewCell: UITableViewCell {
         guard let link = user.imageLink else {
             return
         }
-        imageIcon.sd_setImage(with: URL(string: link), completed: nil)
+        imageIcon.sd_setImage(with: URL(string: link), placeholderImage: UIImage(named:"ic_readable_icon_error.png"))
     }
     
     @objc

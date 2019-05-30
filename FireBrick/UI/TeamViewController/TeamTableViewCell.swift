@@ -25,14 +25,7 @@ class TeamTableViewCell: UITableViewCell {
         super.awakeFromNib()
         addGestureForLabel()
     }
-    
-    func setCellView() {
-        guard let name = team?.name else {
-            return
-        }
-        teamLabel.text = name
-    }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -40,6 +33,21 @@ class TeamTableViewCell: UITableViewCell {
     @IBAction func addEmployee(_ sender: UIButton) {
         self.delegate?.didTapAddEmployee(cell: self)
          self.delegate?.didTapOnTeam(cell: self)
+    }
+    
+    func updateButtonState(isHidden: Bool) {
+        if isHidden {
+            arrowStateButton.isSelected = true
+        } else {
+            arrowStateButton.isSelected = false
+        }
+    }
+    
+    func setCellView() {
+        guard let name = team?.name else {
+            return
+        }
+        teamLabel.text = name
     }
     
     func addGestureForLabel() {

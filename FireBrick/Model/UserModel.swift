@@ -14,5 +14,6 @@ struct User {
     var imageLink: String?
     var hoursInWeek: Int?
     var skills: [String: Int]?
+    var teamDocumentID: String?
 //    var isShouldBeHidden = false
 }

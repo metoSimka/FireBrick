@@ -25,10 +25,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8b-bu-ltm">
-                        <rect key="frame" x="272" y="6.5" width="68" height="44"/>
+                        <rect key="frame" x="272" y="0.0" width="68" height="56.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="68" id="P4E-iU-iks"/>
-                            <constraint firstAttribute="height" constant="44" id="eww-dZ-9U3"/>
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="16" maxY="0.0"/>
                         <state key="normal" image="ic_readable_icon_option-dots"/>
@@ -37,22 +36,21 @@
                         </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_readable_icon_error" translatesAutoresizingMaskIntoConstraints="NO" id="XXO-S0-fNb">
-                        <rect key="frame" x="16" y="18.5" width="20" height="20"/>
+                        <rect key="frame" x="16" y="16.5" width="24" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="XXO-S0-fNb" secondAttribute="height" multiplier="1:1" id="HSD-Ig-6JN"/>
-                            <constraint firstAttribute="width" constant="20" id="RI1-bn-AzY"/>
-                            <constraint firstAttribute="height" constant="20" id="wUP-md-f1P"/>
+                            <constraint firstAttribute="width" constant="24" id="k0d-87-Fyc"/>
+                            <constraint firstAttribute="height" constant="24" id="tdV-Lk-CXX"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7m4-X6-DSD">
-                        <rect key="frame" x="152.5" y="28" width="119.5" height="1"/>
+                        <rect key="frame" x="156.5" y="28" width="115.5" height="1"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="HD2-5g-fdd"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maxim_Pudge666" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsF-Rs-KFg">
-                        <rect key="frame" x="44" y="16" width="108.5" height="24.5"/>
+                        <rect key="frame" x="48" y="16" width="108.5" height="24.5"/>
                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -61,6 +59,7 @@
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="J8b-bu-ltm" firstAttribute="centerY" secondItem="rsF-Rs-KFg" secondAttribute="centerY" id="655-le-fUQ"/>
+                    <constraint firstItem="J8b-bu-ltm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7xO-QS-rT4"/>
                     <constraint firstItem="J8b-bu-ltm" firstAttribute="leading" secondItem="7m4-X6-DSD" secondAttribute="trailing" id="ACG-Qf-kJZ"/>
                     <constraint firstItem="7m4-X6-DSD" firstAttribute="leading" secondItem="rsF-Rs-KFg" secondAttribute="trailing" id="EAq-Rg-H7h"/>
                     <constraint firstItem="rsF-Rs-KFg" firstAttribute="centerY" secondItem="XXO-S0-fNb" secondAttribute="centerY" id="IW2-a1-5Od"/>
@@ -70,6 +69,7 @@
                     <constraint firstItem="rsF-Rs-KFg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="dO2-Uj-fF5"/>
                     <constraint firstItem="7m4-X6-DSD" firstAttribute="centerY" secondItem="rsF-Rs-KFg" secondAttribute="centerY" id="maA-9a-aI9"/>
                     <constraint firstAttribute="bottom" secondItem="rsF-Rs-KFg" secondAttribute="bottom" constant="16" id="oge-CM-cMx"/>
+                    <constraint firstAttribute="bottom" secondItem="J8b-bu-ltm" secondAttribute="bottom" id="vSx-zd-AYg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -77,7 +77,7 @@
                 <outlet property="imageIcon" destination="XXO-S0-fNb" id="eWb-bb-ViF"/>
                 <outlet property="nameLabel" destination="rsF-Rs-KFg" id="L1Y-bj-zyY"/>
             </connections>
-            <point key="canvasLocation" x="-11.199999999999999" y="139.880059970015"/>
+            <point key="canvasLocation" x="-10" y="134"/>
         </tableViewCell>
     </objects>
     <resources>

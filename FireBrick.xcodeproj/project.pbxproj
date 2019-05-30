@@ -338,6 +338,7 @@
 		A5B67932228D3FC4003DB84E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A5B6F697229F936400B5EBF9 /* InviteUserViewController */,
 				A517D5F1229D2A080081B8A6 /* TeamViewController */,
 				A517D5EB229D05D20081B8A6 /* AddTechnologyViewController */,
 				A52D5D39229BF06600E6C4D5 /* TechnologyViewController */,
@@ -350,6 +351,13 @@
 				A51E490B22928E07006687A3 /* WorkspaceViewController */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A5B6F697229F936400B5EBF9 /* InviteUserViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InviteUserViewController;
 			sourceTree = "<group>";
 		};
 		A5FEEC292293AEC400EB09BC /* Fonts */ = {

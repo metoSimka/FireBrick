@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import Firebase
 
 struct Team {
     var name: String?
     var users: [User]?
+    var documentID: String?
 }
