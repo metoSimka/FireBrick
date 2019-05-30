@@ -14,35 +14,30 @@ import SwiftEntryKit
 
 class TeamViewController: UIViewController {
     
-    //    struct teamViewModel {
-    //        enum teamType {
-    //            case name
-    //        }
-    //        enum userType {
-    //            case name
-    //            case imageLink
-    //            case reference
-    //        }
-    //    }
+    enum TeamViewType{
+        case team
+        case user
+    }
     
     struct TeamViewModel {
-        var userType: [UserType]?
-        var teamType: [TeamType]?
+        var type: TeamViewType
+        var user: UserType?
+        var team: TeamType?
+        var isHidden = false
     }
     
-    enum TeamType {
-        case name(_: String?)
+    struct TeamType {
+        var name: String?
     }
     
-    enum UserType {
-        case name(_: String?)
-        case imageLink(_: String?)
-        case reference
-        case isHidden(_: Bool?)
+    struct UserType {
+        var name: String?
+        var imageLink: String?
+        var reference: String?
     }
     
-    var firebaseTeams: [Team] = []
-    var teamModel: [TeamViewModel] = []
+    var teams: [Team] = []
+    var teamViewModel: [TeamViewModel] = []
     var docRef: DocumentReference!
     var db: Firestore?
     
@@ -61,7 +56,6 @@ class TeamViewController: UIViewController {
     }
     
     @IBAction func openFilter(_ sender: UIButton) {
-        
     }
     
     func getterQueryData(snapShot: QuerySnapshot? , error: Error? ) -> QuerySnapshot? {
@@ -105,8 +99,8 @@ class TeamViewController: UIViewController {
                 let team = Team(name: name, users: employee)
                 teams.append(team)
             }
-            self.firebaseTeams = teams
-            self.extractTeams(teams: self.firebaseTeams)
+            self.teams = teams
+            self.extractTeams(teams: self.teams)
             self.tableView.reloadData()
             self.stopLoader()
         })
@@ -121,26 +115,23 @@ class TeamViewController: UIViewController {
             guard let teamUsers = team.users else {
                 return
             }
-            var teamModel = TeamViewModel()
-            teamModel.teamType = []
-            teamModel.teamType?.append(TeamType.name(teamName))
+            let teamType = TeamType(name: teamName)
+            let teamModel = TeamViewModel(type: .team, user: nil, team: teamType, isHidden: false)
             extractedModel.append(teamModel)
             for user in teamUsers {
-                var userModel = TeamViewModel()
-                userModel.userType = []
-                userModel.userType?.append(UserType.name(user.name))
-                userModel.userType?.append(UserType.imageLink(user.imageLink))
+                let userType = UserType(name: user.name, imageLink: user.imageLink, reference: nil)
+                let userModel = TeamViewModel(type: .user, user: userType, team: nil, isHidden: false)
                 extractedModel.append(userModel)
             }
         }
-        teamModel = extractedModel
+        teamViewModel = extractedModel
     }
     
     func startLoader() {
         UIView.animate(withDuration: Constants.forAnimation.normal) {
             self.spinnerView.alpha = 1
         }
-       
+        
     }
     
     func stopLoader() {
@@ -172,68 +163,59 @@ class TeamViewController: UIViewController {
     
     func transferTeamFormat(teamModel: TeamViewModel) -> Team {
         var team = Team()
-        guard let model = teamModel.teamType else {
-            return team
-        }
-        for elem in model {
-            
-            switch elem {
-            case .name(let name):
-                team.name = name
-            }
+        switch teamModel.type {
+        case .user:
+            print("Stop crushing the system!")
+        case .team:
+            team.name = teamModel.team?.name
         }
         return team
     }
     
     func transferUserFormat(teamModel: TeamViewModel) -> User {
         var user = User()
-        guard let model = teamModel.userType else {
-            return user
-        }
-        for elem in model {
-            switch elem {
-            case .name(let name):
-                user.name = name
-            case .imageLink(let link):
-                user.imageLink = link
-            default:
-                break
-            }
+        switch teamModel.type {
+        case .user:
+            user.name = teamModel.user?.name
+            user.imageLink = teamModel.user?.imageLink
+        case .team:
+            print("Stop crushing the system!")
         }
         return user
     }
 }
 
-    extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return teamModel.count
-        }
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let currentModel = teamModel[indexPath.row]
-            if currentModel.teamType != nil {
-                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "TeamTableViewCell") as? TeamTableViewCell else {
-                    return UITableViewCell()
-                }
-                let team = transferTeamFormat(teamModel: currentModel)
-                cell.team = team
-                cell.delegate = self
-                cell.setCellView()
-                return cell
-                
-            } else if currentModel.userType != nil  {
-                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "EmployeeTableViewCell") as? EmployeeTableViewCell else {
-                    return UITableViewCell()
-                }
-                let user = transferUserFormat(teamModel: currentModel)
-                cell.user = user
-                cell.delegate = self
-                cell.setCellView()
-                return cell
-                
+extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return teamViewModel.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let currentModel = teamViewModel[indexPath.row]
+        switch currentModel.type {
+        case .team:
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "TeamTableViewCell") as? TeamTableViewCell else {
+                return UITableViewCell()
             }
-            return UITableViewCell()
+            let team = transferTeamFormat(teamModel: currentModel)
+            cell.team = team
+            cell.delegate = self
+            cell.setCellView()
+            return cell
+        case .user:
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "EmployeeTableViewCell") as? EmployeeTableViewCell else {
+                return UITableViewCell()
+            }
+            if teamViewModel[indexPath.row].isHidden {
+                cell.isHidden = true
+            }
+            let user = transferUserFormat(teamModel: currentModel)
+            cell.user = user
+            cell.delegate = self
+            cell.setCellView()
+            return cell
         }
+    }
 }
 
 extension TeamViewController: TeamTableViewCellDelegate {
@@ -245,30 +227,37 @@ extension TeamViewController: TeamTableViewCellDelegate {
         guard let indexPath = tableView.indexPath(for: cell) else {
             return
         }
-        var indexRow =  indexPath.row
-        
+        var indexRow =  indexPath.row + 1
+        let lastIndex = teamViewModel.count
+        while indexRow < lastIndex {
+            guard self.teamViewModel[indexRow].type == .user else {
+                return
+            }
+            UIView.animate(withDuration: Constants.forAnimation.normal) {
+                
+                if self.teamViewModel[indexRow].isHidden {
+                    self.teamViewModel[indexRow].isHidden = false
+                    cell.arrowStateButton.isSelected = false
+                    self.tableView.reloadData()
+                } else {
+                    self.teamViewModel[indexRow].isHidden = true
+                    cell.arrowStateButton.isSelected = true
+                    self.tableView.reloadData()
+                }
+            }
+            indexRow += 1
+        }
     }
-    
-    
-    func showUsers() {
-        
-    }
-    
-    func hideUsers() {
-        
-    }
-    
 }
 
 extension TeamViewController: EmployeeTableViewCellDelegate {
     func didTapOptionButton() {
-       
+        
     }
     
     func didTapOnUser() {
         
     }
-
 }
 
 

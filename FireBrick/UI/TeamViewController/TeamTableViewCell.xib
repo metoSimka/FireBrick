@@ -30,8 +30,8 @@
                             <constraint firstAttribute="width" constant="10" id="JVe-Pa-kQy"/>
                             <constraint firstAttribute="height" constant="10" id="pMZ-Qv-OlD"/>
                         </constraints>
-                        <state key="normal" image="ic_readable_icon_arrow_closed"/>
-                        <state key="selected" image="ic_readable_icon_arrow_opened"/>
+                        <state key="normal" image="ic_readable_icon_arrow_opened"/>
+                        <state key="selected" image="ic_readable_icon_arrow_closed"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Dire Team(1)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfF-12-8AJ">
                         <rect key="frame" x="34" y="26" width="188" height="67.5"/>

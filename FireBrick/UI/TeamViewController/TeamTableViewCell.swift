@@ -39,6 +39,7 @@ class TeamTableViewCell: UITableViewCell {
     
     @IBAction func addEmployee(_ sender: UIButton) {
         self.delegate?.didTapAddEmployee(cell: self)
+         self.delegate?.didTapOnTeam(cell: self)
     }
     
     func addGestureForLabel() {
