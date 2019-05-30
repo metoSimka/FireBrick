@@ -108,7 +108,7 @@ class TeamViewController: UIViewController {
             guard let name = data["name"] as? String,
                 let users = data["users"] as? [[String:AnyObject]],
                 let employee = self.extractUsers(from: users) else {
-                return nil
+                    return nil
             }
             let team = Team(name: name, users: employee, documentID: data.documentID )
             firebaseTeams.append(team)
@@ -124,7 +124,7 @@ class TeamViewController: UIViewController {
             guard let name = item["name"] as? String,
                 let icon = item["icon"] as? String,
                 let docRef = item["team_path"] as? DocumentReference else {
-                return nil
+                    return nil
             }
             let documentID = docRef.documentID
             user.teamDocumentID = documentID
@@ -274,15 +274,17 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
             hiddenIDDocs.append(idDocument)
         }
         adaptDataWithTeamViewModel(teams: teams, idHiddenDocs: hiddenIDDocs)
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     private func showUpUsers(idDocument: String) {
         if hiddenIDDocs.contains(idDocument) {
-           hiddenIDDocs = hiddenIDDocs.filter { $0 != idDocument }
+            hiddenIDDocs = hiddenIDDocs.filter {
+                $0 != idDocument
+            }
         }
         adaptDataWithTeamViewModel(teams: teams, idHiddenDocs: hiddenIDDocs)
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
 }
 
@@ -300,17 +302,14 @@ extension TeamViewController: TeamTableViewCellDelegate {
             return
         }
         if teamViewModel[indexPath.row].isHidden {
-            print("SHOWED")
             showUpUsers(idDocument: idDoc)
         } else {
-            print("HIDDEN")
             // It's not working now, but i will fix that
-//            guard let idDoc = cell.team?.documentID else {
-//                return
-//            }
-            hideUsers(idDocument: idDoc)        }
-        cell.updateButtonState(isHidden: teamViewModel[indexPath.row].isHidden)
-        tableView.reloadData()
+            //            guard let idDoc = cell.team?.documentID else {
+            //                return
+            //            }
+            hideUsers(idDocument: idDoc)
+        }
     }
 }
 
