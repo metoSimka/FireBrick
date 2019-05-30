@@ -144,12 +144,14 @@ class TeamViewController: UIViewController {
                     return
             }
             let teamType = TeamType(name: teamName, documentID: teamIdDoc)
-            let teamModel = TeamViewModel(type: .team, user: nil, team: teamType, isHidden: false)
+            var teamModel = TeamViewModel(type: .team, user: nil, team: teamType, isHidden: false)
+            if !isUserHidden(team: team, idHiddenDocs: idHiddenDocs) {
+                teamModel.isHidden = true
+                extractedModel.append(teamModel)
+                continue
+            }
             extractedModel.append(teamModel)
             for user in teamUsers {
-                guard isUserHidden(teamUser: user, idHiddenDocs: idHiddenDocs) else{
-                    continue
-                }
                 let userType = UserType(name: user.name, imageLink: user.imageLink, reference: nil, teamDocumentID: user.teamDocumentID)
                 let userModel = TeamViewModel(type: .user, user: userType, team: nil, isHidden: false)
                 extractedModel.append(userModel)
@@ -159,14 +161,13 @@ class TeamViewController: UIViewController {
     }
     
     
-    private func isUserHidden (teamUser: User, idHiddenDocs: [String]? ) -> Bool {
-        
+    private func isUserHidden (team: Team, idHiddenDocs: [String]? ) -> Bool {
         if idHiddenDocs != nil {
             guard let hiddenDocs = idHiddenDocs else {
                 return false
             }
             for idDoc in hiddenDocs {
-                guard idDoc != teamUser.teamDocumentID else {
+                guard idDoc != team.documentID else {
                     return false
                 }
             }
@@ -277,9 +278,12 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     private func showUpUsers(idDocument: String) {
-        
+        if hiddenIDDocs.contains(idDocument) {
+           hiddenIDDocs = hiddenIDDocs.filter { $0 != idDocument }
+        }
+        adaptDataWithTeamViewModel(teams: teams, idHiddenDocs: hiddenIDDocs)
+        tableView.reloadData()
     }
-    
 }
 
 extension TeamViewController: TeamTableViewCellDelegate {
@@ -288,26 +292,25 @@ extension TeamViewController: TeamTableViewCellDelegate {
     }
     
     func didTapOnTeam(cell: TeamTableViewCell) {
-
         guard var indexPath = tableView.indexPath(for: cell) else {
             return
         }
+        let curModel = teamViewModel[indexPath.row]
+        guard let idDoc = curModel.team?.documentID else {
+            return
+        }
         if teamViewModel[indexPath.row].isHidden {
-            teamViewModel[indexPath.row].isHidden = false
+            print("SHOWED")
+            showUpUsers(idDocument: idDoc)
         } else {
-            
-            teamViewModel[indexPath.row].isHidden = true
-            cell.updateButtonState(isHidden: teamViewModel[indexPath.row].isHidden)
+            print("HIDDEN")
             // It's not working now, but i will fix that
 //            guard let idDoc = cell.team?.documentID else {
 //                return
 //            }
-            let curModel = teamViewModel[indexPath.row]
-            guard let idDoc = curModel.team?.documentID else {
-                return
-            }
-            hideUsers(idDocument: idDoc)
-        }
+            hideUsers(idDocument: idDoc)        }
+        cell.updateButtonState(isHidden: teamViewModel[indexPath.row].isHidden)
+        tableView.reloadData()
     }
 }
 
