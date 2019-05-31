@@ -25,4 +25,14 @@ struct Constants {
     enum errorCodes {
         static let googleUserCancel = -5
     }
+    
+    enum fireStoreFields {
+        enum technology {
+            static let technologyNameField = "name"
+            static let technologyDocumentationField = "documentation"
+        }
+    }
+    enum mainFireStoreCollections {
+        static let technology = "Technology"
+    }
 }

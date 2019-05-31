@@ -58,22 +58,14 @@ class TeamViewController: UIViewController {
     
     // MARK: Private funcs
     
-    private func getterQueryData(snapShot: QuerySnapshot? , error: Error? ) -> QuerySnapshot? {
-        guard error == nil else {
-            print("error Here", error ?? "Unkown error")
-            return nil
-        }
-        guard let snapShot = snapShot else {
-            return nil
-        }
-        return snapShot
-    }
-    
     private func fetchTeams() {
         Firestore.firestore().collection("Teams").getDocuments(completion: { (snapShot, error) in
-            guard let snapShot = self.getterQueryData(snapShot: snapShot, error: error) else {
-                self.showErrorAlert(error: error)
+            guard error == nil else {
+                print("error Here", error ?? "Unkown error")
                 return
+            }
+            guard let snapShot = snapShot else {
+                return 
             }
             guard let firebaseTeams = self.extractTeams(from: snapShot) else {
                 return

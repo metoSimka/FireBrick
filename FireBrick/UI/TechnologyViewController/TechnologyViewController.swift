@@ -32,7 +32,7 @@ class TechnologyViewController: UIViewController {
     }
     
     private func addListeners() {
-        Firestore.firestore().collection("Technology").addSnapshotListener({ (snapShot, error) in
+        Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).addSnapshotListener({ (snapShot, error) in
             guard let _ = self.getterQueryData(snapShot: snapShot, error: error) else {
                 return
             }
@@ -68,15 +68,15 @@ class TechnologyViewController: UIViewController {
     // Private
     
     private func fetchTechnologies() {
-        Firestore.firestore().collection("Technology").getDocuments(completion: { (snapShot, error) in
+        Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).getDocuments(completion: { (snapShot, error) in
             guard let snapShot = self.getterQueryData(snapShot: snapShot, error: error) else {
                 self.showErrorAlert(error: error)
                 return
             }
             var techs:[Technology] = []
             for data in snapShot.documents {
-                if  let name = data["Name"] as? String,
-                    let doc = data["Documentation"] as? String {
+                if  let name = data[Constants.fireStoreFields.technology.technologyNameField] as? String,
+                    let doc = data[Constants.fireStoreFields.technology.technologyDocumentationField] as? String {
                     let tech = Technology(name: name, documentation: doc)
                     techs.append(tech)
                 } else {
