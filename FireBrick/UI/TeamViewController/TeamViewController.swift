@@ -23,23 +23,11 @@ class TeamViewController: UIViewController {
     
     struct TeamViewModel {
         var type: TeamViewType
-        var user: UserType?
-        var team: TeamType?
-        var isHidden = false
+        var user: User?
+        var team: Team?
+        var isTeamExpanded: Bool?
     }
-    
-    struct TeamType {
-        var name: String?
-        var documentID: String?
-    }
-    
-    struct UserType {
-        var name: String?
-        var imageLink: String?
-        var reference: String?
-        var teamDocumentID: String?
-    }
-    
+
     var teams: [Team] = []
     var teamViewModel: [TeamViewModel] = []
     var hiddenIDDocs: [String] = []
@@ -51,7 +39,6 @@ class TeamViewController: UIViewController {
     
     // Private vars
     
-    var docRef: DocumentReference!
     var db: Firestore?
     
     // MARK: Lifecycle
@@ -138,26 +125,26 @@ class TeamViewController: UIViewController {
     private func updateDataWithTeamViewModel(teams: [Team], idHiddenDocs: [String]?) {
         var extractedModel:[TeamViewModel] = []
         for team in teams {
-            guard let teamName = team.name,
-                let teamIdDoc = team.documentID,
-                let teamUsers = team.users else {
-                    return
+            var teamModel = TeamViewModel(type: .team, user: nil, team: team, isTeamExpanded: false)
+            guard let users = team.users else {
+                continue
             }
-            let teamType = TeamType(name: teamName, documentID: teamIdDoc)
-            var teamModel = TeamViewModel(type: .team, user: nil, team: teamType, isHidden: false)
             if !isUserHidden(team: team, idHiddenDocs: idHiddenDocs) {
-                teamModel.isHidden = true
+                teamModel.isTeamExpanded = true
                 extractedModel.append(teamModel)
                 continue
             }
             extractedModel.append(teamModel)
-            for user in teamUsers {
-                let userType = UserType(name: user.name, imageLink: user.imageLink, reference: nil, teamDocumentID: user.teamDocumentID)
-                let userModel = TeamViewModel(type: .user, user: userType, team: nil, isHidden: false)
+            for user in users {
+                let userModel = TeamViewModel(type: .user, user: user, team: nil, isTeamExpanded: nil)
                 extractedModel.append(userModel)
             }
         }
         teamViewModel = extractedModel
+    }
+    
+    func extractUsersFromTeam() {
+        
     }
     
     private func isUserHidden (team: Team, idHiddenDocs: [String]? ) -> Bool {
@@ -255,7 +242,10 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
             cell.team = team
             cell.delegate = self
             cell.setCellView()
-            cell.updateButtonState(isHidden: teamViewModel[indexPath.row].isHidden)
+            guard let isTeamExpanded = currentModel.isTeamExpanded else {
+                return UITableViewCell()
+            }
+            cell.updateButtonState(isHidden: isTeamExpanded)
             return cell
         case .user:
             guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "EmployeeTableViewCell") as? EmployeeTableViewCell else {
@@ -269,29 +259,94 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func deleteRowsWithAnimation(indexPath: IndexPath, teamViewModel: [TeamViewModel]) {
-        var idxPath = indexPath
-        idxPath.row += 1
-        let lastIndex = teamViewModel.count
-        var indexesForDelete: [IndexPath] = []
-        while idxPath.row > lastIndex {
-            guard teamViewModel[idxPath.row].type == TeamViewType.user else {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellModel = teamViewModel[indexPath.row]
+        switch cellModel.type {
+            
+        case .team:
+            guard let isTeamExpanded = cellModel.isTeamExpanded else {
                 return
             }
-            indexesForDelete.append(idxPath)
-            idxPath.row += 1
+            guard let cell = tableView.cellForRow(at: indexPath) as? TeamTableViewCell else {
+                return
+            }
+            if isTeamExpanded {
+                var indexesForInser: [IndexPath] = []
+                teamViewModel[indexPath.row].isTeamExpanded = false
+                cell.updateButtonState(isHidden: false)
+                guard let countUsersInTeam = cellModel.team?.users?.count else {
+                    return
+                }
+                guard countUsersInTeam != 0 else {
+                    return
+                }
+                
+                let range = 1...countUsersInTeam
+                for count in range {
+                    var idxPath = indexPath
+                    idxPath.row += count
+                    print(idxPath.row)
+                    indexesForInser.append(idxPath)
+                }
+                let firstUserIndexRow = indexPath.row+1
+                guard let lastUserIndexRow = indexesForInser.last?.row else {
+                    return
+                }
+                guard let users = cellModel.team?.users else {
+                    return
+                }
+                var usersForInsert: [TeamViewModel] = []
+                for user in users {
+                    let userModel = TeamViewModel(type: .user, user: user, team: nil, isTeamExpanded: nil)
+                    teamViewModel.insert(userModel, at: indexPath.row+1)
+                }
+                
+                tableView.insertRows(at: indexesForInser, with: .fade)
+            } else {
+                var indexesForDelete: [IndexPath] = []
+                teamViewModel[indexPath.row].isTeamExpanded = true
+                cell.updateButtonState(isHidden: true)
+                guard let countUsersInTeam = cellModel.team?.users?.count else {
+                    return
+                }
+                guard countUsersInTeam != 0 else {
+                    return
+                }
+                let range = 1...countUsersInTeam
+                for count in range {
+                    var idxPath = indexPath
+                    idxPath.row += count
+                    print(idxPath.row)
+                    indexesForDelete.append(idxPath)
+                }
+                let firstUserIndexRow = indexPath.row+1
+                guard let lastUserIndexRow = indexesForDelete.last?.row else {
+                    return
+                }
+                teamViewModel.removeSubrange(firstUserIndexRow...lastUserIndexRow)
+                tableView.deleteRows(at: indexesForDelete, with: .fade)
+            }
+           
+        default:
+            return
         }
-        tableView.deleteRows(at: indexesForDelete, with: .fade)
     }
     
-    private func hideUsers(idDocument: String, modelBeforUpdate: [TeamViewModel], indexPath: IndexPath) {
-        
-        if !hiddenIDDocs.contains(idDocument) {
-            hiddenIDDocs.append(idDocument)
-        }
-        updateDataWithTeamViewModel(teams: teams, idHiddenDocs: hiddenIDDocs)
-        deleteRowsWithAnimation(indexPath: indexPath, teamViewModel: modelBeforUpdate)
-    }
+//    func deleteRowsWithAnimation(indexPath: IndexPath, teamViewModel: [TeamViewModel]) {
+//        var idxPath = indexPath
+//        idxPath.row += 1
+//
+//        tableView.deleteRows(at: indexesForDelete, with: .fade)
+//    }
+    
+//    private func hideUsers(idDocument: String, modelBeforUpdate: [TeamViewModel], indexPath: IndexPath) {
+//
+//        if !hiddenIDDocs.contains(idDocument) {
+//            hiddenIDDocs.append(idDocument)
+//        }
+//        updateDataWithTeamViewModel(teams: teams, idHiddenDocs: hiddenIDDocs)
+//        deleteRowsWithAnimation(indexPath: indexPath, teamViewModel: modelBeforUpdate)
+//    }
     
     private func showUpUsers(idDocument: String) {
         if hiddenIDDocs.contains(idDocument) {
@@ -315,10 +370,13 @@ extension TeamViewController: TeamTableViewCellDelegate {
         guard var indexPath = tableView.indexPath(for: cell) else {
             return
         }
-        if teamViewModel[indexPath.row].isHidden {
+        guard let isTeamExpanded = teamViewModel[indexPath.row].isTeamExpanded else {
+            return
+        }
+        if isTeamExpanded {
             showUpUsers(idDocument: idDoc)
         } else {
-            hideUsers(idDocument: idDoc, modelBeforUpdate: teamViewModel, indexPath: indexPath)
+//            hideUsers(idDocument: idDoc, modelBeforUpdate: teamViewModel, indexPath: indexPath)
         }
     }
 }

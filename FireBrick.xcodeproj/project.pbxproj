@@ -338,16 +338,16 @@
 		A5B67932228D3FC4003DB84E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A5B6F697229F936400B5EBF9 /* InviteUserViewController */,
-				A517D5F1229D2A080081B8A6 /* TeamViewController */,
 				A517D5EB229D05D20081B8A6 /* AddTechnologyViewController */,
-				A52D5D39229BF06600E6C4D5 /* TechnologyViewController */,
-				A50717FF2296A0FD00BC7FF1 /* SimpleAlertViewController */,
 				A5136494228E64D90053DE00 /* AuthViewController */,
 				A5136495228E64F10053DE00 /* EmailAuthViewController */,
 				A5FEEC6822940DA400EB09BC /* ForgotPasswordController */,
+				A5B6F697229F936400B5EBF9 /* InviteUserViewController */,
 				A5075C8D2297CCDE008FF334 /* LaunchScreen */,
+				A50717FF2296A0FD00BC7FF1 /* SimpleAlertViewController */,
 				A50718042296BD3C00BC7FF1 /* SplashScreenViewController */,
+				A517D5F1229D2A080081B8A6 /* TeamViewController */,
+				A52D5D39229BF06600E6C4D5 /* TechnologyViewController */,
 				A51E490B22928E07006687A3 /* WorkspaceViewController */,
 			);
 			path = UI;

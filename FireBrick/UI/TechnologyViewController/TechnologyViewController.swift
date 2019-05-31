@@ -12,10 +12,10 @@ import Firebase
 import FirebaseFirestore
 
 class TechnologyViewController: UIViewController {
-    
-    var docRef: DocumentReference!
+
     var db: Firestore?
     var availableTechnoloies: [Technology] = []
+    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,7 +26,6 @@ class TechnologyViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         db = Firestore.firestore()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
