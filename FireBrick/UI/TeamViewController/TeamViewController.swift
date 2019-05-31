@@ -96,7 +96,7 @@ class TeamViewController: UIViewController {
             }
             self.startLoader()
             self.teams = firebaseTeams
-            self.adaptDataWithTeamViewModel(teams: self.teams, idHiddenDocs: nil)
+            self.updateDataWithTeamViewModel(teams: self.teams, idHiddenDocs: nil)
             self.tableView.reloadData()
             self.stopLoader()
         })
@@ -135,7 +135,7 @@ class TeamViewController: UIViewController {
         return employees
     }
     
-    private func adaptDataWithTeamViewModel(teams: [Team], idHiddenDocs: [String]?) {
+    private func updateDataWithTeamViewModel(teams: [Team], idHiddenDocs: [String]?) {
         var extractedModel:[TeamViewModel] = []
         for team in teams {
             guard let teamName = team.name,
@@ -159,7 +159,6 @@ class TeamViewController: UIViewController {
         }
         teamViewModel = extractedModel
     }
-    
     
     private func isUserHidden (team: Team, idHiddenDocs: [String]? ) -> Bool {
         if idHiddenDocs != nil {
@@ -215,6 +214,7 @@ class TeamViewController: UIViewController {
             print("Stop crushing the system!")
         case .team:
             team.name = teamModel.team?.name
+            team.documentID = teamModel.team?.documentID
         }
         return team
     }
@@ -269,12 +269,28 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    private func hideUsers(idDocument: String) {
+    func deleteRowsWithAnimation(indexPath: IndexPath, teamViewModel: [TeamViewModel]) {
+        var idxPath = indexPath
+        idxPath.row += 1
+        let lastIndex = teamViewModel.count
+        var indexesForDelete: [IndexPath] = []
+        while idxPath.row > lastIndex {
+            guard teamViewModel[idxPath.row].type == TeamViewType.user else {
+                return
+            }
+            indexesForDelete.append(idxPath)
+            idxPath.row += 1
+        }
+        tableView.deleteRows(at: indexesForDelete, with: .fade)
+    }
+    
+    private func hideUsers(idDocument: String, modelBeforUpdate: [TeamViewModel], indexPath: IndexPath) {
+        
         if !hiddenIDDocs.contains(idDocument) {
             hiddenIDDocs.append(idDocument)
         }
-        adaptDataWithTeamViewModel(teams: teams, idHiddenDocs: hiddenIDDocs)
-        self.tableView.reloadData()
+        updateDataWithTeamViewModel(teams: teams, idHiddenDocs: hiddenIDDocs)
+        deleteRowsWithAnimation(indexPath: indexPath, teamViewModel: modelBeforUpdate)
     }
     
     private func showUpUsers(idDocument: String) {
@@ -283,8 +299,7 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
                 $0 != idDocument
             }
         }
-        adaptDataWithTeamViewModel(teams: teams, idHiddenDocs: hiddenIDDocs)
-        self.tableView.reloadData()
+        updateDataWithTeamViewModel(teams: teams, idHiddenDocs: hiddenIDDocs)
     }
 }
 
@@ -294,21 +309,16 @@ extension TeamViewController: TeamTableViewCellDelegate {
     }
     
     func didTapOnTeam(cell: TeamTableViewCell) {
-        guard var indexPath = tableView.indexPath(for: cell) else {
+        guard let idDoc = cell.team?.documentID else {
             return
         }
-        let curModel = teamViewModel[indexPath.row]
-        guard let idDoc = curModel.team?.documentID else {
+        guard var indexPath = tableView.indexPath(for: cell) else {
             return
         }
         if teamViewModel[indexPath.row].isHidden {
             showUpUsers(idDocument: idDoc)
         } else {
-            // It's not working now, but i will fix that
-            //            guard let idDoc = cell.team?.documentID else {
-            //                return
-            //            }
-            hideUsers(idDocument: idDoc)
+            hideUsers(idDocument: idDoc, modelBeforUpdate: teamViewModel, indexPath: indexPath)
         }
     }
 }
