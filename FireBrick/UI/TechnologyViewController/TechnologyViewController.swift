@@ -33,23 +33,14 @@ class TechnologyViewController: UIViewController {
     
     private func addListeners() {
         Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).addSnapshotListener({ (snapShot, error) in
-            guard let _ = self.getterQueryData(snapShot: snapShot, error: error) else {
+            guard error == nil else {
+                print("error Here", error ?? "Unkown error")
                 return
             }
             self.fetchTechnologies()
         })
     }
-    
-    func getterQueryData(snapShot: QuerySnapshot? , error: Error? ) -> QuerySnapshot? {
-        guard error == nil else {
-            print("error Here", error ?? "Unkown error")
-            return nil
-        }
-        guard let snapShot = snapShot else {
-            return nil
-        }
-        return snapShot
-    }
+
     
     // MARK: IBAction
     
@@ -69,9 +60,12 @@ class TechnologyViewController: UIViewController {
     
     private func fetchTechnologies() {
         Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).getDocuments(completion: { (snapShot, error) in
-            guard let snapShot = self.getterQueryData(snapShot: snapShot, error: error) else {
-                self.showErrorAlert(error: error)
+            guard error == nil else {
+                print("error Here", error ?? "Unkown error")
                 return
+            }
+            guard let snapShot = snapShot else {
+                return 
             }
             var techs:[Technology] = []
             for data in snapShot.documents {
