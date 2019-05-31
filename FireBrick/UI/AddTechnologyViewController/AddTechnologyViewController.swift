@@ -43,8 +43,8 @@ class AddTechnologyViewController: UIViewController {
             return
         }
         
-        let dataToSave: [String: Any] = [Constants.fireStoreFields.technology.technologyNameField: name,
-                                         Constants.fireStoreFields.technology.technologyDocumentationField: doc]
+        let dataToSave: [String: Any] = [Constants.fireStoreFields.technology.name: name,
+                                         Constants.fireStoreFields.technology.documentation: doc]
         
         Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).addDocument(data: dataToSave, completion: { (error) in
             guard error == nil else {

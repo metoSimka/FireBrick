@@ -59,7 +59,7 @@ class TeamViewController: UIViewController {
     // MARK: Private funcs
     
     private func fetchTeams() {
-        Firestore.firestore().collection("Teams").getDocuments(completion: { (snapShot, error) in
+        Firestore.firestore().collection(Constants.mainFireStoreCollections.teams).getDocuments(completion: { (snapShot, error) in
             guard error == nil else {
                 print("error Here", error ?? "Unkown error")
                 return
@@ -81,8 +81,8 @@ class TeamViewController: UIViewController {
     func extractTeams(from snapShot: QuerySnapshot) -> [Team]? {
         var firebaseTeams: [Team] = []
         for data in snapShot.documents {
-            guard let name = data["name"] as? String,
-                let users = data["users"] as? [[String:AnyObject]],
+            guard let name = data[Constants.fireStoreFields.teams.name] as? String,
+                let users = data[Constants.fireStoreFields.teams.users] as? [[String:AnyObject]],
                 let employee = self.extractUsers(from: users) else {
                     return nil
             }
@@ -97,8 +97,8 @@ class TeamViewController: UIViewController {
         for item in users {
             var user = User()
             print(item)
-            guard let name = item["name"] as? String,
-                let icon = item["icon"] as? String else {
+            guard let name = item[Constants.fireStoreFields.users.name] as? String,
+                let icon = item[Constants.fireStoreFields.users.icon] as? String else {
                     return nil
             }
             user.name = name
@@ -143,8 +143,10 @@ class TeamViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "TeamTableViewCell", bundle: nil), forCellReuseIdentifier: "TeamTableViewCell")
-        tableView.register(UINib(nibName: "EmployeeTableViewCell", bundle: nil), forCellReuseIdentifier: "EmployeeTableViewCell")
+        let teamTableViewNib = UINib(nibName: Constants.cellsID.teamTableViewCell, bundle: nil)
+        let EmployeeTableViewNib = UINib(nibName: Constants.cellsID.employeeTableCell, bundle: nil)
+        tableView.register(teamTableViewNib, forCellReuseIdentifier: Constants.cellsID.teamTableViewCell)
+        tableView.register(EmployeeTableViewNib, forCellReuseIdentifier: Constants.cellsID.employeeTableCell)
         self.tableView.estimatedRowHeight = 70
         tableView.rowHeight = UITableView.automaticDimension
     }
@@ -153,8 +155,8 @@ class TeamViewController: UIViewController {
         guard let error = error else {
             return
         }
-        let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "SimpleAlertViewController") as? SimpleAlertViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.simpleAlertViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.simpleAlertViewController) as? SimpleAlertViewController else {
             return
         }
         vc.messageTitle = error.localizedDescription
@@ -194,7 +196,7 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
         let currentModel = teamViewModel[indexPath.row]
         switch currentModel.type {
         case .team:
-            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "TeamTableViewCell") as? TeamTableViewCell else {
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.teamTableViewCell) as? TeamTableViewCell else {
                 return UITableViewCell()
             }
             let team = transferTeamFormat(teamModel: currentModel)
@@ -207,7 +209,7 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
             cell.updateButtonState(isHidden: isTeamExpanded)
             return cell
         case .user:
-            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "EmployeeTableViewCell") as? EmployeeTableViewCell else {
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.employeeTableCell) as? EmployeeTableViewCell else {
                 return UITableViewCell()
             }
             let user = transferUserFormat(teamModel: currentModel)

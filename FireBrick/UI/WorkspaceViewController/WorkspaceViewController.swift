@@ -36,8 +36,8 @@ class WorkspaceViewController: UIViewController {
     }
 
     @IBAction func openTeam(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "TeamViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "TeamViewController"  ) as? TeamViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.teamViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.teamViewController  ) as? TeamViewController else {
             return
         }
         self.present(vc, animated: true, completion: nil)
@@ -54,7 +54,7 @@ class WorkspaceViewController: UIViewController {
                     return
                 }
                 self.docRef = doc.reference
-                self.writeData(dataToSave: ["Documentation": "can be Swift or Objective-C"])
+                self.writeData(dataToSave: ["documentation": "can be Swift or Objective-C"])
                 print(name)
             }
         })
@@ -91,8 +91,8 @@ class WorkspaceViewController: UIViewController {
     
     
     @IBAction func researchTechnology(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "TechnologyViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "TechnologyViewController"  ) as? TechnologyViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.technologyViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.technologyViewController  ) as? TechnologyViewController else {
             return
         }
         self.present(vc, animated: true, completion: nil)
@@ -105,8 +105,8 @@ class WorkspaceViewController: UIViewController {
     @IBAction func signOut(_ sender: UIButton) {
         GIDSignIn.sharedInstance()?.signOut()
         
-        let storyboard = UIStoryboard(name: "AuthViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "AuthViewController"  ) as? AuthViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.authViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.authViewController  ) as? AuthViewController else {
             return
         }
         self.present(vc, animated: true, completion: nil)

@@ -49,8 +49,8 @@ class TechnologyViewController: UIViewController {
     }
     
     @IBAction func addTechnology(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "AddTechnologyViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "AddTechnologyViewController") as? AddTechnologyViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.addTechnologyViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.addTechnologyViewController) as? AddTechnologyViewController else {
             return
         }
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
@@ -69,8 +69,8 @@ class TechnologyViewController: UIViewController {
             }
             var techs:[Technology] = []
             for data in snapShot.documents {
-                if  let name = data[Constants.fireStoreFields.technology.technologyNameField] as? String,
-                    let doc = data[Constants.fireStoreFields.technology.technologyDocumentationField] as? String {
+                if  let name = data[Constants.fireStoreFields.technology.name] as? String,
+                    let doc = data[Constants.fireStoreFields.technology.documentation] as? String {
                     let tech = Technology(name: name, documentation: doc)
                     techs.append(tech)
                 } else {
@@ -88,8 +88,8 @@ class TechnologyViewController: UIViewController {
         guard let error = error else {
             return
         }
-        let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "SimpleAlertViewController") as? SimpleAlertViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.simpleAlertViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.simpleAlertViewController) as? SimpleAlertViewController else {
             return
         }
         vc.messageTitle = error.localizedDescription
@@ -114,7 +114,7 @@ class TechnologyViewController: UIViewController {
     //    }
     
     private func setupTableView() {
-        tableView.register(UINib(nibName: "TechnologyTableViewCell", bundle: nil), forCellReuseIdentifier: "TechnologyCell")
+        tableView.register(UINib(nibName: Constants.cellsID.technologyTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.cellsID.technologyTableViewCell)
         self.tableView.estimatedRowHeight = 70
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
@@ -128,7 +128,7 @@ extension TechnologyViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "TechnologyCell") as? TechnologyTableViewCell else {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.technologyTableViewCell) as? TechnologyTableViewCell else {
             return UITableViewCell()
         }
         cell.technology = availableTechnoloies[indexPath.row]

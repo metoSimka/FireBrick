@@ -53,7 +53,7 @@ class EmailAuthViewController: UIViewController {
     }
     
     @IBAction func forgotPassword(_ sender: UIButton) {
-        let vc = ForgotPasswordViewController(nibName: "ForgotPasswordViewController", bundle: nil)
+        let vc = ForgotPasswordViewController(nibName: Constants.controllers.forgotPasswordViewController, bundle: nil)
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
@@ -147,8 +147,8 @@ class EmailAuthViewController: UIViewController {
         spinnerLogin.stopAnimating()
         spinnerSignUp.stopAnimating()
         enableButtons()
-        LogInButton.setTitle(Constants.strings.LogInButton, for: .normal)
-        signUpButton.setTitle(Constants.strings.signUpButton, for: .normal)
+        LogInButton.setTitle(Constants.commonStrings.LogInButton, for: .normal)
+        signUpButton.setTitle(Constants.commonStrings.signUpButton, for: .normal)
     }
     
     private func showWarningPassword() {
@@ -188,8 +188,8 @@ class EmailAuthViewController: UIViewController {
     }
     
     private func showErrorWithMessage() {
-        let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "SimpleAlertViewController") as? SimpleAlertViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.simpleAlertViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.simpleAlertViewController) as? SimpleAlertViewController else {
             return
         }
         vc.headerLabel.text = "Error"
@@ -198,8 +198,8 @@ class EmailAuthViewController: UIViewController {
     }
     
     private  func userDidSignIn() {
-        let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "WorkspaceViewController") as? WorkspaceViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.workspaceViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.workspaceViewController) as? WorkspaceViewController else {
             return
         }
         self.present(vc, animated: true, completion: nil)
@@ -209,8 +209,8 @@ class EmailAuthViewController: UIViewController {
         guard let error = error else {
             return
         }
-        let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "SimpleAlertViewController") as? SimpleAlertViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.simpleAlertViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.simpleAlertViewController) as? SimpleAlertViewController else {
             return
         }
         vc.messageTitle = error.localizedDescription
@@ -234,7 +234,7 @@ class EmailAuthViewController: UIViewController {
         guard let txt = emailTextField.text else {
             return false
         }
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", Constants.strings.eMailFormat)
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", Constants.commonStrings.eMailFormat)
         return emailTest.evaluate(with: txt)
     }
     
