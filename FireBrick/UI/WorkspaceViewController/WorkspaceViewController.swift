@@ -18,12 +18,10 @@ class WorkspaceViewController: UIViewController {
     var listener: ListenerRegistration!
     
     @IBOutlet weak var teamLabel: UILabel!
-    var db: Firestore?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         docRef = Firestore.firestore().document("Technology/Name")
-        db = Firestore.firestore()
 //        getDocumentBy(collectionName: "Technology", fieldName: "Name", value: "iOS" as AnyObject)
     }
     
@@ -46,7 +44,7 @@ class WorkspaceViewController: UIViewController {
     }
     
     func getDocumentBy(collectionName: String, fieldName: String, value: AnyObject) {
-        db?.collection(collectionName).whereField(fieldName, isEqualTo: value).getDocuments(completion: { (snapShot, error) in
+        Firestore.firestore().collection(collectionName).whereField(fieldName, isEqualTo: value).getDocuments(completion: { (snapShot, error) in
             guard let QsnapShot = self.getterQueryData(snapShot: snapShot, error: error) else {
                 return
             }

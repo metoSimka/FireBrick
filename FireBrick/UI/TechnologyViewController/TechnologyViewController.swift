@@ -13,7 +13,6 @@ import FirebaseFirestore
 
 class TechnologyViewController: UIViewController {
 
-    var db: Firestore?
     var availableTechnoloies: [Technology] = []
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -25,7 +24,6 @@ class TechnologyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        db = Firestore.firestore()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +32,7 @@ class TechnologyViewController: UIViewController {
     }
     
     private func addListeners() {
-        db?.collection("Technology").addSnapshotListener({ (snapShot, error) in
+        Firestore.firestore().collection("Technology").addSnapshotListener({ (snapShot, error) in
             guard let _ = self.getterQueryData(snapShot: snapShot, error: error) else {
                 return
             }
@@ -70,7 +68,7 @@ class TechnologyViewController: UIViewController {
     // Private
     
     private func fetchTechnologies() {
-        db?.collection("Technology").getDocuments(completion: { (snapShot, error) in
+        Firestore.firestore().collection("Technology").getDocuments(completion: { (snapShot, error) in
             guard let snapShot = self.getterQueryData(snapShot: snapShot, error: error) else {
                 self.showErrorAlert(error: error)
                 return

@@ -39,12 +39,9 @@ class TeamViewController: UIViewController {
     
     // Private vars
     
-    var db: Firestore?
-    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
-        db = Firestore.firestore()
         super.viewDidLoad()
         setupTableView()
         fetchTeams()
@@ -73,7 +70,7 @@ class TeamViewController: UIViewController {
     }
     
     private func fetchTeams() {
-        db?.collection("Teams").getDocuments(completion: { (snapShot, error) in
+        Firestore.firestore().collection("Teams").getDocuments(completion: { (snapShot, error) in
             guard let snapShot = self.getterQueryData(snapShot: snapShot, error: error) else {
                 self.showErrorAlert(error: error)
                 return
@@ -232,7 +229,6 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellModel = teamViewModel[indexPath.row]
         switch cellModel.type {
-            
         case .team:
             guard let isTeamExpanded = cellModel.isTeamExpanded else {
                 return

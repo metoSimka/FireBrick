@@ -12,17 +12,13 @@ import Firebase
 import FirebaseFirestore
 
 class AddTechnologyViewController: UIViewController {
-    
-    var docRef: DocumentReference!
-    var db: Firestore?
-    
+
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var docTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        db = Firestore.firestore()
         nameTextField.delegate = self
         docTextField.delegate = self
         updataButtonState()
@@ -48,7 +44,7 @@ class AddTechnologyViewController: UIViewController {
         }
         
         let dataToSave: [String: Any] = ["Name": name, "Documentation": doc]
-        db!.collection("Technology").addDocument(data: dataToSave, completion: { (error) in
+        Firestore.firestore().collection("Technology").addDocument(data: dataToSave, completion: { (error) in
             guard error == nil else {
                 print("there must be ALERT!")
                 return
