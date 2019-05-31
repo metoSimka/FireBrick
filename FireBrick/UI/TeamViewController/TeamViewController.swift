@@ -70,7 +70,7 @@ class TeamViewController: UIViewController {
                 self.stopLoader()
                 return 
             }
-            guard let firebaseTeams = self.extractTeams(from: snapShot) else {
+            guard let firebaseTeams = self.getTeams(from: snapShot) else {
                 self.stopLoader()
                 return
             }
@@ -81,21 +81,21 @@ class TeamViewController: UIViewController {
         })
     }
     
-    func extractTeams(from snapShot: QuerySnapshot) -> [Team]? {
+    func getTeams(from snapShot: QuerySnapshot) -> [Team]? {
         var firebaseTeams: [Team] = []
         for data in snapShot.documents {
             guard let name = data[Constants.fireStoreFields.teams.name] as? String,
                 let users = data[Constants.fireStoreFields.teams.users] as? [[String:AnyObject]],
-                let employee = self.extractUsers(from: users) else {
+                let employees = self.getUsers(from: users) else {
                     return nil
             }
-            let team = Team(name: name, users: employee, documentID: data.documentID )
+            let team = Team(name: name, users: employees, documentID: data.documentID )
             firebaseTeams.append(team)
         }
         return firebaseTeams
     }
     
-    func extractUsers(from users: [[String : AnyObject]]) -> [User]? {
+    func getUsers(from users: [[String : AnyObject]]) -> [User]? {
         var employees: [User] = []
         for item in users {
             var user = User()
