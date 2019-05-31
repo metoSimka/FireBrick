@@ -59,18 +59,21 @@ class TeamViewController: UIViewController {
     // MARK: Private funcs
     
     private func fetchTeams() {
+        self.startLoader()
         Firestore.firestore().collection(Constants.mainFireStoreCollections.teams).getDocuments(completion: { (snapShot, error) in
             guard error == nil else {
                 print("error Here", error ?? "Unkown error")
+                self.stopLoader()
                 return
             }
             guard let snapShot = snapShot else {
+                self.stopLoader()
                 return 
             }
             guard let firebaseTeams = self.extractTeams(from: snapShot) else {
+                self.stopLoader()
                 return
             }
-            self.startLoader()
             self.teams = firebaseTeams
             self.updateDataWithTeamViewModel(teams: self.teams, idHiddenDocs: nil)
             self.tableView.reloadData()
