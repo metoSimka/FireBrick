@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct Technology {
-    let name: String?
-    let documentation: String?
+    var name: String?
+    var documentation: String?
+    var icon: String?
+    var color: UIColor?
 }

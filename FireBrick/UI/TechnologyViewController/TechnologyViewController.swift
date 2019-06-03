@@ -13,7 +13,7 @@ import FirebaseFirestore
 
 class TechnologyViewController: UIViewController {
 
-    var availableTechnoloies: [Technology] = []
+    var availableTechnologies: [Technology] = []
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
@@ -70,14 +70,18 @@ class TechnologyViewController: UIViewController {
             for data in snapShot.documents {
                 if  let name = data[Constants.fireStoreFields.technology.name] as? String,
                     let doc = data[Constants.fireStoreFields.technology.documentation] as? String {
-                    let tech = Technology(name: name, documentation: doc)
+                    var tech = Technology()
+                    tech.name = name
+                    tech.documentation = doc
                     techs.append(tech)
                 } else {
-                    let tech = Technology(name: "error", documentation: "error")
+                    var tech = Technology()
+                    tech.name = "error"
+                    tech.documentation = "error"
                     techs.append(tech)
                 }
             }
-            self.availableTechnoloies = techs
+            self.availableTechnologies = techs
             self.tableView.reloadData()
             self.spinner.stopAnimating()
         })
@@ -123,14 +127,14 @@ class TechnologyViewController: UIViewController {
 
 extension TechnologyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return availableTechnoloies.count
+        return availableTechnologies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.technologyTableViewCell) as? TechnologyTableViewCell else {
             return UITableViewCell()
         }
-        cell.technology = availableTechnoloies[indexPath.row]
+        cell.technology = availableTechnologies[indexPath.row]
         cell.setTechnology()
         return cell
     }

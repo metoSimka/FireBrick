@@ -146,9 +146,9 @@ class TeamViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         let teamTableViewNib = UINib(nibName: Constants.cellsID.teamTableViewCell, bundle: nil)
-        let EmployeeTableViewNib = UINib(nibName: Constants.cellsID.employeeTableCell, bundle: nil)
+        let EmployeeTableViewNib = UINib(nibName: Constants.cellsID.employeeTableViewCell, bundle: nil)
         tableView.register(teamTableViewNib, forCellReuseIdentifier: Constants.cellsID.teamTableViewCell)
-        tableView.register(EmployeeTableViewNib, forCellReuseIdentifier: Constants.cellsID.employeeTableCell)
+        tableView.register(EmployeeTableViewNib, forCellReuseIdentifier: Constants.cellsID.employeeTableViewCell)
         self.tableView.estimatedRowHeight = 70
         tableView.rowHeight = UITableView.automaticDimension
     }
@@ -211,7 +211,7 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
             cell.updateButtonState(isHidden: isTeamExpanded)
             return cell
         case .user:
-            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.employeeTableCell) as? EmployeeTableViewCell else {
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.employeeTableViewCell) as? EmployeeTableViewCell else {
                 return UITableViewCell()
             }
             let user = transferUserFormat(teamModel: currentModel)

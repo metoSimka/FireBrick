@@ -18,7 +18,7 @@
         <!--Choose Technology View Controller-->
         <scene sceneID="tQH-70-DjT">
             <objects>
-                <viewController id="Gby-SB-USM" customClass="ChooseTechnologyViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseTechnologyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gby-SB-USM" customClass="ChooseTechnologyViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p9m-5g-Fxn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -7,18 +7,31 @@
 //
 
 import UIKit
+import SDWebImage
 
-class TableViewCell: UITableViewCell {
+class ChooseTechnologyTableViewCell: UITableViewCell {
+    
+    var technology: Technology?
 
+    
+    @IBOutlet weak var imageIcon: UIImageView!
+    @IBOutlet weak var labelTechnology: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func setTechnology() {
+        labelTechnology.text = technology?.name
+        guard let link = technology?.icon else {
+            return
+        }
+        imageIcon.sd_setImage(with: URL(string: link), placeholderImage: UIImage(named: Constants.commonStrings.placeHolder))
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

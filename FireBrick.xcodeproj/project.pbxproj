@@ -291,10 +291,10 @@
 		A52D5D39229BF06600E6C4D5 /* TechnologyViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A52D5D3C229BF08F00E6C4D5 /* TechnologyViewController.swift */,
 				A517D5E7229CE9F30081B8A6 /* TechnologyTableViewCell.swift */,
 				A517D5E8229CE9F30081B8A6 /* TechnologyTableViewCell.xib */,
 				A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */,
-				A52D5D3C229BF08F00E6C4D5 /* TechnologyViewController.swift */,
 			);
 			path = TechnologyViewController;
 			sourceTree = "<group>";

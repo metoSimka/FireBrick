@@ -31,6 +31,8 @@ struct Constants {
         enum technology {
             static let name = "name"
             static let documentation = "documentation"
+            static let icon = "icon"
+            static let color = "color"
         }
         enum teams {
             static let name = "name"
@@ -57,10 +59,12 @@ struct Constants {
         static let authViewController = "AuthViewController"
         static let addTechnologyViewController = "AddTechnologyViewController"
         static let simpleAlertViewController = "SimpleAlertViewController"
+        static let chooseTechnologyViewController = "ChooseTechnologyViewController"
     }
     enum cellsID {
         static let technologyTableViewCell = "TechnologyTableViewCell"
         static let teamTableViewCell = "TeamTableViewCell"
-        static let employeeTableCell = "EmployeeTableViewCell"
+        static let employeeTableViewCell = "EmployeeTableViewCell"
+        static let chooseTableViewCell = "ChooseTableVeiwCell"
     }
 }
