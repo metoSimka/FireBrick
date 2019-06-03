@@ -29,6 +29,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="68" id="P4E-iU-iks"/>
                         </constraints>
+                        <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="16" maxY="0.0"/>
                         <state key="normal" image="ic_readable_icon_option-dots"/>
                         <connections>
