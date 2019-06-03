@@ -30,9 +30,9 @@
 		A517D5F3229D2A240081B8A6 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5F2229D2A240081B8A6 /* TeamViewController.swift */; };
 		A517D5F5229D2A2E0081B8A6 /* TeamViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A517D5F4229D2A2E0081B8A6 /* TeamViewController.storyboard */; };
 		A51B9F0222A4D56D00775921 /* ChooseTechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F0122A4D56D00775921 /* ChooseTechnologyViewController.swift */; };
-		A51B9F0422A4D58500775921 /* ChooseTechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F0322A4D58500775921 /* ChooseTechnologyViewController.storyboard */; };
-		A51B9F0722A4E83C00775921 /* ChooseTechnologyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F0522A4E83C00775921 /* ChooseTechnologyTableViewCell.swift */; };
-		A51B9F0822A4E83C00775921 /* ChooseTechnologyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F0622A4E83C00775921 /* ChooseTechnologyTableViewCell.xib */; };
+		A51B9F0B22A51C8000775921 /* ChooseTechnologyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F0922A51C8000775921 /* ChooseTechnologyTableViewCell.swift */; };
+		A51B9F0C22A51C8000775921 /* ChooseTechnologyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F0A22A51C8000775921 /* ChooseTechnologyTableViewCell.xib */; };
+		A51B9F1022A51E0A00775921 /* ChooseTechnologyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F0E22A51E0A00775921 /* ChooseTechnologyViewController.xib */; };
 		A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E490F2292907F006687A3 /* WorkspaceViewController.swift */; };
 		A51E4912229291E3006687A3 /* WorkspaceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51E4911229291E3006687A3 /* WorkspaceViewController.storyboard */; };
 		A52D5D3B229BF08400E6C4D5 /* TechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */; };
@@ -103,9 +103,9 @@
 		A517D5F2229D2A240081B8A6 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		A517D5F4229D2A2E0081B8A6 /* TeamViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamViewController.storyboard; sourceTree = "<group>"; };
 		A51B9F0122A4D56D00775921 /* ChooseTechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTechnologyViewController.swift; sourceTree = "<group>"; };
-		A51B9F0322A4D58500775921 /* ChooseTechnologyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseTechnologyViewController.storyboard; sourceTree = "<group>"; };
-		A51B9F0522A4E83C00775921 /* ChooseTechnologyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTechnologyTableViewCell.swift; sourceTree = "<group>"; };
-		A51B9F0622A4E83C00775921 /* ChooseTechnologyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTechnologyTableViewCell.xib; sourceTree = "<group>"; };
+		A51B9F0922A51C8000775921 /* ChooseTechnologyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTechnologyTableViewCell.swift; sourceTree = "<group>"; };
+		A51B9F0A22A51C8000775921 /* ChooseTechnologyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTechnologyTableViewCell.xib; sourceTree = "<group>"; };
+		A51B9F0E22A51E0A00775921 /* ChooseTechnologyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTechnologyViewController.xib; sourceTree = "<group>"; };
 		A51E490F2292907F006687A3 /* WorkspaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewController.swift; sourceTree = "<group>"; };
 		A51E4911229291E3006687A3 /* WorkspaceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkspaceViewController.storyboard; sourceTree = "<group>"; };
 		A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TechnologyViewController.storyboard; sourceTree = "<group>"; };
@@ -272,9 +272,9 @@
 			isa = PBXGroup;
 			children = (
 				A51B9F0122A4D56D00775921 /* ChooseTechnologyViewController.swift */,
-				A51B9F0322A4D58500775921 /* ChooseTechnologyViewController.storyboard */,
-				A51B9F0522A4E83C00775921 /* ChooseTechnologyTableViewCell.swift */,
-				A51B9F0622A4E83C00775921 /* ChooseTechnologyTableViewCell.xib */,
+				A51B9F0922A51C8000775921 /* ChooseTechnologyTableViewCell.swift */,
+				A51B9F0A22A51C8000775921 /* ChooseTechnologyTableViewCell.xib */,
+				A51B9F0E22A51E0A00775921 /* ChooseTechnologyViewController.xib */,
 			);
 			path = ChooseTechnologyViewController;
 			sourceTree = "<group>";
@@ -500,6 +500,7 @@
 				A5FEEC5E2293AEC400EB09BC /* SF-Pro-Text-RegularItalic.otf in Resources */,
 				A5FEEC582293AEC400EB09BC /* SF-Pro-Display-Ultralight.otf in Resources */,
 				A5FEEC5C2293AEC400EB09BC /* SF-Pro-Display-Black.otf in Resources */,
+				A51B9F0C22A51C8000775921 /* ChooseTechnologyTableViewCell.xib in Resources */,
 				A5FEEC612293AEC400EB09BC /* SF-Pro-Display-ThinItalic.otf in Resources */,
 				A5FEEC602293AEC400EB09BC /* SF-Pro-Text-HeavyItalic.otf in Resources */,
 				A5FEEC522293AEC400EB09BC /* SF-Pro-Text-Light.otf in Resources */,
@@ -528,10 +529,10 @@
 				A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */,
 				A5FEEC572293AEC400EB09BC /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				A5FEEC502293AEC400EB09BC /* SF-Pro-Display-Medium.otf in Resources */,
+				A51B9F1022A51E0A00775921 /* ChooseTechnologyViewController.xib in Resources */,
 				A5FEEC652293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				A5FEEC5D2293AEC400EB09BC /* SF-Pro-Text-BoldItalic.otf in Resources */,
 				A50B0107229D3A91008C85AE /* EmployeeTableViewCell.xib in Resources */,
-				A51B9F0822A4E83C00775921 /* ChooseTechnologyTableViewCell.xib in Resources */,
 				A5FEEC4C2293AEC400EB09BC /* SF-Pro-Display-Light.otf in Resources */,
 				A517D5EE229D05D20081B8A6 /* AddTechnologyViewController.storyboard in Resources */,
 				A507359F22A139CA00EE15D7 /* InvaiteUserViewController.storyboard in Resources */,
@@ -541,7 +542,6 @@
 				A5FEEC4B2293AEC400EB09BC /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				A5FEEC4D2293AEC400EB09BC /* SF-Pro-Display-Regular.otf in Resources */,
 				A5B67921228D3F74003DB84E /* AuthViewController.storyboard in Resources */,
-				A51B9F0422A4D58500775921 /* ChooseTechnologyViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,8 +623,8 @@
 				A517D5EF229D05D20081B8A6 /* AddTechnologyViewController.swift in Sources */,
 				A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */,
 				A50B0106229D3A91008C85AE /* EmployeeTableViewCell.swift in Sources */,
-				A51B9F0722A4E83C00775921 /* ChooseTechnologyTableViewCell.swift in Sources */,
 				A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */,
+				A51B9F0B22A51C8000775921 /* ChooseTechnologyTableViewCell.swift in Sources */,
 				A507359D22A139A200EE15D7 /* InvaiteUserViewController.swift in Sources */,
 				A50718032296A12000BC7FF1 /* SimpleAlertViewController.swift in Sources */,
 				A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */,

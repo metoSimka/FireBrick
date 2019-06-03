@@ -287,11 +287,20 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
             teamViewModel.insert(userModel, at: index)
         }
     }
+    
+    private func showInviteViewController() {
+        let storyboard = UIStoryboard(name: Constants.controllers.inviteUserViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.inviteUserViewController  ) as? InvaiteUserViewController else {
+            return
+        }
+        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
+    }
 }
 
 extension TeamViewController: TeamTableViewCellDelegate {
+    
     func didTapAddEmployee(cell: TeamTableViewCell) {
-        
+        showInviteViewController()
     }
     
     func didTapOnTeam(cell: TeamTableViewCell) {
@@ -302,6 +311,7 @@ extension TeamViewController: TeamTableViewCellDelegate {
 // MARK: - Protocol Conformance
 
 extension TeamViewController: EmployeeTableViewCellDelegate {
+    
     func didTapOptionButton() {
         
     }

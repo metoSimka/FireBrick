@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,23 +20,26 @@
             <objects>
                 <viewController storyboardIdentifier="ChooseTechnologyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gby-SB-USM" customClass="ChooseTechnologyViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p9m-5g-Fxn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Puh-Ix-Y7y">
-                                <rect key="frame" x="24" y="183" width="272" height="258"/>
+                                <rect key="frame" x="24" y="80" width="327" height="507"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTt-qs-8TW">
-                                        <rect key="frame" x="67" y="16" width="138" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Choose Technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTt-qs-8TW">
+                                        <rect key="frame" x="101.5" y="16" width="124" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="ROW-6v-9Cs"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_readable_image_red_dots_2" translatesAutoresizingMaskIntoConstraints="NO" id="1tX-ts-g3S">
-                                        <rect key="frame" x="16" y="204" width="240" height="38"/>
+                                        <rect key="frame" x="16" y="453" width="295" height="38"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYt-Mb-ryl">
-                                        <rect key="frame" x="16" y="204" width="240" height="38"/>
+                                        <rect key="frame" x="16" y="453" width="295" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="CXy-Iu-AZo"/>
                                         </constraints>
@@ -49,13 +52,16 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYG-E8-tyZ">
-                                        <rect key="frame" x="129.5" y="185.5" width="13" height="14.5"/>
+                                        <rect key="frame" x="158" y="435" width="11" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="JXZ-0K-kH5"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="12"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Ew-qc-jt9">
-                                        <rect key="frame" x="16" y="49" width="240" height="120.5"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Ew-qc-jt9">
+                                        <rect key="frame" x="16" y="49" width="295" height="266"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
@@ -73,7 +79,7 @@
                                     <constraint firstItem="iTt-qs-8TW" firstAttribute="centerX" secondItem="Puh-Ix-Y7y" secondAttribute="centerX" id="VMz-7F-Fxh"/>
                                     <constraint firstItem="1tX-ts-g3S" firstAttribute="top" secondItem="zYG-E8-tyZ" secondAttribute="bottom" constant="4" id="WY8-56-OdF"/>
                                     <constraint firstAttribute="trailing" secondItem="BYt-Mb-ryl" secondAttribute="trailing" constant="16" id="Yd4-hr-4wX"/>
-                                    <constraint firstItem="zYG-E8-tyZ" firstAttribute="top" secondItem="7Ew-qc-jt9" secondAttribute="bottom" constant="16" id="wre-y4-oUb"/>
+                                    <constraint firstItem="zYG-E8-tyZ" firstAttribute="top" secondItem="7Ew-qc-jt9" secondAttribute="bottom" constant="120" id="wre-y4-oUb"/>
                                     <constraint firstItem="BYt-Mb-ryl" firstAttribute="leading" secondItem="Puh-Ix-Y7y" secondAttribute="leading" constant="16" id="wta-bW-a5f"/>
                                     <constraint firstItem="BYt-Mb-ryl" firstAttribute="height" secondItem="1tX-ts-g3S" secondAttribute="height" id="xed-OE-ZP0"/>
                                     <constraint firstAttribute="bottom" secondItem="BYt-Mb-ryl" secondAttribute="bottom" constant="16" id="z5c-6Y-Ibk"/>
@@ -87,10 +93,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Puh-Ix-Y7y" firstAttribute="top" secondItem="A2w-S3-dIy" secondAttribute="top" constant="163" id="b2R-Nx-fnD"/>
+                            <constraint firstItem="Puh-Ix-Y7y" firstAttribute="top" secondItem="A2w-S3-dIy" secondAttribute="top" constant="60" id="bTU-6X-C7d"/>
+                            <constraint firstItem="A2w-S3-dIy" firstAttribute="bottom" secondItem="Puh-Ix-Y7y" secondAttribute="bottom" constant="80" id="blS-Ib-Faa"/>
                             <constraint firstItem="A2w-S3-dIy" firstAttribute="trailing" secondItem="Puh-Ix-Y7y" secondAttribute="trailing" constant="24" id="djn-oP-kSw"/>
+                            <constraint firstItem="Puh-Ix-Y7y" firstAttribute="centerX" secondItem="p9m-5g-Fxn" secondAttribute="centerX" id="hvd-dT-eKb"/>
                             <constraint firstItem="Puh-Ix-Y7y" firstAttribute="leading" secondItem="A2w-S3-dIy" secondAttribute="leading" constant="24" id="noq-LF-lhJ"/>
-                            <constraint firstItem="A2w-S3-dIy" firstAttribute="bottom" secondItem="Puh-Ix-Y7y" secondAttribute="bottom" constant="127" id="y9p-1z-RQN"/>
+                            <constraint firstItem="Puh-Ix-Y7y" firstAttribute="centerY" secondItem="p9m-5g-Fxn" secondAttribute="centerY" id="yh8-3L-Nzo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A2w-S3-dIy"/>
                     </view>

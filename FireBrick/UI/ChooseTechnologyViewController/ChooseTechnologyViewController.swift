@@ -15,15 +15,31 @@ class ChooseTechnologyViewController: UIViewController {
     var availableTechnologies: [Technology] = []
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var constraintTableViewLimitHeight: NSLayoutConstraint!
+    @IBOutlet weak var constraintTableHeight: NSLayoutConstraint!
+    
+    let heightCell:CGFloat = 40
+    let cellsLimit = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
+        setupTableView()
         fetchTechnologies()
     }
     
     @IBAction func makeNewSkill(_ sender: UIButton) {
         
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.alwaysBounceVertical = false
+        let techCell = UINib(nibName: Constants.cellsID.chooseTechnologyTableViewCell, bundle: nil)
+        tableView.register(techCell, forCellReuseIdentifier: Constants.cellsID.chooseTechnologyTableViewCell)
+        self.tableView.estimatedRowHeight = 70
+        tableView.rowHeight = UITableView.automaticDimension
+        constraintTableViewLimitHeight.constant = CGFloat(cellsLimit) * heightCell
     }
     
     private func fetchTechnologies() {
@@ -55,7 +71,13 @@ class ChooseTechnologyViewController: UIViewController {
     }
     
     func didChooseTechnologyAtIndex(indexPath: IndexPath) {
-        let technology = availableTechnologies[indexPath.row]
+        _ = availableTechnologies[indexPath.row]
+    }
+    
+    func updateTableHeight() {
+        let height = heightCell * CGFloat(availableTechnologies.count)
+        constraintTableHeight.constant = height
+        self.view.layoutIfNeeded()
     }
 }
 
@@ -65,11 +87,12 @@ extension ChooseTechnologyViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.chooseTableViewCell) as? ChooseTechnologyTableViewCell else {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.chooseTechnologyTableViewCell) as? ChooseTechnologyTableViewCell else {
             return UITableViewCell()
         }
         cell.technology = availableTechnologies[indexPath.row]
         cell.setTechnology()
+        self.updateTableHeight()
         return cell
     }
     

@@ -55,6 +55,7 @@ class EmailAuthViewController: UIViewController {
     
     @IBAction func forgotPassword(_ sender: UIButton) {
         let vc = ForgotPasswordViewController(nibName: Constants.controllers.forgotPasswordViewController, bundle: nil)
+        
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftEntryKit
 
 class InvaiteUserViewController: UIViewController {
 
@@ -19,6 +20,9 @@ class InvaiteUserViewController: UIViewController {
     
     
     @IBAction func addNewTechnology(_ sender: UIButton) {
+        let vc = ChooseTechnologyViewController(nibName: Constants.controllers.chooseTechnologyViewController, bundle: nil)
+//        self.present(vc, animated: true, completion: nil)
+        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
     @IBAction func addTechnology(_ sender: UIButton) {
@@ -35,6 +39,7 @@ class InvaiteUserViewController: UIViewController {
 
 extension InvaiteUserViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        resignFirstResponder()
         if isValidEmail() {
             return true
         } else {

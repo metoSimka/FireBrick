@@ -18,8 +18,8 @@
         <!--Invaite User View Controller-->
         <scene sceneID="sh9-jp-hzP">
             <objects>
-                <viewController id="rqP-oO-MyN" customClass="InvaiteUserViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ppc-9k-jog">
+                <viewController storyboardIdentifier="InvaiteUserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rqP-oO-MyN" customClass="InvaiteUserViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Ppc-9k-jog">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -69,7 +69,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_readable_image_red_dots" translatesAutoresizingMaskIntoConstraints="NO" id="AzE-6k-OhC">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_readable_image_red_dots_1" translatesAutoresizingMaskIntoConstraints="NO" id="AzE-6k-OhC">
                                         <rect key="frame" x="16" y="170" width="248" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="DCf-0B-lU4"/>
@@ -142,7 +142,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mLs-FF-2Fl" firstAttribute="top" secondItem="5zt-L4-Lbq" secondAttribute="top" constant="150" id="9B7-wl-NQe"/>
+                            <constraint firstItem="mLs-FF-2Fl" firstAttribute="centerY" secondItem="Ppc-9k-jog" secondAttribute="centerY" id="ZOP-y7-PqR"/>
                             <constraint firstItem="5zt-L4-Lbq" firstAttribute="trailing" secondItem="mLs-FF-2Fl" secondAttribute="trailing" constant="20" id="dmD-7L-v8u"/>
+                            <constraint firstItem="mLs-FF-2Fl" firstAttribute="centerX" secondItem="Ppc-9k-jog" secondAttribute="centerX" id="kgU-PJ-paF"/>
                             <constraint firstItem="mLs-FF-2Fl" firstAttribute="leading" secondItem="5zt-L4-Lbq" secondAttribute="leading" constant="20" id="mwU-c8-AwM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5zt-L4-Lbq"/>
@@ -157,6 +159,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="img_readable_image_red_dots" width="242" height="42"/>
+        <image name="img_readable_image_red_dots_1" width="242" height="42"/>
     </resources>
 </document>

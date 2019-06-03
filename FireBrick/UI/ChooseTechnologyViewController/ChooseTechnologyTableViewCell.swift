@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  ChooseTechnologyTableViewCell.swift
 //  FireBrick
 //
 //  Created by metoSimka on 03/06/2019.
@@ -12,14 +12,12 @@ import SDWebImage
 class ChooseTechnologyTableViewCell: UITableViewCell {
     
     var technology: Technology?
-
     
     @IBOutlet weak var imageIcon: UIImageView!
     @IBOutlet weak var labelTechnology: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func setTechnology() {
@@ -30,8 +28,4 @@ class ChooseTechnologyTableViewCell: UITableViewCell {
         imageIcon.sd_setImage(with: URL(string: link), placeholderImage: UIImage(named: Constants.commonStrings.placeHolder))
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
 }

@@ -60,11 +60,12 @@ struct Constants {
         static let addTechnologyViewController = "AddTechnologyViewController"
         static let simpleAlertViewController = "SimpleAlertViewController"
         static let chooseTechnologyViewController = "ChooseTechnologyViewController"
+        static let inviteUserViewController = "InvaiteUserViewController"
     }
     enum cellsID {
         static let technologyTableViewCell = "TechnologyTableViewCell"
         static let teamTableViewCell = "TeamTableViewCell"
         static let employeeTableViewCell = "EmployeeTableViewCell"
-        static let chooseTableViewCell = "ChooseTableVeiwCell"
+        static let chooseTechnologyTableViewCell = "ChooseTechnologyTableViewCell"
     }
 }
