@@ -13,31 +13,32 @@ import SwiftEntryKit
 
 class EmailAuthViewController: UIViewController {
     
-    // MARK: icons
+    // MARK: - IBOutlets
+    // MARK: Icons
     @IBOutlet weak var imageWarningPassword: UIImageView!
     @IBOutlet weak var imageWarningEmail: UIImageView!
-    // MARK: buttons
+    // MARK: Buttons
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var LogInButton: UIButton!
     @IBOutlet weak var eyeButton: UIButton!
-    // MARK: textFields, Labels.
+    // MARK: TextFields, Labels.
     @IBOutlet weak var warningEmailTextLabel: UILabel!
     @IBOutlet weak var warningPasswordTextLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    // MARK: common
+    // MARK: Common
     @IBOutlet weak var spinnerLogin: UIActivityIndicatorView!
     @IBOutlet weak var spinnerSignUp: UIActivityIndicatorView!
     @IBOutlet weak var constraintPasswordWarning: NSLayoutConstraint!
     @IBOutlet weak var constraintEmailWarning: NSLayoutConstraint!
     
-    // MARK: Private vars
+    // MARK: - Private variables
     let showConstraintValue: CGFloat = -17
     let hideConstraintValue: CGFloat = 20
     let minCountPasswordChars = 6
     let disableTransparencyAlpha:CGFloat = 0.5
     
-    // MARK: Lifecycle
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,7 @@ class EmailAuthViewController: UIViewController {
         disableButtons()
     }
     
-    // MARK: IBAction
+    /// MARK: - IBActions
     
     @IBAction func back(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -75,7 +76,7 @@ class EmailAuthViewController: UIViewController {
         logInFunc()
     }
     
-    // MARK: Private
+    // MARK: - Private methods
     
     private func logInFunc() {
         guard emailTextField.text != "" else  {
@@ -274,7 +275,7 @@ class EmailAuthViewController: UIViewController {
     }
 }
 
-// MARK: Extenstions
+// MARK: - Protocol Conformance
 
 extension EmailAuthViewController: UITextFieldDelegate {
     
@@ -304,6 +305,8 @@ extension EmailAuthViewController: UITextFieldDelegate {
         updateButtonStatus()
     }
 }
+
+// MARK: - Notification.Name's
 
 extension Notification.Name {
     static let e_mailSignedIn = Notification.Name("e-mailSignedIn")

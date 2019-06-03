@@ -13,6 +13,8 @@ import GoogleSignIn
 
 class AuthViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var googleSignInView: GIDSignInButton!
     @IBOutlet weak var spinnerView: UIView!
@@ -20,9 +22,11 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var googleAuth: UIView!
     @IBOutlet weak var googleHiddenButton: GIDSignInButton!
     
+    // MARK: - Private constants
+    
     let disableTransparencyAlpha: CGFloat = 0.5
     
-    // MARK: Lifecycle
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +38,7 @@ class AuthViewController: UIViewController {
         registerNotifications()
     }
     
-    // MARK: IBActions
+    // MARK: - IBActions
     
     @IBAction func googleTap(_ sender: UIView) {
         startGoogleLoader()
@@ -50,7 +54,7 @@ class AuthViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    // MARK: Private
+   // MARK: - Private methods
     
     @objc
     private func googleUserDidSignIn(_ notification:Notification) {
@@ -150,7 +154,7 @@ class AuthViewController: UIViewController {
     }
 }
 
-// MARK: Extensions
+// MARK: - Protocol Conformance
 
 extension AuthViewController: GIDSignInUIDelegate {
 }

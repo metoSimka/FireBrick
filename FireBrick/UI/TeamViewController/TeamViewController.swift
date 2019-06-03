@@ -14,7 +14,7 @@ import SwiftEntryKit
 
 class TeamViewController: UIViewController {
     
-    // Public vars
+    // MARK: - Public variables
     
     enum TeamViewType{
         case team
@@ -27,19 +27,18 @@ class TeamViewController: UIViewController {
         var team: Team?
         var isTeamExpanded: Bool?
     }
-
+    
     var teams: [Team] = []
     var teamViewModel: [TeamViewModel] = []
     var hiddenIDDocs: [String] = []
     
-    // MARK: Outlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinnerView: UIView!
     
-    // Private vars
     
-    // MARK: Lifecycle
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +46,7 @@ class TeamViewController: UIViewController {
         fetchTeams()
     }
     
-    // MARK: IBActions
+    // MARK: - IBActions
     
     @IBAction func openNavigation(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -56,7 +55,7 @@ class TeamViewController: UIViewController {
     @IBAction func openFilter(_ sender: UIButton) {
     }
     
-    // MARK: Private funcs
+    // MARK: - Private methods
     
     private func fetchTeams() {
         self.startLoader()
@@ -81,7 +80,7 @@ class TeamViewController: UIViewController {
         })
     }
     
-    func getTeams(from snapShot: QuerySnapshot) -> [Team]? {
+    private func getTeams(from snapShot: QuerySnapshot) -> [Team]? {
         var firebaseTeams: [Team] = []
         for data in snapShot.documents {
             guard let name = data[Constants.fireStoreFields.teams.name] as? String,
@@ -95,7 +94,7 @@ class TeamViewController: UIViewController {
         return firebaseTeams
     }
     
-    func getUsers(from users: [[String : AnyObject]]) -> [User]? {
+    private func getUsers(from users: [[String : AnyObject]]) -> [User]? {
         var employees: [User] = []
         for item in users {
             var user = User()
@@ -127,7 +126,7 @@ class TeamViewController: UIViewController {
         teamViewModel = extractedModel
     }
     
-    func extractUsersFromTeam() {
+    private func extractUsersFromTeam() {
         
     }
     
@@ -260,7 +259,7 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func findIndexes(countCells countUsersInTeam: Int,	startingIndexPath indexPath: IndexPath) -> [IndexPath] {
+    private  func findIndexes(countCells countUsersInTeam: Int,	startingIndexPath indexPath: IndexPath) -> [IndexPath] {
         let range = 1...countUsersInTeam
         var indexes: [IndexPath] = []
         for count in range {
@@ -271,7 +270,7 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
         return indexes
     }
     
-    func removeTeamUsersFromViewModel(teamIndex indexPath: IndexPath, indexesForRemove: [IndexPath] ) {
+    private func removeTeamUsersFromViewModel(teamIndex indexPath: IndexPath, indexesForRemove: [IndexPath] ) {
         let firstUserIndexRow = indexPath.row+1
         guard let lastUserIndexRow = indexesForRemove.last?.row else {
             return
@@ -279,7 +278,7 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
         teamViewModel.removeSubrange(firstUserIndexRow...lastUserIndexRow)
     }
     
-    func insertTeamUsersToViewModel(from team: Team, inIndex index: Int ) {
+    private  func insertTeamUsersToViewModel(from team: Team, inIndex index: Int ) {
         guard let users = team.users else {
             return
         }
@@ -296,9 +295,11 @@ extension TeamViewController: TeamTableViewCellDelegate {
     }
     
     func didTapOnTeam(cell: TeamTableViewCell) {
-   
+        
     }
 }
+
+// MARK: - Protocol Conformance
 
 extension TeamViewController: EmployeeTableViewCellDelegate {
     func didTapOptionButton() {
@@ -309,9 +310,6 @@ extension TeamViewController: EmployeeTableViewCellDelegate {
         
     }
 }
-
-
-
 
 //    func uploadImageToFirestore(data: Data ) {
 //        let storageRef = Storage.storage().reference(withPath: "pics/demo.jpg")

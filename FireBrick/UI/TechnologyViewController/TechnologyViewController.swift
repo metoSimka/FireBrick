@@ -41,7 +41,6 @@ class TechnologyViewController: UIViewController {
         })
     }
 
-    
     // MARK: IBAction
     
     @IBAction func Back(_ sender: UIButton) {
