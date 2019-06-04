@@ -66,6 +66,7 @@ class ChooseTechnologyViewController: UIViewController {
                 }
             }
             self.availableTechnologies = techs
+            self.updateTableHeight()
             self.tableView.reloadData()
         })
     }
@@ -92,7 +93,6 @@ extension ChooseTechnologyViewController: UITableViewDelegate, UITableViewDataSo
         }
         cell.technology = availableTechnologies[indexPath.row]
         cell.setTechnology()
-        self.updateTableHeight()
         return cell
     }
     

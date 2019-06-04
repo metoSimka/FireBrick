@@ -19,12 +19,12 @@
         <scene sceneID="sh9-jp-hzP">
             <objects>
                 <viewController storyboardIdentifier="InvaiteUserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rqP-oO-MyN" customClass="InvaiteUserViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Ppc-9k-jog">
+                    <view key="view" contentMode="scaleToFill" id="Ppc-9k-jog">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLs-FF-2Fl">
-                                <rect key="frame" x="20" y="170" width="280" height="292"/>
+                                <rect key="frame" x="20" y="138" width="280" height="292"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite User" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cel-ic-5j1">
                                         <rect key="frame" x="102" y="16" width="76" height="17"/>
@@ -141,7 +141,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mLs-FF-2Fl" firstAttribute="top" secondItem="5zt-L4-Lbq" secondAttribute="top" constant="150" id="9B7-wl-NQe"/>
+                            <constraint firstItem="mLs-FF-2Fl" firstAttribute="top" secondItem="5zt-L4-Lbq" secondAttribute="top" constant="118" id="Brm-pA-rFF"/>
                             <constraint firstItem="mLs-FF-2Fl" firstAttribute="centerY" secondItem="Ppc-9k-jog" secondAttribute="centerY" id="ZOP-y7-PqR"/>
                             <constraint firstItem="5zt-L4-Lbq" firstAttribute="trailing" secondItem="mLs-FF-2Fl" secondAttribute="trailing" constant="20" id="dmD-7L-v8u"/>
                             <constraint firstItem="mLs-FF-2Fl" firstAttribute="centerX" secondItem="Ppc-9k-jog" secondAttribute="centerX" id="kgU-PJ-paF"/>

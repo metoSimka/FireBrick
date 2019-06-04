@@ -42,11 +42,17 @@ struct Constants {
         enum users {
             static let name = "name"
             static let icon = "icon"
+            static let skills = "skills"
+            static let skillsName = "name"
+            static let skillsTime = "years"
+            static let busy = "busy"
+            static let standardWeeklyEmploymentValue: CGFloat = 40
         }
     }
     enum mainFireStoreCollections {
         static let technology = "Technology"
         static let teams = "Teams"
+        static let users = "Users"
     }
     
     enum controllers {
@@ -67,7 +73,7 @@ struct Constants {
     enum cellsID {
         static let technologyTableViewCell = "TechnologyTableViewCell"
         static let teamTableViewCell = "TeamTableViewCell"
-        static let employeeTableViewCell = "EmployeeTableViewCell"
+        static let teamMemberTableViewCell = "TeamMemberTableViewCell"
         static let chooseTechnologyTableViewCell = "ChooseTechnologyTableViewCell"
         static let employeesTableViewCell = "EmployeesTableViewCell"
     }

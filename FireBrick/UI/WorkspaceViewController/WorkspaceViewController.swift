@@ -43,6 +43,15 @@ class WorkspaceViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func showEmployees(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: Constants.controllers.employeesViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.employeesViewController  ) as? EmployeesViewController else {
+            return
+        }
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
     func getDocumentBy(collectionName: String, fieldName: String, value: AnyObject) {
         Firestore.firestore().collection(collectionName).whereField(fieldName, isEqualTo: value).getDocuments(completion: { (snapShot, error) in
             guard let QsnapShot = self.getterQueryData(snapShot: snapShot, error: error) else {
@@ -88,7 +97,6 @@ class WorkspaceViewController: UIViewController {
             self.teamLabel?.text = name
         }
     }
-    
     
     @IBAction func researchTechnology(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: Constants.controllers.technologyViewController, bundle: nil)

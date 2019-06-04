@@ -13,6 +13,7 @@ struct User {
     var name: String?
     var imageLink: String?
     var hoursInWeek: Int?
-    var skills: [String: Int]?
+    var skills: [[String: AnyObject]]?
     var teamDocumentID: String?
+    var busy: Int?
 }

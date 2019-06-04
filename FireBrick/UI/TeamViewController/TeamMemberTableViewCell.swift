@@ -14,7 +14,7 @@ protocol EmployeeTableViewCellDelegate {
     func didTapOnUser()
 }
 
-class EmployeeTableViewCell: UITableViewCell {
+class TeamMemberTableViewCell: UITableViewCell {
     
     var delegate: EmployeeTableViewCellDelegate?
     var user = User()
