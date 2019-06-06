@@ -12,11 +12,14 @@ import Firebase
 import FirebaseFirestore
 
 class TechnologyViewController: UIViewController {
-
+    
+    // MARK: - Public variables
+    
     var availableTechnologies: [Technology] = []
     
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    // MARK: - IBOutlets
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Lifecycle
@@ -31,16 +34,6 @@ class TechnologyViewController: UIViewController {
         addListeners()
     }
     
-    private func addListeners() {
-        Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).addSnapshotListener({ (snapShot, error) in
-            guard error == nil else {
-                print("error Here", error ?? "Unkown error")
-                return
-            }
-            self.fetchTechnologies()
-        })
-    }
-
     // MARK: IBAction
     
     @IBAction func Back(_ sender: UIButton) {
@@ -55,7 +48,17 @@ class TechnologyViewController: UIViewController {
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
-    // Private
+    // MARK: - Private methods
+    
+    private func addListeners() {
+        Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).addSnapshotListener({ (snapShot, error) in
+            guard error == nil else {
+                print("error Here", error ?? "Unkown error")
+                return
+            }
+            self.fetchTechnologies()
+        })
+    }
     
     private func fetchTechnologies() {
         Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).getDocuments(completion: { (snapShot, error) in
@@ -108,6 +111,8 @@ class TechnologyViewController: UIViewController {
     }
 }
 
+// MARK: - Protocol Conformance
+
 extension TechnologyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return availableTechnologies.count
@@ -117,7 +122,7 @@ extension TechnologyViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.technologyTableViewCell) as? TechnologyTableViewCell else {
             return UITableViewCell()
         }
-        cell.setupTechnology(withTechnology: availableTechnologies[indexPath.row])
+        cell.setupCell(withTechnology: availableTechnologies[indexPath.row])
         return cell
     }
 }

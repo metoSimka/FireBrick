@@ -14,27 +14,41 @@ protocol TeamTableViewCellDelegate {
 }
 
 class TeamTableViewCell: UITableViewCell {
-
+    
+    // MARK: - Public variables
+    
     var delegate: TeamTableViewCellDelegate?
+    
+    // MARK: - IBOutlets
     
     @IBOutlet weak var teamLabel: UILabel!
     @IBOutlet weak var arrowStateButton: UIButton!
+    
+    // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         addGestureForLabel()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
+    // MARK: - IBActions
+    
     @IBAction func addEmployee(_ sender: UIButton) {
         self.delegate?.didTapAddEmployee(inCell: self)
-         self.delegate?.didTapOnTeam(inCell: self)
+        self.delegate?.didTapOnTeam(inCell: self)
     }
     
-    func updateButtonState(isHidden: Bool) {
+    // MARK: - Public methods
+    
+    public func setupCell(with team: Team) {
+        teamLabel.text = team.name
+    }
+    
+    public func updateButtonState(isHidden: Bool) {
         if isHidden {
             arrowStateButton.isSelected = true
         } else {
@@ -42,17 +56,16 @@ class TeamTableViewCell: UITableViewCell {
         }
     }
     
-    func setupCell(with team: Team) {
-        teamLabel.text = team.name
-    }
+    // MARK: - Private methods
     
-    func addGestureForLabel() {
+    
+    private func addGestureForLabel() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         teamLabel.addGestureRecognizer(tap)
     }
     
     @objc
-    func handleTap(_ sender: UITapGestureRecognizer) {
+    private func handleTap(_ sender: UITapGestureRecognizer) {
         self.delegate?.didTapOnTeam(inCell: self)
     }
 }

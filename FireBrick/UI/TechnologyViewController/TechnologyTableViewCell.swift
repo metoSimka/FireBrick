@@ -9,15 +9,21 @@
 import UIKit
 
 class TechnologyTableViewCell: UITableViewCell {
- 
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var docLabel: UILabel!
+    
+    // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    func setupTechnology(withTechnology technology: Technology) {
+    
+    // MARK: - Public methods
+    
+    public func setupCell(withTechnology technology: Technology) {
         guard let technologyName = technology.name else {
             return
         }

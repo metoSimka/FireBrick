@@ -12,10 +12,14 @@ import Firebase
 import FirebaseFirestore
 
 class AddTechnologyViewController: UIViewController {
-
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var docTextField: UITextField!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,8 @@ class AddTechnologyViewController: UIViewController {
         docTextField.delegate = self
         updataButtonState()
     }
+    
+    // MARK: - IBActions
     
     @IBAction func cancel(_ sender: UIButton) {
         SwiftEntryKit.dismiss()
@@ -32,7 +38,9 @@ class AddTechnologyViewController: UIViewController {
         writeData()
     }
     
-    func writeData() {
+    // MARK: - Private methods
+    
+    private func writeData() {
         guard let name = nameTextField.text else {
             return
         }
@@ -54,11 +62,11 @@ class AddTechnologyViewController: UIViewController {
                 self.showErrorMessage(errorText: errorText)
                 return
             }
-                SwiftEntryKit.dismiss()
+            SwiftEntryKit.dismiss()
         })
     }
     
-    func isFieldsAreEmpty() -> Bool {
+    private func isFieldsAreEmpty() -> Bool {
         guard let nameText = nameTextField.text?.count else {
             return true
         }
@@ -71,19 +79,19 @@ class AddTechnologyViewController: UIViewController {
         return false
     }
     
-    func formIsValid() -> Bool {
+    private func formIsValid() -> Bool {
         return true
     }
     
-    func nameIsValid() -> Bool {
-          return true
+    private func nameIsValid() -> Bool {
+        return true
     }
     
-    func documentationIsValid() -> Bool {
-          return true
+    private func documentationIsValid() -> Bool {
+        return true
     }
     
-    func updataButtonState() {
+    private  func updataButtonState() {
         if isFieldsAreEmpty() {
             addButton.alpha = 0.5
             addButton.isEnabled = false
@@ -101,6 +109,8 @@ class AddTechnologyViewController: UIViewController {
     }
 }
 
+// MARK: - Protocol Conformance
+
 extension AddTechnologyViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == nameTextField {
@@ -112,7 +122,7 @@ extension AddTechnologyViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-            updataButtonState()
+        updataButtonState()
     }
 }
 

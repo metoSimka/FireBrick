@@ -13,11 +13,15 @@ import GoogleSignIn
 
 class SplashScreenViewController: UIViewController {
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         enableNotifications()
         GIDSignIn.sharedInstance()?.signInSilently()
     }
+    
+    // MARK: - Private methods
     
     @objc
     private func googleUserDidSignIn(_ notification:Notification) {

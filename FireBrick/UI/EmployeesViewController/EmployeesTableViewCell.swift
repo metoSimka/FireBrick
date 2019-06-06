@@ -11,8 +11,13 @@ import SDWebImage
 
 class EmployeesTableViewCell: UITableViewCell {
     
+    // MARK: - Public constants
     static let minInteritemSpacing:CGFloat = 4
+    
+    // MARK: - Public variables
     var user: User?
+    
+    // MARK: - IBOutlets
     
     @IBOutlet weak var constraintCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -22,28 +27,15 @@ class EmployeesTableViewCell: UITableViewCell {
     @IBOutlet weak var imageAvatar: UIImageView!
     @IBOutlet weak var progressBar: UIProgressView!
     
+    // MARK: - Lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupTagCollectionView()
     }
-
-    func updateHeightCollectionView() {
-        let height = collectionView.collectionViewLayout.collectionViewContentSize.height
-        constraintCollectionViewHeight.constant = height
-        collectionView.layoutIfNeeded()
-    }
     
-    func setupTagCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        let cellNib = UINib(nibName: "TagCollectionViewCell", bundle: nil)
-        self.collectionView.register(cellNib, forCellWithReuseIdentifier: "TagCollectionViewCell")
-        var flowLayout = UICollectionViewFlowLayout()
-        flowLayout = LeftAlignedCollectionViewFlowLayout()
-        flowLayout.estimatedItemSize = CGSize(width: 40, height: 20)
-        collectionView.collectionViewLayout = flowLayout
-    }
-
+    // MARK: - Public methods
+    
     func setupCell() {
         labelUserName.text = user?.name
         labelBusy.text = ("\(user?.busy ?? 0) hr / week")
@@ -53,7 +45,27 @@ class EmployeesTableViewCell: UITableViewCell {
         updateProgressBar()
     }
     
-    func updateProgressBar() {
+    
+    // MARK: - Private methods
+    
+    private func updateHeightCollectionView() {
+        let height = collectionView.collectionViewLayout.collectionViewContentSize.height
+        constraintCollectionViewHeight.constant = height
+        collectionView.layoutIfNeeded()
+    }
+    
+    private func setupTagCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let cellNib = UINib(nibName: "TagCollectionViewCell", bundle: nil)
+        self.collectionView.register(cellNib, forCellWithReuseIdentifier: "TagCollectionViewCell")
+        var flowLayout = UICollectionViewFlowLayout()
+        flowLayout = LeftAlignedCollectionViewFlowLayout()
+        flowLayout.estimatedItemSize = CGSize(width: 40, height: 20)
+        collectionView.collectionViewLayout = flowLayout
+    }
+    
+    private  func updateProgressBar() {
         guard let busyInt = user?.busy else {
             return
         }
@@ -72,6 +84,8 @@ class EmployeesTableViewCell: UITableViewCell {
     }
 }
 
+// MARK: - Protocol Conformance
+
 extension EmployeesTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -89,12 +103,12 @@ extension EmployeesTableViewCell: UICollectionViewDelegate, UICollectionViewData
         cell.setupCell(withSkill: userSkill[indexPath.row])
         return cell
     }
-
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
-            return cell.systemLayoutSizeFitting(cell.tagLabel!.bounds.size)
-        }
-
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
+        return cell.systemLayoutSizeFitting(cell.tagLabel!.bounds.size)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 4
     }

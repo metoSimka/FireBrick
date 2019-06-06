@@ -15,21 +15,32 @@ protocol SingleButtonAlertMessageViewDelegate {
 
 class SimpleAlertViewController: UIViewController {
     
+    // MARK: - Public variables
+    
     var delegate: SingleButtonAlertMessageViewDelegate?
-    var headerTitle = "Alert"
-    var messageTitle = "Uknown Error"
-    var buttonTitle = "OK"
+    
+    
+    // MARK: - IBOutlets
     
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var headerLabel: UILabel!
     
+    // MARK: - Private variables
+    
+    var headerTitle = "Alert"
+    var messageTitle = "Uknown Error"
+    var buttonTitle = "OK"
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         headerLabel.text = headerTitle
         messageLabel.text = messageTitle
         button.setTitle(buttonTitle, for: .normal)
     }
+    
+    // MARK: - IBActions
     
     @IBAction func tapButton(_ sender: UIButton) {
         self.delegate?.didTapButton(button: sender)

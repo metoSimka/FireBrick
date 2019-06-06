@@ -10,14 +10,20 @@ import UIKit
 import SwiftEntryKit
 
 class InvaiteUserViewController: UIViewController {
-
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var emailTextField: UITextField!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.delegate = self
     }
-
+    
+    // MARK: - IBActions
+    
     @IBAction func addNewTechnology(_ sender: UIButton) {
         let vc = ChooseTechnologyViewController(nibName: Constants.controllers.chooseTechnologyViewController, bundle: nil)
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
@@ -25,6 +31,8 @@ class InvaiteUserViewController: UIViewController {
     
     @IBAction func addTechnology(_ sender: UIButton) {
     }
+    
+    // MARK: - Private methods
     
     private  func isValidEmail() -> Bool {
         guard let txt = emailTextField.text else {

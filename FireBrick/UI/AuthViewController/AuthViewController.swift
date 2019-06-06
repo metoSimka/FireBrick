@@ -54,7 +54,7 @@ class AuthViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-   // MARK: - Private methods
+    // MARK: - Private methods
     
     @objc
     private func googleUserDidSignIn(_ notification:Notification) {
@@ -98,7 +98,7 @@ class AuthViewController: UIViewController {
         }
         showErrorMessage(errorText: error.localizedDescription)
     }
-
+    
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(googleUserDidSignIn(_:)), name: .googleSignedIn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(googleErrorAuth(_:)), name: .googleError, object: nil)

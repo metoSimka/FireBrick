@@ -6,21 +6,30 @@
 //  Copyright © 2019 metoSimka. All rights reserved.
 //
 
+
 import UIKit
 import Firebase
 
 class EmployeesViewController: UIViewController {
     
+    // MARK: - Public variables
+    
     var users: [User] = []
     
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         fetchUsers()
     }
-
+    
+    // MARK: - Private methods
+    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -79,6 +88,8 @@ class EmployeesViewController: UIViewController {
         
     }
 }
+
+// MARK: - Protocol Conformance
 
 extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -10,11 +10,16 @@ import UIKit
 
 class TagCollectionViewCell: UICollectionViewCell {
     
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var tagLabel: UILabel!
+    
+    // MARK: - Private constants
+    
     let cellInset:CGFloat = 4
     
-    var data: [String:AnyObject]?
-
-    @IBOutlet weak var tagLabel: UILabel!
+    // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +27,7 @@ class TagCollectionViewCell: UICollectionViewCell {
         self.tagLabel.textColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
         self.layer.cornerRadius = 4
     }
-
+    
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         setNeedsLayout()
         layoutIfNeeded()
@@ -32,10 +37,9 @@ class TagCollectionViewCell: UICollectionViewCell {
         return layoutAttributes
     }
     
-    func setupCell(withSkill skill: [String: AnyObject]) {
-        guard let skill = data else {
-            return
-        }
+    // MARK: - Public methods
+    
+    public func setupCell(withSkill skill: [String: AnyObject]) {
         guard let skillName = skill[Constants.fireStoreFields.teams.skillName] as? String,
             let skillColor = skill[Constants.fireStoreFields.teams.skillColor] as? String,
             let skillAge = skill[Constants.fireStoreFields.teams.skillAge] as? Int else {

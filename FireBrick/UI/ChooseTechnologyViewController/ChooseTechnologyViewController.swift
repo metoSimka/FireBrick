@@ -12,14 +12,22 @@ import FirebaseFirestore
 
 class ChooseTechnologyViewController: UIViewController {
     
+    // MARK: - Public variables
+    
     var availableTechnologies: [Technology] = []
+    
+    // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var constraintTableViewLimitHeight: NSLayoutConstraint!
     @IBOutlet weak var constraintTableHeight: NSLayoutConstraint!
     
+    // MARK: - Private constants
+    
     let heightCell:CGFloat = 40
     let cellsLimit = 5
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +35,13 @@ class ChooseTechnologyViewController: UIViewController {
         fetchTechnologies()
     }
     
+    // MARK: - IBActions
+    
     @IBAction func makeNewSkill(_ sender: UIButton) {
         
     }
+    
+    // MARK: - Private methods
     
     private func setupTableView() {
         tableView.delegate = self
@@ -71,16 +83,18 @@ class ChooseTechnologyViewController: UIViewController {
         })
     }
     
-    func didChooseTechnologyAtIndex(indexPath: IndexPath) {
+    private func didChooseTechnologyAtIndex(indexPath: IndexPath) {
         _ = availableTechnologies[indexPath.row]
     }
     
-    func updateTableHeight() {
+    private func updateTableHeight() {
         let height = heightCell * CGFloat(availableTechnologies.count)
         constraintTableHeight.constant = height
         self.view.layoutIfNeeded()
     }
 }
+
+// MARK: - Protocol Conformance
 
 extension ChooseTechnologyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

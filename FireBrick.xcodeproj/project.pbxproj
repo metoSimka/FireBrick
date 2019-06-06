@@ -217,8 +217,8 @@
 		A50718042296BD3C00BC7FF1 /* SplashScreenViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A50718052296BD4E00BC7FF1 /* SplashScreenViewController.storyboard */,
 				A50718072296BD7000BC7FF1 /* SplashScreenViewController.swift */,
+				A50718052296BD4E00BC7FF1 /* SplashScreenViewController.storyboard */,
 			);
 			path = SplashScreenViewController;
 			sourceTree = "<group>";

@@ -16,29 +16,34 @@ protocol EmployeeTableViewCellDelegate {
 
 class TeamMemberTableViewCell: UITableViewCell {
     
+    // MARK: - Public variables
+    
     var delegate: EmployeeTableViewCellDelegate?
-
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageIcon: UIImageView!
+    
+    // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    // MARK: - IBActions
     
     @IBAction func openOptions(_ sender: UIButton) {
         self.delegate?.didTapOptionButton()
     }
     
-    func addGestureForLabel() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-        imageIcon.addGestureRecognizer(tap)
-    }
+    // MARK: - Public methods
     
-    func setupCell(withUser user: User) {
+    public func setupCell(withUser user: User) {
         nameLabel.text = user.name
         guard let link = user.imageLink else {
             return
@@ -46,8 +51,15 @@ class TeamMemberTableViewCell: UITableViewCell {
         imageIcon.sd_setImage(with: URL(string: link), placeholderImage: UIImage(named: Constants.commonStrings.placeHolder))
     }
     
+    // MARK: - Private methods
+    
+    private func addGestureForLabel() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        imageIcon.addGestureRecognizer(tap)
+    }
+    
     @objc
-    func handleTap(_ sender: UITapGestureRecognizer) {
+    private func handleTap(_ sender: UITapGestureRecognizer) {
         self.delegate?.didTapOnUser()
     }
 }
