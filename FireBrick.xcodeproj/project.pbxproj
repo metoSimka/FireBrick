@@ -19,7 +19,6 @@
 		A507A6F122A8E48A00F742AD /* LeftAlligmentFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507A6F022A8E48A00F742AD /* LeftAlligmentFlowLayout.swift */; };
 		A508EEA822A7A26500640A83 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508EEA622A7A26500640A83 /* TagCollectionViewCell.swift */; };
 		A508EEA922A7A26500640A83 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A508EEA722A7A26500640A83 /* TagCollectionViewCell.xib */; };
-		A508EEAD22A7B39700640A83 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508EEAC22A7B39700640A83 /* TagView.swift */; };
 		A50B0106229D3A91008C85AE /* TeamMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B0104229D3A91008C85AE /* TeamMemberTableViewCell.swift */; };
 		A50B0107229D3A91008C85AE /* TeamMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50B0105229D3A91008C85AE /* TeamMemberTableViewCell.xib */; };
 		A50B0109229D3CDE008C85AE /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B0108229D3CDE008C85AE /* TeamModel.swift */; };
@@ -103,7 +102,6 @@
 		A507A6F022A8E48A00F742AD /* LeftAlligmentFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlligmentFlowLayout.swift; sourceTree = "<group>"; };
 		A508EEA622A7A26500640A83 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A508EEA722A7A26500640A83 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
-		A508EEAC22A7B39700640A83 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		A50B0104229D3A91008C85AE /* TeamMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberTableViewCell.swift; sourceTree = "<group>"; };
 		A50B0105229D3A91008C85AE /* TeamMemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamMemberTableViewCell.xib; sourceTree = "<group>"; };
 		A50B0108229D3CDE008C85AE /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
@@ -389,7 +387,6 @@
 				A513649A228E745C0053DE00 /* ExtensionDesignableUIView.swift */,
 				A5FEEC662293F28E00EB09BC /* Constants.swift */,
 				A51499DE22A684B900B7C39A /* ExtensionUIColor.swift */,
-				A508EEAC22A7B39700640A83 /* TagView.swift */,
 				A507A6F022A8E48A00F742AD /* LeftAlligmentFlowLayout.swift */,
 			);
 			path = Utils;
@@ -676,7 +673,6 @@
 				A50733FF229E397900A3DABB /* TeamTableViewCell.swift in Sources */,
 				A517D5EF229D05D20081B8A6 /* AddTechnologyViewController.swift in Sources */,
 				A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */,
-				A508EEAD22A7B39700640A83 /* TagView.swift in Sources */,
 				A508EEA822A7A26500640A83 /* TagCollectionViewCell.swift in Sources */,
 				A50B0106229D3A91008C85AE /* TeamMemberTableViewCell.swift in Sources */,
 				A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */,

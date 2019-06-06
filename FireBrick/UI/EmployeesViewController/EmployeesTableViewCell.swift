@@ -26,11 +26,11 @@ class EmployeesTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setupTagCollectionView()
     }
-    
+
     func updateHeightCollectionView() {
         let height = collectionView.collectionViewLayout.collectionViewContentSize.height
-        constraintCollectionViewHeight.constant = height
-        self.layoutIfNeeded(); collectionView.layoutIfNeeded()
+        constraintCollectionViewHeight.constant = 250
+        collectionView.layoutIfNeeded()
     }
     
     func setupTagCollectionView() {

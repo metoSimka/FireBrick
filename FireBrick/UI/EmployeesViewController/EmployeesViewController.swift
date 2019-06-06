@@ -93,11 +93,4 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setUserProfile()
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.employeesTableViewCell) as? EmployeesTableViewCell else {
-            return
-        }
-        cell.updateHeightCollectionView()
-    }
 }

@@ -99,23 +99,6 @@ class TechnologyViewController: UIViewController {
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
-    //It may use in feature.
-    
-    //    private func showAlertIfNeeded(array idFailedDocs: [String]) {
-    //        if idFailedDocs.count > 0 {
-    //            self.showFormattAlert(ids: idFailedDocs)
-    //        }
-    //    }
-    //
-    //    private func showFormattAlert(ids: [String]) {
-    //        let storyboard = UIStoryboard(name: "SimpleAlertViewController", bundle: nil)
-    //        guard let vc = storyboard.instantiateViewController(withIdentifier: "SimpleAlertViewController") as? SimpleAlertViewController else {
-    //            return
-    //        }
-    //        vc.messageTitle = "One or more technologies came in the wrong format and will not be displayed. \nID-list failed documents: \(ids.map { "\($0)" }.joined(separator:"\n"))"
-    //        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
-    //    }
-    
     private func setupTableView() {
         tableView.register(UINib(nibName: Constants.cellsID.technologyTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.cellsID.technologyTableViewCell)
         self.tableView.estimatedRowHeight = 70

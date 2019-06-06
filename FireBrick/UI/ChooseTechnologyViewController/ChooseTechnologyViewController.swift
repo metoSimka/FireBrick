@@ -100,5 +100,4 @@ extension ChooseTechnologyViewController: UITableViewDelegate, UITableViewDataSo
         didChooseTechnologyAtIndex(indexPath: indexPath)
         return
     }
-    
 }

@@ -17,11 +17,9 @@ class InvaiteUserViewController: UIViewController {
         super.viewDidLoad()
         emailTextField.delegate = self
     }
-    
-    
+
     @IBAction func addNewTechnology(_ sender: UIButton) {
         let vc = ChooseTechnologyViewController(nibName: Constants.controllers.chooseTechnologyViewController, bundle: nil)
-//        self.present(vc, animated: true, completion: nil)
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     

@@ -22,7 +22,6 @@ class WorkspaceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         docRef = Firestore.firestore().document("Technology/Name")
-//        getDocumentBy(collectionName: "Technology", fieldName: "Name", value: "iOS" as AnyObject)
     }
     
     override func viewWillAppear(_ animated: Bool) {
