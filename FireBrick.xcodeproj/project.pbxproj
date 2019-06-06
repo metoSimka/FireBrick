@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,10 +12,41 @@
 		A50718032296A12000BC7FF1 /* SimpleAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50718022296A12000BC7FF1 /* SimpleAlertViewController.swift */; };
 		A50718062296BD4E00BC7FF1 /* SplashScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A50718052296BD4E00BC7FF1 /* SplashScreenViewController.storyboard */; };
 		A50718082296BD7000BC7FF1 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50718072296BD7000BC7FF1 /* SplashScreenViewController.swift */; };
+		A50733FF229E397900A3DABB /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50733FD229E397900A3DABB /* TeamTableViewCell.swift */; };
+		A5073400229E397900A3DABB /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50733FE229E397900A3DABB /* TeamTableViewCell.xib */; };
+		A507359D22A139A200EE15D7 /* InvaiteUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507359C22A139A200EE15D7 /* InvaiteUserViewController.swift */; };
+		A507359F22A139CA00EE15D7 /* InvaiteUserViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A507359E22A139CA00EE15D7 /* InvaiteUserViewController.storyboard */; };
+		A507A6F122A8E48A00F742AD /* LeftAlligmentFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507A6F022A8E48A00F742AD /* LeftAlligmentFlowLayout.swift */; };
+		A508EEA822A7A26500640A83 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508EEA622A7A26500640A83 /* TagCollectionViewCell.swift */; };
+		A508EEA922A7A26500640A83 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A508EEA722A7A26500640A83 /* TagCollectionViewCell.xib */; };
+		A50B0106229D3A91008C85AE /* TeamMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B0104229D3A91008C85AE /* TeamMemberTableViewCell.swift */; };
+		A50B0107229D3A91008C85AE /* TeamMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50B0105229D3A91008C85AE /* TeamMemberTableViewCell.xib */; };
+		A50B0109229D3CDE008C85AE /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B0108229D3CDE008C85AE /* TeamModel.swift */; };
+		A50B010B229D3D03008C85AE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B010A229D3D03008C85AE /* UserModel.swift */; };
 		A5136493228E648A0053DE00 /* EmailAuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5136492228E648A0053DE00 /* EmailAuthViewController.storyboard */; };
 		A513649B228E745C0053DE00 /* ExtensionDesignableUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513649A228E745C0053DE00 /* ExtensionDesignableUIView.swift */; };
+		A51499D822A639FD00B7C39A /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51499D622A639FD00B7C39A /* AddEmployeeViewController.swift */; };
+		A51499D922A639FD00B7C39A /* AddEmployeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51499D722A639FD00B7C39A /* AddEmployeeViewController.xib */; };
+		A51499DF22A684B900B7C39A /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51499DE22A684B900B7C39A /* ExtensionUIColor.swift */; };
+		A517D5E5229CE97F0081B8A6 /* TecnhologyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5E4229CE97E0081B8A6 /* TecnhologyModel.swift */; };
+		A517D5E9229CE9F30081B8A6 /* TechnologyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5E7229CE9F30081B8A6 /* TechnologyTableViewCell.swift */; };
+		A517D5EA229CE9F30081B8A6 /* TechnologyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A517D5E8229CE9F30081B8A6 /* TechnologyTableViewCell.xib */; };
+		A517D5EE229D05D20081B8A6 /* AddTechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A517D5EC229D05D20081B8A6 /* AddTechnologyViewController.storyboard */; };
+		A517D5EF229D05D20081B8A6 /* AddTechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5ED229D05D20081B8A6 /* AddTechnologyViewController.swift */; };
+		A517D5F3229D2A240081B8A6 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5F2229D2A240081B8A6 /* TeamViewController.swift */; };
+		A517D5F5229D2A2E0081B8A6 /* TeamViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A517D5F4229D2A2E0081B8A6 /* TeamViewController.storyboard */; };
+		A51B9F0222A4D56D00775921 /* ChooseTechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F0122A4D56D00775921 /* ChooseTechnologyViewController.swift */; };
+		A51B9F0B22A51C8000775921 /* ChooseTechnologyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F0922A51C8000775921 /* ChooseTechnologyTableViewCell.swift */; };
+		A51B9F0C22A51C8000775921 /* ChooseTechnologyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F0A22A51C8000775921 /* ChooseTechnologyTableViewCell.xib */; };
+		A51B9F1022A51E0A00775921 /* ChooseTechnologyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F0E22A51E0A00775921 /* ChooseTechnologyViewController.xib */; };
+		A51B9F1322A5392700775921 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F1222A5392700775921 /* EmployeesViewController.swift */; };
+		A51B9F1522A5392F00775921 /* EmployeesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F1422A5392F00775921 /* EmployeesViewController.storyboard */; };
+		A51B9F1822A53CA200775921 /* EmployeesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F1622A53CA200775921 /* EmployeesTableViewCell.swift */; };
+		A51B9F1922A53CA200775921 /* EmployeesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F1722A53CA200775921 /* EmployeesTableViewCell.xib */; };
 		A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E490F2292907F006687A3 /* WorkspaceViewController.swift */; };
 		A51E4912229291E3006687A3 /* WorkspaceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51E4911229291E3006687A3 /* WorkspaceViewController.storyboard */; };
+		A52D5D3B229BF08400E6C4D5 /* TechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */; };
+		A52D5D3D229BF08F00E6C4D5 /* TechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52D5D3C229BF08F00E6C4D5 /* TechnologyViewController.swift */; };
 		A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6791B228D3F74003DB84E /* AppDelegate.swift */; };
 		A5B67921228D3F74003DB84E /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6791F228D3F74003DB84E /* AuthViewController.storyboard */; };
 		A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B67922228D3F75003DB84E /* Assets.xcassets */; };
@@ -64,10 +95,41 @@
 		A50718022296A12000BC7FF1 /* SimpleAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAlertViewController.swift; sourceTree = "<group>"; };
 		A50718052296BD4E00BC7FF1 /* SplashScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreenViewController.storyboard; sourceTree = "<group>"; };
 		A50718072296BD7000BC7FF1 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		A50733FD229E397900A3DABB /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		A50733FE229E397900A3DABB /* TeamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamTableViewCell.xib; sourceTree = "<group>"; };
+		A507359C22A139A200EE15D7 /* InvaiteUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvaiteUserViewController.swift; sourceTree = "<group>"; };
+		A507359E22A139CA00EE15D7 /* InvaiteUserViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InvaiteUserViewController.storyboard; sourceTree = "<group>"; };
+		A507A6F022A8E48A00F742AD /* LeftAlligmentFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlligmentFlowLayout.swift; sourceTree = "<group>"; };
+		A508EEA622A7A26500640A83 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		A508EEA722A7A26500640A83 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		A50B0104229D3A91008C85AE /* TeamMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberTableViewCell.swift; sourceTree = "<group>"; };
+		A50B0105229D3A91008C85AE /* TeamMemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamMemberTableViewCell.xib; sourceTree = "<group>"; };
+		A50B0108229D3CDE008C85AE /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
+		A50B010A229D3D03008C85AE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A5136492228E648A0053DE00 /* EmailAuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailAuthViewController.storyboard; sourceTree = "<group>"; };
 		A513649A228E745C0053DE00 /* ExtensionDesignableUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDesignableUIView.swift; sourceTree = "<group>"; };
+		A51499D622A639FD00B7C39A /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
+		A51499D722A639FD00B7C39A /* AddEmployeeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmployeeViewController.xib; sourceTree = "<group>"; };
+		A51499DE22A684B900B7C39A /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		A517D5E4229CE97E0081B8A6 /* TecnhologyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TecnhologyModel.swift; sourceTree = "<group>"; };
+		A517D5E7229CE9F30081B8A6 /* TechnologyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnologyTableViewCell.swift; sourceTree = "<group>"; };
+		A517D5E8229CE9F30081B8A6 /* TechnologyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TechnologyTableViewCell.xib; sourceTree = "<group>"; };
+		A517D5EC229D05D20081B8A6 /* AddTechnologyViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddTechnologyViewController.storyboard; sourceTree = "<group>"; };
+		A517D5ED229D05D20081B8A6 /* AddTechnologyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTechnologyViewController.swift; sourceTree = "<group>"; };
+		A517D5F2229D2A240081B8A6 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		A517D5F4229D2A2E0081B8A6 /* TeamViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamViewController.storyboard; sourceTree = "<group>"; };
+		A51B9F0122A4D56D00775921 /* ChooseTechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTechnologyViewController.swift; sourceTree = "<group>"; };
+		A51B9F0922A51C8000775921 /* ChooseTechnologyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTechnologyTableViewCell.swift; sourceTree = "<group>"; };
+		A51B9F0A22A51C8000775921 /* ChooseTechnologyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTechnologyTableViewCell.xib; sourceTree = "<group>"; };
+		A51B9F0E22A51E0A00775921 /* ChooseTechnologyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTechnologyViewController.xib; sourceTree = "<group>"; };
+		A51B9F1222A5392700775921 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
+		A51B9F1422A5392F00775921 /* EmployeesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeesViewController.storyboard; sourceTree = "<group>"; };
+		A51B9F1622A53CA200775921 /* EmployeesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewCell.swift; sourceTree = "<group>"; };
+		A51B9F1722A53CA200775921 /* EmployeesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeesTableViewCell.xib; sourceTree = "<group>"; };
 		A51E490F2292907F006687A3 /* WorkspaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewController.swift; sourceTree = "<group>"; };
 		A51E4911229291E3006687A3 /* WorkspaceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkspaceViewController.storyboard; sourceTree = "<group>"; };
+		A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TechnologyViewController.storyboard; sourceTree = "<group>"; };
+		A52D5D3C229BF08F00E6C4D5 /* TechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyViewController.swift; sourceTree = "<group>"; };
 		A5B67918228D3F74003DB84E /* FireBrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireBrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B6791B228D3F74003DB84E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B67920228D3F74003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AuthViewController.storyboard; sourceTree = "<group>"; };
@@ -155,8 +217,8 @@
 		A50718042296BD3C00BC7FF1 /* SplashScreenViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A50718052296BD4E00BC7FF1 /* SplashScreenViewController.storyboard */,
 				A50718072296BD7000BC7FF1 /* SplashScreenViewController.swift */,
+				A50718052296BD4E00BC7FF1 /* SplashScreenViewController.storyboard */,
 			);
 			path = SplashScreenViewController;
 			sourceTree = "<group>";
@@ -187,6 +249,78 @@
 			path = EmailAuthViewController;
 			sourceTree = "<group>";
 		};
+		A51499D122A6398800B7C39A /* AddEmployessViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A51499D622A639FD00B7C39A /* AddEmployeeViewController.swift */,
+				A51499D722A639FD00B7C39A /* AddEmployeeViewController.xib */,
+			);
+			path = AddEmployessViewController;
+			sourceTree = "<group>";
+		};
+		A517D5E3229CE97E0081B8A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A517D5E4229CE97E0081B8A6 /* TecnhologyModel.swift */,
+				A50B0108229D3CDE008C85AE /* TeamModel.swift */,
+				A50B010A229D3D03008C85AE /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A517D5EB229D05D20081B8A6 /* AddTechnologyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A517D5EC229D05D20081B8A6 /* AddTechnologyViewController.storyboard */,
+				A517D5ED229D05D20081B8A6 /* AddTechnologyViewController.swift */,
+			);
+			path = AddTechnologyViewController;
+			sourceTree = "<group>";
+		};
+		A517D5F0229D05F60081B8A6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A517D5F1229D2A080081B8A6 /* TeamViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A517D5F2229D2A240081B8A6 /* TeamViewController.swift */,
+				A517D5F4229D2A2E0081B8A6 /* TeamViewController.storyboard */,
+				A50B0104229D3A91008C85AE /* TeamMemberTableViewCell.swift */,
+				A50B0105229D3A91008C85AE /* TeamMemberTableViewCell.xib */,
+				A50733FD229E397900A3DABB /* TeamTableViewCell.swift */,
+				A50733FE229E397900A3DABB /* TeamTableViewCell.xib */,
+			);
+			path = TeamViewController;
+			sourceTree = "<group>";
+		};
+		A51B9F0022A4D55200775921 /* ChooseTechnologyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A51B9F0122A4D56D00775921 /* ChooseTechnologyViewController.swift */,
+				A51B9F0922A51C8000775921 /* ChooseTechnologyTableViewCell.swift */,
+				A51B9F0A22A51C8000775921 /* ChooseTechnologyTableViewCell.xib */,
+				A51B9F0E22A51E0A00775921 /* ChooseTechnologyViewController.xib */,
+			);
+			path = ChooseTechnologyViewController;
+			sourceTree = "<group>";
+		};
+		A51B9F1122A538FD00775921 /* EmployeesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A51B9F1222A5392700775921 /* EmployeesViewController.swift */,
+				A51B9F1422A5392F00775921 /* EmployeesViewController.storyboard */,
+				A51B9F1622A53CA200775921 /* EmployeesTableViewCell.swift */,
+				A51B9F1722A53CA200775921 /* EmployeesTableViewCell.xib */,
+				A508EEA622A7A26500640A83 /* TagCollectionViewCell.swift */,
+				A508EEA722A7A26500640A83 /* TagCollectionViewCell.xib */,
+			);
+			path = EmployeesViewController;
+			sourceTree = "<group>";
+		};
 		A51E490B22928E07006687A3 /* WorkspaceViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +328,17 @@
 				A51E4911229291E3006687A3 /* WorkspaceViewController.storyboard */,
 			);
 			path = WorkspaceViewController;
+			sourceTree = "<group>";
+		};
+		A52D5D39229BF06600E6C4D5 /* TechnologyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A52D5D3C229BF08F00E6C4D5 /* TechnologyViewController.swift */,
+				A517D5E7229CE9F30081B8A6 /* TechnologyTableViewCell.swift */,
+				A517D5E8229CE9F30081B8A6 /* TechnologyTableViewCell.xib */,
+				A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */,
+			);
+			path = TechnologyViewController;
 			sourceTree = "<group>";
 		};
 		A5B6790F228D3F74003DB84E = {
@@ -217,10 +362,10 @@
 		A5B6791A228D3F74003DB84E /* FireBrick */ = {
 			isa = PBXGroup;
 			children = (
+				A517D5F0229D05F60081B8A6 /* Services */,
+				A517D5E3229CE97E0081B8A6 /* Model */,
 				A5B6792F228D3FB8003DB84E /* Config */,
-				A5B67930228D3FBE003DB84E /* Model */,
 				A5B6792D228D3FAD003DB84E /* Resources */,
-				A5B67931228D3FC1003DB84E /* Services */,
 				A5B67932228D3FC4003DB84E /* UI */,
 				A5B6792E228D3FB2003DB84E /* Utils */,
 			);
@@ -241,6 +386,8 @@
 			children = (
 				A513649A228E745C0053DE00 /* ExtensionDesignableUIView.swift */,
 				A5FEEC662293F28E00EB09BC /* Constants.swift */,
+				A51499DE22A684B900B7C39A /* ExtensionUIColor.swift */,
+				A507A6F022A8E48A00F742AD /* LeftAlligmentFlowLayout.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -255,32 +402,34 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		A5B67930228D3FBE003DB84E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A5B67931228D3FC1003DB84E /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		A5B67932228D3FC4003DB84E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A50717FF2296A0FD00BC7FF1 /* SimpleAlertViewController */,
+				A51499D122A6398800B7C39A /* AddEmployessViewController */,
+				A517D5EB229D05D20081B8A6 /* AddTechnologyViewController */,
 				A5136494228E64D90053DE00 /* AuthViewController */,
+				A51B9F0022A4D55200775921 /* ChooseTechnologyViewController */,
 				A5136495228E64F10053DE00 /* EmailAuthViewController */,
+				A51B9F1122A538FD00775921 /* EmployeesViewController */,
 				A5FEEC6822940DA400EB09BC /* ForgotPasswordController */,
+				A5B6F697229F936400B5EBF9 /* InviteUserViewController */,
 				A5075C8D2297CCDE008FF334 /* LaunchScreen */,
+				A50717FF2296A0FD00BC7FF1 /* SimpleAlertViewController */,
 				A50718042296BD3C00BC7FF1 /* SplashScreenViewController */,
+				A517D5F1229D2A080081B8A6 /* TeamViewController */,
+				A52D5D39229BF06600E6C4D5 /* TechnologyViewController */,
 				A51E490B22928E07006687A3 /* WorkspaceViewController */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A5B6F697229F936400B5EBF9 /* InviteUserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A507359C22A139A200EE15D7 /* InvaiteUserViewController.swift */,
+				A507359E22A139CA00EE15D7 /* InvaiteUserViewController.storyboard */,
+			);
+			path = InviteUserViewController;
 			sourceTree = "<group>";
 		};
 		A5FEEC292293AEC400EB09BC /* Fonts */ = {
@@ -393,23 +542,29 @@
 			files = (
 				A5FEEC722294149500EB09BC /* ForgotPasswordViewController.xib in Resources */,
 				A5FEEC482293AEC400EB09BC /* SF-Pro-Display-Thin.otf in Resources */,
+				A508EEA922A7A26500640A83 /* TagCollectionViewCell.xib in Resources */,
 				A5FEEC622293AEC400EB09BC /* SF-Pro-Text-LightItalic.otf in Resources */,
 				A5FEEC5E2293AEC400EB09BC /* SF-Pro-Text-RegularItalic.otf in Resources */,
 				A5FEEC582293AEC400EB09BC /* SF-Pro-Display-Ultralight.otf in Resources */,
 				A5FEEC5C2293AEC400EB09BC /* SF-Pro-Display-Black.otf in Resources */,
+				A51B9F0C22A51C8000775921 /* ChooseTechnologyTableViewCell.xib in Resources */,
 				A5FEEC612293AEC400EB09BC /* SF-Pro-Display-ThinItalic.otf in Resources */,
 				A5FEEC602293AEC400EB09BC /* SF-Pro-Text-HeavyItalic.otf in Resources */,
 				A5FEEC522293AEC400EB09BC /* SF-Pro-Text-Light.otf in Resources */,
+				A52D5D3B229BF08400E6C4D5 /* TechnologyViewController.storyboard in Resources */,
 				A5FEEC4E2293AEC400EB09BC /* SF-Pro-Text-MediumItalic.otf in Resources */,
+				A517D5F5229D2A2E0081B8A6 /* TeamViewController.storyboard in Resources */,
 				A5B67926228D3F75003DB84E /* LaunchScreen.storyboard in Resources */,
 				A5FEEC562293AEC400EB09BC /* SF-Pro-Display-MediumItalic.otf in Resources */,
 				A5FEEC512293AEC400EB09BC /* SF-Pro-Display-Heavy.otf in Resources */,
+				A5073400229E397900A3DABB /* TeamTableViewCell.xib in Resources */,
 				A5FEEC5A2293AEC400EB09BC /* SF-Pro-Display-LightItalic.otf in Resources */,
 				A5B67934228D4537003DB84E /* GoogleService-Info.plist in Resources */,
 				A5FEEC552293AEC400EB09BC /* SF-Pro-Text-Bold.otf in Resources */,
 				A5FEEC5F2293AEC400EB09BC /* SF-Pro-Text-Semibold.otf in Resources */,
 				A5FEEC532293AEC400EB09BC /* SF-Pro-Display-Semibold.otf in Resources */,
 				A5FEEC542293AEC400EB09BC /* SF-Pro-Text-Regular.otf in Resources */,
+				A51499D922A639FD00B7C39A /* AddEmployeeViewController.xib in Resources */,
 				A5FEEC4F2293AEC400EB09BC /* SF-Pro-Display-Bold.otf in Resources */,
 				A5FEEC5B2293AEC400EB09BC /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				A50718012296A11400BC7FF1 /* SimpleAlertViewController.storyboard in Resources */,
@@ -417,13 +572,20 @@
 				A5FEEC4A2293AEC400EB09BC /* SF-Pro-Text-Heavy.otf in Resources */,
 				A5FEEC632293AEC400EB09BC /* SF-Pro-Text-Medium.otf in Resources */,
 				A5FEEC492293AEC400EB09BC /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
+				A517D5EA229CE9F30081B8A6 /* TechnologyTableViewCell.xib in Resources */,
 				A5FEEC592293AEC400EB09BC /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */,
+				A51B9F1522A5392F00775921 /* EmployeesViewController.storyboard in Resources */,
 				A5FEEC572293AEC400EB09BC /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				A5FEEC502293AEC400EB09BC /* SF-Pro-Display-Medium.otf in Resources */,
+				A51B9F1022A51E0A00775921 /* ChooseTechnologyViewController.xib in Resources */,
 				A5FEEC652293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				A5FEEC5D2293AEC400EB09BC /* SF-Pro-Text-BoldItalic.otf in Resources */,
+				A50B0107229D3A91008C85AE /* TeamMemberTableViewCell.xib in Resources */,
 				A5FEEC4C2293AEC400EB09BC /* SF-Pro-Display-Light.otf in Resources */,
+				A517D5EE229D05D20081B8A6 /* AddTechnologyViewController.storyboard in Resources */,
+				A507359F22A139CA00EE15D7 /* InvaiteUserViewController.storyboard in Resources */,
+				A51B9F1922A53CA200775921 /* EmployeesTableViewCell.xib in Resources */,
 				A5FEEC642293AEC400EB09BC /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				A51E4912229291E3006687A3 /* WorkspaceViewController.storyboard in Resources */,
 				A50718062296BD4E00BC7FF1 /* SplashScreenViewController.storyboard in Resources */,
@@ -442,16 +604,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FireBrick/Pods-FireBrick-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-FireBrick/Pods-FireBrick-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-FireBrick/Pods-FireBrick-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -486,28 +643,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FireBrick/Pods-FireBrick-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-FireBrick/Pods-FireBrick-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QuickLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEntryKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-FireBrick/Pods-FireBrick-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -522,14 +662,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5FEEC712294149500EB09BC /* ForgotPasswordViewController.swift in Sources */,
+				A50B0109229D3CDE008C85AE /* TeamModel.swift in Sources */,
 				A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */,
 				A50718082296BD7000BC7FF1 /* SplashScreenViewController.swift in Sources */,
 				A513649B228E745C0053DE00 /* ExtensionDesignableUIView.swift in Sources */,
+				A507A6F122A8E48A00F742AD /* LeftAlligmentFlowLayout.swift in Sources */,
+				A52D5D3D229BF08F00E6C4D5 /* TechnologyViewController.swift in Sources */,
+				A517D5E9229CE9F30081B8A6 /* TechnologyTableViewCell.swift in Sources */,
 				A5F7C4F0228D715400B35C6C /* AuthViewController.swift in Sources */,
+				A50733FF229E397900A3DABB /* TeamTableViewCell.swift in Sources */,
+				A517D5EF229D05D20081B8A6 /* AddTechnologyViewController.swift in Sources */,
 				A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */,
+				A508EEA822A7A26500640A83 /* TagCollectionViewCell.swift in Sources */,
+				A50B0106229D3A91008C85AE /* TeamMemberTableViewCell.swift in Sources */,
 				A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */,
+				A51B9F0B22A51C8000775921 /* ChooseTechnologyTableViewCell.swift in Sources */,
+				A51B9F1322A5392700775921 /* EmployeesViewController.swift in Sources */,
+				A507359D22A139A200EE15D7 /* InvaiteUserViewController.swift in Sources */,
 				A50718032296A12000BC7FF1 /* SimpleAlertViewController.swift in Sources */,
 				A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */,
+				A51499D822A639FD00B7C39A /* AddEmployeeViewController.swift in Sources */,
+				A517D5E5229CE97F0081B8A6 /* TecnhologyModel.swift in Sources */,
+				A50B010B229D3D03008C85AE /* UserModel.swift in Sources */,
+				A517D5F3229D2A240081B8A6 /* TeamViewController.swift in Sources */,
+				A51B9F1822A53CA200775921 /* EmployeesTableViewCell.swift in Sources */,
+				A51B9F0222A4D56D00775921 /* ChooseTechnologyViewController.swift in Sources */,
+				A51499DF22A684B900B7C39A /* ExtensionUIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

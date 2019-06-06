@@ -13,16 +13,20 @@ import GoogleSignIn
 
 class SplashScreenViewController: UIViewController {
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         enableNotifications()
         GIDSignIn.sharedInstance()?.signInSilently()
     }
     
+    // MARK: - Private methods
+    
     @objc
     private func googleUserDidSignIn(_ notification:Notification) {
-        let storyboard = UIStoryboard(name: "WorkspaceViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "WorkspaceViewController"  ) as? WorkspaceViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.workspaceViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.workspaceViewController) as? WorkspaceViewController else {
             return
         }
         disableNotifications()
@@ -31,8 +35,8 @@ class SplashScreenViewController: UIViewController {
     
     @objc
     private func googleErrorAuth(_ notification:Notification) {
-        let storyboard = UIStoryboard(name: "AuthViewController", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "AuthViewController"  ) as? AuthViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.authViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.authViewController) as? AuthViewController else {
             return
         }
         disableNotifications()

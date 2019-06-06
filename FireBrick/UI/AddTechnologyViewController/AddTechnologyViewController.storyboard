@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Add Technology View Controller-->
+        <scene sceneID="Wvc-Al-wLk">
+            <objects>
+                <viewController storyboardIdentifier="AddTechnologyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6E6-cS-gNa" customClass="AddTechnologyViewController" customModule="FireBrick" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xdR-yq-vwO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qsd-Zy-wSz">
+                                <rect key="frame" x="16" y="180" width="343" height="327"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWn-uV-VTg">
+                                        <rect key="frame" x="295" y="0.0" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="3ea-gv-Hzp"/>
+                                            <constraint firstAttribute="height" constant="48" id="rau-XP-sXy"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_readable_icon_close"/>
+                                        <connections>
+                                            <action selector="cancel:" destination="6E6-cS-gNa" eventType="touchUpInside" id="L18-jQ-sNE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uyn-b8-zcN">
+                                        <rect key="frame" x="114.5" y="267" width="114" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.35686274509999999" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="B7V-rR-HnP"/>
+                                            <constraint firstAttribute="width" constant="114" id="gIp-Qj-K6M"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="12"/>
+                                        <state key="normal" title="ADD">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="add:" destination="6E6-cS-gNa" eventType="touchUpInside" id="YQ2-LR-AP3"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new Technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXw-ek-uT5">
+                                        <rect key="frame" x="20" y="40" width="187" height="56"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Documentation" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="40G-D9-WZW">
+                                        <rect key="frame" x="20" y="173" width="303" height="44"/>
+                                        <color key="backgroundColor" red="0.89365547895431519" green="0.89433497190475464" blue="0.89376074075698853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="MBO-xM-8lX"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of technology" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LzG-fO-Yfh">
+                                        <rect key="frame" x="20" y="104" width="303" height="44"/>
+                                        <color key="backgroundColor" red="0.89369371356190863" green="0.89369371356190863" blue="0.89369371356190863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="9jx-Qa-00e"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="nickname"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Uyn-b8-zcN" firstAttribute="centerX" secondItem="Qsd-Zy-wSz" secondAttribute="centerX" id="2lc-k6-mbH"/>
+                                    <constraint firstAttribute="trailing" secondItem="40G-D9-WZW" secondAttribute="trailing" constant="20" id="3bK-CA-KG2"/>
+                                    <constraint firstItem="Uyn-b8-zcN" firstAttribute="top" secondItem="40G-D9-WZW" secondAttribute="bottom" constant="50" id="7Yj-cD-EEv"/>
+                                    <constraint firstItem="LzG-fO-Yfh" firstAttribute="top" secondItem="VXw-ek-uT5" secondAttribute="bottom" constant="8" id="CKc-Vd-EVV"/>
+                                    <constraint firstItem="40G-D9-WZW" firstAttribute="top" secondItem="LzG-fO-Yfh" secondAttribute="bottom" constant="25" id="E5v-LR-7uY"/>
+                                    <constraint firstItem="LzG-fO-Yfh" firstAttribute="leading" secondItem="Qsd-Zy-wSz" secondAttribute="leading" constant="20" id="INc-C8-fNX"/>
+                                    <constraint firstAttribute="trailing" secondItem="LzG-fO-Yfh" secondAttribute="trailing" constant="20" id="PHX-io-phq"/>
+                                    <constraint firstItem="VXw-ek-uT5" firstAttribute="leading" secondItem="Qsd-Zy-wSz" secondAttribute="leading" constant="20" id="Smw-1N-fym"/>
+                                    <constraint firstAttribute="bottom" secondItem="Uyn-b8-zcN" secondAttribute="bottom" constant="16" id="ZIN-LE-QQy"/>
+                                    <constraint firstItem="MWn-uV-VTg" firstAttribute="top" secondItem="Qsd-Zy-wSz" secondAttribute="top" id="mDo-hB-wjF"/>
+                                    <constraint firstItem="VXw-ek-uT5" firstAttribute="top" secondItem="Qsd-Zy-wSz" secondAttribute="top" constant="40" id="pHl-Sr-gan"/>
+                                    <constraint firstAttribute="trailing" secondItem="MWn-uV-VTg" secondAttribute="trailing" id="qOS-uo-SgX"/>
+                                    <constraint firstItem="40G-D9-WZW" firstAttribute="leading" secondItem="Qsd-Zy-wSz" secondAttribute="leading" constant="20" id="t3D-Ms-4Zs"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qsd-Zy-wSz" firstAttribute="top" secondItem="OFm-wB-s93" secondAttribute="top" constant="160" id="7Dl-0D-PCp"/>
+                            <constraint firstItem="OFm-wB-s93" firstAttribute="trailing" secondItem="Qsd-Zy-wSz" secondAttribute="trailing" constant="16" id="TOo-Sn-bo1"/>
+                            <constraint firstItem="OFm-wB-s93" firstAttribute="bottom" secondItem="Qsd-Zy-wSz" secondAttribute="bottom" constant="160" id="p17-pb-tOa"/>
+                            <constraint firstItem="Qsd-Zy-wSz" firstAttribute="leading" secondItem="OFm-wB-s93" secondAttribute="leading" constant="16" id="xM3-pa-pPw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OFm-wB-s93"/>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="Uyn-b8-zcN" id="L3S-uf-m2l"/>
+                        <outlet property="docTextField" destination="40G-D9-WZW" id="xxu-13-Eey"/>
+                        <outlet property="nameTextField" destination="LzG-fO-Yfh" id="fL0-A2-9YL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5U6-xJ-wU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="285.60000000000002" y="-419.64017991004499"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_readable_icon_close" width="17" height="17"/>
+    </resources>
+</document>
