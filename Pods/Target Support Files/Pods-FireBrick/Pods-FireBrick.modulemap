@@ -1,6 +1,0 @@
-framework module Pods_FireBrick {
-  umbrella header "Pods-FireBrick-umbrella.h"
-
-  export *
-  module * { export * }
-}
