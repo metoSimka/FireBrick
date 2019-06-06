@@ -48,7 +48,10 @@ class AddTechnologyViewController: UIViewController {
         
         Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).addDocument(data: dataToSave, completion: { (error) in
             guard error == nil else {
-                print("there must be ALERT!")
+                guard let errorText = error?.localizedDescription else {
+                    return
+                }
+                self.showErrorMessage(errorText: errorText)
                 return
             }
                 SwiftEntryKit.dismiss()
@@ -70,6 +73,13 @@ class AddTechnologyViewController: UIViewController {
             addButton.alpha = 1
             addButton.isEnabled = true
         }
+    }
+    
+    private func showErrorMessage(errorText: String) {
+        let alertController = UIAlertController(title: "Error", message: errorText, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

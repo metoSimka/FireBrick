@@ -320,25 +320,3 @@ extension TeamViewController: EmployeeTableViewCellDelegate {
         
     }
 }
-
-//    func uploadImageToFirestore(data: Data ) {
-//        let storageRef = Storage.storage().reference(withPath: "pics/demo.jpg")
-//        let uploadMetadata = StorageMetadata()
-//        uploadMetadata.contentType = "pics/demo.jpg"
-//      let uploadTask =  storageRef.putData(data, metadata: uploadMetadata) { (metaData, error) in
-//            guard error == nil else {
-//                return
-//            }
-//            print("done")
-//        }
-//        uploadTask.observe(.progress) {[weak self] (snapshot) in
-//            guard let storageRef = self else {
-//                return
-//            }
-//            guard let progress = snapshot.progress else {
-//                return
-//            }
-////            storageRef.progressView.progess = Float(progress.fractionCompleted)
-//        }
-//    }
-

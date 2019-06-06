@@ -12,11 +12,14 @@ class AddEmployeeViewController: UIViewController {
     
 
     @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func addTechnology(_ sender: UIButton) {
     }
+    
     @IBAction func addEmployee(_ sender: UIButton) {
     }
 }
