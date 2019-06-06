@@ -90,7 +90,7 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         cell.user = users[indexPath.row]
-        cell.setUserProfile()
+        cell.setupCell()
         return cell
     }
 }

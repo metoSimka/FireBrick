@@ -117,8 +117,7 @@ extension TechnologyViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.technologyTableViewCell) as? TechnologyTableViewCell else {
             return UITableViewCell()
         }
-        cell.technology = availableTechnologies[indexPath.row]
-        cell.setTechnology()
+        cell.setupTechnology(withTechnology: availableTechnologies[indexPath.row])
         return cell
     }
 }

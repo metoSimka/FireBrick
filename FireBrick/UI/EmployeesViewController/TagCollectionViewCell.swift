@@ -32,7 +32,7 @@ class TagCollectionViewCell: UICollectionViewCell {
         return layoutAttributes
     }
     
-    func configueCell() {
+    func setupCell(withSkill skill: [String: AnyObject]) {
         guard let skill = data else {
             return
         }

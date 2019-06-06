@@ -9,14 +9,13 @@
 import UIKit
 
 protocol TeamTableViewCellDelegate {
-    func didTapAddEmployee(cell: TeamTableViewCell)
-    func didTapOnTeam(cell: TeamTableViewCell)
+    func didTapAddEmployee(inCell: TeamTableViewCell)
+    func didTapOnTeam(inCell: TeamTableViewCell)
 }
 
 class TeamTableViewCell: UITableViewCell {
 
     var delegate: TeamTableViewCellDelegate?
-    var team: Team?
     
     @IBOutlet weak var teamLabel: UILabel!
     @IBOutlet weak var arrowStateButton: UIButton!
@@ -31,8 +30,8 @@ class TeamTableViewCell: UITableViewCell {
     }
     
     @IBAction func addEmployee(_ sender: UIButton) {
-        self.delegate?.didTapAddEmployee(cell: self)
-         self.delegate?.didTapOnTeam(cell: self)
+        self.delegate?.didTapAddEmployee(inCell: self)
+         self.delegate?.didTapOnTeam(inCell: self)
     }
     
     func updateButtonState(isHidden: Bool) {
@@ -43,11 +42,8 @@ class TeamTableViewCell: UITableViewCell {
         }
     }
     
-    func setCellView() {
-        guard let name = team?.name else {
-            return
-        }
-        teamLabel.text = name
+    func setupCell(with team: Team) {
+        teamLabel.text = team.name
     }
     
     func addGestureForLabel() {
@@ -57,6 +53,6 @@ class TeamTableViewCell: UITableViewCell {
     
     @objc
     func handleTap(_ sender: UITapGestureRecognizer) {
-        self.delegate?.didTapOnTeam(cell: self)
+        self.delegate?.didTapOnTeam(inCell: self)
     }
 }

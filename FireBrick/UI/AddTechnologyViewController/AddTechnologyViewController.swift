@@ -71,6 +71,18 @@ class AddTechnologyViewController: UIViewController {
         return false
     }
     
+    func formIsValid() -> Bool {
+        return true
+    }
+    
+    func nameIsValid() -> Bool {
+          return true
+    }
+    
+    func documentationIsValid() -> Bool {
+          return true
+    }
+    
     func updataButtonState() {
         if isFieldsAreEmpty() {
             addButton.alpha = 0.5

@@ -17,7 +17,6 @@ protocol EmployeeTableViewCellDelegate {
 class TeamMemberTableViewCell: UITableViewCell {
     
     var delegate: EmployeeTableViewCellDelegate?
-    var user = User()
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageIcon: UIImageView!
@@ -39,7 +38,7 @@ class TeamMemberTableViewCell: UITableViewCell {
         imageIcon.addGestureRecognizer(tap)
     }
     
-    func setCellView() {
+    func setupCell(withUser user: User) {
         nameLabel.text = user.name
         guard let link = user.imageLink else {
             return

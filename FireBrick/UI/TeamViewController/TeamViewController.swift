@@ -202,12 +202,11 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
             }
             let team = transferTeamFormat(teamModel: currentModel)
-            cell.team = team
-            cell.delegate = self
-            cell.setCellView()
+            cell.setupCell(with: team)
             guard let isTeamExpanded = currentModel.isTeamExpanded else {
                 return UITableViewCell()
             }
+            cell.delegate = self
             cell.updateButtonState(isHidden: isTeamExpanded)
             return cell
         case .user:
@@ -215,9 +214,8 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
             }
             let user = transferUserFormat(teamModel: currentModel)
-            cell.user = user
             cell.delegate = self
-            cell.setCellView()
+            cell.setupCell(withUser: user)
             return cell
         }
     }
@@ -299,11 +297,11 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension TeamViewController: TeamTableViewCellDelegate {
     
-    func didTapAddEmployee(cell: TeamTableViewCell) {
+    func didTapAddEmployee(inCell: TeamTableViewCell) {
         showInviteViewController()
     }
     
-    func didTapOnTeam(cell: TeamTableViewCell) {
+    func didTapOnTeam(inCell: TeamTableViewCell) {
         
     }
 }

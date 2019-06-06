@@ -91,8 +91,7 @@ extension ChooseTechnologyViewController: UITableViewDelegate, UITableViewDataSo
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.chooseTechnologyTableViewCell) as? ChooseTechnologyTableViewCell else {
             return UITableViewCell()
         }
-        cell.technology = availableTechnologies[indexPath.row]
-        cell.setTechnology()
+        cell.setupCell(withTechnology: availableTechnologies[indexPath.row])
         return cell
     }
     

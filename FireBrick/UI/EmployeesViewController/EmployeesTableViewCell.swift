@@ -29,7 +29,7 @@ class EmployeesTableViewCell: UITableViewCell {
 
     func updateHeightCollectionView() {
         let height = collectionView.collectionViewLayout.collectionViewContentSize.height
-        constraintCollectionViewHeight.constant = 250
+        constraintCollectionViewHeight.constant = height
         collectionView.layoutIfNeeded()
     }
     
@@ -44,7 +44,7 @@ class EmployeesTableViewCell: UITableViewCell {
         collectionView.collectionViewLayout = flowLayout
     }
 
-    func setUserProfile() {
+    func setupCell() {
         labelUserName.text = user?.name
         labelBusy.text = ("\(user?.busy ?? 0) hr / week")
         if let link = user?.imageLink {
@@ -86,8 +86,7 @@ extension EmployeesTableViewCell: UICollectionViewDelegate, UICollectionViewData
         guard let userSkill = user?.skills else {
             return UICollectionViewCell()
         }
-        cell.data = userSkill[indexPath.row]
-        cell.configueCell()
+        cell.setupCell(withSkill: userSkill[indexPath.row])
         return cell
     }
 
