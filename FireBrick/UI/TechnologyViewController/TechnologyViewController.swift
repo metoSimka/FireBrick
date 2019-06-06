@@ -45,10 +45,22 @@ class TechnologyViewController: UIViewController {
         guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.addTechnologyViewController) as? AddTechnologyViewController else {
             return
         }
+        vc.availableTechnologyNames = getTechnologyNames()
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
     // MARK: - Private methods
+    
+    private func getTechnologyNames() -> [String] {
+        var technologyNames: [String] = []
+        for tech in availableTechnologies {
+            guard let name = tech.name else {
+                continue
+            }
+            technologyNames.append(name)
+        }
+        return technologyNames
+    }
     
     private func addListeners() {
         Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).addSnapshotListener({ (snapShot, error) in

@@ -21,6 +21,7 @@ struct Constants {
         static let LogInButton = "LOG IN"
         static let eMailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         static let placeHolder = "ic_readable_icon_error.png"
+        static let nameFormat = "[A-Za-z]"
     }
     
     enum errorCodes {

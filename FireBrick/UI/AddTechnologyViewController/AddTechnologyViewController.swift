@@ -13,11 +13,16 @@ import FirebaseFirestore
 
 class AddTechnologyViewController: UIViewController {
     
+    // MARK: - Public variables
+    
+    var availableTechnologyNames: [String] = []
+    
     // MARK: - IBOutlets
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var docTextField: UITextField!
+    
     
     // MARK: - Lifecycle
     
@@ -35,6 +40,7 @@ class AddTechnologyViewController: UIViewController {
     }
     
     @IBAction func add(_ sender: UIButton) {
+        documentationTextFieldNillGuard()
         writeData()
     }
     
@@ -66,38 +72,61 @@ class AddTechnologyViewController: UIViewController {
         })
     }
     
-    private func isFieldsAreEmpty() -> Bool {
-        guard let nameText = nameTextField.text?.count else {
-            return true
+    private func isNameValid() -> Bool {
+        guard isNameContainsAtLeastOneWord() && isNameNotEmpty() && isNameOriginal() else {
+            return false
         }
-        guard let docText = docTextField.text?.count else {
-            return true
-        }
-        if nameText == 0 || docText == 0 {
-            return true
-        }
-        return false
-    }
-    
-    private func formIsValid() -> Bool {
         return true
     }
     
-    private func nameIsValid() -> Bool {
+    private func isNameContainsAtLeastOneWord() -> Bool {
+        let letters = NSCharacterSet.letters
+        
+        guard let nameText = nameTextField.text else {
+            return false
+        }
+        let range = nameText.rangeOfCharacter(from: letters)
+        guard range != nil else {
+            return false
+        }
         return true
     }
     
-    private func documentationIsValid() -> Bool {
+    private func isNameNotEmpty() -> Bool {
+        guard let nameTextCount = nameTextField.text?.count else {
+            return false
+        }
+        guard nameTextCount != 0 else {
+            return false
+        }
         return true
     }
     
-    private  func updataButtonState() {
-        if isFieldsAreEmpty() {
-            addButton.alpha = 0.5
-            addButton.isEnabled = false
-        } else {
+    private func isNameOriginal() -> Bool {
+        guard let nameText = nameTextField.text else {
+            return false
+        }
+        guard !availableTechnologyNames.contains(nameText) else {
+            return false
+        }
+        print(availableTechnologyNames)
+        print(nameText)
+        return true
+    }
+    
+    private func documentationTextFieldNillGuard() {
+        if docTextField.text == nil {
+            docTextField.text = ""
+        }
+    }
+    
+    private func updataButtonState() {
+        if isNameValid() {
             addButton.alpha = 1
             addButton.isEnabled = true
+        } else {
+            addButton.alpha = 0.5
+            addButton.isEnabled = false
         }
     }
     
