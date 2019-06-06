@@ -30,7 +30,6 @@ class TeamViewController: UIViewController {
     
     var teams: [Team] = []
     var teamViewModel: [TeamViewModel] = []
-    var hiddenIDDocs: [String] = []
     
     // MARK: - IBOutlets
     
