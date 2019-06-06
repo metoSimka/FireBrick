@@ -58,15 +58,21 @@ class AddTechnologyViewController: UIViewController {
         })
     }
     
-    func isFildsAreEmpty() -> Bool {
-        if nameTextField.text?.count ?? 0 == 0 || docTextField.text?.count ?? 0 == 0 {
+    func isFieldsAreEmpty() -> Bool {
+        guard let nameText = nameTextField.text?.count else {
+            return true
+        }
+        guard let docText = docTextField.text?.count else {
+            return true
+        }
+        if nameText == 0 || docText == 0 {
             return true
         }
         return false
     }
     
     func updataButtonState() {
-        if isFildsAreEmpty() {
+        if isFieldsAreEmpty() {
             addButton.alpha = 0.5
             addButton.isEnabled = false
         } else {
