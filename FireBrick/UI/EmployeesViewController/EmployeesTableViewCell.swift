@@ -57,8 +57,8 @@ class EmployeesTableViewCell: UITableViewCell {
     private func setupTagCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        let cellNib = UINib(nibName: "TagCollectionViewCell", bundle: nil)
-        self.collectionView.register(cellNib, forCellWithReuseIdentifier: "TagCollectionViewCell")
+        let cellNib = UINib(nibName: Constants.cellsID.tagCollectionViewCell, bundle: nil)
+        self.collectionView.register(cellNib, forCellWithReuseIdentifier: Constants.cellsID.tagCollectionViewCell)
         var flowLayout = UICollectionViewFlowLayout()
         flowLayout = LeftAlignedCollectionViewFlowLayout()
         flowLayout.estimatedItemSize = CGSize(width: 40, height: 20)
@@ -96,7 +96,9 @@ extension EmployeesTableViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellsID.tagCollectionViewCell, for: indexPath) as? TagCollectionViewCell else {
+           return UICollectionViewCell()
+        }
         guard let userSkill = user?.skills else {
             return UICollectionViewCell()
         }
@@ -105,8 +107,13 @@ extension EmployeesTableViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
-        return cell.systemLayoutSizeFitting(cell.tagLabel!.bounds.size)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellsID.tagCollectionViewCell, for: indexPath) as? TagCollectionViewCell else {
+            return CGSize()
+        }
+        guard let label = cell.tagLabel else {
+            return CGSize()
+        }
+        return cell.systemLayoutSizeFitting(label.bounds.size)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

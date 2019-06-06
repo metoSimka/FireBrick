@@ -167,10 +167,10 @@ class TeamViewController: UIViewController {
     private  func transferTeamFormat(teamModel: TeamViewModel) -> Team {
         var team = Team()
         switch teamModel.type {
-        case .user:
-            print("Stop crushing the system!")
         case .team:
             team.name = teamModel.team?.name
+        default :
+            break
         }
         return team
     }
@@ -181,8 +181,8 @@ class TeamViewController: UIViewController {
         case .user:
             user.name = teamModel.user?.name
             user.imageLink = teamModel.user?.imageLink
-        case .team:
-            print("Stop crushing the system!")
+        default:
+            break
         }
         return user
     }

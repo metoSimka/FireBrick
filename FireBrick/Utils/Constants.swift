@@ -80,5 +80,6 @@ struct Constants {
         static let teamMemberTableViewCell = "TeamMemberTableViewCell"
         static let chooseTechnologyTableViewCell = "ChooseTechnologyTableViewCell"
         static let employeesTableViewCell = "EmployeesTableViewCell"
+        static let tagCollectionViewCell = "TagCollectionViewCell"
     }
 }
