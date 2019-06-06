@@ -16,9 +16,9 @@
 		A5073400229E397900A3DABB /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50733FE229E397900A3DABB /* TeamTableViewCell.xib */; };
 		A507359D22A139A200EE15D7 /* InvaiteUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507359C22A139A200EE15D7 /* InvaiteUserViewController.swift */; };
 		A507359F22A139CA00EE15D7 /* InvaiteUserViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A507359E22A139CA00EE15D7 /* InvaiteUserViewController.storyboard */; };
+		A507A6F122A8E48A00F742AD /* LeftAlligmentFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507A6F022A8E48A00F742AD /* LeftAlligmentFlowLayout.swift */; };
 		A508EEA822A7A26500640A83 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508EEA622A7A26500640A83 /* TagCollectionViewCell.swift */; };
 		A508EEA922A7A26500640A83 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A508EEA722A7A26500640A83 /* TagCollectionViewCell.xib */; };
-		A508EEAB22A7A96C00640A83 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508EEAA22A7A96C00640A83 /* FlowLayout.swift */; };
 		A508EEAD22A7B39700640A83 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508EEAC22A7B39700640A83 /* TagView.swift */; };
 		A50B0106229D3A91008C85AE /* TeamMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B0104229D3A91008C85AE /* TeamMemberTableViewCell.swift */; };
 		A50B0107229D3A91008C85AE /* TeamMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50B0105229D3A91008C85AE /* TeamMemberTableViewCell.xib */; };
@@ -28,8 +28,6 @@
 		A513649B228E745C0053DE00 /* ExtensionDesignableUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A513649A228E745C0053DE00 /* ExtensionDesignableUIView.swift */; };
 		A51499D822A639FD00B7C39A /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51499D622A639FD00B7C39A /* AddEmployeeViewController.swift */; };
 		A51499D922A639FD00B7C39A /* AddEmployeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51499D722A639FD00B7C39A /* AddEmployeeViewController.xib */; };
-		A51499DC22A656C700B7C39A /* SkillsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51499DA22A656C700B7C39A /* SkillsCollectionViewCell.swift */; };
-		A51499DD22A656C700B7C39A /* SkillsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51499DB22A656C700B7C39A /* SkillsCollectionViewCell.xib */; };
 		A51499DF22A684B900B7C39A /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51499DE22A684B900B7C39A /* ExtensionUIColor.swift */; };
 		A517D5E5229CE97F0081B8A6 /* TecnhologyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5E4229CE97E0081B8A6 /* TecnhologyModel.swift */; };
 		A517D5E9229CE9F30081B8A6 /* TechnologyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5E7229CE9F30081B8A6 /* TechnologyTableViewCell.swift */; };
@@ -102,10 +100,9 @@
 		A50733FE229E397900A3DABB /* TeamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamTableViewCell.xib; sourceTree = "<group>"; };
 		A507359C22A139A200EE15D7 /* InvaiteUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvaiteUserViewController.swift; sourceTree = "<group>"; };
 		A507359E22A139CA00EE15D7 /* InvaiteUserViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InvaiteUserViewController.storyboard; sourceTree = "<group>"; };
-		A508EE9B22A7755F00640A83 /* FireBrick-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FireBrick-Bridging-Header.h"; sourceTree = "<group>"; };
+		A507A6F022A8E48A00F742AD /* LeftAlligmentFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlligmentFlowLayout.swift; sourceTree = "<group>"; };
 		A508EEA622A7A26500640A83 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A508EEA722A7A26500640A83 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
-		A508EEAA22A7A96C00640A83 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		A508EEAC22A7B39700640A83 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		A50B0104229D3A91008C85AE /* TeamMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberTableViewCell.swift; sourceTree = "<group>"; };
 		A50B0105229D3A91008C85AE /* TeamMemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamMemberTableViewCell.xib; sourceTree = "<group>"; };
@@ -115,8 +112,6 @@
 		A513649A228E745C0053DE00 /* ExtensionDesignableUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDesignableUIView.swift; sourceTree = "<group>"; };
 		A51499D622A639FD00B7C39A /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
 		A51499D722A639FD00B7C39A /* AddEmployeeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmployeeViewController.xib; sourceTree = "<group>"; };
-		A51499DA22A656C700B7C39A /* SkillsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsCollectionViewCell.swift; sourceTree = "<group>"; };
-		A51499DB22A656C700B7C39A /* SkillsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A51499DE22A684B900B7C39A /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		A517D5E4229CE97E0081B8A6 /* TecnhologyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TecnhologyModel.swift; sourceTree = "<group>"; };
 		A517D5E7229CE9F30081B8A6 /* TechnologyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnologyTableViewCell.swift; sourceTree = "<group>"; };
@@ -322,10 +317,8 @@
 				A51B9F1422A5392F00775921 /* EmployeesViewController.storyboard */,
 				A51B9F1622A53CA200775921 /* EmployeesTableViewCell.swift */,
 				A51B9F1722A53CA200775921 /* EmployeesTableViewCell.xib */,
-				A51499DA22A656C700B7C39A /* SkillsCollectionViewCell.swift */,
 				A508EEA622A7A26500640A83 /* TagCollectionViewCell.swift */,
 				A508EEA722A7A26500640A83 /* TagCollectionViewCell.xib */,
-				A51499DB22A656C700B7C39A /* SkillsCollectionViewCell.xib */,
 			);
 			path = EmployeesViewController;
 			sourceTree = "<group>";
@@ -396,8 +389,8 @@
 				A513649A228E745C0053DE00 /* ExtensionDesignableUIView.swift */,
 				A5FEEC662293F28E00EB09BC /* Constants.swift */,
 				A51499DE22A684B900B7C39A /* ExtensionUIColor.swift */,
-				A508EEAA22A7A96C00640A83 /* FlowLayout.swift */,
 				A508EEAC22A7B39700640A83 /* TagView.swift */,
+				A507A6F022A8E48A00F742AD /* LeftAlligmentFlowLayout.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -408,7 +401,6 @@
 				A5B67933228D4537003DB84E /* GoogleService-Info.plist */,
 				A5B6791B228D3F74003DB84E /* AppDelegate.swift */,
 				A5B67927228D3F75003DB84E /* Info.plist */,
-				A508EE9B22A7755F00640A83 /* FireBrick-Bridging-Header.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -590,7 +582,6 @@
 				A5FEEC572293AEC400EB09BC /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				A5FEEC502293AEC400EB09BC /* SF-Pro-Display-Medium.otf in Resources */,
 				A51B9F1022A51E0A00775921 /* ChooseTechnologyViewController.xib in Resources */,
-				A51499DD22A656C700B7C39A /* SkillsCollectionViewCell.xib in Resources */,
 				A5FEEC652293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				A5FEEC5D2293AEC400EB09BC /* SF-Pro-Text-BoldItalic.otf in Resources */,
 				A50B0107229D3A91008C85AE /* TeamMemberTableViewCell.xib in Resources */,
@@ -678,8 +669,7 @@
 				A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */,
 				A50718082296BD7000BC7FF1 /* SplashScreenViewController.swift in Sources */,
 				A513649B228E745C0053DE00 /* ExtensionDesignableUIView.swift in Sources */,
-				A508EEAB22A7A96C00640A83 /* FlowLayout.swift in Sources */,
-				A51499DC22A656C700B7C39A /* SkillsCollectionViewCell.swift in Sources */,
+				A507A6F122A8E48A00F742AD /* LeftAlligmentFlowLayout.swift in Sources */,
 				A52D5D3D229BF08F00E6C4D5 /* TechnologyViewController.swift in Sources */,
 				A517D5E9229CE9F30081B8A6 /* TechnologyTableViewCell.swift in Sources */,
 				A5F7C4F0228D715400B35C6C /* AuthViewController.swift in Sources */,
@@ -859,7 +849,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.blackbricks.firebrick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FireBrick/Config/FireBrick-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				SWIFT_VERSION = 4.2;
@@ -883,7 +873,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.blackbricks.firebrick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FireBrick/Config/FireBrick-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

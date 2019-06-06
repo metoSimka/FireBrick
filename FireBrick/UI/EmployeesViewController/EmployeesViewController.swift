@@ -78,7 +78,6 @@ class EmployeesViewController: UIViewController {
     func stopLoader() {
         
     }
-    
 }
 
 extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -93,5 +92,12 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.user = users[indexPath.row]
         cell.setUserProfile()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.employeesTableViewCell) as? EmployeesTableViewCell else {
+            return
+        }
+        cell.updateHeightCollectionView()
     }
 }
