@@ -38,6 +38,9 @@ struct Constants {
             static let name = "name"
             static let users = "users"
             static let documentID = ""
+            static let skillAge = "skill_age"
+            static let skillName = "name"
+            static let skillColor = "color_hex"
         }
         enum users {
             static let name = "name"
@@ -76,5 +79,6 @@ struct Constants {
         static let teamMemberTableViewCell = "TeamMemberTableViewCell"
         static let chooseTechnologyTableViewCell = "ChooseTechnologyTableViewCell"
         static let employeesTableViewCell = "EmployeesTableViewCell"
+        static let skillsCollectionViewCell = "SkillsCollectionViewCell"
     }
 }
