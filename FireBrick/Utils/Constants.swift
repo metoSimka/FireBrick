@@ -29,6 +29,16 @@ struct Constants {
     }
     
     enum fireStoreFields {
+        enum projects {
+            static let name = "name"
+            static let imageLink = "icon"
+            static let endDate = "end_date"
+            static let startDate = "start_date"
+            static let hours = "hours"
+            static let users = "users"
+            static let technologies = "technologies"
+        }
+        
         enum technology {
             static let name = "name"
             static let documentation = "documentation"

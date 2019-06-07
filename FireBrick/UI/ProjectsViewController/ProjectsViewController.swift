@@ -7,16 +7,25 @@
 //
 
 import UIKit
+import SwiftEntryKit
+import Firebase
 
 class ProjectsViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addProject(_ sender: UIButton) {
+    }
+    
+    @IBAction func openNavigation(_ sender: UIButton) {
+    }
+    
+    
     /*
     // MARK: - Navigation
 
