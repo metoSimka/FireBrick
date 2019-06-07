@@ -24,13 +24,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="340" height="56.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8b-bu-ltm">
-                        <rect key="frame" x="272" y="0.0" width="68" height="56.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8b-bu-ltm">
+                        <rect key="frame" x="300" y="0.0" width="40" height="56.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="68" id="P4E-iU-iks"/>
+                            <constraint firstAttribute="width" constant="40" id="P4E-iU-iks"/>
                         </constraints>
                         <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="16" maxY="0.0"/>
                         <state key="normal" image="ic_readable_icon_option-dots"/>
                         <connections>
                             <action selector="openOptions:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MGK-P1-Fj3"/>
@@ -44,7 +43,7 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7m4-X6-DSD">
-                        <rect key="frame" x="156.5" y="28" width="115.5" height="1"/>
+                        <rect key="frame" x="156.5" y="28" width="143.5" height="1"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="HD2-5g-fdd"/>

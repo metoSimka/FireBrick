@@ -36,23 +36,21 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU9-7u-pxG">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU9-7u-pxG">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="96" id="aWu-qW-muq"/>
+                                            <constraint firstAttribute="width" constant="60" id="aWu-qW-muq"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" image="ic_readable_icon_navigation_bar"/>
                                         <connections>
                                             <action selector="openNavigation:" destination="5t1-dV-PNH" eventType="touchUpInside" id="gaP-yU-H3q"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxb-cN-XS4">
-                                        <rect key="frame" x="279" y="0.0" width="96" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxb-cN-XS4">
+                                        <rect key="frame" x="315" y="0.0" width="60" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="96" id="iva-2R-6vo"/>
+                                            <constraint firstAttribute="width" constant="60" id="iva-2R-6vo"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                         <state key="normal" image="ic_readable_icon_filter"/>
                                         <connections>
                                             <action selector="openFilter:" destination="5t1-dV-PNH" eventType="touchUpInside" id="5Lh-eD-Aah"/>

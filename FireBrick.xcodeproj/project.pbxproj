@@ -43,10 +43,14 @@
 		A51B9F1522A5392F00775921 /* EmployeesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F1422A5392F00775921 /* EmployeesViewController.storyboard */; };
 		A51B9F1822A53CA200775921 /* EmployeesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F1622A53CA200775921 /* EmployeesTableViewCell.swift */; };
 		A51B9F1922A53CA200775921 /* EmployeesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F1722A53CA200775921 /* EmployeesTableViewCell.xib */; };
+		A51DE0F622AA205E00BAA37E /* InvaiteUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51DE0F422AA205E00BAA37E /* InvaiteUserTableViewCell.swift */; };
+		A51DE0F722AA205E00BAA37E /* InvaiteUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51DE0F522AA205E00BAA37E /* InvaiteUserTableViewCell.xib */; };
 		A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E490F2292907F006687A3 /* WorkspaceViewController.swift */; };
 		A51E4912229291E3006687A3 /* WorkspaceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51E4911229291E3006687A3 /* WorkspaceViewController.storyboard */; };
 		A52D5D3B229BF08400E6C4D5 /* TechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */; };
 		A52D5D3D229BF08F00E6C4D5 /* TechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52D5D3C229BF08F00E6C4D5 /* TechnologyViewController.swift */; };
+		A59FCE5122AA66EB00062FCF /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59FCE5022AA66EB00062FCF /* ProjectsViewController.swift */; };
+		A59FCE5322AA66FF00062FCF /* ProjectsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59FCE5222AA66FF00062FCF /* ProjectsViewController.storyboard */; };
 		A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6791B228D3F74003DB84E /* AppDelegate.swift */; };
 		A5B67921228D3F74003DB84E /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6791F228D3F74003DB84E /* AuthViewController.storyboard */; };
 		A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B67922228D3F75003DB84E /* Assets.xcassets */; };
@@ -126,10 +130,14 @@
 		A51B9F1422A5392F00775921 /* EmployeesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeesViewController.storyboard; sourceTree = "<group>"; };
 		A51B9F1622A53CA200775921 /* EmployeesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewCell.swift; sourceTree = "<group>"; };
 		A51B9F1722A53CA200775921 /* EmployeesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeesTableViewCell.xib; sourceTree = "<group>"; };
+		A51DE0F422AA205E00BAA37E /* InvaiteUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvaiteUserTableViewCell.swift; sourceTree = "<group>"; };
+		A51DE0F522AA205E00BAA37E /* InvaiteUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvaiteUserTableViewCell.xib; sourceTree = "<group>"; };
 		A51E490F2292907F006687A3 /* WorkspaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewController.swift; sourceTree = "<group>"; };
 		A51E4911229291E3006687A3 /* WorkspaceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkspaceViewController.storyboard; sourceTree = "<group>"; };
 		A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TechnologyViewController.storyboard; sourceTree = "<group>"; };
 		A52D5D3C229BF08F00E6C4D5 /* TechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyViewController.swift; sourceTree = "<group>"; };
+		A59FCE5022AA66EB00062FCF /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		A59FCE5222AA66FF00062FCF /* ProjectsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectsViewController.storyboard; sourceTree = "<group>"; };
 		A5B67918228D3F74003DB84E /* FireBrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireBrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B6791B228D3F74003DB84E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B67920228D3F74003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AuthViewController.storyboard; sourceTree = "<group>"; };
@@ -271,8 +279,8 @@
 		A517D5EB229D05D20081B8A6 /* AddTechnologyViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A517D5EC229D05D20081B8A6 /* AddTechnologyViewController.storyboard */,
 				A517D5ED229D05D20081B8A6 /* AddTechnologyViewController.swift */,
+				A517D5EC229D05D20081B8A6 /* AddTechnologyViewController.storyboard */,
 			);
 			path = AddTechnologyViewController;
 			sourceTree = "<group>";
@@ -341,6 +349,15 @@
 			path = TechnologyViewController;
 			sourceTree = "<group>";
 		};
+		A59FCE4F22AA66D200062FCF /* ProjectsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A59FCE5022AA66EB00062FCF /* ProjectsViewController.swift */,
+				A59FCE5222AA66FF00062FCF /* ProjectsViewController.storyboard */,
+			);
+			path = ProjectsViewController;
+			sourceTree = "<group>";
+		};
 		A5B6790F228D3F74003DB84E = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +422,7 @@
 		A5B67932228D3FC4003DB84E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A59FCE4F22AA66D200062FCF /* ProjectsViewController */,
 				A51499D122A6398800B7C39A /* AddEmployessViewController */,
 				A517D5EB229D05D20081B8A6 /* AddTechnologyViewController */,
 				A5136494228E64D90053DE00 /* AuthViewController */,
@@ -428,6 +446,8 @@
 			children = (
 				A507359C22A139A200EE15D7 /* InvaiteUserViewController.swift */,
 				A507359E22A139CA00EE15D7 /* InvaiteUserViewController.storyboard */,
+				A51DE0F422AA205E00BAA37E /* InvaiteUserTableViewCell.swift */,
+				A51DE0F522AA205E00BAA37E /* InvaiteUserTableViewCell.xib */,
 			);
 			path = InviteUserViewController;
 			sourceTree = "<group>";
@@ -559,6 +579,7 @@
 				A5FEEC512293AEC400EB09BC /* SF-Pro-Display-Heavy.otf in Resources */,
 				A5073400229E397900A3DABB /* TeamTableViewCell.xib in Resources */,
 				A5FEEC5A2293AEC400EB09BC /* SF-Pro-Display-LightItalic.otf in Resources */,
+				A51DE0F722AA205E00BAA37E /* InvaiteUserTableViewCell.xib in Resources */,
 				A5B67934228D4537003DB84E /* GoogleService-Info.plist in Resources */,
 				A5FEEC552293AEC400EB09BC /* SF-Pro-Text-Bold.otf in Resources */,
 				A5FEEC5F2293AEC400EB09BC /* SF-Pro-Text-Semibold.otf in Resources */,
@@ -576,6 +597,7 @@
 				A5FEEC592293AEC400EB09BC /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */,
 				A51B9F1522A5392F00775921 /* EmployeesViewController.storyboard in Resources */,
+				A59FCE5322AA66FF00062FCF /* ProjectsViewController.storyboard in Resources */,
 				A5FEEC572293AEC400EB09BC /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				A5FEEC502293AEC400EB09BC /* SF-Pro-Display-Medium.otf in Resources */,
 				A51B9F1022A51E0A00775921 /* ChooseTechnologyViewController.xib in Resources */,
@@ -681,12 +703,14 @@
 				A507359D22A139A200EE15D7 /* InvaiteUserViewController.swift in Sources */,
 				A50718032296A12000BC7FF1 /* SimpleAlertViewController.swift in Sources */,
 				A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */,
+				A59FCE5122AA66EB00062FCF /* ProjectsViewController.swift in Sources */,
 				A51499D822A639FD00B7C39A /* AddEmployeeViewController.swift in Sources */,
 				A517D5E5229CE97F0081B8A6 /* TecnhologyModel.swift in Sources */,
 				A50B010B229D3D03008C85AE /* UserModel.swift in Sources */,
 				A517D5F3229D2A240081B8A6 /* TeamViewController.swift in Sources */,
 				A51B9F1822A53CA200775921 /* EmployeesTableViewCell.swift in Sources */,
 				A51B9F0222A4D56D00775921 /* ChooseTechnologyViewController.swift in Sources */,
+				A51DE0F622AA205E00BAA37E /* InvaiteUserTableViewCell.swift in Sources */,
 				A51499DF22A684B900B7C39A /* ExtensionUIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

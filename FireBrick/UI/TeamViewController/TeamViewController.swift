@@ -82,15 +82,40 @@ class TeamViewController: UIViewController {
     private func getTeams(from snapShot: QuerySnapshot) -> [Team]? {
         var firebaseTeams: [Team] = []
         for data in snapShot.documents {
-            guard let name = data[Constants.fireStoreFields.teams.name] as? String,
-                let users = data[Constants.fireStoreFields.teams.users] as? [[String:AnyObject]],
-                let employees = self.getUsers(from: users) else {
-                    return nil
+            var team = Team()
+            if let name = data[Constants.fireStoreFields.teams.name] as? String {
+                team.name = name
             }
-            let team = Team(name: name, users: employees, documentID: data.documentID )
+            if let users = data[Constants.fireStoreFields.teams.users] as? [[String:AnyObject]] {
+                team.users = self.getUsers(from: users)
+            }
+            if let technologies = data[Constants.fireStoreFields.teams.technologies] as? [[String:AnyObject]] {
+                team.technologies = getTechnologies(from: technologies)
+            }
             firebaseTeams.append(team)
         }
         return firebaseTeams
+    }
+    
+    private func getTechnologies(from firebaseTechnologies: [[String:AnyObject]]) -> [Technology]? {
+        var technologies: [Technology] = []
+        for tech in firebaseTechnologies {
+            var technology = Technology()
+            if let name = tech[Constants.fireStoreFields.technology.name] as? String {
+                technology.name = name
+            }
+            if let color = tech[Constants.fireStoreFields.technology.color] as? String {
+                technology.color = UIColor.hexStringToUIColor(hex: color)
+            }
+            if let icon = tech[Constants.fireStoreFields.technology.icon] as? String {
+                technology.icon = icon
+            }
+            if let hrs_in_week = tech[Constants.fireStoreFields.technology.hrs_in_week] as? Int {
+                technology.hrs_in_week = hrs_in_week
+            }
+            technologies.append(technology)
+        }
+        return technologies
     }
     
     private func getUsers(from users: [[String : AnyObject]]) -> [User]? {
@@ -285,19 +310,26 @@ extension TeamViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    private func showInviteViewController() {
+    private func showInviteViewController(toTeam team: Team) {
         let storyboard = UIStoryboard(name: Constants.controllers.inviteUserViewController, bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.inviteUserViewController  ) as? InvaiteUserViewController else {
             return
         }
-        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
+        if let technologies = team.technologies {
+            vc.availableTechnologies = technologies
+        }
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
 extension TeamViewController: TeamTableViewCellDelegate {
     
     func didTapAddEmployee(inCell: TeamTableViewCell) {
-        showInviteViewController()
+        guard let indexPath = tableView.indexPath(for: inCell) else {
+            return
+        }
+        let team = teams[indexPath.row]
+        showInviteViewController(toTeam: team)
     }
     
     func didTapOnTeam(inCell: TeamTableViewCell) {

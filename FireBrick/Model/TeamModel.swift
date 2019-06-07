@@ -12,5 +12,6 @@ import Firebase
 struct Team {
     var name: String?
     var users: [User]?
+    var technologies: [Technology]?
     var documentID: String?
 }

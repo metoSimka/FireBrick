@@ -22,7 +22,7 @@ class AddTechnologyViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var docTextField: UITextField!
-    
+
     
     // MARK: - Lifecycle
     
@@ -154,4 +154,3 @@ extension AddTechnologyViewController: UITextFieldDelegate {
         updataButtonState()
     }
 }
-

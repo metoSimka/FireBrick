@@ -28,6 +28,9 @@ class EmployeesViewController: UIViewController {
         fetchUsers()
     }
     
+    @IBAction func back(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     // MARK: - Private methods
     
     private func setupTableView() {

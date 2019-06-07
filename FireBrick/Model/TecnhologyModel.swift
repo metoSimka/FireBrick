@@ -14,4 +14,5 @@ struct Technology {
     var documentation: String?
     var icon: String?
     var color: UIColor?
+    var hrs_in_week: Int?
 }
