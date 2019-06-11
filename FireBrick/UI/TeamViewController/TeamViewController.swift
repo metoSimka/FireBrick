@@ -105,7 +105,7 @@ class TeamViewController: UIViewController {
                 technology.name = name
             }
             if let color = tech[Constants.fireStoreFields.technology.color] as? String {
-                technology.color = UIColor.hexStringToUIColor(hex: color)
+                technology.colorHex = color
             }
             if let icon = tech[Constants.fireStoreFields.technology.icon] as? String {
                 technology.icon = icon

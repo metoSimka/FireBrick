@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class InvaiteUserTableViewCell: UITableViewCell {
+class ChooseTechnologyForUserTableViewCell: UITableViewCell {
 
       // MARK: - IBOutlets
     

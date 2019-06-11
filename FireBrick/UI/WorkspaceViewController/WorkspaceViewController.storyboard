@@ -133,6 +133,25 @@
                                     <action selector="showEmployees:" destination="sP1-qw-vvz" eventType="touchUpInside" id="gcl-na-skZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6S-Qe-ODy">
+                                <rect key="frame" x="25" y="299" width="325" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Xsn-d7-IhO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="17"/>
+                                <state key="normal" title="Projects">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showProjects:" destination="sP1-qw-vvz" eventType="touchUpInside" id="p9P-zD-wyL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -146,12 +165,15 @@
                             <constraint firstItem="xJm-DV-ZHQ" firstAttribute="top" secondItem="aY0-ui-o6i" secondAttribute="top" id="Dx5-Xu-TJC"/>
                             <constraint firstItem="06a-IB-osi" firstAttribute="centerX" secondItem="aY0-ui-o6i" secondAttribute="centerX" id="FfT-Xs-TiA"/>
                             <constraint firstItem="5B8-p4-r0E" firstAttribute="trailing" secondItem="fyG-iM-6DP" secondAttribute="trailing" constant="25" id="NDT-EA-OSb"/>
+                            <constraint firstItem="Q6S-Qe-ODy" firstAttribute="leading" secondItem="5B8-p4-r0E" secondAttribute="leading" constant="25" id="Se6-O7-qHZ"/>
                             <constraint firstItem="2wg-Yg-Et1" firstAttribute="leading" secondItem="5B8-p4-r0E" secondAttribute="leading" constant="25" id="Tsz-4j-iRU"/>
+                            <constraint firstItem="Q6S-Qe-ODy" firstAttribute="top" secondItem="fyG-iM-6DP" secondAttribute="bottom" constant="18" id="VwP-Kh-4j1"/>
                             <constraint firstItem="fyG-iM-6DP" firstAttribute="top" secondItem="2wg-Yg-Et1" secondAttribute="bottom" constant="21" id="fKK-QB-8jK"/>
                             <constraint firstItem="xJm-DV-ZHQ" firstAttribute="trailing" secondItem="5B8-p4-r0E" secondAttribute="trailing" id="fvr-eg-GNI"/>
                             <constraint firstItem="xJm-DV-ZHQ" firstAttribute="leading" secondItem="5B8-p4-r0E" secondAttribute="leading" id="hoA-Ql-b3S"/>
                             <constraint firstItem="fyG-iM-6DP" firstAttribute="leading" secondItem="5B8-p4-r0E" secondAttribute="leading" constant="25" id="jlP-tZ-KXe"/>
                             <constraint firstItem="xJm-DV-ZHQ" firstAttribute="bottom" secondItem="5B8-p4-r0E" secondAttribute="bottom" id="ket-J5-dsp"/>
+                            <constraint firstItem="5B8-p4-r0E" firstAttribute="trailing" secondItem="Q6S-Qe-ODy" secondAttribute="trailing" constant="25" id="lCL-Nw-aNO"/>
                             <constraint firstItem="Onw-Dm-wP1" firstAttribute="centerX" secondItem="aY0-ui-o6i" secondAttribute="centerX" id="lEE-bu-1PF"/>
                             <constraint firstItem="5B8-p4-r0E" firstAttribute="bottom" secondItem="DXi-KI-fIh" secondAttribute="bottom" constant="50" id="o8W-tG-CE6"/>
                             <constraint firstItem="5B8-p4-r0E" firstAttribute="trailing" secondItem="Onw-Dm-wP1" secondAttribute="trailing" constant="25" id="q04-1C-86Y"/>

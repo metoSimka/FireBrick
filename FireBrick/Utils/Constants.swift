@@ -29,6 +29,10 @@ struct Constants {
     }
     
     enum fireStoreFields {
+        enum storage {
+            static let path = "path"
+            static let URL = "url"
+        }
         enum projects {
             static let name = "name"
             static let imageLink = "icon"
@@ -69,6 +73,8 @@ struct Constants {
         static let technology = "Technology"
         static let teams = "Teams"
         static let users = "Users"
+        static let projects = "Projects"
+        static let storage = "Storage"
     }
     
     enum controllers {
@@ -79,20 +85,27 @@ struct Constants {
         static let forgotPasswordViewController = "ForgotPasswordViewController"
         static let emailAuthViewController = "EmailAuthViewController"
         static let authViewController = "AuthViewController"
-        static let addTechnologyViewController = "AddTechnologyViewController"
+        static let makeTechnologyViewController = "MakeTechnologyViewController"
         static let simpleAlertViewController = "SimpleAlertViewController"
-        static let chooseTechnologyViewController = "ChooseTechnologyViewController"
         static let inviteUserViewController = "InvaiteUserViewController"
         static let employeesViewController = "EmployeesViewController"
+        static let projectsViewController = "ProjectsViewController"
+        static let addProjectViewController = "AddProjectViewController"
+        static let addTechnologyViewController = "AddTechnologyViewController"
+        static let configueAddedTechnologyViewController = "ConfigueAddedTechnologyViewController"
+        static let newTechnologyViewController = "NewTechnologyViewController"
     }
     
     enum cellsID {
         static let technologyTableViewCell = "TechnologyTableViewCell"
         static let teamTableViewCell = "TeamTableViewCell"
         static let teamMemberTableViewCell = "TeamMemberTableViewCell"
-        static let chooseTechnologyTableViewCell = "ChooseTechnologyTableViewCell"
+        static let chooseTechnologyForUserTableViewCell = "ChooseTechnologyForUserTableViewCell"
         static let employeesTableViewCell = "EmployeesTableViewCell"
         static let tagCollectionViewCell = "TagCollectionViewCell"
         static let InvaiteUserTableViewCell = "InvaiteUserTableViewCell"
+        static let projectTableViewCell = "ProjectTableViewCell"
+        static let addTechnologyTableViewCell = "AddTechnologyTableViewCell"
+        static let chooseTechnologyForProjectTableViewCell = "ChooseTechnologyForProjectTableViewCell"
     }
 }

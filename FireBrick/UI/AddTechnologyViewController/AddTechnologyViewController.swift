@@ -2,155 +2,114 @@
 //  AddTechnologyViewController.swift
 //  FireBrick
 //
-//  Created by metoSimka on 27/05/2019.
+//  Created by metoSimka on 11/06/2019.
 //  Copyright © 2019 metoSimka. All rights reserved.
 //
 
 import UIKit
 import SwiftEntryKit
 import Firebase
-import FirebaseFirestore
 
 class AddTechnologyViewController: UIViewController {
     
-    // MARK: - Public variables
+    var availableTechnologies: [Technology] = []
     
-    var availableTechnologyNames: [String] = []
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var constraintTableViewHeight: NSLayoutConstraint!
     
-    // MARK: - IBOutlets
-    
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var docTextField: UITextField!
+    let cellHeight: CGFloat = 46
 
-    
-    // MARK: - Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameTextField.delegate = self
-        docTextField.delegate = self
-        updataButtonState()
+        fetchTechnologies()
+        setupTableView()
     }
     
-    // MARK: - IBActions
-    
-    @IBAction func cancel(_ sender: UIButton) {
-        SwiftEntryKit.dismiss()
+    @IBAction func back(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func add(_ sender: UIButton) {
-        documentationTextFieldNillGuard()
-        writeData()
+    @IBAction func makeNewTechnology(_ sender: UIButton) {
+        let vc = NewTechnologyViewController(nibName: Constants.controllers.newTechnologyViewController, bundle: nil)
+        SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
-    // MARK: - Private methods
-    
-    private func writeData() {
-        guard let name = nameTextField.text else {
-            return
-        }
-        guard let doc = docTextField.text else {
-            return
-        }
-        guard name.count > 0 && doc.count > 0 else {
-            return
-        }
-        
-        let dataToSave: [String: Any] = [Constants.fireStoreFields.technology.name: name,
-                                         Constants.fireStoreFields.technology.documentation: doc]
-        
-        Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).addDocument(data: dataToSave, completion: { (error) in
+    private func fetchTechnologies() {
+        Firestore.firestore().collection(Constants.mainFireStoreCollections.technology).getDocuments(completion: { (snapShot, error) in
             guard error == nil else {
-                guard let errorText = error?.localizedDescription else {
-                    return
-                }
-                self.showErrorMessage(errorText: errorText)
+                print("error Here", error ?? "Unkown error")
                 return
             }
-            SwiftEntryKit.dismiss()
+            guard let snapShot = snapShot else {
+                return
+            }
+            var techs:[Technology] = []
+            for data in snapShot.documents {
+                if  let name = data[Constants.fireStoreFields.technology.name] as? String,
+                    let doc = data[Constants.fireStoreFields.technology.documentation] as? String {
+                    var tech = Technology()
+                    tech.name = name
+                    tech.documentation = doc
+                    techs.append(tech)
+                } else {
+                    var tech = Technology()
+                    tech.name = "error"
+                    tech.documentation = "error"
+                    techs.append(tech)
+                }
+            }
+            self.availableTechnologies = techs
+            self.updateTableViewHeight()
+            self.tableView.reloadData()
         })
     }
     
-    private func isNameValid() -> Bool {
-        guard isNameContainsAtLeastOneWord() && isNameNotEmpty() && isNameOriginal() else {
-            return false
-        }
-        return true
+    private func updateTableViewHeight() {
+        let height = cellHeight * CGFloat(availableTechnologies.count)
+        constraintTableViewHeight.constant = height
     }
     
-    private func isNameContainsAtLeastOneWord() -> Bool {
-        let letters = NSCharacterSet.letters
-        
-        guard let nameText = nameTextField.text else {
-            return false
-        }
-        let range = nameText.rangeOfCharacter(from: letters)
-        guard range != nil else {
-            return false
-        }
-        return true
-    }
     
-    private func isNameNotEmpty() -> Bool {
-        guard let nameTextCount = nameTextField.text?.count else {
-            return false
-        }
-        guard nameTextCount != 0 else {
-            return false
-        }
-        return true
-    }
-    
-    private func isNameOriginal() -> Bool {
-        guard let nameText = nameTextField.text else {
-            return false
-        }
-        guard !availableTechnologyNames.contains(nameText) else {
-            return false
-        }
-        print(availableTechnologyNames)
-        print(nameText)
-        return true
-    }
-    
-    private func documentationTextFieldNillGuard() {
-        if docTextField.text == nil {
-            docTextField.text = ""
-        }
-    }
-    
-    private func updataButtonState() {
-        if isNameValid() {
-            addButton.alpha = 1
-            addButton.isEnabled = true
-        } else {
-            addButton.alpha = 0.5
-            addButton.isEnabled = false
-        }
-    }
-    
-    private func showErrorMessage(errorText: String) {
-        let alertController = UIAlertController(title: "Error", message: errorText, preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(defaultAction)
-        self.present(alertController, animated: true, completion: nil)
+    private func setupTableView() {
+        tableView.register(UINib(nibName: Constants.cellsID.addTechnologyTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.cellsID.addTechnologyTableViewCell)
+        self.tableView.estimatedRowHeight = 70
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 }
 
-// MARK: - Protocol Conformance
-
-extension AddTechnologyViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == nameTextField {
-            docTextField.becomeFirstResponder()
-        } else if textField == docTextField {
-            docTextField.resignFirstResponder()
-        }
-        return true
+extension AddTechnologyViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return availableTechnologies.count
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        updataButtonState()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.addTechnologyTableViewCell) as? AddTechnologyTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.setupCell(withTechnology: availableTechnologies[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = self.tableView.cellForRow(at: indexPath) as? AddTechnologyTableViewCell else {
+            return
+        }
+        
+        let storyboard = UIStoryboard(name: Constants.controllers.configueAddedTechnologyViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.configueAddedTechnologyViewController  ) as? ConfigueAddedTechnologyViewController else {
+            return
+        }
+        vc.labelNameTechnology = cell.labelNameTechnology
+        vc.imageIcon = cell.imageIcon
+        self.present(vc, animated: true, completion: nil)
+    }
+}
+
+extension AddTechnologyViewController: NewTechnologyViewControllerProtocol {
+    func didTapAddButton(newTechnology: Technology) {
+        availableTechnologies.append(newTechnology)
+        tableView.reloadData()
     }
 }

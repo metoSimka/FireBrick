@@ -50,6 +50,15 @@ class WorkspaceViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func showProjects(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: Constants.controllers.projectsViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.projectsViewController  ) as? ProjectsViewController else {
+            return
+        }
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
     
     func getDocumentBy(collectionName: String, fieldName: String, value: AnyObject) {
         Firestore.firestore().collection(collectionName).whereField(fieldName, isEqualTo: value).getDocuments(completion: { (snapShot, error) in

@@ -41,8 +41,8 @@ class TechnologyViewController: UIViewController {
     }
     
     @IBAction func addTechnology(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: Constants.controllers.addTechnologyViewController, bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.addTechnologyViewController) as? AddTechnologyViewController else {
+        let storyboard = UIStoryboard(name: Constants.controllers.makeTechnologyViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.makeTechnologyViewController) as? MakeTechnologyViewController else {
             return
         }
         vc.availableTechnologyNames = getTechnologyNames()

@@ -50,6 +50,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="miH-Nw-276"/>
                                                 </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="ic_readable_icon_plus"/>
                                             </button>
                                         </subviews>

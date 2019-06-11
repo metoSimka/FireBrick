@@ -13,6 +13,6 @@ struct Technology {
     var name: String?
     var documentation: String?
     var icon: String?
-    var color: UIColor?
+    var colorHex: String?
     var hrs_in_week: Int?
 }

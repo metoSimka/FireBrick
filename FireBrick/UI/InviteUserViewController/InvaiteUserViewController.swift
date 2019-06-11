@@ -61,11 +61,14 @@ class InvaiteUserViewController: UIViewController {
     }
     
     @IBAction func addNewTechnology (_ sender: UIButton) {
-        let vc = ChooseTechnologyViewController(nibName: Constants.controllers.chooseTechnologyViewController, bundle: nil)
+        let storyboard = UIStoryboard(name: Constants.controllers.makeTechnologyViewController, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: Constants.controllers.makeTechnologyViewController) as? MakeTechnologyViewController else {
+            return
+        }
         SwiftEntryKit.display(entry: vc, using: EKAttributes.default)
     }
     
-    @IBAction func invideUser(_ sender: UIButton) {
+    @IBAction func inviteUser(_ sender: UIButton) {
     }
     
     
@@ -82,8 +85,8 @@ class InvaiteUserViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        let InvaiteUserTableViewNib = UINib(nibName: Constants.cellsID.InvaiteUserTableViewCell, bundle: nil)
-        tableView.register(InvaiteUserTableViewNib, forCellReuseIdentifier: Constants.cellsID.InvaiteUserTableViewCell)
+        let InvaiteUserTableViewNib = UINib(nibName: Constants.cellsID.chooseTechnologyForUserTableViewCell, bundle: nil)
+        tableView.register(InvaiteUserTableViewNib, forCellReuseIdentifier: Constants.cellsID.chooseTechnologyForUserTableViewCell)
         self.tableView.estimatedRowHeight = 70
         tableView.rowHeight = UITableView.automaticDimension
     }
@@ -110,7 +113,7 @@ extension InvaiteUserViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.InvaiteUserTableViewCell) as? InvaiteUserTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellsID.chooseTechnologyForUserTableViewCell) as? ChooseTechnologyForUserTableViewCell else {
             return UITableViewCell()
         }
         cell.setupCell(withTechnology: availableTechnologies[indexPath.row])

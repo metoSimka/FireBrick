@@ -17,6 +17,16 @@
 		A507359D22A139A200EE15D7 /* InvaiteUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507359C22A139A200EE15D7 /* InvaiteUserViewController.swift */; };
 		A507359F22A139CA00EE15D7 /* InvaiteUserViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A507359E22A139CA00EE15D7 /* InvaiteUserViewController.storyboard */; };
 		A507A6F122A8E48A00F742AD /* LeftAlligmentFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507A6F022A8E48A00F742AD /* LeftAlligmentFlowLayout.swift */; };
+		A508925922AF603F00E01389 /* ChooseTechnologyForProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508925722AF603F00E01389 /* ChooseTechnologyForProjectTableViewCell.swift */; };
+		A508925A22AF603F00E01389 /* ChooseTechnologyForProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A508925822AF603F00E01389 /* ChooseTechnologyForProjectTableViewCell.xib */; };
+		A508925D22AF672A00E01389 /* AddTechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508925C22AF672A00E01389 /* AddTechnologyViewController.swift */; };
+		A508925F22AF673C00E01389 /* AddTechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A508925E22AF673C00E01389 /* AddTechnologyViewController.storyboard */; };
+		A508926222AF697900E01389 /* AddTechnologyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508926022AF697900E01389 /* AddTechnologyTableViewCell.swift */; };
+		A508926322AF697900E01389 /* AddTechnologyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A508926122AF697900E01389 /* AddTechnologyTableViewCell.xib */; };
+		A508926522AF798200E01389 /* ConfigueAddedTechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508926422AF798200E01389 /* ConfigueAddedTechnologyViewController.swift */; };
+		A508926722AF798D00E01389 /* ConfigueAddedTechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A508926622AF798D00E01389 /* ConfigueAddedTechnologyViewController.storyboard */; };
+		A508926A22AF814000E01389 /* NewTechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508926822AF814000E01389 /* NewTechnologyViewController.swift */; };
+		A508926B22AF814000E01389 /* NewTechnologyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A508926922AF814000E01389 /* NewTechnologyViewController.xib */; };
 		A508EEA822A7A26500640A83 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508EEA622A7A26500640A83 /* TagCollectionViewCell.swift */; };
 		A508EEA922A7A26500640A83 /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A508EEA722A7A26500640A83 /* TagCollectionViewCell.xib */; };
 		A50B0106229D3A91008C85AE /* TeamMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50B0104229D3A91008C85AE /* TeamMemberTableViewCell.swift */; };
@@ -31,20 +41,16 @@
 		A517D5E5229CE97F0081B8A6 /* TecnhologyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5E4229CE97E0081B8A6 /* TecnhologyModel.swift */; };
 		A517D5E9229CE9F30081B8A6 /* TechnologyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5E7229CE9F30081B8A6 /* TechnologyTableViewCell.swift */; };
 		A517D5EA229CE9F30081B8A6 /* TechnologyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A517D5E8229CE9F30081B8A6 /* TechnologyTableViewCell.xib */; };
-		A517D5EE229D05D20081B8A6 /* AddTechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A517D5EC229D05D20081B8A6 /* AddTechnologyViewController.storyboard */; };
-		A517D5EF229D05D20081B8A6 /* AddTechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5ED229D05D20081B8A6 /* AddTechnologyViewController.swift */; };
+		A517D5EE229D05D20081B8A6 /* MakeTechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A517D5EC229D05D20081B8A6 /* MakeTechnologyViewController.storyboard */; };
+		A517D5EF229D05D20081B8A6 /* MakeTechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5ED229D05D20081B8A6 /* MakeTechnologyViewController.swift */; };
 		A517D5F3229D2A240081B8A6 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A517D5F2229D2A240081B8A6 /* TeamViewController.swift */; };
 		A517D5F5229D2A2E0081B8A6 /* TeamViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A517D5F4229D2A2E0081B8A6 /* TeamViewController.storyboard */; };
-		A51B9F0222A4D56D00775921 /* ChooseTechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F0122A4D56D00775921 /* ChooseTechnologyViewController.swift */; };
-		A51B9F0B22A51C8000775921 /* ChooseTechnologyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F0922A51C8000775921 /* ChooseTechnologyTableViewCell.swift */; };
-		A51B9F0C22A51C8000775921 /* ChooseTechnologyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F0A22A51C8000775921 /* ChooseTechnologyTableViewCell.xib */; };
-		A51B9F1022A51E0A00775921 /* ChooseTechnologyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F0E22A51E0A00775921 /* ChooseTechnologyViewController.xib */; };
 		A51B9F1322A5392700775921 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F1222A5392700775921 /* EmployeesViewController.swift */; };
 		A51B9F1522A5392F00775921 /* EmployeesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F1422A5392F00775921 /* EmployeesViewController.storyboard */; };
 		A51B9F1822A53CA200775921 /* EmployeesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51B9F1622A53CA200775921 /* EmployeesTableViewCell.swift */; };
 		A51B9F1922A53CA200775921 /* EmployeesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51B9F1722A53CA200775921 /* EmployeesTableViewCell.xib */; };
-		A51DE0F622AA205E00BAA37E /* InvaiteUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51DE0F422AA205E00BAA37E /* InvaiteUserTableViewCell.swift */; };
-		A51DE0F722AA205E00BAA37E /* InvaiteUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51DE0F522AA205E00BAA37E /* InvaiteUserTableViewCell.xib */; };
+		A51DE0F622AA205E00BAA37E /* ChooseTechnologyForUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51DE0F422AA205E00BAA37E /* ChooseTechnologyForUserTableViewCell.swift */; };
+		A51DE0F722AA205E00BAA37E /* ChooseTechnologyForUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A51DE0F522AA205E00BAA37E /* ChooseTechnologyForUserTableViewCell.xib */; };
 		A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51E490F2292907F006687A3 /* WorkspaceViewController.swift */; };
 		A51E4912229291E3006687A3 /* WorkspaceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51E4911229291E3006687A3 /* WorkspaceViewController.storyboard */; };
 		A52D5D3B229BF08400E6C4D5 /* TechnologyViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */; };
@@ -52,8 +58,10 @@
 		A59FCE5122AA66EB00062FCF /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59FCE5022AA66EB00062FCF /* ProjectsViewController.swift */; };
 		A59FCE5322AA66FF00062FCF /* ProjectsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59FCE5222AA66FF00062FCF /* ProjectsViewController.storyboard */; };
 		A59FCE5522AA6C2000062FCF /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59FCE5422AA6C2000062FCF /* ProjectModel.swift */; };
-		A59FCE5822AA701300062FCF /* ProjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59FCE5622AA701300062FCF /* ProjectsTableViewCell.swift */; };
-		A59FCE5922AA701300062FCF /* ProjectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59FCE5722AA701300062FCF /* ProjectsTableViewCell.xib */; };
+		A59FCE5822AA701300062FCF /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59FCE5622AA701300062FCF /* ProjectTableViewCell.swift */; };
+		A59FCE5922AA701300062FCF /* ProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59FCE5722AA701300062FCF /* ProjectTableViewCell.xib */; };
+		A59FCE5C22AA7ED500062FCF /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59FCE5B22AA7ED500062FCF /* AddProjectViewController.swift */; };
+		A59FCE5E22AA7EF200062FCF /* AddProjectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59FCE5D22AA7EF200062FCF /* AddProjectViewController.storyboard */; };
 		A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6791B228D3F74003DB84E /* AppDelegate.swift */; };
 		A5B67921228D3F74003DB84E /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B6791F228D3F74003DB84E /* AuthViewController.storyboard */; };
 		A5B67923228D3F75003DB84E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B67922228D3F75003DB84E /* Assets.xcassets */; };
@@ -107,6 +115,16 @@
 		A507359C22A139A200EE15D7 /* InvaiteUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvaiteUserViewController.swift; sourceTree = "<group>"; };
 		A507359E22A139CA00EE15D7 /* InvaiteUserViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InvaiteUserViewController.storyboard; sourceTree = "<group>"; };
 		A507A6F022A8E48A00F742AD /* LeftAlligmentFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlligmentFlowLayout.swift; sourceTree = "<group>"; };
+		A508925722AF603F00E01389 /* ChooseTechnologyForProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTechnologyForProjectTableViewCell.swift; sourceTree = "<group>"; };
+		A508925822AF603F00E01389 /* ChooseTechnologyForProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTechnologyForProjectTableViewCell.xib; sourceTree = "<group>"; };
+		A508925C22AF672A00E01389 /* AddTechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTechnologyViewController.swift; sourceTree = "<group>"; };
+		A508925E22AF673C00E01389 /* AddTechnologyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTechnologyViewController.storyboard; sourceTree = "<group>"; };
+		A508926022AF697900E01389 /* AddTechnologyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTechnologyTableViewCell.swift; sourceTree = "<group>"; };
+		A508926122AF697900E01389 /* AddTechnologyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTechnologyTableViewCell.xib; sourceTree = "<group>"; };
+		A508926422AF798200E01389 /* ConfigueAddedTechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigueAddedTechnologyViewController.swift; sourceTree = "<group>"; };
+		A508926622AF798D00E01389 /* ConfigueAddedTechnologyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfigueAddedTechnologyViewController.storyboard; sourceTree = "<group>"; };
+		A508926822AF814000E01389 /* NewTechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTechnologyViewController.swift; sourceTree = "<group>"; };
+		A508926922AF814000E01389 /* NewTechnologyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTechnologyViewController.xib; sourceTree = "<group>"; };
 		A508EEA622A7A26500640A83 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		A508EEA722A7A26500640A83 /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		A50B0104229D3A91008C85AE /* TeamMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamMemberTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,20 +139,16 @@
 		A517D5E4229CE97E0081B8A6 /* TecnhologyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TecnhologyModel.swift; sourceTree = "<group>"; };
 		A517D5E7229CE9F30081B8A6 /* TechnologyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnologyTableViewCell.swift; sourceTree = "<group>"; };
 		A517D5E8229CE9F30081B8A6 /* TechnologyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TechnologyTableViewCell.xib; sourceTree = "<group>"; };
-		A517D5EC229D05D20081B8A6 /* AddTechnologyViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddTechnologyViewController.storyboard; sourceTree = "<group>"; };
-		A517D5ED229D05D20081B8A6 /* AddTechnologyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTechnologyViewController.swift; sourceTree = "<group>"; };
+		A517D5EC229D05D20081B8A6 /* MakeTechnologyViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MakeTechnologyViewController.storyboard; sourceTree = "<group>"; };
+		A517D5ED229D05D20081B8A6 /* MakeTechnologyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeTechnologyViewController.swift; sourceTree = "<group>"; };
 		A517D5F2229D2A240081B8A6 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		A517D5F4229D2A2E0081B8A6 /* TeamViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamViewController.storyboard; sourceTree = "<group>"; };
-		A51B9F0122A4D56D00775921 /* ChooseTechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTechnologyViewController.swift; sourceTree = "<group>"; };
-		A51B9F0922A51C8000775921 /* ChooseTechnologyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTechnologyTableViewCell.swift; sourceTree = "<group>"; };
-		A51B9F0A22A51C8000775921 /* ChooseTechnologyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTechnologyTableViewCell.xib; sourceTree = "<group>"; };
-		A51B9F0E22A51E0A00775921 /* ChooseTechnologyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTechnologyViewController.xib; sourceTree = "<group>"; };
 		A51B9F1222A5392700775921 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
 		A51B9F1422A5392F00775921 /* EmployeesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeesViewController.storyboard; sourceTree = "<group>"; };
 		A51B9F1622A53CA200775921 /* EmployeesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewCell.swift; sourceTree = "<group>"; };
 		A51B9F1722A53CA200775921 /* EmployeesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeesTableViewCell.xib; sourceTree = "<group>"; };
-		A51DE0F422AA205E00BAA37E /* InvaiteUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvaiteUserTableViewCell.swift; sourceTree = "<group>"; };
-		A51DE0F522AA205E00BAA37E /* InvaiteUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvaiteUserTableViewCell.xib; sourceTree = "<group>"; };
+		A51DE0F422AA205E00BAA37E /* ChooseTechnologyForUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTechnologyForUserTableViewCell.swift; sourceTree = "<group>"; };
+		A51DE0F522AA205E00BAA37E /* ChooseTechnologyForUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTechnologyForUserTableViewCell.xib; sourceTree = "<group>"; };
 		A51E490F2292907F006687A3 /* WorkspaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewController.swift; sourceTree = "<group>"; };
 		A51E4911229291E3006687A3 /* WorkspaceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkspaceViewController.storyboard; sourceTree = "<group>"; };
 		A52D5D3A229BF08400E6C4D5 /* TechnologyViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TechnologyViewController.storyboard; sourceTree = "<group>"; };
@@ -142,8 +156,10 @@
 		A59FCE5022AA66EB00062FCF /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		A59FCE5222AA66FF00062FCF /* ProjectsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectsViewController.storyboard; sourceTree = "<group>"; };
 		A59FCE5422AA6C2000062FCF /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
-		A59FCE5622AA701300062FCF /* ProjectsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewCell.swift; sourceTree = "<group>"; };
-		A59FCE5722AA701300062FCF /* ProjectsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectsTableViewCell.xib; sourceTree = "<group>"; };
+		A59FCE5622AA701300062FCF /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		A59FCE5722AA701300062FCF /* ProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTableViewCell.xib; sourceTree = "<group>"; };
+		A59FCE5B22AA7ED500062FCF /* AddProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewController.swift; sourceTree = "<group>"; };
+		A59FCE5D22AA7EF200062FCF /* AddProjectViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddProjectViewController.storyboard; sourceTree = "<group>"; };
 		A5B67918228D3F74003DB84E /* FireBrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireBrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B6791B228D3F74003DB84E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B67920228D3F74003DB84E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AuthViewController.storyboard; sourceTree = "<group>"; };
@@ -245,6 +261,21 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
+		A508925B22AF671000E01389 /* AddTechnologyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A508925C22AF672A00E01389 /* AddTechnologyViewController.swift */,
+				A508925E22AF673C00E01389 /* AddTechnologyViewController.storyboard */,
+				A508926022AF697900E01389 /* AddTechnologyTableViewCell.swift */,
+				A508926122AF697900E01389 /* AddTechnologyTableViewCell.xib */,
+				A508926422AF798200E01389 /* ConfigueAddedTechnologyViewController.swift */,
+				A508926622AF798D00E01389 /* ConfigueAddedTechnologyViewController.storyboard */,
+				A508926822AF814000E01389 /* NewTechnologyViewController.swift */,
+				A508926922AF814000E01389 /* NewTechnologyViewController.xib */,
+			);
+			path = AddTechnologyViewController;
+			sourceTree = "<group>";
+		};
 		A5136494228E64D90053DE00 /* AuthViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,13 +314,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A517D5EB229D05D20081B8A6 /* AddTechnologyViewController */ = {
+		A517D5EB229D05D20081B8A6 /* MakeTechnologyViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A517D5ED229D05D20081B8A6 /* AddTechnologyViewController.swift */,
-				A517D5EC229D05D20081B8A6 /* AddTechnologyViewController.storyboard */,
+				A517D5ED229D05D20081B8A6 /* MakeTechnologyViewController.swift */,
+				A517D5EC229D05D20081B8A6 /* MakeTechnologyViewController.storyboard */,
 			);
-			path = AddTechnologyViewController;
+			path = MakeTechnologyViewController;
 			sourceTree = "<group>";
 		};
 		A517D5F0229D05F60081B8A6 /* Services */ = {
@@ -315,10 +346,6 @@
 		A51B9F0022A4D55200775921 /* ChooseTechnologyViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A51B9F0122A4D56D00775921 /* ChooseTechnologyViewController.swift */,
-				A51B9F0922A51C8000775921 /* ChooseTechnologyTableViewCell.swift */,
-				A51B9F0A22A51C8000775921 /* ChooseTechnologyTableViewCell.xib */,
-				A51B9F0E22A51E0A00775921 /* ChooseTechnologyViewController.xib */,
 			);
 			path = ChooseTechnologyViewController;
 			sourceTree = "<group>";
@@ -361,10 +388,21 @@
 			children = (
 				A59FCE5022AA66EB00062FCF /* ProjectsViewController.swift */,
 				A59FCE5222AA66FF00062FCF /* ProjectsViewController.storyboard */,
-				A59FCE5622AA701300062FCF /* ProjectsTableViewCell.swift */,
-				A59FCE5722AA701300062FCF /* ProjectsTableViewCell.xib */,
+				A59FCE5622AA701300062FCF /* ProjectTableViewCell.swift */,
+				A59FCE5722AA701300062FCF /* ProjectTableViewCell.xib */,
 			);
 			path = ProjectsViewController;
+			sourceTree = "<group>";
+		};
+		A59FCE5A22AA7E6000062FCF /* AddProjectViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A59FCE5B22AA7ED500062FCF /* AddProjectViewController.swift */,
+				A59FCE5D22AA7EF200062FCF /* AddProjectViewController.storyboard */,
+				A508925722AF603F00E01389 /* ChooseTechnologyForProjectTableViewCell.swift */,
+				A508925822AF603F00E01389 /* ChooseTechnologyForProjectTableViewCell.xib */,
+			);
+			path = AddProjectViewController;
 			sourceTree = "<group>";
 		};
 		A5B6790F228D3F74003DB84E = {
@@ -431,9 +469,9 @@
 		A5B67932228D3FC4003DB84E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A59FCE4F22AA66D200062FCF /* ProjectsViewController */,
 				A51499D122A6398800B7C39A /* AddEmployessViewController */,
-				A517D5EB229D05D20081B8A6 /* AddTechnologyViewController */,
+				A59FCE5A22AA7E6000062FCF /* AddProjectViewController */,
+				A508925B22AF671000E01389 /* AddTechnologyViewController */,
 				A5136494228E64D90053DE00 /* AuthViewController */,
 				A51B9F0022A4D55200775921 /* ChooseTechnologyViewController */,
 				A5136495228E64F10053DE00 /* EmailAuthViewController */,
@@ -441,6 +479,8 @@
 				A5FEEC6822940DA400EB09BC /* ForgotPasswordController */,
 				A5B6F697229F936400B5EBF9 /* InviteUserViewController */,
 				A5075C8D2297CCDE008FF334 /* LaunchScreen */,
+				A517D5EB229D05D20081B8A6 /* MakeTechnologyViewController */,
+				A59FCE4F22AA66D200062FCF /* ProjectsViewController */,
 				A50717FF2296A0FD00BC7FF1 /* SimpleAlertViewController */,
 				A50718042296BD3C00BC7FF1 /* SplashScreenViewController */,
 				A517D5F1229D2A080081B8A6 /* TeamViewController */,
@@ -455,8 +495,8 @@
 			children = (
 				A507359C22A139A200EE15D7 /* InvaiteUserViewController.swift */,
 				A507359E22A139CA00EE15D7 /* InvaiteUserViewController.storyboard */,
-				A51DE0F422AA205E00BAA37E /* InvaiteUserTableViewCell.swift */,
-				A51DE0F522AA205E00BAA37E /* InvaiteUserTableViewCell.xib */,
+				A51DE0F422AA205E00BAA37E /* ChooseTechnologyForUserTableViewCell.swift */,
+				A51DE0F522AA205E00BAA37E /* ChooseTechnologyForUserTableViewCell.xib */,
 			);
 			path = InviteUserViewController;
 			sourceTree = "<group>";
@@ -570,26 +610,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5FEEC722294149500EB09BC /* ForgotPasswordViewController.xib in Resources */,
+				A59FCE5E22AA7EF200062FCF /* AddProjectViewController.storyboard in Resources */,
 				A5FEEC482293AEC400EB09BC /* SF-Pro-Display-Thin.otf in Resources */,
 				A508EEA922A7A26500640A83 /* TagCollectionViewCell.xib in Resources */,
 				A5FEEC622293AEC400EB09BC /* SF-Pro-Text-LightItalic.otf in Resources */,
 				A5FEEC5E2293AEC400EB09BC /* SF-Pro-Text-RegularItalic.otf in Resources */,
+				A508925A22AF603F00E01389 /* ChooseTechnologyForProjectTableViewCell.xib in Resources */,
 				A5FEEC582293AEC400EB09BC /* SF-Pro-Display-Ultralight.otf in Resources */,
 				A5FEEC5C2293AEC400EB09BC /* SF-Pro-Display-Black.otf in Resources */,
-				A51B9F0C22A51C8000775921 /* ChooseTechnologyTableViewCell.xib in Resources */,
 				A5FEEC612293AEC400EB09BC /* SF-Pro-Display-ThinItalic.otf in Resources */,
 				A5FEEC602293AEC400EB09BC /* SF-Pro-Text-HeavyItalic.otf in Resources */,
 				A5FEEC522293AEC400EB09BC /* SF-Pro-Text-Light.otf in Resources */,
 				A52D5D3B229BF08400E6C4D5 /* TechnologyViewController.storyboard in Resources */,
 				A5FEEC4E2293AEC400EB09BC /* SF-Pro-Text-MediumItalic.otf in Resources */,
 				A517D5F5229D2A2E0081B8A6 /* TeamViewController.storyboard in Resources */,
-				A59FCE5922AA701300062FCF /* ProjectsTableViewCell.xib in Resources */,
+				A59FCE5922AA701300062FCF /* ProjectTableViewCell.xib in Resources */,
 				A5B67926228D3F75003DB84E /* LaunchScreen.storyboard in Resources */,
 				A5FEEC562293AEC400EB09BC /* SF-Pro-Display-MediumItalic.otf in Resources */,
 				A5FEEC512293AEC400EB09BC /* SF-Pro-Display-Heavy.otf in Resources */,
 				A5073400229E397900A3DABB /* TeamTableViewCell.xib in Resources */,
+				A508926B22AF814000E01389 /* NewTechnologyViewController.xib in Resources */,
 				A5FEEC5A2293AEC400EB09BC /* SF-Pro-Display-LightItalic.otf in Resources */,
-				A51DE0F722AA205E00BAA37E /* InvaiteUserTableViewCell.xib in Resources */,
+				A508926322AF697900E01389 /* AddTechnologyTableViewCell.xib in Resources */,
+				A51DE0F722AA205E00BAA37E /* ChooseTechnologyForUserTableViewCell.xib in Resources */,
 				A5B67934228D4537003DB84E /* GoogleService-Info.plist in Resources */,
 				A5FEEC552293AEC400EB09BC /* SF-Pro-Text-Bold.otf in Resources */,
 				A5FEEC5F2293AEC400EB09BC /* SF-Pro-Text-Semibold.otf in Resources */,
@@ -599,6 +642,7 @@
 				A5FEEC4F2293AEC400EB09BC /* SF-Pro-Display-Bold.otf in Resources */,
 				A5FEEC5B2293AEC400EB09BC /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				A50718012296A11400BC7FF1 /* SimpleAlertViewController.storyboard in Resources */,
+				A508926722AF798D00E01389 /* ConfigueAddedTechnologyViewController.storyboard in Resources */,
 				A5136493228E648A0053DE00 /* EmailAuthViewController.storyboard in Resources */,
 				A5FEEC4A2293AEC400EB09BC /* SF-Pro-Text-Heavy.otf in Resources */,
 				A5FEEC632293AEC400EB09BC /* SF-Pro-Text-Medium.otf in Resources */,
@@ -610,14 +654,14 @@
 				A59FCE5322AA66FF00062FCF /* ProjectsViewController.storyboard in Resources */,
 				A5FEEC572293AEC400EB09BC /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				A5FEEC502293AEC400EB09BC /* SF-Pro-Display-Medium.otf in Resources */,
-				A51B9F1022A51E0A00775921 /* ChooseTechnologyViewController.xib in Resources */,
 				A5FEEC652293AEC400EB09BC /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				A5FEEC5D2293AEC400EB09BC /* SF-Pro-Text-BoldItalic.otf in Resources */,
 				A50B0107229D3A91008C85AE /* TeamMemberTableViewCell.xib in Resources */,
 				A5FEEC4C2293AEC400EB09BC /* SF-Pro-Display-Light.otf in Resources */,
-				A517D5EE229D05D20081B8A6 /* AddTechnologyViewController.storyboard in Resources */,
+				A517D5EE229D05D20081B8A6 /* MakeTechnologyViewController.storyboard in Resources */,
 				A507359F22A139CA00EE15D7 /* InvaiteUserViewController.storyboard in Resources */,
 				A51B9F1922A53CA200775921 /* EmployeesTableViewCell.xib in Resources */,
+				A508925F22AF673C00E01389 /* AddTechnologyViewController.storyboard in Resources */,
 				A5FEEC642293AEC400EB09BC /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				A51E4912229291E3006687A3 /* WorkspaceViewController.storyboard in Resources */,
 				A50718062296BD4E00BC7FF1 /* SplashScreenViewController.storyboard in Resources */,
@@ -693,6 +737,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A508925D22AF672A00E01389 /* AddTechnologyViewController.swift in Sources */,
+				A508926522AF798200E01389 /* ConfigueAddedTechnologyViewController.swift in Sources */,
 				A5FEEC712294149500EB09BC /* ForgotPasswordViewController.swift in Sources */,
 				A50B0109229D3CDE008C85AE /* TeamModel.swift in Sources */,
 				A5B6791C228D3F74003DB84E /* AppDelegate.swift in Sources */,
@@ -700,29 +746,31 @@
 				A513649B228E745C0053DE00 /* ExtensionDesignableUIView.swift in Sources */,
 				A59FCE5522AA6C2000062FCF /* ProjectModel.swift in Sources */,
 				A507A6F122A8E48A00F742AD /* LeftAlligmentFlowLayout.swift in Sources */,
+				A508925922AF603F00E01389 /* ChooseTechnologyForProjectTableViewCell.swift in Sources */,
 				A52D5D3D229BF08F00E6C4D5 /* TechnologyViewController.swift in Sources */,
 				A517D5E9229CE9F30081B8A6 /* TechnologyTableViewCell.swift in Sources */,
 				A5F7C4F0228D715400B35C6C /* AuthViewController.swift in Sources */,
 				A50733FF229E397900A3DABB /* TeamTableViewCell.swift in Sources */,
-				A517D5EF229D05D20081B8A6 /* AddTechnologyViewController.swift in Sources */,
+				A517D5EF229D05D20081B8A6 /* MakeTechnologyViewController.swift in Sources */,
 				A5F7C4F6228D7B2000B35C6C /* EmailAuthViewController.swift in Sources */,
 				A508EEA822A7A26500640A83 /* TagCollectionViewCell.swift in Sources */,
 				A50B0106229D3A91008C85AE /* TeamMemberTableViewCell.swift in Sources */,
 				A51E49102292907F006687A3 /* WorkspaceViewController.swift in Sources */,
-				A51B9F0B22A51C8000775921 /* ChooseTechnologyTableViewCell.swift in Sources */,
+				A508926A22AF814000E01389 /* NewTechnologyViewController.swift in Sources */,
 				A51B9F1322A5392700775921 /* EmployeesViewController.swift in Sources */,
 				A507359D22A139A200EE15D7 /* InvaiteUserViewController.swift in Sources */,
 				A50718032296A12000BC7FF1 /* SimpleAlertViewController.swift in Sources */,
 				A5FEEC672293F28E00EB09BC /* Constants.swift in Sources */,
 				A59FCE5122AA66EB00062FCF /* ProjectsViewController.swift in Sources */,
-				A59FCE5822AA701300062FCF /* ProjectsTableViewCell.swift in Sources */,
+				A508926222AF697900E01389 /* AddTechnologyTableViewCell.swift in Sources */,
+				A59FCE5822AA701300062FCF /* ProjectTableViewCell.swift in Sources */,
 				A51499D822A639FD00B7C39A /* AddEmployeeViewController.swift in Sources */,
+				A59FCE5C22AA7ED500062FCF /* AddProjectViewController.swift in Sources */,
 				A517D5E5229CE97F0081B8A6 /* TecnhologyModel.swift in Sources */,
 				A50B010B229D3D03008C85AE /* UserModel.swift in Sources */,
 				A517D5F3229D2A240081B8A6 /* TeamViewController.swift in Sources */,
 				A51B9F1822A53CA200775921 /* EmployeesTableViewCell.swift in Sources */,
-				A51B9F0222A4D56D00775921 /* ChooseTechnologyViewController.swift in Sources */,
-				A51DE0F622AA205E00BAA37E /* InvaiteUserTableViewCell.swift in Sources */,
+				A51DE0F622AA205E00BAA37E /* ChooseTechnologyForUserTableViewCell.swift in Sources */,
 				A51499DF22A684B900B7C39A /* ExtensionUIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
